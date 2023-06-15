@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .drawer-menu > li > a {
+    @apply flex flex-row gap-4 px-6 py-4 items-center rounded-full font-semibold;
+  }
+
+  .drawer-menu > li > a:hover {
+    @apply bg-[rgba(0,0,0,0.06)];
+  }
+}
