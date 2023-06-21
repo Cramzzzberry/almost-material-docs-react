@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { ButtonSnippets } from './Button-Snippets';
 
 export default function ActiveButton() {
   const tabs = {
@@ -17,14 +20,14 @@ export default function ActiveButton() {
       </div>
     ),
     "html": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <span>Html here</span>
-      </div>
+      <SyntaxHighlighter className="card card-primary" language="cshtml" style={ darcula }>
+        { ButtonSnippets.activeButton.htmlCode }
+      </SyntaxHighlighter>
     ),
     "jsx": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <span>jsx here</span>
-      </div>
+      <SyntaxHighlighter className="card card-primary" language="jsx" style={ darcula }>
+        { ButtonSnippets.activeButton.jsxCode }
+      </SyntaxHighlighter>
     )
   }
   const [previewActive, setPreviewActive] = useState("active")
