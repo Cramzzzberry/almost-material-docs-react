@@ -1,10 +1,19 @@
 import { useState } from 'react';
 
-export default function OutlinedButton() {
+export default function ActiveButton() {
   const tabs = {
     "preview": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <button className="btn btn-outlined">Outlined</button>
+      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
+        <button className="btn active">Default</button>
+        <button className="btn btn-primary active">Primary</button>
+        <button className="btn btn-secondary active">Secondary</button>
+        <button className="btn btn-surface active">Surface</button>
+        <button className="btn btn-info active">Info</button>
+        <button className="btn btn-warning active">Warning</button>
+        <button className="btn btn-success active">Success</button>
+        <button className="btn btn-error active">Error</button>
+        <button className="btn btn-ghost active">Ghost</button>
+        <button className="btn btn-link active">Link</button>
       </div>
     ),
     "html": (
@@ -29,14 +38,14 @@ export default function OutlinedButton() {
     setJsxActive(activeTab === "jsx" ? "active" : "")
     setSecondRow(tabs[activeTab])
   }
-  
+
   return (
     <>
-    {/* outlined button */}
+    {/* button active */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
-        <h3 className="font-semibold">Outlined Button</h3>
+        <h3 className="font-semibold">Active Button</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-surface btn-outlined btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }

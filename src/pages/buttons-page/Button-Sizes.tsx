@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-export default function OutlinedButton() {
+export default function ButtonSizes() {
   const tabs = {
     "preview": (
       <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <button className="btn btn-outlined">Outlined</button>
+        <button className="btn btn-sm">Small</button>
+        <button className="btn">Default</button>
+        <button className="btn btn-lg">Large</button>
       </div>
     ),
     "html": (
@@ -29,14 +31,14 @@ export default function OutlinedButton() {
     setJsxActive(activeTab === "jsx" ? "active" : "")
     setSecondRow(tabs[activeTab])
   }
-  
+
   return (
     <>
-    {/* outlined button */}
+    {/* button sizes */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
-        <h3 className="font-semibold">Outlined Button</h3>
+            <h3 className="font-semibold">Button Sizes</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-surface btn-outlined btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }

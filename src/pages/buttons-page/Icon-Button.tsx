@@ -23,16 +23,16 @@ export default function IconButton() {
       </div>
     )
   }
-  const [previewActive, setPreviewActive] = useState("active");
-  const [htmlActive, setHtmlActive] = useState("");
-  const [jsxActive, setJsxActive] = useState("");
+  const [previewActive, setPreviewActive] = useState("active")
+  const [htmlActive, setHtmlActive] = useState("")
+  const [jsxActive, setJsxActive] = useState("")
   const [secondRow, setSecondRow] = useState(tabs["preview"])
 
   const handleTabs = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "active" : "");
-    setHtmlActive(activeTab === "html" ? "active" : "");
-    setJsxActive(activeTab === "jsx" ? "active" : "");
-    setSecondRow(tabs[activeTab]);
+    setPreviewActive(activeTab === "preview" ? "active" : "")
+    setHtmlActive(activeTab === "html" ? "active" : "")
+    setJsxActive(activeTab === "jsx" ? "active" : "")
+    setSecondRow(tabs[activeTab])
   }
 
   return (

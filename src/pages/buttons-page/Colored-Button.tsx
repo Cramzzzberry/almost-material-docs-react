@@ -1,10 +1,16 @@
 import { useState } from 'react';
 
-export default function OutlinedButton() {
+export default function ColoredButton() {
   const tabs = {
     "preview": (
       <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <button className="btn btn-outlined">Outlined</button>
+        <button className="btn btn-primary">Primary</button>
+        <button className="btn btn-secondary">Secondary</button>
+        <button className="btn btn-surface">Surface</button>
+        <button className="btn btn-info">Info</button>
+        <button className="btn btn-warning">Warning</button>
+        <button className="btn btn-success">Success</button>
+        <button className="btn btn-error">Error</button>
       </div>
     ),
     "html": (
@@ -29,14 +35,14 @@ export default function OutlinedButton() {
     setJsxActive(activeTab === "jsx" ? "active" : "")
     setSecondRow(tabs[activeTab])
   }
-  
+
   return (
     <>
-    {/* outlined button */}
+    {/* buttons with colors */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
-        <h3 className="font-semibold">Outlined Button</h3>
+        <h3 className="font-semibold">Buttons w/ Colors</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-surface btn-outlined btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }
