@@ -1,6 +1,7 @@
 import SolidButton from "./Solid-Button";
 import IconButton from "./Icon-Button";
 import OutlinedButton from "./Outlined-Button";
+import GhostButton from "./ghost-button";
 
 export default function Buttons() {
   return (
@@ -15,24 +16,7 @@ export default function Buttons() {
         <SolidButton />
         <IconButton />
         <OutlinedButton />
-
-        {/* text button */}
-        <div className="flex flex-col gap-4">
-          {/* first row */}
-          <div className="flex flex-row gap-4 mx-4 justify-between">
-            <h3 className="font-semibold">Ghost Button</h3>
-            <div className="flex flex-row gap-2 items-center">
-              <button className="btn btn-surface btn-outlined btn-sm">Preview</button>
-              <button className="btn btn-surface btn-outlined btn-sm">HTML</button>
-              <button className="btn btn-surface btn-outlined btn-sm">JSX</button>
-            </div>
-          </div>
-
-          {/* second row */}
-          <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-            <button className="btn btn-ghost">Ghost</button>
-          </div>
-        </div>
+        <GhostButton />
 
         {/* link button */}
         <div className="flex flex-col gap-4">
@@ -56,7 +40,7 @@ export default function Buttons() {
         <div className="flex flex-col gap-4">
           {/* first row */}
           <div className="flex flex-row gap-4 mx-4 justify-between">
-            <h3 className="font-semibold">Rounded Button</h3>
+            <h3 className="font-semibold">Circle Button</h3>
             <div className="flex flex-row gap-2 items-center">
               <button className="btn btn-surface btn-outlined btn-sm">Preview</button>
               <button className="btn btn-surface btn-outlined btn-sm">HTML</button>
@@ -66,7 +50,7 @@ export default function Buttons() {
 
           {/* second row */}
           <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-            <button className="btn btn-rounded">
+            <button className="btn btn-circle">
               <span className="material-icons-round">
                 search
               </span>

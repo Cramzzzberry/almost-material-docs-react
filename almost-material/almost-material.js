@@ -88,28 +88,28 @@ const almostMaterialPlugin = plugin(
 					"-webkit-user-select": "none",
 					"-ms-user-select": "none",
 					"user-select": "none",
-					"&.badge-outlined": {
+					"&.badge-outlined": { //badge-outlined
 						backgroundColor: "transparent",
 						color: customPalette.defaultColor,
 						borderWidth: "1px",
 						borderColor: customPalette.defaultColor,
 					},
 
-					"&.badge-dot": {
+					"&.badge-dot": { //badge-dot
 						padding: "0",
 						backgroundColor: customPalette.defaultColor,
 						width: "0.5rem",
 						height: "0.5rem",
 					},
 
-					"&.badge-sm": {
+					"&.badge-sm": { //badge-sm
 						paddingLeft: "1rem",
 						paddingRight: "1rem",
 						fontSize: "0.875rem",
 						lineHeight: "1.25rem",
 					},
 
-					"&.badge-lg": {
+					"&.badge-lg": { //badge-lg
 						paddingTop: "0.25rem",
 						paddingBottom: "0.25rem",
 						paddingLeft: "2rem",
@@ -148,7 +148,7 @@ const almostMaterialPlugin = plugin(
 						backgroundColor: shadeHexColor(customPalette.defaultColor, 0.05),
 					},
 
-					"&.btn-outlined": {
+					"&.btn-outlined": { //btn-outlined
 						backgroundColor: "transparent",
 						borderColor: "#C7C7C7",
 						color: customPalette.defaultColor,
@@ -161,7 +161,7 @@ const almostMaterialPlugin = plugin(
 						}
 					},
 
-					"&.btn-ghost": {
+					"&.btn-ghost": { //btn-ghost
 						paddingTop: "0.5rem",
 						paddingBottom: "0.5rem", 
 						paddingLeft: "1.5rem",
@@ -174,7 +174,7 @@ const almostMaterialPlugin = plugin(
 							background: "rgba(0,0,0,0.05)",
 						},
 
-						"&.active": {
+						"&.active": { //btn-active
 							backgroundColor: "rgba(0,0,0,0.05)",
 							color: customPalette.defaultColor,
 							"&:hover:not([disabled])": {
@@ -183,7 +183,7 @@ const almostMaterialPlugin = plugin(
 						},
 					},
 					
-					"&.btn-link": {
+					"&.btn-link": { //btn-link
 						padding: "0",
 						color: customPalette.defaultColor,
 						backgroundColor: "transparent",
@@ -203,7 +203,7 @@ const almostMaterialPlugin = plugin(
 						},
 					},
 
-					"&.btn-rounded": {
+					"&.btn-circle": { //btn-circle
 						padding: "1rem",
 						borderRadius: "9999px",
 						"&.btn-ghost": {
@@ -231,7 +231,7 @@ const almostMaterialPlugin = plugin(
 						},
 					},
 
-					"&.active": {
+					"&.active": { //btn with active state
 						backgroundColor: customPalette.defaultColor,
 						borderColor: customPalette.defaultColor,
 						color: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
@@ -240,13 +240,13 @@ const almostMaterialPlugin = plugin(
 						}
 					},
 
-					"&:disabled": {
+					"&:disabled": { //disabled btn
 						backgroundColor: "rgba(0,0,0,0.075)",
 						color: shadeHexColor(customPalette.defaultColor, tonePercent[10]),
 						opacity: "70%",
 					},
 
-					"&.btn-sm": {
+					"&.btn-sm": { //btn-sm
 						paddingTop: "0.5rem",
 						paddingBottom: "0.5rem",
 						paddingLeft: "1rem",
@@ -257,7 +257,7 @@ const almostMaterialPlugin = plugin(
 						}
 					},
 
-					"&.btn-lg": {
+					"&.btn-lg": { //btn-lg
 						paddingTop: "1.5rem",
 						paddingBottom: "1.5rem",
 						paddingLeft: "2rem",

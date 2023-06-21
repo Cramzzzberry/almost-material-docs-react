@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export default function SolidButton() {
+export default function GhostButton() {
   const tabs = {
     "preview": (
       <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <button className="btn">Solid</button>
+        <button className="btn btn-ghost">Ghost</button>
       </div>
     ),
     "html": (
@@ -32,11 +32,11 @@ export default function SolidButton() {
 
   return (
     <>
-    {/* solid button */}
+    {/* button with icon */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
-        <h3 className="font-semibold">Solid Button</h3>
+        <h3 className="font-semibold">Ghost Button</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-surface btn-outlined btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }
