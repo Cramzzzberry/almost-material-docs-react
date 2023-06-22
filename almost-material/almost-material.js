@@ -496,17 +496,25 @@ const almostMaterialPlugin = plugin(
 						}
 					},
 
-					"&.btn-text": {
+					"&.btn-ghost": {
 						backgroundColor: "transparent",
 						borderColor: "transparent",
-						color:  color, 
+						color: color, 
 						"&:hover:not([disabled])": {
 							background: "rgba(0,0,0,0.05)",
-						}
+						},
+
+						"&.active": {
+							backgroundColor: "rgba(0,0,0,0.05)",
+							color: color,
+							"&:hover:not([disabled])": {
+								backgroundColor: "rgba(0,0,0,0.05)",
+							}
+						},
 					},
 
 					"&.btn-link": {
-						color:  color,
+						color: color,
 						backgroundColor: "transparent",
 						"&:hover:not([disabled])": {
 							color: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.2 : 0.2),

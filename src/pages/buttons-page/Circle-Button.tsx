@@ -55,13 +55,13 @@ export default function LinkButton() {
       <div className="flex flex-row gap-4 mx-4 justify-between">
         <h3 className="font-semibold">Circle Button</h3>
         <div className="flex flex-row gap-2 items-center">
-          <button className={"btn btn-surface btn-outlined btn-sm " + previewActive}
+          <button className={"btn btn-surface btn-ghost btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }
             >Preview</button>
-          <button className={"btn btn-surface btn-outlined btn-sm " + htmlActive}
+          <button className={"btn btn-surface btn-ghost btn-sm " + htmlActive}
             onClick={ () => handleTabs("html") }
             >HTML</button>
-          <button className={"btn btn-surface btn-outlined btn-sm " + jsxActive}
+          <button className={"btn btn-surface btn-ghost btn-sm " + jsxActive}
             onClick={ () => handleTabs("jsx") }
             >JSX</button>
         </div>

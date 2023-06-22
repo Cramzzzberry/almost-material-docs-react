@@ -2,7 +2,7 @@ import 'material-icons/iconfont/material-icons.css'
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import Buttons from "./pages/buttons-page/Buttons"
-import Badges from "./pages/badges"
+import Badges from "./pages/badges-page/badges"
 
 export default function App() {
   return(
