@@ -3,21 +3,17 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ButtonSnippets } from './Button-Snippets';
 
-export default function SolidButton() {
+const Button = (props) => {
   const tabs = {
-    "preview": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
-        <button className="btn" disabled="disabled">Disabled</button>
-      </div>
-    ),
+    "preview": ButtonSnippets[props.type].preview,
     "html": (
       <SyntaxHighlighter className="card card-primary" language="cshtml" style={ darcula }>
-        { ButtonSnippets.disabledButton.htmlCode }
+        { ButtonSnippets[props.type].htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
       <SyntaxHighlighter className="card card-primary" language="jsx" style={ darcula }>
-        { ButtonSnippets.disabledButton.jsxCode }
+        { ButtonSnippets[props.type].jsxCode }
       </SyntaxHighlighter>
     )
   }
@@ -35,11 +31,11 @@ export default function SolidButton() {
 
   return (
     <>
-    {/* button disabled */}
+    {/* solid button */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
-            <h3 className="font-semibold">Disabled Button</h3>
+        <h3 className="font-semibold">{ props.type }</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-surface btn-ghost btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }
@@ -59,3 +55,5 @@ export default function SolidButton() {
     </>
   )
 }
+
+export default Button

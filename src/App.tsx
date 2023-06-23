@@ -1,7 +1,7 @@
 import 'material-icons/iconfont/material-icons.css'
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"
 import Home from "./pages/Home"
-import Buttons from "./pages/buttons-page/Buttons"
+import ButtonsPage from "./pages/buttons-page/Buttons-Page"
 import Badges from "./pages/badges-page/badges"
 
 export default function App() {
@@ -32,10 +32,10 @@ export default function App() {
 
         <div class="drawer-content overflow-y-auto p-4 xl:basis-[calc(100vw-320px)] xl:h-screen"> {/* content of the drawer */}
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={ <Home /> } />
             <Route path="/" element={ <Navigate to="/home" /> }></Route>
-            <Route path="/buttons" element={<Buttons />} />
-            <Route path="/badges" element={<Badges />} />
+            <Route path="/buttons" element={ <ButtonsPage /> } />
+            <Route path="/badges" element={ <Badges /> } />
           </Routes>
         </div>
       </div>
