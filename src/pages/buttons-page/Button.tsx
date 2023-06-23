@@ -12,7 +12,7 @@ const Button = (props) => {
     ),
     "jsx": (
       <SyntaxHighlighter className="card card-primary" language="jsx" style={ darcula }>
-        { props.htmlCode }
+        { props.jsxCode }
       </SyntaxHighlighter>
     )
   }
