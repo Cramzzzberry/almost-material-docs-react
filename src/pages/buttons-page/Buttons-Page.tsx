@@ -5,8 +5,15 @@ const getButtons =  () => { //get the button snippets keys and then push it insi
   const buttonComponents = []
   const buttonSnippets = Object.keys(ButtonSnippets)
 
-  for(const key of buttonSnippets){
-    buttonComponents.push(<Button key={ key } type={ key } />)
+  for(const key of buttonSnippets) {
+    buttonComponents.push(
+      <Button
+        key={ key }
+        type={ key }
+        preview={ ButtonSnippets[key].preview }
+        htmlCode={ ButtonSnippets[key].htmlCode }
+        jsxCode={ ButtonSnippets[key].jsxCode } />
+    )
   }
 
   return buttonComponents

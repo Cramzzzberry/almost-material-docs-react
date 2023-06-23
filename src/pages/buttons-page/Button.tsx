@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { ButtonSnippets } from './Button-Snippets';
 
 const Button = (props) => {
   const tabs = {
-    "preview": ButtonSnippets[props.type].preview,
+    "preview": props.preview,
     "html": (
       <SyntaxHighlighter className="card card-primary" language="cshtml" style={ darcula }>
-        { ButtonSnippets[props.type].htmlCode }
+        { props.htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
       <SyntaxHighlighter className="card card-primary" language="jsx" style={ darcula }>
-        { ButtonSnippets[props.type].jsxCode }
+        { props.htmlCode }
       </SyntaxHighlighter>
     )
   }
