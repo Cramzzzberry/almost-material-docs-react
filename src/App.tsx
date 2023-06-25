@@ -2,7 +2,7 @@ import 'material-icons/iconfont/material-icons.css'
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import ButtonsPage from "./pages/buttons-page/Buttons-Page"
-import Badges from "./pages/badges-page/badges"
+import BadgesPage from "./pages/badges-page/Badges-Page"
 
 export default function App() {
   return(
@@ -35,7 +35,7 @@ export default function App() {
             <Route path="/home" element={ <Home /> } />
             <Route path="/" element={ <Navigate to="/home" /> }></Route>
             <Route path="/buttons" element={ <ButtonsPage /> } />
-            <Route path="/badges" element={ <Badges /> } />
+            <Route path="/badges" element={ <BadgesPage /> } />
           </Routes>
         </div>
       </div>

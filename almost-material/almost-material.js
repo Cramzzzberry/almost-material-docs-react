@@ -85,13 +85,10 @@ const almostMaterialPlugin = plugin(
 					justifyContent: "center",
 					alignItems: "center",
 					borderRadius: "9999px",
-					"-webkit-user-select": "none",
-					"-ms-user-select": "none",
-					"user-select": "none",
+					borderWidth: "1px",
 					"&.badge-outlined": { //badge-outlined
 						backgroundColor: "transparent",
 						color: customPalette.defaultColor,
-						borderWidth: "1px",
 						borderColor: customPalette.defaultColor,
 					},
 
@@ -140,65 +137,46 @@ const almostMaterialPlugin = plugin(
 					borderRadius: "9999px", 
 					gap: "0.5rem",
 					fontWeight: "600",
+					borderWidth: "1px",
 					"-webkit-user-select": "none",
 					"-ms-user-select": "none",
 					"user-select": "none",
 					"&:hover:not([disabled])": {
 						cursor: "pointer",
-						backgroundColor: shadeHexColor(customPalette.defaultColor, 0.05),
+						backgroundColor: shadeHexColor(customPalette.defaultColor, 0.1),
 					},
 
 					"&.btn-outlined": { //btn-outlined
 						backgroundColor: "transparent",
 						borderColor: "#C7C7C7",
 						color: customPalette.defaultColor,
-						borderWidth: "1px",
 						"&:hover": {
 							backgroundColor: customPalette.defaultColor,
 							borderColor: customPalette.defaultColor,
 							color: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
 							opacity: "1",
-						}
+						},
 					},
 
 					"&.btn-ghost": { //btn-ghost
-						paddingTop: "0.5rem",
-						paddingBottom: "0.5rem", 
-						paddingLeft: "1.5rem",
-						paddingRight: "1.5rem", 
+						// paddingTop: "0.5rem",
+						// paddingBottom: "0.5rem", 
+						// paddingLeft: "1.5rem",
+						// paddingRight: "1.5rem", 
 						backgroundColor: "transparent",
+						borderColor: "transparent",
 						color: customPalette.defaultColor,
-						borderRadius: "12px",
-						fontWeight: "600",
+						// borderRadius: "12px",
 						"&:hover:not([disabled])": {
 							background: "rgba(0,0,0,0.05)",
 						},
 
 						"&.active": { //btn-active
 							backgroundColor: "rgba(0,0,0,0.05)",
+							borderColor: "transparent",
 							color: customPalette.defaultColor,
 							"&:hover:not([disabled])": {
 								backgroundColor: "rgba(0,0,0,0.05)",
-							}
-						},
-					},
-					
-					"&.btn-link": { //btn-link
-						padding: "0",
-						color: customPalette.defaultColor,
-						backgroundColor: "transparent",
-						textDecoration: "underline",
-						"&:hover:not([disabled])": {
-							backgroundColor: "transparent",
-							color: shadeHexColor(customPalette.defaultColor, 0.2),
-						},
-
-						"&.active": {
-							backgroundColor: "transparent",
-							color: shadeHexColor(customPalette.defaultColor, 0.2),
-							"&:hover:not([disabled])": {
-								backgroundColor: "transparent",
-								color: shadeHexColor(customPalette.defaultColor, 0.2),
 							}
 						},
 					},
@@ -242,6 +220,7 @@ const almostMaterialPlugin = plugin(
 
 					"&:disabled": { //disabled btn
 						backgroundColor: "rgba(0,0,0,0.075)",
+						borderColor: "transparent",
 						color: shadeHexColor(customPalette.defaultColor, tonePercent[10]),
 						opacity: "70%",
 					},
@@ -352,88 +331,6 @@ const almostMaterialPlugin = plugin(
 
 
 
-				// drawer components
-				// ".drawer": {
-				// 	position: "fixed", 
-				// 	top: "0", 
-				// 	left: "-100%", 
-				// 	zIndex: "20", 
-				// 	width: "100%", 
-				// 	height: "100vh", 
-				// 	transitionDelay: "500ms",
-				// },
-
-				// ".drawer-toggle": {
-				// 	position: "absolute", 
-				// 	top: "-2.5rem", 
-				// 	visibility: "hidden", 
-				// },
-
-				// ".drawer .drawer-overlay": {
-				// 	position: "fixed", 
-				// 	transitionProperty: "background-color, border-color, color, fill, stroke", 
-				// 	transitionDuration: "500ms", 
-				// 	width: "100%", 
-				// 	height: "100%", 
-				// 	cursor: "pointer", 
-				// 	background: "rgba(0,0,0,0.0)",
-				// },
-
-				// ".drawer-toggle:checked + .drawer .drawer-overlay": {
-				// 	background: "rgba(0,0,0,0.2)",
-				// },
-
-				// ".drawer > .drawer-side": {
-				// 	position: "fixed", 
-				// 	left: "-360px",
-				// 	paddingLeft: "1rem",
-				// 	paddingRight: "1rem", 
-				// 	paddingTop: "1.5rem",
-				// 	paddingBottom: "1.5rem", 
-				// 	backgroundColor: shadeHexColor(customPalette.primary, tonePercent[95]), 
-				// 	transitionProperty: "all", 
-				// 	transitionDuration: "500ms", 
-				// 	height: "100vh", 
-				// 	borderTopRightRadius: "1rem",
-				// 	borderBottomRightRadius: "1rem", 
-				// 	width: "360px",
-				// 	overflowY: "auto", 
-				// },
-
-				// ".drawer-toggle:checked + .drawer > .drawer-side": {
-				// 	left: "0",
-				// },
-
-				// ".drawer-toggle:checked + .drawer": {
-				// 	left: "0",
-				// 	transitionDelay: "0ms",
-				// },
-
-				// ".drawer .drawer-side > ul > li > a": {
-				// 	display: "flex", 
-				// 	paddingTop: "1rem",
-				// 	paddingBottom: "1rem", 
-				// 	paddingLeft: "1.5rem",
-				// 	paddingRight: "1.5rem", 
-				// 	flexDirection: "row", 
-				// 	alignItems: "center", 
-				// 	borderRadius: "9999px", 
-				// 	gap: "1rem",
-				// 	fontWeight: "600",
-				// 	"&:hover": {
-				// 		backgroundColor: "rgba(0,0,0,0.06)",
-				// 	}
-				// },
-
-				// ".drawer .drawer-side > ul > li > a.active": {
-				// 	color: shadeHexColor(customPalette.primary, lightOrDark(customPalette.primary) === 'light' ? tonePercent[10] : tonePercent[100]),
-				// 	backgroundColor: customPalette.primary,
-				// },
-
-
-
-
-
 				// navbar components
 				".navbar": {
 					display: "flex",
@@ -482,7 +379,7 @@ const almostMaterialPlugin = plugin(
 					borderColor: color,
 					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 					"&:hover:not([disabled])": {
-						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.05 : 0.05),
+						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
 					},
 
 					"&.btn-outlined": {
@@ -511,14 +408,6 @@ const almostMaterialPlugin = plugin(
 								backgroundColor: "rgba(0,0,0,0.05)",
 							}
 						},
-					},
-
-					"&.btn-link": {
-						color: color,
-						backgroundColor: "transparent",
-						"&:hover:not([disabled])": {
-							color: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.2 : 0.2),
-						}
 					},
 
 					"&.btn-rounded": {

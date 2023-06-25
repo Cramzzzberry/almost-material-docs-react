@@ -2,23 +2,23 @@ import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const Button = (props) => {
+const Badge = (props) => {
   const tabs = {
     "preview": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center overflow-x-auto">
+      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center">
         { props.preview }
       </div>
     ),
     "html": (
-      <SyntaxHighlighter className="card" language="cshtml" style={ darcula }>
+      <SyntaxHighlighter className="card card-primary" language="cshtml" style={ darcula }>
         { props.htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
-      <SyntaxHighlighter className="card" language="jsx" style={ darcula }>
+      <SyntaxHighlighter className="card card-primary" language="jsx" style={ darcula }>
         { props.jsxCode }
       </SyntaxHighlighter>
-    )
+    ),
   }
   const [previewActive, setPreviewActive] = useState("btn-surface active")
   const [htmlActive, setHtmlActive] = useState("btn-ghost")
@@ -34,6 +34,7 @@ const Button = (props) => {
 
   return (
     <>
+    {/* solid badge */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
@@ -58,4 +59,4 @@ const Button = (props) => {
   )
 }
 
-export default Button
+export default Badge

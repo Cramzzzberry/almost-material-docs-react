@@ -2,19 +2,19 @@
 import { almostMaterialPlugin } from './almost-material/almost-material'
 
 const almostMaterialPalette = {
-  primary: "#1c4f82",
+  primary: "#65c3c8",
    
-  secondary: "#7d919b",
+  secondary: "#ef9fbc",
       
-  surface: "#23282f",
+  surface: "#291334",
       
-  info: "#0092d6",
+  info: "#3abff8",
       
-  success: "#6cb288",
+  warning: "#36d399",
       
-  warning: "#daad58",
+  success: "#fbbd23",
       
-  error: "#ab3d30",
+  error: "#f87272",
 }
 
 export default {
