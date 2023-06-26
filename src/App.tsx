@@ -1,8 +1,9 @@
 import 'material-icons/iconfont/material-icons.css'
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"
 import Home from "./pages/Home"
-import ButtonsPage from "./pages/buttons-page/Buttons-Page"
-import BadgesPage from "./pages/badges-page/Badges-Page"
+import ButtonsPage from "./pages/buttons/Buttons-Page"
+import BadgesPage from "./pages/badges/Badges-Page"
+import CardsPage from "./pages/cards/Cards-Page"
 
 export default function App() {
   return(
@@ -14,7 +15,7 @@ export default function App() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/buttons">Buttons</Link></li>
             <li><Link to="/badges">Badges</Link></li>
-            <li><Link to="#" className="bg-error">Cards</Link></li>
+            <li><Link to="/cards">Cards</Link></li>
             <li><Link to="#" className="bg-error">Checkbox</Link></li>
             <li><Link to="#" className="bg-error">Chips</Link></li>
             <li><Link to="#" className="bg-error">Divider</Link></li>
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/" element={ <Navigate to="/home" /> }></Route>
             <Route path="/buttons" element={ <ButtonsPage /> } />
             <Route path="/badges" element={ <BadgesPage /> } />
+            <Route path="/cards" element={ <CardsPage /> } />
           </Routes>
         </div>
       </div>

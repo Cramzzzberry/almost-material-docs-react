@@ -34,7 +34,6 @@ const Badge = (props) => {
 
   return (
     <>
-    {/* solid badge */}
     <div className="flex flex-col gap-4">
       {/* first row */}
       <div className="flex flex-row gap-4 mx-4 justify-between">

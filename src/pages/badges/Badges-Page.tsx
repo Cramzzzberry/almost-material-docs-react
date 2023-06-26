@@ -19,7 +19,7 @@ const getBadges =  () => {
   return badgeComponents
 }
 
-const Badges = () => {
+const BadgesPage = () => {
   return (
     <>
     <div className="flex flex-row gap-4">
@@ -35,4 +35,4 @@ const Badges = () => {
   )
 }
 
-export default Badges
+export default BadgesPage
