@@ -10,9 +10,9 @@ const almostMaterialPalette = {
       
   info: "#3abff8",
       
-  warning: "#36d399",
+  warning: "#fbbd23",
       
-  success: "#fbbd23",
+  success: "#36d399",
       
   error: "#f87272",
 }

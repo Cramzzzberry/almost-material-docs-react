@@ -69,32 +69,89 @@ const almostMaterialPlugin = plugin(
 	function({addComponents, matchComponents, theme, addBase}) {
 
 		const customPalette = theme("almostMaterial") //get the palette from tailwind config
-		customPalette.defaultColor = shadeHexColor(customPalette.primary, tonePercent[10])
+		customPalette.default = shadeHexColor(customPalette.primary, tonePercent[10])
+
+		let customShades = {} //an object for storing all color shades of the customPalette
+
+		for(const color of Object.keys(customPalette)) {
+			customShades[`${color}0`] = shadeHexColor(customPalette[color], tonePercent[0])
+			customShades[`${color}10`] = shadeHexColor(customPalette[color], tonePercent[10])
+			customShades[`${color}20`] = shadeHexColor(customPalette[color], tonePercent[20])
+			customShades[`${color}30`] = shadeHexColor(customPalette[color], tonePercent[30])
+			customShades[`${color}`] = shadeHexColor(customPalette[color], tonePercent[40])
+			customShades[`${color}50`] = shadeHexColor(customPalette[color], tonePercent[50])
+			customShades[`${color}60`] = shadeHexColor(customPalette[color], tonePercent[60])
+			customShades[`${color}70`] = shadeHexColor(customPalette[color], tonePercent[70])
+			customShades[`${color}80`] = shadeHexColor(customPalette[color], tonePercent[80])
+			customShades[`${color}90`] = shadeHexColor(customPalette[color], tonePercent[90])
+			customShades[`${color}95`] = shadeHexColor(customPalette[color], tonePercent[95])
+			customShades[`${color}99`] = shadeHexColor(customPalette[color], tonePercent[99])
+			customShades[`${color}100`] = shadeHexColor(customPalette[color], tonePercent[100])
+		}
+
+		console.log(customShades)
+
 		addComponents(
 			{
-				// badge components
-				".badge": {
+				".divider": {
+					display: "flex",
+					alignItems: "center",
+				},
+				".divider::before, .divider::after": {
+					flex: "1",
+					backgroundColor: customPalette.default,
+					content: "''",
+					borderRadius: "9999px",
+					padding: "0.5px",				
+				},
+				".navbar": {
+					display: "flex",
+					position: "sticky",
+					top: "0",
+					paddingLeft: "1.5rem",
+					paddingRight: "1.5rem",
+					height: "4rem",
+					maxHeight: "4rem",
+					backgroundColor: shadeHexColor(customPalette.primary, tonePercent[95]),
+					fontSize: "1.5rem",
+					lineHeight: "2rem",
+					flexDirection: "row",
+					justifyContent: "space-between",
+					alignItems: "center",
+				},
+			}
+		)
+
+
+
+
+
+		matchComponents(
+			{
+				//badge components
+				"badge": (color) => ({
 					display: "flex",
 					paddingLeft: "1.5rem",
 					paddingRight: "1.5rem",
 					fontSize: "16px",
 					height: "fit-content",
-					backgroundColor: customPalette.defaultColor,
-					color: shadeHexColor(customPalette.defaultColor, lightOrDark(customPalette.defaultColor) === 'light' ? tonePercent[10] : tonePercent[90]),
+					backgroundColor: color,
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 					flexDirection: "row",
 					justifyContent: "center",
 					alignItems: "center",
 					borderRadius: "9999px",
 					borderWidth: "1px",
+					borderColor: color,
 					"&.badge-outlined": { //badge-outlined
 						backgroundColor: "transparent",
-						color: customPalette.defaultColor,
-						borderColor: customPalette.defaultColor,
+						color: color,
+						borderColor: color,
 					},
 
 					"&.badge-dot": { //badge-dot
 						padding: "0",
-						backgroundColor: customPalette.defaultColor,
+						backgroundColor: color,
 						width: "0.5rem",
 						height: "0.5rem",
 					},
@@ -114,23 +171,20 @@ const almostMaterialPlugin = plugin(
 						fontSize: "1.125rem",
 						lineHeight: "1.75rem",
 					},
-				},
+				}),
 
 
-
-
-
-				// button components
-				".btn": {
-					backgroundColor: customPalette.defaultColor,
-					borderColor: customPalette.defaultColor,
+				//button components
+				"btn": (color) => ({
+					backgroundColor: color,
+					borderColor: color,
 					display: "flex", 
 					paddingTop: "1rem",
 					paddingBottom: "1rem", 
 					paddingLeft: "1.5rem",
 					paddingRight: "1.5rem",
 					height: "fit-content",
-					color: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 					flexDirection: "row", 
 					justifyContent: "center", 
 					alignItems: "center", 
@@ -143,17 +197,17 @@ const almostMaterialPlugin = plugin(
 					"user-select": "none",
 					"&:hover:not([disabled])": {
 						cursor: "pointer",
-						backgroundColor: shadeHexColor(customPalette.defaultColor, 0.1),
+						backgroundColor: shadeHexColor(color, 0.1),
 					},
 
 					"&.btn-outlined": { //btn-outlined
 						backgroundColor: "transparent",
 						borderColor: "#C7C7C7",
-						color: customPalette.defaultColor,
+						color: color,
 						"&:hover": {
-							backgroundColor: customPalette.defaultColor,
-							borderColor: customPalette.defaultColor,
-							color: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
+							backgroundColor: color,
+							borderColor: color,
+							color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 							opacity: "1",
 						},
 					},
@@ -165,7 +219,7 @@ const almostMaterialPlugin = plugin(
 						// paddingRight: "1.5rem", 
 						backgroundColor: "transparent",
 						borderColor: "transparent",
-						color: customPalette.defaultColor,
+						color: color,
 						// borderRadius: "12px",
 						"&:hover:not([disabled])": {
 							background: "rgba(0,0,0,0.05)",
@@ -174,7 +228,7 @@ const almostMaterialPlugin = plugin(
 						"&.active": { //btn-active
 							backgroundColor: "rgba(0,0,0,0.05)",
 							borderColor: "transparent",
-							color: customPalette.defaultColor,
+							color: color,
 							"&:hover:not([disabled])": {
 								backgroundColor: "rgba(0,0,0,0.05)",
 							}
@@ -199,7 +253,7 @@ const almostMaterialPlugin = plugin(
 								fontSize: "0.875rem",
 							}
 						},
-	
+
 						"&.btn-lg": {
 							padding: "1.25rem",
 							fontSize: "2rem",
@@ -210,18 +264,18 @@ const almostMaterialPlugin = plugin(
 					},
 
 					"&.active": { //btn with active state
-						backgroundColor: customPalette.defaultColor,
-						borderColor: customPalette.defaultColor,
-						color: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
+						backgroundColor: color,
+						borderColor: color,
+						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 						"&:hover:not([disabled])": {
-							backgroundColor: customPalette.defaultColor,
+							backgroundColor: color,
 						}
 					},
 
 					"&:disabled": { //disabled btn
 						backgroundColor: "rgba(0,0,0,0.075)",
 						borderColor: "transparent",
-						color: shadeHexColor(customPalette.defaultColor, tonePercent[10]),
+						color: shadeHexColor(color, tonePercent[10]),
 						opacity: "70%",
 					},
 
@@ -246,27 +300,25 @@ const almostMaterialPlugin = plugin(
 							fontSize: "1.75rem",
 						}
 					},
-				},
-
-
-
+				}),
 
 
 				//card components
-				".card": {
+				"card": (color) => ({
 					height: "auto",
 					flexDirection: "column",
 					overflow: "hidden",
 					borderRadius: "1.5rem",
-					backgroundColor: shadeHexColor(customPalette.defaultColor, tonePercent[90]),
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+					backgroundColor: color,
 					transitionProperty: "background-color, border-color, color, fill, stroke",
 					transitionDuration: "150ms",
-					"& > .card-headline" : {
+					"& > .card-textblock" : {
 						padding: "1.25rem",
 						whiteSpace: "normal",
 					},
 
-					"& > .card-actions": {
+					"& > .card-actionblock": {
 						display: "flex",
 						padding: "1.25rem",
 						flexDirection: "row",
@@ -283,8 +335,8 @@ const almostMaterialPlugin = plugin(
 					},
 
 					"&.card-hover:hover": {
-						backgroundColor: shadeHexColor(customPalette.defaultColor, tonePercent[0]),
-						color: shadeHexColor(customPalette.defaultColor, lightOrDark(customPalette.defaultColor) === 'light' ? tonePercent[10] : tonePercent[90]),
+						backgroundColor: shadeHexColor(color, tonePercent[0]),
+						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
 					},
 
 					"& > input[type='checkbox']": {
@@ -308,155 +360,11 @@ const almostMaterialPlugin = plugin(
 					"& > input[type='checkbox']:checked + .card-headline + .card-collapse": {
 						gridTemplateRows: "1fr",
 					}
-				},
-
-
-
-
-
-				//divider components
-				".divider": {
-					display: "flex",
-					alignItems: "center",
-				},
-				".divider::before, .divider::after": {
-					flex: "1",
-					backgroundColor: customPalette.defaultColor,
-					content: "''",
-					borderRadius: "9999px",
-					padding: "0.5px",				
-				},
-
-
-
-
-
-				// navbar components
-				".navbar": {
-					display: "flex",
-					position: "sticky",
-					top: "0",
-					paddingLeft: "1.5rem",
-					paddingRight: "1.5rem",
-					height: "4rem",
-					maxHeight: "4rem",
-					backgroundColor: shadeHexColor(customPalette.primary, tonePercent[95]),
-					fontSize: "1.5rem",
-					lineHeight: "2rem",
-					flexDirection: "row",
-					justifyContent: "space-between",
-					alignItems: "center",
-				},
-			}
-		)
-
-
-
-
-		matchComponents(
-			{
-				// badge components
-				"badge": (color) => ({
-					backgroundColor: color,
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
-					"&.badge-outlined": {
-						borderColor: color,
-						color: color,
-					},
-
-					"&.badge-dot": {
-						backgroundColor: color,
-					},
-				}),
-
-
-
-
-
-				//button components
-				"btn": (color) => ({
-					backgroundColor: color,
-					borderColor: color,
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
-					"&:hover:not([disabled])": {
-						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
-					},
-
-					"&.btn-outlined": {
-						backgroundColor: "transparent",
-						color: color,
-						"&:hover:not([disabled])": {
-							borderColor: color,
-							backgroundColor: color,
-							color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
-							opacity: "1",
-						}
-					},
-
-					"&.btn-ghost": {
-						backgroundColor: "transparent",
-						borderColor: "transparent",
-						color: color, 
-						"&:hover:not([disabled])": {
-							background: "rgba(0,0,0,0.05)",
-						},
-
-						"&.active": {
-							backgroundColor: "rgba(0,0,0,0.05)",
-							color: color,
-							"&:hover:not([disabled])": {
-								backgroundColor: "rgba(0,0,0,0.05)",
-							}
-						},
-					},
-
-					"&.btn-rounded": {
-						padding: "1rem",
-						borderRadius: "9999px",
-						"&.btn-ghost": {
-							padding: "1rem",
-							borderRadius: "9999px",
-							backgroundColor: "transparent",
-							borderColor: "transparent",
-							color: color,
-							"&:hover:not([disabled])": {
-								background: "rgba(0,0,0,0.05)",
-							},
-						}
-					},
-
-					"&.active": {
-						backgroundColor: color,
-						borderColor: color,
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
-						"&:hover:not([disabled])": {
-							backgroundColor: color,
-						}
-					},
-
-					"&:disabled": {
-						color: shadeHexColor(color, tonePercent[10]),
-					},
-				}),
-
-
-
-
-				
-				//card components
-				"card": (color) => ({
-					backgroundColor: shadeHexColor(color, tonePercent[90]),
-					color: shadeHexColor(color, tonePercent[10]),
-					"&.card-hover:hover": {
-						backgroundColor: color,
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
-					}
-				}),
+				})
 			},
-			{
-				values: customPalette
-			}
+			{ values: customShades }
 		)
+
 
 
 
@@ -470,7 +378,7 @@ const almostMaterialPlugin = plugin(
 			"@font-face": {
 				fontFamily: "'openSans'",
 				fontWeight: "normal",
-				src: "url('/almost-material/OpenSans-VariableFont.ttf') format('truetype')",
+				src: "url('/almost-material/NotoSans-Regular.ttf') format('truetype')",
 			},
 
 			"body": {

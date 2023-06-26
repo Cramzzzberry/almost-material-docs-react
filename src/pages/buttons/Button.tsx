@@ -5,30 +5,30 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const Button = (props) => {
   const tabs = {
     "preview": (
-      <div className="card card-primary p-5 flex flex-row gap-2 justify-center items-center overflow-x-auto">
+      <div className="card-primary80 p-5 flex flex-row gap-2 justify-center items-center overflow-x-auto">
         { props.preview }
       </div>
     ),
     "html": (
-      <SyntaxHighlighter className="card" language="cshtml" style={ darcula }>
+      <SyntaxHighlighter className="card-primary80" language="cshtml" style={ darcula }>
         { props.htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
-      <SyntaxHighlighter className="card" language="jsx" style={ darcula }>
+      <SyntaxHighlighter className="card-primary80" language="jsx" style={ darcula }>
         { props.jsxCode }
       </SyntaxHighlighter>
     )
   }
-  const [previewActive, setPreviewActive] = useState("btn-surface active")
+  const [previewActive, setPreviewActive] = useState("active")
   const [htmlActive, setHtmlActive] = useState("btn-ghost")
   const [jsxActive, setJsxActive] = useState("btn-ghost")
   const [secondRow, setSecondRow] = useState(tabs["preview"])
 
   const handleTabs = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "btn-surface active" : "btn-ghost")
-    setHtmlActive(activeTab === "html" ? "btn-surface active" : "btn-ghost")
-    setJsxActive(activeTab === "jsx" ? "btn-surface active" : "btn-ghost")
+    setPreviewActive(activeTab === "preview" ? "active" : "btn-ghost")
+    setHtmlActive(activeTab === "html" ? "active" : "btn-ghost")
+    setJsxActive(activeTab === "jsx" ? "active" : "btn-ghost")
     setSecondRow(tabs[activeTab])
   }
 
@@ -39,13 +39,13 @@ const Button = (props) => {
       <div className="flex flex-row gap-4 mx-4 justify-between">
         <h3 className="font-semibold">{ props.type }</h3>
         <div className="flex flex-row gap-2 items-center">
-          <button className={"btn btn-sm " + previewActive}
+          <button className={"btn-surface btn-sm " + previewActive}
             onClick={ () => handleTabs("preview") }
             >Preview</button>
-          <button className={"btn btn-sm " + htmlActive}
+          <button className={"btn-surface btn-sm " + htmlActive}
             onClick={ () => handleTabs("html") }
             >HTML</button>
-          <button className={"btn btn-sm " + jsxActive}
+          <button className={"btn-surface btn-sm " + jsxActive}
             onClick={ () => handleTabs("jsx") }
             >JSX</button>
         </div>
