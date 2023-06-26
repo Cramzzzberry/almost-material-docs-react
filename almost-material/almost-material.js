@@ -197,7 +197,7 @@ const almostMaterialPlugin = plugin(
 					"user-select": "none",
 					"&:hover:not([disabled])": {
 						cursor: "pointer",
-						backgroundColor: shadeHexColor(color, 0.1),
+						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
 					},
 
 					"&.btn-outlined": { //btn-outlined
