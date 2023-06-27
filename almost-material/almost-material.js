@@ -191,6 +191,7 @@ const almostMaterialPlugin = plugin(
 					"user-select": "none",
 					"&:hover:not([disabled])": {
 						cursor: "pointer",
+						borderColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
 						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
 					},
 
@@ -216,6 +217,7 @@ const almostMaterialPlugin = plugin(
 						color: color,
 						// borderRadius: "12px",
 						"&:hover:not([disabled])": {
+							borderColor: "transparent",
 							background: "rgba(0,0,0,0.05)",
 						},
 
@@ -224,6 +226,7 @@ const almostMaterialPlugin = plugin(
 							borderColor: "transparent",
 							color: color,
 							"&:hover:not([disabled])": {
+								borderColor: "transparent",
 								backgroundColor: "rgba(0,0,0,0.05)",
 							}
 						},
@@ -262,6 +265,7 @@ const almostMaterialPlugin = plugin(
 						borderColor: color,
 						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 						"&:hover:not([disabled])": {
+							borderColor: color,
 							backgroundColor: color,
 						}
 					},
@@ -305,8 +309,6 @@ const almostMaterialPlugin = plugin(
 					borderRadius: "1.5rem",
 					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					backgroundColor: color,
-					transitionProperty: "background-color, border-color, color, fill, stroke",
-					transitionDuration: "150ms",
 					"& > .card-textblock" : {
 						padding: "1.25rem",
 						whiteSpace: "normal",
@@ -326,11 +328,6 @@ const almostMaterialPlugin = plugin(
 						backgroundSize: "cover",
 						borderRadius: "1rem",
 						height: "240px",
-					},
-
-					"&.card-hover:hover": {
-						backgroundColor: shadeHexColor(color, shadesInPercent[0]),
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					},
 
 					"& > input[type='checkbox']": {

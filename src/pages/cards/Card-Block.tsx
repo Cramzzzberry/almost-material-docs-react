@@ -5,7 +5,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const CardBlock = (props) => {
   const tabContent = {
     "preview": (
-      <div className="card-primary80 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="card-warning90 min-h-[100px] p-5 flex flex-row gap-2 justify-center items-center">
         { props.preview }
       </div>
     ),

@@ -13,7 +13,7 @@ export const BadgeSnippets = {
     htmlCode: "<span class=\"badge-default badge-outlined\">Outlined</span>",
     jsxCode: "<span className=\"badge-default badge-outlined\">Outlined</span>",
   },
-  "Dot Badge (?)": {
+  "Dot Badge": {
     preview: (
       <span className="badge-default badge-dot"></span>
     ),

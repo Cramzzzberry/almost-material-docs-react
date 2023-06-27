@@ -16,18 +16,18 @@ export default function App() {
             <li><Link to="/buttons">Buttons</Link></li>
             <li><Link to="/badges">Badges</Link></li>
             <li><Link to="/cards">Cards</Link></li>
-            <li><Link to="#" className="bg-error">Checkbox</Link></li>
-            <li><Link to="#" className="bg-error">Chips</Link></li>
-            <li><Link to="#" className="bg-error">Divider</Link></li>
-            <li><Link to="#" className="bg-error">Dropdown</Link></li>
-            <li><Link to="#" className="bg-error">Input Fields</Link></li>
-            <li><Link to="#" className="bg-error">Modals</Link></li>
-            <li><Link to="#" className="bg-error">Navigation Bars</Link></li>
-            <li><Link to="#" className="bg-error">Navigation Drawer</Link></li>
-            <li><Link to="#" className="bg-error">Progress Bars</Link></li>
-            <li><Link to="#" className="bg-error">Radio Button</Link></li>
-            <li><Link to="#" className="bg-error">Snackbar</Link></li>
-            <li><Link to="#" className="bg-error">Switch</Link></li>
+            <li><Link to="#" className="bg-warning">Checkbox</Link></li>
+            <li><Link to="#" className="bg-warning">Chips</Link></li>
+            <li><Link to="#" className="bg-warning">Divider</Link></li>
+            <li><Link to="#" className="bg-warning">Dropdown</Link></li>
+            <li><Link to="#" className="bg-warning">Input Fields</Link></li>
+            <li><Link to="#" className="bg-warning">Modals</Link></li>
+            <li><Link to="#" className="bg-warning">Navigation Bars</Link></li>
+            <li><Link to="#" className="bg-warning">Navigation Drawer</Link></li>
+            <li><Link to="#" className="bg-warning">Progress Bars</Link></li>
+            <li><Link to="#" className="bg-warning">Radio Button</Link></li>
+            <li><Link to="#" className="bg-warning">Snackbar</Link></li>
+            <li><Link to="#" className="bg-warning">Switch</Link></li>
           </ul>
         </div>
 
