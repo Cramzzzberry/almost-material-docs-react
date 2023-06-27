@@ -48,7 +48,7 @@ function lightOrDark(color) {
 }
 
 //shade presets for palettes
-const tonePercent = {
+const shadesInPercent = {
 	0: "-1",
 	10: "-0.75",
 	20: "-0.5",
@@ -68,28 +68,26 @@ const almostMaterialPlugin = plugin(
   
 	function({addComponents, matchComponents, theme, addBase}) {
 
-		const customPalette = theme("almostMaterial") //get the palette from tailwind config
-		customPalette.default = shadeHexColor(customPalette.primary, tonePercent[10])
+		const userPalette = theme("almostMaterial") //get the palette from tailwind config
+		userPalette.default = shadeHexColor(userPalette.primary, shadesInPercent[10])
 
-		let customShades = {} //an object for storing all color shades of the customPalette
+		let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
-		for(const color of Object.keys(customPalette)) {
-			customShades[`${color}0`] = shadeHexColor(customPalette[color], tonePercent[0])
-			customShades[`${color}10`] = shadeHexColor(customPalette[color], tonePercent[10])
-			customShades[`${color}20`] = shadeHexColor(customPalette[color], tonePercent[20])
-			customShades[`${color}30`] = shadeHexColor(customPalette[color], tonePercent[30])
-			customShades[`${color}`] = shadeHexColor(customPalette[color], tonePercent[40])
-			customShades[`${color}50`] = shadeHexColor(customPalette[color], tonePercent[50])
-			customShades[`${color}60`] = shadeHexColor(customPalette[color], tonePercent[60])
-			customShades[`${color}70`] = shadeHexColor(customPalette[color], tonePercent[70])
-			customShades[`${color}80`] = shadeHexColor(customPalette[color], tonePercent[80])
-			customShades[`${color}90`] = shadeHexColor(customPalette[color], tonePercent[90])
-			customShades[`${color}95`] = shadeHexColor(customPalette[color], tonePercent[95])
-			customShades[`${color}99`] = shadeHexColor(customPalette[color], tonePercent[99])
-			customShades[`${color}100`] = shadeHexColor(customPalette[color], tonePercent[100])
+		for(const color of Object.keys(userPalette)) {
+			colorsAndShades[`${color}0`] = shadeHexColor(userPalette[color], shadesInPercent[0])
+			colorsAndShades[`${color}10`] = shadeHexColor(userPalette[color], shadesInPercent[10])
+			colorsAndShades[`${color}20`] = shadeHexColor(userPalette[color], shadesInPercent[20])
+			colorsAndShades[`${color}30`] = shadeHexColor(userPalette[color], shadesInPercent[30])
+			colorsAndShades[`${color}`] = shadeHexColor(userPalette[color], shadesInPercent[40])
+			colorsAndShades[`${color}50`] = shadeHexColor(userPalette[color], shadesInPercent[50])
+			colorsAndShades[`${color}60`] = shadeHexColor(userPalette[color], shadesInPercent[60])
+			colorsAndShades[`${color}70`] = shadeHexColor(userPalette[color], shadesInPercent[70])
+			colorsAndShades[`${color}80`] = shadeHexColor(userPalette[color], shadesInPercent[80])
+			colorsAndShades[`${color}90`] = shadeHexColor(userPalette[color], shadesInPercent[90])
+			colorsAndShades[`${color}95`] = shadeHexColor(userPalette[color], shadesInPercent[95])
+			colorsAndShades[`${color}99`] = shadeHexColor(userPalette[color], shadesInPercent[99])
+			colorsAndShades[`${color}100`] = shadeHexColor(userPalette[color], shadesInPercent[100])
 		}
-
-		console.log(customShades)
 
 		addComponents(
 			{
@@ -99,7 +97,7 @@ const almostMaterialPlugin = plugin(
 				},
 				".divider::before, .divider::after": {
 					flex: "1",
-					backgroundColor: customPalette.default,
+					backgroundColor: userPalette.default,
 					content: "''",
 					borderRadius: "9999px",
 					padding: "0.5px",				
@@ -112,7 +110,7 @@ const almostMaterialPlugin = plugin(
 					paddingRight: "1.5rem",
 					height: "4rem",
 					maxHeight: "4rem",
-					backgroundColor: shadeHexColor(customPalette.primary, tonePercent[95]),
+					backgroundColor: shadeHexColor(userPalette.primary, shadesInPercent[95]),
 					fontSize: "1.5rem",
 					lineHeight: "2rem",
 					flexDirection: "row",
@@ -121,10 +119,6 @@ const almostMaterialPlugin = plugin(
 				},
 			}
 		)
-
-
-
-
 
 		matchComponents(
 			{
@@ -136,7 +130,7 @@ const almostMaterialPlugin = plugin(
 					fontSize: "16px",
 					height: "fit-content",
 					backgroundColor: color,
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					flexDirection: "row",
 					justifyContent: "center",
 					alignItems: "center",
@@ -184,7 +178,7 @@ const almostMaterialPlugin = plugin(
 					paddingLeft: "1.5rem",
 					paddingRight: "1.5rem",
 					height: "fit-content",
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					flexDirection: "row", 
 					justifyContent: "center", 
 					alignItems: "center", 
@@ -207,7 +201,7 @@ const almostMaterialPlugin = plugin(
 						"&:hover": {
 							backgroundColor: color,
 							borderColor: color,
-							color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+							color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 							opacity: "1",
 						},
 					},
@@ -266,7 +260,7 @@ const almostMaterialPlugin = plugin(
 					"&.active": { //btn with active state
 						backgroundColor: color,
 						borderColor: color,
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 						"&:hover:not([disabled])": {
 							backgroundColor: color,
 						}
@@ -275,7 +269,7 @@ const almostMaterialPlugin = plugin(
 					"&:disabled": { //disabled btn
 						backgroundColor: "rgba(0,0,0,0.075)",
 						borderColor: "transparent",
-						color: shadeHexColor(color, tonePercent[10]),
+						color: shadeHexColor(color, shadesInPercent[10]),
 						opacity: "70%",
 					},
 
@@ -309,7 +303,7 @@ const almostMaterialPlugin = plugin(
 					flexDirection: "column",
 					overflow: "hidden",
 					borderRadius: "1.5rem",
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					backgroundColor: color,
 					transitionProperty: "background-color, border-color, color, fill, stroke",
 					transitionDuration: "150ms",
@@ -335,8 +329,8 @@ const almostMaterialPlugin = plugin(
 					},
 
 					"&.card-hover:hover": {
-						backgroundColor: shadeHexColor(color, tonePercent[0]),
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? tonePercent[10] : tonePercent[90]),
+						backgroundColor: shadeHexColor(color, shadesInPercent[0]),
+						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					},
 
 					"& > input[type='checkbox']": {
@@ -362,7 +356,7 @@ const almostMaterialPlugin = plugin(
 					}
 				})
 			},
-			{ values: customShades }
+			{ values: colorsAndShades }
 		)
 
 
@@ -372,7 +366,7 @@ const almostMaterialPlugin = plugin(
 		addBase({
 			// or whichever color you"d like
 			"html": {
-				color: shadeHexColor(customPalette.primary, tonePercent[10])
+				color: shadeHexColor(userPalette.primary, shadesInPercent[10])
 			},
 
 			"@font-face": {
@@ -382,7 +376,7 @@ const almostMaterialPlugin = plugin(
 			},
 
 			"body": {
-				backgroundColor: shadeHexColor(customPalette.primary, tonePercent[99]),
+				backgroundColor: shadeHexColor(userPalette.primary, shadesInPercent[99]),
 				fontFamily: "'openSans'",
 			},
 			

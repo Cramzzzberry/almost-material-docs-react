@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const Badge = (props) => {
-  const tabs = {
+const CardBlock = (props) => {
+  const tabContent = {
     "preview": (
       <div className="card-primary80 p-5 flex flex-row gap-2 justify-center items-center">
         { props.preview }
@@ -23,39 +23,39 @@ const Badge = (props) => {
   const [previewActive, setPreviewActive] = useState("active")
   const [htmlActive, setHtmlActive] = useState("btn-ghost")
   const [jsxActive, setJsxActive] = useState("btn-ghost")
-  const [secondRow, setSecondRow] = useState(tabs["preview"])
+  const [secondBlock, setSecondBlock] = useState(tabContent["preview"])
 
-  const handleTabs = (activeTab) => {
+  const tabHandler = (activeTab) => {
     setPreviewActive(activeTab === "preview" ? "active" : "btn-ghost")
     setHtmlActive(activeTab === "html" ? "active" : "btn-ghost")
     setJsxActive(activeTab === "jsx" ? "active" : "btn-ghost")
-    setSecondRow(tabs[activeTab])
+    setSecondBlock(tabContent[activeTab])
   }
 
   return (
     <>
     <div className="flex flex-col gap-4">
-      {/* first row */}
+      {/* first block */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
         <h3 className="font-semibold">{ props.type }</h3>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn-surface btn-sm " + previewActive}
-            onClick={ () => handleTabs("preview") }
+            onClick={ () => tabHandler("preview") }
             >Preview</button>
           <button className={"btn-surface btn-sm " + htmlActive}
-            onClick={ () => handleTabs("html") }
+            onClick={ () => tabHandler("html") }
             >HTML</button>
           <button className={"btn-surface btn-sm " + jsxActive}
-            onClick={ () => handleTabs("jsx") }
+            onClick={ () => tabHandler("jsx") }
             >JSX</button>
         </div>
       </div>
 
-      {/* second row */}
-      { secondRow }
+      {/* second block */}
+      { secondBlock }
     </div>
     </>
   )
 }
 
-export default Badge
+export default CardBlock

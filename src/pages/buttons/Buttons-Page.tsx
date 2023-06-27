@@ -1,4 +1,4 @@
-import Button from "./Button"
+import ButtonBlock from "./Button-Block"
 import { ButtonSnippets } from './Button-Snippets'
 
 const getButtons =  () => { //get the button snippets keys and then push it inside an array returning an array of objects(react component)
@@ -7,7 +7,7 @@ const getButtons =  () => { //get the button snippets keys and then push it insi
 
   for(const key of buttonSnippets) {
     buttonComponents.push(
-      <Button
+      <ButtonBlock
         key={ key } //just a uniue key
         type={ key } //type of button
         preview={ ButtonSnippets[key].preview } //displays the button itself

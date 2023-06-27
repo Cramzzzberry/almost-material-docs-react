@@ -1,4 +1,4 @@
-import Card from "./Card"
+import CardBlock from "./Card-Block"
 import { CardSnippets } from "./Card-Snippets"
 
 const getCards =  () => {
@@ -7,7 +7,7 @@ const getCards =  () => {
 
   for(const key of badgeSnippets) {
     badgeComponents.push(
-      <Card
+      <CardBlock
         key={ key }
         type={ key }
         preview={ CardSnippets[key].preview }
