@@ -24,7 +24,7 @@ const ButtonsPage = () => {
     <>
     <div className="flex flex-row gap-4">
       <div className="flex flex-col gap-4 w-2/3">
-        <div className="card-primary80 p-32 mb-4">
+        <div className="card card-primary80 p-32 mb-4">
           <h1 className="font-bold">Buttons</h1>
           <h4>It allows the user to take actions</h4>
         </div>

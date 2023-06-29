@@ -50,65 +50,34 @@ const almostMaterialPlugin = plugin(
 	function({addComponents, matchComponents, theme, addBase}) {
 
 		const userPalette = theme("almostMaterial") //get the palette from tailwind config
-		userPalette.default = shadeHexColor(userPalette.primary, shadesInPercent[10])
+		const defaultColor = "#000000"
 
 		addComponents(
 			{
-				".divider": {
-					display: "flex",
-					alignItems: "center",
-				},
-				".divider::before, .divider::after": {
-					flex: "1",
-					backgroundColor: userPalette.default,
-					content: "''",
-					borderRadius: "9999px",
-					padding: "0.5px",				
-				},
-				".navbar": {
-					display: "flex",
-					position: "sticky",
-					top: "0",
-					paddingLeft: "1.5rem",
-					paddingRight: "1.5rem",
-					height: "4rem",
-					maxHeight: "4rem",
-					backgroundColor: shadeHexColor(userPalette.primary, shadesInPercent[95]),
-					fontSize: "1.5rem",
-					lineHeight: "2rem",
-					flexDirection: "row",
-					justifyContent: "space-between",
-					alignItems: "center",
-				},
-			}
-		)
-
-		matchComponents(
-			{
-				//badge components
-				"badge": (color) => ({
+				//badge class
+				".badge": {
 					display: "flex",
 					paddingLeft: "1.5rem",
 					paddingRight: "1.5rem",
 					fontSize: "16px",
 					height: "fit-content",
-					backgroundColor: color,
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					backgroundColor: defaultColor,
+					color: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					flexDirection: "row",
 					justifyContent: "center",
 					alignItems: "center",
 					borderRadius: "9999px",
 					borderWidth: "1px",
-					borderColor: color,
+					borderColor: defaultColor,
 					"&.badge-outlined": { //badge-outlined
 						backgroundColor: "transparent",
-						color: color,
-						borderColor: color,
+						color: defaultColor,
+						borderColor: defaultColor,
 					},
 
 					"&.badge-dot": { //badge-dot
 						padding: "0",
-						backgroundColor: color,
+						backgroundColor: defaultColor,
 						width: "0.5rem",
 						height: "0.5rem",
 					},
@@ -128,20 +97,21 @@ const almostMaterialPlugin = plugin(
 						fontSize: "1.125rem",
 						lineHeight: "1.75rem",
 					},
-				}),
+				},
 
 
-				//button components
-				"btn": (color) => ({
-					backgroundColor: color,
-					borderColor: color,
+
+				//btn class
+				".btn": {
+					backgroundColor: defaultColor,
+					borderColor: defaultColor,
 					display: "flex", 
 					paddingTop: "1rem",
 					paddingBottom: "1rem", 
 					paddingLeft: "1.5rem",
 					paddingRight: "1.5rem",
 					height: "fit-content",
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					color: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					flexDirection: "row", 
 					justifyContent: "center", 
 					alignItems: "center", 
@@ -154,31 +124,26 @@ const almostMaterialPlugin = plugin(
 					"user-select": "none",
 					"&:hover:not([disabled])": {
 						cursor: "pointer",
-						borderColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
-						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
+						borderColor: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? -0.1 : 0.1),
+						backgroundColor: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? -0.1 : 0.1),
 					},
 
 					"&.btn-outlined": { //btn-outlined
 						backgroundColor: "transparent",
 						borderColor: "#C7C7C7",
-						color: color,
+						color: defaultColor,
 						"&:hover": {
-							backgroundColor: color,
-							borderColor: color,
-							color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+							backgroundColor: defaultColor,
+							borderColor: defaultColor,
+							color: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 							opacity: "1",
 						},
 					},
 
 					"&.btn-ghost": { //btn-ghost
-						// paddingTop: "0.5rem",
-						// paddingBottom: "0.5rem", 
-						// paddingLeft: "1.5rem",
-						// paddingRight: "1.5rem", 
 						backgroundColor: "transparent",
 						borderColor: "transparent",
-						color: color,
-						// borderRadius: "12px",
+						color: defaultColor,
 						"&:hover:not([disabled])": {
 							borderColor: "transparent",
 							background: "rgba(0,0,0,0.05)",
@@ -187,7 +152,7 @@ const almostMaterialPlugin = plugin(
 						"&.active": { //btn-active
 							backgroundColor: "rgba(0,0,0,0.05)",
 							borderColor: "transparent",
-							color: color,
+							color: defaultColor,
 							"&:hover:not([disabled])": {
 								borderColor: "transparent",
 								backgroundColor: "rgba(0,0,0,0.05)",
@@ -224,19 +189,19 @@ const almostMaterialPlugin = plugin(
 					},
 
 					"&.active": { //btn with active state
-						backgroundColor: color,
-						borderColor: color,
-						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+						backgroundColor: defaultColor,
+						borderColor: defaultColor,
+						color: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 						"&:hover:not([disabled])": {
-							borderColor: color,
-							backgroundColor: color,
+							borderColor: defaultColor,
+							backgroundColor: defaultColor,
 						}
 					},
 
 					"&:disabled": { //disabled btn
 						backgroundColor: "rgba(0,0,0,0.075)",
 						borderColor: "transparent",
-						color: shadeHexColor(color, shadesInPercent[10]),
+						color: shadeHexColor(defaultColor, shadesInPercent[10]),
 						opacity: "70%",
 					},
 
@@ -261,17 +226,18 @@ const almostMaterialPlugin = plugin(
 							fontSize: "1.75rem",
 						}
 					},
-				}),
+				},
 
 
-				//card components
-				"card": (color) => ({
+
+				//card class
+				".card": {
 					height: "auto",
 					flexDirection: "column",
 					overflow: "hidden",
 					borderRadius: "1.5rem",
-					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
-					backgroundColor: color,
+					color: shadeHexColor(defaultColor, lightOrDark(defaultColor) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					backgroundColor: defaultColor,
 					"& > .card-textblock" : {
 						padding: "1.25rem",
 						whiteSpace: "normal",
@@ -314,6 +280,106 @@ const almostMaterialPlugin = plugin(
 					"& > input[type='checkbox']:checked + .card-headline + .card-collapse": {
 						gridTemplateRows: "1fr",
 					}
+				},
+
+				".divider": {
+					display: "flex",
+					alignItems: "center",
+				},
+				".divider::before, .divider::after": {
+					flex: "1",
+					backgroundColor: defaultColor,
+					content: "''",
+					borderRadius: "9999px",
+					padding: "0.5px",				
+				},
+				".navbar": {
+					display: "flex",
+					position: "sticky",
+					top: "0",
+					paddingLeft: "1.5rem",
+					paddingRight: "1.5rem",
+					height: "4rem",
+					maxHeight: "4rem",
+					backgroundColor: shadeHexColor(userPalette.primary, shadesInPercent[95]),
+					fontSize: "1.5rem",
+					lineHeight: "2rem",
+					flexDirection: "row",
+					justifyContent: "space-between",
+					alignItems: "center",
+				},
+			}
+		)
+
+		matchComponents(
+			{
+				//badge components
+				"badge": (color) => ({
+					backgroundColor: color,
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					borderColor: color,
+					"&.badge-outlined": { //badge-outlined
+						backgroundColor: "transparent",
+						color: color,
+						borderColor: color,
+					},
+
+					"&.badge-dot": { //badge-dot
+						padding: "0",
+						backgroundColor: color,
+						width: "0.5rem",
+						height: "0.5rem",
+					},
+				}),
+
+
+				//button components
+				"btn": (color) => ({
+					backgroundColor: color,
+					borderColor: color,
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					"&:hover:not([disabled])": {
+						borderColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
+						backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
+					},
+
+					"&.btn-outlined": { //btn-outlined
+						color: color,
+						"&:hover": {
+							backgroundColor: color,
+							borderColor: color,
+							color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+						},
+					},
+
+					"&.btn-ghost": { //btn-ghost
+						color: color,
+
+						"&.active": { //btn-active
+							color: color,
+						},
+					},
+
+					"&.active": { //btn with active state
+						backgroundColor: color,
+						borderColor: color,
+						color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+						"&:hover:not([disabled])": {
+							borderColor: color,
+							backgroundColor: color,
+						}
+					},
+
+					"&:disabled": { //disabled btn
+						color: shadeHexColor(color, shadesInPercent[10]),
+					},
+				}),
+
+
+				//card components
+				"card": (color) => ({
+					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
+					backgroundColor: color,
 				})
 			},
 			{ values: AlmostMaterialPalette(userPalette) }

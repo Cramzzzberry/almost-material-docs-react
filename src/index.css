@@ -7,6 +7,14 @@
     @apply flex flex-row gap-4 px-6 py-4 items-center rounded-full font-semibold;
   }
 
+  .drawer-menu > li > a.active {
+    @apply bg-primary;
+  }
+
+  .drawer-menu > li > a.active:hover {
+    @apply bg-primary;
+  }
+
   .drawer-menu > li > a:hover {
     @apply bg-[rgba(0,0,0,0.06)];
   }
