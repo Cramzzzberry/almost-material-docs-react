@@ -27,19 +27,19 @@ const AlmostMaterialPalette = (palette) => {
 	let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
 	for(const color of Object.keys(palette)) {
-		colorsAndShades[`${color}0`] = shadeHexColor(palette[color], shadesInPercent[0])
-		colorsAndShades[`${color}10`] = shadeHexColor(palette[color], shadesInPercent[10])
-		colorsAndShades[`${color}20`] = shadeHexColor(palette[color], shadesInPercent[20])
-		colorsAndShades[`${color}30`] = shadeHexColor(palette[color], shadesInPercent[30])
+		colorsAndShades[`${color}-0`] = shadeHexColor(palette[color], shadesInPercent[0])
+		colorsAndShades[`${color}-10`] = shadeHexColor(palette[color], shadesInPercent[10])
+		colorsAndShades[`${color}-20`] = shadeHexColor(palette[color], shadesInPercent[20])
+		colorsAndShades[`${color}-30`] = shadeHexColor(palette[color], shadesInPercent[30])
 		colorsAndShades[`${color}`] = shadeHexColor(palette[color], shadesInPercent[40])
-		colorsAndShades[`${color}50`] = shadeHexColor(palette[color], shadesInPercent[50])
-		colorsAndShades[`${color}60`] = shadeHexColor(palette[color], shadesInPercent[60])
-		colorsAndShades[`${color}70`] = shadeHexColor(palette[color], shadesInPercent[70])
-		colorsAndShades[`${color}80`] = shadeHexColor(palette[color], shadesInPercent[80])
-		colorsAndShades[`${color}90`] = shadeHexColor(palette[color], shadesInPercent[90])
-		colorsAndShades[`${color}95`] = shadeHexColor(palette[color], shadesInPercent[95])
-		colorsAndShades[`${color}99`] = shadeHexColor(palette[color], shadesInPercent[99])
-		colorsAndShades[`${color}100`] = shadeHexColor(palette[color], shadesInPercent[100])
+		colorsAndShades[`${color}-50`] = shadeHexColor(palette[color], shadesInPercent[50])
+		colorsAndShades[`${color}-60`] = shadeHexColor(palette[color], shadesInPercent[60])
+		colorsAndShades[`${color}-70`] = shadeHexColor(palette[color], shadesInPercent[70])
+		colorsAndShades[`${color}-80`] = shadeHexColor(palette[color], shadesInPercent[80])
+		colorsAndShades[`${color}-90`] = shadeHexColor(palette[color], shadesInPercent[90])
+		colorsAndShades[`${color}-95`] = shadeHexColor(palette[color], shadesInPercent[95])
+		colorsAndShades[`${color}-99`] = shadeHexColor(palette[color], shadesInPercent[99])
+		colorsAndShades[`${color}-100`] = shadeHexColor(palette[color], shadesInPercent[100])
 	}
 
 	return colorsAndShades
@@ -269,19 +269,22 @@ const almostMaterialPlugin = plugin(
 						height: "auto",
 						display: "grid",
 						gridTemplateRows: "0fr",
-						transitionProperty: "all",
+						transitionProperty: "grid",
 						transitionDuration: "400ms",
 						transitionTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
-						"& > div": {
+						"& > div.card-container": {
 							overflow: "hidden",
-						}				
+						}	
 					},
 
-					"& > input[type='checkbox']:checked + .card-headline + .card-collapse": {
+					"& > input[type='checkbox']:checked + .card-collapse": {
 						gridTemplateRows: "1fr",
 					}
 				},
 
+
+
+				//divider class
 				".divider": {
 					display: "flex",
 					alignItems: "center",
@@ -313,7 +316,7 @@ const almostMaterialPlugin = plugin(
 
 		matchComponents(
 			{
-				//badge components
+				//badge class
 				"badge": (color) => ({
 					backgroundColor: color,
 					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
@@ -333,7 +336,7 @@ const almostMaterialPlugin = plugin(
 				}),
 
 
-				//button components
+				//button class
 				"btn": (color) => ({
 					backgroundColor: color,
 					borderColor: color,
@@ -376,7 +379,7 @@ const almostMaterialPlugin = plugin(
 				}),
 
 
-				//card components
+				//card class
 				"card": (color) => ({
 					color: shadeHexColor(color, lightOrDark(color) === 'light' ? shadesInPercent[10] : shadesInPercent[90]),
 					backgroundColor: color,

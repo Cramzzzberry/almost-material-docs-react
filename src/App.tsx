@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
       {/* the whole drawer */}
       <div className="drawer xl:flex xl:flex-row">
-        <div className="drawer-side bg-primary80 xl:h-screen border-r xl:basis-[320px]"> {/* drawer side */}
+        <div className="drawer-side bg-primary-80 xl:h-screen border-r xl:basis-[320px]"> {/* drawer side */}
           <ul className="drawer-menu p-4"> {/* drawer menu */} 
             <li><NavLink to="/home" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
             <li><NavLink to="/buttons" className={({ isActive }) => isActive ? "active" : ""}>Buttons</NavLink></li>
@@ -31,7 +31,7 @@ export default function App() {
           </ul>
         </div>
 
-        <div class="drawer-content bg-primary90 overflow-y-auto p-4 xl:basis-[calc(100vw-320px)] xl:h-screen"> {/* content of the drawer */}
+        <div class="drawer-content bg-primary-90 overflow-y-auto p-4 xl:basis-[calc(100vw-320px)] xl:h-screen"> {/* content of the drawer */}
           <Routes>
             <Route path="/home" element={ <Home /> } />
             <Route path="/" element={ <Navigate to="/home" /> }></Route>
