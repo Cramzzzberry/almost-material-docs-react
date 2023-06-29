@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-import { almostMaterialPlugin } from './almost-material/almost-material'
+import { almostMaterialPlugin, AlmostMaterialPalette } from './almost-material/almost-material'
 
-const almostMaterialPalette = {
+const myPalette = {
   primary: "#65c3c8",
    
   secondary: "#ef9fbc",
@@ -24,9 +24,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: almostMaterialPalette
+      colors: AlmostMaterialPalette(myPalette)
     },
-    almostMaterial: almostMaterialPalette,
+    almostMaterial: myPalette,
   },
   plugins: [almostMaterialPlugin],
 }
