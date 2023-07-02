@@ -24,9 +24,12 @@ const CardsPage = () => {
     <>
     <div className="flex flex-row gap-4">
       <div className="flex flex-col gap-4 w-2/3">
-        <div className="card card-primary-80 p-32 mb-4">
-          <h1 className="font-bold">Cards</h1>
-          <h4>Used to contain a group of related elements</h4>
+        <div className="card card-primary-80 p-32 mb-4 flex flex-row justify-between items-center">
+          <div>
+            <h1 className="font-bold">Cards</h1>
+            <h4>Used to contain a group of related elements</h4>
+          </div>
+          <span className="badge badge-info badge-lg">In Dev</span>
         </div>
         { getCards() }
       </div>
