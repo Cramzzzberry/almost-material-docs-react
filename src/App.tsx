@@ -18,7 +18,6 @@ export default function App() {
             <li><NavLink to="/badges" className={({ isActive }) => isActive ? "active" : ""}>Badges</NavLink></li>
             <li><NavLink to="/cards" className={({ isActive }) => isActive ? "active" : ""}>Cards</NavLink></li>
             <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "active" : ""}>Checkbox</NavLink></li>
-            <li><NavLink to="#">Chips</NavLink></li>
             <li><NavLink to="#">Divider</NavLink></li>
             <li><NavLink to="#">Dropdown</NavLink></li>
             <li><NavLink to="#">Input Fields</NavLink></li>

@@ -1,32 +1,33 @@
 import Block from "../../components/Component-Blocks"
 import Page from "../../components/Component-Page"
-// import { CheckboxSnippets } from "./Checkbox-Snippets"
+import { CheckboxSnippets } from "./Checkbox-Snippets"
 
-// const getCheckboxes =  () => {
-//   const badgeComponents = []
-//   const badgeSnippets = Object.keys(CardSnippets)
+const getCheckboxes =  () => {
+  const checkboxComponents = []
+  const checkboxSnippets = Object.keys(CheckboxSnippets)
 
-//   for(const key of badgeSnippets) {
-//     badgeComponents.push(
-//       <CardBlock
-//         key={ key }
-//         type={ key }
-//         preview={ CardSnippets[key].preview }
-//         htmlCode={ CardSnippets[key].htmlCode }
-//         jsxCode={ CardSnippets[key].jsxCode } />
-//     )
-//   }
+  for(const key of checkboxSnippets) {
+    checkboxComponents.push(
+      <Block
+        key={ key }
+        componentName={ key }
+        preview={ CheckboxSnippets[key].preview }
+        htmlCode={ CheckboxSnippets[key].htmlCode }
+        jsxCode={ CheckboxSnippets[key].jsxCode } />
+    )
+  }
 
-//   return badgeComponents
-// }
+  return checkboxComponents
+}
 
-const CardsPage = () => {
+const CheckboxPage = () => {
   return (
     <Page 
       name="Checkbox"
       desc="Blah blah here"
+      components={ getCheckboxes() }
     />
   )
 }
 
-export default CardsPage
+export default CheckboxPage

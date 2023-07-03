@@ -245,6 +245,35 @@ const AddComponents = (color, shades) => {
           }
         },
       },
+
+
+
+      //checkbox class
+      ".checkbox": {
+        appearance: "none",
+        "-webkit-appearance": "none",
+        height: "1.25rem",
+        width: "1.25rem",
+        backgroundColor: "transparent",
+        borderWidth: "2px",
+        borderColor: "#C7C7C7",
+        borderRadius: "9999px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        "&:checked": {
+          borderColor: color,
+          backgroundColor: color,
+        },
+        "&:after": {
+          content: "url('/almost-material/check_black_24dp.svg')",
+          display: "none",
+        },
+        "&:checked:after": {
+          display: "block",
+        }
+      },
   
   
   
