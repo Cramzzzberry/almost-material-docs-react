@@ -1,5 +1,5 @@
-import shadeHexColor from "./shadeHexColor"
-import lightOrDark from "./lightOrDark"
+import ShadeHexColor from "./shadeHexColor"
+import LightOrDark from "./lightOrDark"
 
 const MatchComponents = (shades) => {
   return (
@@ -7,7 +7,7 @@ const MatchComponents = (shades) => {
       //badge class
       "badge": (color) => ({
         backgroundColor: color,
-        color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         borderColor: color,
         "&.badge-outlined": { //badge-outlined
           backgroundColor: "transparent",
@@ -28,10 +28,10 @@ const MatchComponents = (shades) => {
       "btn": (color) => ({
         backgroundColor: color,
         borderColor: color,
-        color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         "&:hover:not([disabled])": {
-          borderColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
-          backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
+          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
         },
   
         "&.btn-outlined": { //btn-outlined
@@ -39,7 +39,7 @@ const MatchComponents = (shades) => {
           "&:hover": {
             backgroundColor: color,
             borderColor: color,
-            color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+            color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
           },
         },
   
@@ -54,7 +54,7 @@ const MatchComponents = (shades) => {
         "&.active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
-          color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
           "&:hover:not([disabled])": {
             borderColor: color,
             backgroundColor: color,
@@ -62,14 +62,14 @@ const MatchComponents = (shades) => {
         },
   
         "&:disabled": { //disabled btn
-          color: shadeHexColor(color, shades[10]),
+          color: ShadeHexColor(color, shades[10]),
         },
       }),
   
   
       //card class
       "card": (color) => ({
-        color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         backgroundColor: color,
       })
     }

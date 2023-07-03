@@ -1,4 +1,5 @@
-import ButtonBlock from "./Button-Block"
+import Block from "../../components/Component-Blocks"
+import Page from "../../components/Component-Page"
 import { ButtonSnippets } from './Button-Snippets'
 
 const getButtons =  () => { //get the button snippets keys and then push it inside an array returning an array of objects(react component)
@@ -7,12 +8,13 @@ const getButtons =  () => { //get the button snippets keys and then push it insi
 
   for(const key of buttonSnippets) {
     buttonComponents.push(
-      <ButtonBlock
+      <Block
         key={ key } //just a uniue key
-        type={ key } //type of button
+        componentName={ key } //type of button
         preview={ ButtonSnippets[key].preview } //displays the button itself
         htmlCode={ ButtonSnippets[key].htmlCode } //html code snippet of the button
-        jsxCode={ ButtonSnippets[key].jsxCode } /> //the jsx equivalent of the html snippet
+        jsxCode={ ButtonSnippets[key].jsxCode } //jsx equivalent of the button
+      />
     )
   }
 
@@ -21,17 +23,11 @@ const getButtons =  () => { //get the button snippets keys and then push it insi
 
 const ButtonsPage = () => {
   return (
-    <>
-    <div className="flex flex-row gap-4">
-      <div className="flex flex-col gap-4 w-2/3">
-        <div className="card card-primary-80 p-32 mb-4">
-          <h1 className="font-bold">Buttons</h1>
-          <h4>It allows the user to take actions</h4>
-        </div>
-        { getButtons() }
-      </div>
-    </div>
-    </>
+    <Page 
+      name="Buttons"
+      desc="It allows the user to take actions"
+      components={ getButtons() }
+    />
   )
 }
 

@@ -1,5 +1,5 @@
 // used to check the luminosity of a color
-export default function lightOrDark(color) {
+export default function LightOrDark(color) {
 	var r, g, b, hsp;
 
 	// Check the format of the color, HEX or RGB?

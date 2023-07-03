@@ -1,5 +1,5 @@
-import shadeHexColor from "./shadeHexColor"
-import lightOrDark from "./lightOrDark"
+import ShadeHexColor from "./shadeHexColor"
+import LightOrDark from "./lightOrDark"
 
 const AddComponents = (color, shades) => {
   return (
@@ -11,18 +11,21 @@ const AddComponents = (color, shades) => {
         paddingRight: "1.5rem",
         fontSize: "16px",
         height: "fit-content",
+        width: "fit-content",
         backgroundColor: color,
-        color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: "9999px",
         borderWidth: "1px",
         borderColor: color,
+        fontWeight: "bold",
         "&.badge-outlined": { //badge-outlined
           backgroundColor: "transparent",
           color: color,
           borderColor: color,
+          fontWeight: "normal",
         },
   
         "&.badge-dot": { //badge-dot
@@ -61,7 +64,8 @@ const AddComponents = (color, shades) => {
         paddingLeft: "1.5rem",
         paddingRight: "1.5rem",
         height: "fit-content",
-        color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        width: "fit-content",
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         flexDirection: "row", 
         justifyContent: "center", 
         alignItems: "center", 
@@ -74,8 +78,8 @@ const AddComponents = (color, shades) => {
         "user-select": "none",
         "&:hover:not([disabled])": {
           cursor: "pointer",
-          borderColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
-          backgroundColor: shadeHexColor(color, lightOrDark(color) === 'light' ? -0.1 : 0.1),
+          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
         },
   
         "&.btn-outlined": { //btn-outlined
@@ -85,7 +89,7 @@ const AddComponents = (color, shades) => {
           "&:hover": {
             backgroundColor: color,
             borderColor: color,
-            color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+            color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
             opacity: "1",
           },
         },
@@ -141,7 +145,7 @@ const AddComponents = (color, shades) => {
         "&.active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
-          color: shadeHexColor(color, lightOrDark(color) === 'light' ? shades[10] : shades[90]),
+          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
           "&:hover:not([disabled])": {
             borderColor: color,
             backgroundColor: color,
@@ -151,7 +155,7 @@ const AddComponents = (color, shades) => {
         "&:disabled": { //disabled btn
           backgroundColor: "rgba(0,0,0,0.075)",
           borderColor: "transparent",
-          color: shadeHexColor(color, shades[10]),
+          color: ShadeHexColor(color, shades[10]),
           opacity: "70%",
         },
   
@@ -183,16 +187,15 @@ const AddComponents = (color, shades) => {
       //card class
       ".card": {
         height: "auto",
-        flexDirection: "column",
         overflow: "hidden",
         borderRadius: "1.5rem",
-        color: shadeHexColor("#FFFFFF", lightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
+        color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
         "& > .card-body": {
           padding: "1.25rem",
 
           "& > .card-title": {
-            fontWeight: "700",
+            fontWeight: "bold",
           },
   
           "& > .card-actions": {
@@ -202,18 +205,41 @@ const AddComponents = (color, shades) => {
             alignItems: "center",
             gap: "0.5rem",
           },
+
+          "& > figure": {
+            width: "100%",
+            height: "auto",
+            display: "flex",
+            borderRadius: "1rem",
+            overflow: "hidden",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            "& > img": {
+              "-o-user-select": "none",
+              "-moz-user-select": "none",
+              "-webkit-user-select": "none",
+              "user-select": "none",
+              objectFit: "cover",
+              width: "100%",
+            }
+          },
         },
   
         "& > figure": {
           width: "100%",
           height: "auto",
+          display: "flex",
           borderRadius: "1.5rem",
           overflow: "hidden",
-          display: "flex",
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
           "& > img": {
+            "-o-user-select": "none",
+            "-moz-user-select": "none",
+            "-webkit-user-select": "none",
+            "user-select": "none",
             objectFit: "cover",
             width: "100%",
           }
@@ -242,7 +268,7 @@ const AddComponents = (color, shades) => {
         paddingRight: "1.5rem",
         height: "4rem",
         maxHeight: "4rem",
-        backgroundColor: shadeHexColor(color, shades[95]),
+        backgroundColor: ShadeHexColor(color, shades[95]),
         fontSize: "1.5rem",
         lineHeight: "2rem",
         flexDirection: "row",

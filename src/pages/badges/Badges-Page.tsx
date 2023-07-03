@@ -1,4 +1,5 @@
-import BadgeBlock from "./Badge-Block"
+import Block from "../../components/Component-Blocks"
+import Page from "../../components/Component-Page"
 import { BadgeSnippets } from "./Badge-Snippets"
 
 const getBadges =  () => {
@@ -7,9 +8,9 @@ const getBadges =  () => {
 
   for(const key of badgeSnippets) {
     badgeComponents.push(
-      <BadgeBlock
+      <Block
         key={ key }
-        type={ key }
+        componentName={ key }
         preview={ BadgeSnippets[key].preview }
         htmlCode={ BadgeSnippets[key].htmlCode }
         jsxCode={ BadgeSnippets[key].jsxCode } />
@@ -21,17 +22,11 @@ const getBadges =  () => {
 
 const BadgesPage = () => {
   return (
-    <>
-    <div className="flex flex-row gap-4">
-      <div className="flex flex-col gap-4 w-2/3">
-        <div className="card card-primary-80 p-32 mb-4">
-          <h1 className="font-bold">Badges</h1>
-          <h4>Blah blah here</h4>
-        </div>
-        { getBadges() }
-      </div>
-    </div>
-    </>
+    <Page 
+      name="Badges"
+      desc="Blah blah here"
+      components={ getBadges() }
+    />
   )
 }
 
