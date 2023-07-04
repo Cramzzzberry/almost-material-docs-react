@@ -24,6 +24,7 @@ const MatchComponents = (shades) => {
       }),
   
   
+
       //button class
       "btn": (color) => ({
         backgroundColor: color,
@@ -67,11 +68,25 @@ const MatchComponents = (shades) => {
       }),
   
   
+      
       //card class
       "card": (color) => ({
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         backgroundColor: color,
-      })
+      }),
+
+
+
+      //checkbox class
+      "checkbox": (color) =>  ({
+        "&:checked": {
+          borderColor: color,
+          backgroundColor: color,
+        },
+        "&:after": {
+          content: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="1 3 22 22" width="1rem"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }" stroke-width="2"/></svg>')`,
+        },
+      }),
     }
   )
 }

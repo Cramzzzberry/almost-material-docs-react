@@ -7,8 +7,8 @@ const AddComponents = (color, shades) => {
       //badge class
       ".badge": {
         display: "flex",
-        paddingLeft: "1.5rem",
-        paddingRight: "1.5rem",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
         fontSize: "16px",
         height: "fit-content",
         width: "fit-content",
@@ -36,8 +36,8 @@ const AddComponents = (color, shades) => {
         },
   
         "&.badge-sm": { //badge-sm
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
+          paddingLeft: "0.25rem",
+          paddingRight: "0.25rem",
           fontSize: "0.875rem",
           lineHeight: "1.25rem",
         },
@@ -45,8 +45,8 @@ const AddComponents = (color, shades) => {
         "&.badge-lg": { //badge-lg
           paddingTop: "0.25rem",
           paddingBottom: "0.25rem",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
           fontSize: "1.125rem",
           lineHeight: "1.75rem",
         },
@@ -257,22 +257,21 @@ const AddComponents = (color, shades) => {
         backgroundColor: "transparent",
         borderWidth: "2px",
         borderColor: "#C7C7C7",
-        borderRadius: "9999px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        borderRadius: "4px",
         cursor: "pointer",
         "&:checked": {
           borderColor: color,
           backgroundColor: color,
+          "&:after": {
+            display: "block",
+          },
         },
         "&:after": {
-          content: "url('/almost-material/check_black_24dp.svg')",
           display: "none",
+          height: "1.25rem",
+          width: "1.25rem",
+          content: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="1 3 22 22" width="1rem"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }" stroke-width="2"/></svg>')`,
         },
-        "&:checked:after": {
-          display: "block",
-        }
       },
   
   
