@@ -1,5 +1,4 @@
-import ShadeHexColor from "./shadeHexColor"
-import LightOrDark from "./lightOrDark"
+import { ShadeHexColor, LightOrDark } from "./misc"
 
 const AddComponents = (color, shades) => {
   return (
@@ -280,28 +279,27 @@ const AddComponents = (color, shades) => {
       ".divider": {
         display: "flex",
         alignItems: "center",
-      },
-      ".divider::before, .divider::after": {
-        flex: "1",
-        backgroundColor: color,
-        content: "''",
-        borderRadius: "9999px",
-        padding: "0.5px",				
-      },
-      ".navbar": {
-        display: "flex",
-        position: "sticky",
-        top: "0",
-        paddingLeft: "1.5rem",
-        paddingRight: "1.5rem",
-        height: "4rem",
-        maxHeight: "4rem",
-        backgroundColor: ShadeHexColor(color, shades[95]),
-        fontSize: "1.5rem",
-        lineHeight: "2rem",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        width: "100%",
+        height: "100%",
+        paddingTop: "1rem",
+        paddingBottom: "1rem",
+        paddingLeft: "0",
+        paddingRight: "0",
+        "&.divider-horizontal": {
+          width: "0%",
+          flexDirection: "column",
+          paddingTop: "0",
+          paddingBottom: "0",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        },
+        "&:before, &:after": {
+          flex: "1",
+          backgroundColor: color,
+          content: "''",
+          borderRadius: "9999px",
+          padding: "0.5px",				
+        },
       },
     }
   )

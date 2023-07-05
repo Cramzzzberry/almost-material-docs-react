@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-undef
 const plugin = require("tailwindcss/plugin")
 
-import shadeHexColor from "./shadeHexColor"
+import { ShadeHexColor } from "./misc"
 
 import AddComponents from "./add-components"
 import MatchComponents from "./match-components"
@@ -29,19 +29,19 @@ const AlmostMaterialPalette = (palette) => {
 	let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
 	for(const color of Object.keys(palette)) {
-		colorsAndShades[`${color}-0`] = shadeHexColor(palette[color], shades[0])
-		colorsAndShades[`${color}-10`] = shadeHexColor(palette[color], shades[10])
-		colorsAndShades[`${color}-20`] = shadeHexColor(palette[color], shades[20])
-		colorsAndShades[`${color}-30`] = shadeHexColor(palette[color], shades[30])
-		colorsAndShades[`${color}`] = shadeHexColor(palette[color], shades[40])
-		colorsAndShades[`${color}-50`] = shadeHexColor(palette[color], shades[50])
-		colorsAndShades[`${color}-60`] = shadeHexColor(palette[color], shades[60])
-		colorsAndShades[`${color}-70`] = shadeHexColor(palette[color], shades[70])
-		colorsAndShades[`${color}-80`] = shadeHexColor(palette[color], shades[80])
-		colorsAndShades[`${color}-90`] = shadeHexColor(palette[color], shades[90])
-		colorsAndShades[`${color}-95`] = shadeHexColor(palette[color], shades[95])
-		colorsAndShades[`${color}-99`] = shadeHexColor(palette[color], shades[99])
-		colorsAndShades[`${color}-100`] = shadeHexColor(palette[color], shades[100])
+		colorsAndShades[`${color}-0`] = ShadeHexColor(palette[color], shades[0])
+		colorsAndShades[`${color}-10`] = ShadeHexColor(palette[color], shades[10])
+		colorsAndShades[`${color}-20`] = ShadeHexColor(palette[color], shades[20])
+		colorsAndShades[`${color}-30`] = ShadeHexColor(palette[color], shades[30])
+		colorsAndShades[`${color}`] = ShadeHexColor(palette[color], shades[40])
+		colorsAndShades[`${color}-50`] = ShadeHexColor(palette[color], shades[50])
+		colorsAndShades[`${color}-60`] = ShadeHexColor(palette[color], shades[60])
+		colorsAndShades[`${color}-70`] = ShadeHexColor(palette[color], shades[70])
+		colorsAndShades[`${color}-80`] = ShadeHexColor(palette[color], shades[80])
+		colorsAndShades[`${color}-90`] = ShadeHexColor(palette[color], shades[90])
+		colorsAndShades[`${color}-95`] = ShadeHexColor(palette[color], shades[95])
+		colorsAndShades[`${color}-99`] = ShadeHexColor(palette[color], shades[99])
+		colorsAndShades[`${color}-100`] = ShadeHexColor(palette[color], shades[100])
 	}
 
 	return colorsAndShades
@@ -61,7 +61,7 @@ const almostMaterialPlugin = plugin(
 		addBase({
 			// or whichever color you"d like
 			"html": {
-				color: shadeHexColor(userPalette.primary, shades[10])
+				color: ShadeHexColor(userPalette.primary, shades[10])
 			},
 
 			"@font-face": {
@@ -71,7 +71,7 @@ const almostMaterialPlugin = plugin(
 			},
 
 			"body": {
-				backgroundColor: shadeHexColor(userPalette.primary, shades[99]),
+				backgroundColor: ShadeHexColor(userPalette.primary, shades[99]),
 				fontFamily: "'openSans'",
 			},
 			
