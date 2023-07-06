@@ -13,13 +13,13 @@ export const BadgeSnippets = {
     htmlCode: "<span class=\"badge badge-outlined\">Outlined</span>",
     jsxCode: "<span className=\"badge badge-outlined\">Outlined</span>",
   },
-  "Dot Badge": {
-    preview: (
-      <span className="badge badge-dot"></span>
-    ),
-    htmlCode: "<span class=\"badge badge-dot\"></span>",
-    jsxCode: "<span className=\"badge badge-dot\"></span>",
-  },
+  // "Dot Badge": {
+  //   preview: (
+  //     <span className="badge badge-dot"></span>
+  //   ),
+  //   htmlCode: "<span class=\"badge badge-dot\"></span>",
+  //   jsxCode: "<span className=\"badge badge-dot\"></span>",
+  // },
   "Colored Badge": {
     preview: (
       <>

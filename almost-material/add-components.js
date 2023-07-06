@@ -1,6 +1,8 @@
 import { ShadeHexColor, LightOrDark } from "./misc"
 
 const AddComponents = (color, shades) => {
+  const easeInOut = "cubic-bezier(0.4, 0, 0.2, 1)"
+
   return (
     {
       //badge class
@@ -26,13 +28,13 @@ const AddComponents = (color, shades) => {
           borderColor: color,
           fontWeight: "normal",
         },
-  
-        "&.badge-dot": { //badge-dot
-          padding: "0",
-          backgroundColor: color,
-          width: "0.5rem",
-          height: "0.5rem",
-        },
+        
+        // "&.badge-dot": { //badge-dot
+        //   padding: "0",
+        //   backgroundColor: color,
+        //   width: "0.5rem",
+        //   height: "0.5rem",
+        // },
   
         "&.badge-sm": { //badge-sm
           paddingLeft: "0.25rem",
@@ -318,12 +320,37 @@ const AddComponents = (color, shades) => {
           backgroundColor: "#ffffff",
           opacity: "1",
           borderRadius: "1.5rem",
-          zIndex: "-1",
           minWidth: "240px",
-          transitionProperty: "all",
-          "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
-          transitionDuration: "75ms",
-          transform: "scale(0.875, 0.875)",
+          visibility: "hidden",
+          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 40ms ${ easeInOut }`,
+          transform: "scale(0.9, 0.9)",
+        },
+
+        "& > label:focus ~ .menu-content": {
+          transform: "scale(1, 1)",
+          opacity: "1",
+          visibility: "visible",
+        },
+
+        "& > .menu-content:focus": { //this is important so that the menu doesnt close
+          transform: "scale(1, 1)",
+          opacity: "1",
+          visibility: "visible",
+        },
+
+        "& > .menu-content > li > a": {
+          display: "flex",
+          padding: "1.5rem",
+          paddingTop: "1.25rem",
+          paddingBottom: "1.25rem",
+          flexDirection: "row",
+          width: "100%",
+        },
+
+        "& > .menu-content > li > a:hover": {
+          cursor: "pointer",
+          backgroundColor: "rgba(0,0,0,0.06)",
+          top: "calc(100% + 8px)",
         },
 
         "&.menu-top": {
@@ -370,33 +397,6 @@ const AddComponents = (color, shades) => {
             bottom: "0%",
             left: "calc(100% + 8px)",
           },
-        },
-
-        "& > label:focus ~ .menu-content": {
-          transform: "scale(1, 1)",
-          opacity: "1",
-          zIndex: "1",
-        },
-
-        "& > .menu-content:focus": { //this is important so that the menu doesnt close
-          transform: "scale(1, 1)",
-          opacity: "1",
-          zIndex: "1",
-        },
-
-        "& > .menu-content > li > a": {
-          display: "flex",
-          padding: "1.5rem",
-          paddingTop: "1.25rem",
-          paddingBottom: "1.25rem",
-          flexDirection: "row",
-          width: "100%",
-        },
-
-        "& > .menu-content > li > a:hover": {
-          cursor: "pointer",
-          backgroundColor: "rgba(0,0,0,0.06)",
-          top: "calc(100% + 8px)",
         },
       }
     }
