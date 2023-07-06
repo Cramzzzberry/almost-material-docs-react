@@ -18,3 +18,4 @@ const Page = ({name, desc, components}) => {
 }
 
 export default Page
+

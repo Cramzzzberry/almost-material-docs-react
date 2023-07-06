@@ -156,6 +156,7 @@ const AddComponents = (color, shades) => {
           borderColor: "transparent",
           color: ShadeHexColor(color, shades[10]),
           opacity: "70%",
+          cursor: "not-allowed",
         },
   
         "&.btn-sm": { //btn-sm
@@ -295,12 +296,109 @@ const AddComponents = (color, shades) => {
         },
         "&:before, &:after": {
           flex: "1",
-          backgroundColor: color,
+          backgroundColor: "rgba(0,0,0,0.05)",
           content: "''",
           borderRadius: "9999px",
-          padding: "0.5px",				
+          padding: "1px",				
         },
       },
+
+
+
+      //menu class
+      ".menu": {
+        position: "relative",
+        "& > .menu-content": { //default position
+          top: "calc(100% + 8px)",
+          bottom: "auto",
+          left: "auto",
+          right: "auto",
+          overflowY: "auto",
+          position: "absolute",
+          backgroundColor: "#ffffff",
+          opacity: "1",
+          borderRadius: "1.5rem",
+          zIndex: "-1",
+          minWidth: "240px",
+          transitionProperty: "all",
+          "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+          transitionDuration: "75ms",
+          transform: "scale(0.875, 0.875)",
+        },
+
+        "&.menu-top": {
+          "& > .menu-content": {
+            top: "auto",
+            bottom: "calc(100% + 8px)",
+          },
+          "&.menu-end > .menu-content": {
+            top: "auto",
+            right: "0%",
+          },
+        },
+
+        "&.menu-bottom": {
+          "& > .menu-content": {
+            top: "calc(100% + 8px)",
+            bottom: "auto",
+          },
+          "&.menu-end > .menu-content": {
+            top: "calc(100% + 8px)",
+            right: "0%",
+          },
+        },
+
+        "&.menu-left": {
+          "& > .menu-content": {
+            top: "0%",
+            right: "calc(100% + 8px)"
+          },
+          "&.menu-end > .menu-content": {
+            top: "auto",
+            bottom: "0%",
+            right: "calc(100% + 8px)",
+          },
+        },
+
+        "&.menu-right": {
+          "& > .menu-content": {
+            top: "0%",
+            left: "calc(100% + 8px)"
+          },
+          "&.menu-end > .menu-content": {
+            top: "auto",
+            bottom: "0%",
+            left: "calc(100% + 8px)",
+          },
+        },
+
+        "& > label:focus ~ .menu-content": {
+          transform: "scale(1, 1)",
+          opacity: "1",
+          zIndex: "1",
+        },
+
+        "& > .menu-content:focus": { //this is important so that the menu doesnt close
+          transform: "scale(1, 1)",
+          opacity: "1",
+          zIndex: "1",
+        },
+
+        "& > .menu-content > li > a": {
+          display: "flex",
+          padding: "1.5rem",
+          paddingTop: "1.25rem",
+          paddingBottom: "1.25rem",
+          flexDirection: "row",
+          width: "100%",
+        },
+
+        "& > .menu-content > li > a:hover": {
+          cursor: "pointer",
+          backgroundColor: "rgba(0,0,0,0.06)",
+          top: "calc(100% + 8px)",
+        },
+      }
     }
   )
 }

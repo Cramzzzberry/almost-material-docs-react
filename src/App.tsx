@@ -6,6 +6,7 @@ import BadgesPage from "./pages/badges/Badges-Page"
 import CardsPage from "./pages/cards/Cards-Page"
 import CheckboxPage from "./pages/checkbox/Checkbox-Page"
 import DividerPage from "./pages/divider/Divider-Page"
+import MenuPage from "./pages/menu/Menu-Page"
 
 export default function App() {
   return(
@@ -20,8 +21,8 @@ export default function App() {
             <li><NavLink to="/cards" className={({ isActive }) => isActive ? "active" : ""}>Cards</NavLink></li>
             <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "active" : ""}>Checkbox</NavLink></li>
             <li><NavLink to="/divider" className={({ isActive }) => isActive ? "active" : ""}>Divider</NavLink></li>
-            <li><NavLink to="#">Dropdown</NavLink></li>
             <li><NavLink to="#">Input Fields</NavLink></li>
+            <li><NavLink to="/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu</NavLink></li>
             <li><NavLink to="#">Modals</NavLink></li>
             <li><NavLink to="#">Navigation Bars</NavLink></li>
             <li><NavLink to="#">Navigation Drawer</NavLink></li>
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/cards" element={ <CardsPage /> } />
             <Route path="/checkbox" element={ <CheckboxPage /> } />
             <Route path="/divider" element={ <DividerPage /> } />
+            <Route path="/menu" element={ <MenuPage /> } />
           </Routes>
         </div>
       </div>
