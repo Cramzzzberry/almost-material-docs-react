@@ -311,6 +311,7 @@ const AddComponents = (color, shades) => {
       ".menu": {
         position: "relative",
         "& > .menu-content": { //default position
+          transformOrigin: "10% 10%",
           top: "calc(100% + 8px)",
           bottom: "auto",
           left: "auto",
@@ -322,7 +323,7 @@ const AddComponents = (color, shades) => {
           borderRadius: "1.5rem",
           minWidth: "240px",
           visibility: "hidden",
-          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 40ms ${ easeInOut }`,
+          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 38ms ${ easeInOut }`,
           transform: "scale(0.9, 0.9)",
         },
 
@@ -353,46 +354,53 @@ const AddComponents = (color, shades) => {
           top: "calc(100% + 8px)",
         },
 
-        "&.menu-top": {
+        "&.menu-top": { //top menu
           "& > .menu-content": {
+            transformOrigin: "10% 90%",
             top: "auto",
             bottom: "calc(100% + 8px)",
           },
           "&.menu-end > .menu-content": {
+            transformOrigin: "90% 90%",
             top: "auto",
             right: "0%",
           },
         },
 
-        "&.menu-bottom": {
+        "&.menu-bottom": { //bottom menu
           "& > .menu-content": {
             top: "calc(100% + 8px)",
             bottom: "auto",
           },
           "&.menu-end > .menu-content": {
+            transformOrigin: "90% 10%",
             top: "calc(100% + 8px)",
             right: "0%",
           },
         },
 
-        "&.menu-left": {
+        "&.menu-left": { //left menu
           "& > .menu-content": {
+            transformOrigin: "90% 10%",
             top: "0%",
             right: "calc(100% + 8px)"
           },
           "&.menu-end > .menu-content": {
+            transformOrigin: "90% 90%",
             top: "auto",
             bottom: "0%",
             right: "calc(100% + 8px)",
           },
         },
 
-        "&.menu-right": {
+        "&.menu-right": { //right menu
           "& > .menu-content": {
+            transformOrigin: "10% 10%",
             top: "0%",
             left: "calc(100% + 8px)"
           },
           "&.menu-end > .menu-content": {
+            transformOrigin: "10% 90%",
             top: "auto",
             bottom: "0%",
             left: "calc(100% + 8px)",
