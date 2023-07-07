@@ -21,14 +21,14 @@ const getButtons =  () => { //get the button snippets keys and then push it insi
   return buttonComponents
 }
 
-const ButtonsPage = () => {
+const ButtonPage = () => {
   return (
     <Page 
-      name="Buttons"
+      name="Button"
       desc="It allows the user to take actions"
       components={ getButtons() }
     />
   )
 }
 
-export default ButtonsPage
+export default ButtonPage

@@ -20,14 +20,14 @@ const getBadges =  () => {
   return badgeComponents
 }
 
-const BadgesPage = () => {
+const BadgePage = () => {
   return (
     <Page 
-      name="Badges"
+      name="Badge"
       desc="Blah blah here"
       components={ getBadges() }
     />
   )
 }
 
-export default BadgesPage
+export default BadgePage

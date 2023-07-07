@@ -95,6 +95,26 @@ const MatchComponents = (shades) => {
           backgroundColor: color,	
         }
       }),
+
+
+
+      //input class
+      "input": (color) => ({ 
+        backgroundColor: "#ffffff",
+        borderColor: "#ffffff",
+        "&:focus": {
+          outline: `2px solid ${ color }`,
+          outlineOffset: "2px",
+        },
+
+        "&.input-bordered": {
+          borderColor: color,
+        },
+
+        "&.input-underlined": {
+          borderColor: color,
+        },
+      }),
     }
   )
 }

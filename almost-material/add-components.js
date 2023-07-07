@@ -307,6 +307,48 @@ const AddComponents = (color, shades) => {
 
 
 
+      //input class
+      ".input": {
+        paddingTop: "calc(1.25rem - 2px)",
+        paddingBottom: "calc(1.25rem - 2px)",
+        paddingLeft: "1.5rem",
+        paddingRight: "1.5rem",
+        backgroundColor: "#ffffff",
+        borderRadius: "9999px",
+        borderWidth: "2px",
+        borderColor: "#ffffff",
+        "&:focus": {
+          outline: `2px solid ${ color }`,
+          outlineOffset: "2px",
+          "&.input-underlined": {
+            outline: "none",
+          },
+        },
+
+        "&.input-bordered": {
+          borderColor: color,
+        },
+
+        "&.input-ghost": {
+          borderColor: "transparent",
+          backgroundColor: "transparent",
+        },
+
+        "&.input-underlined": {
+          borderWidth: "0px",
+          borderBottomWidth: "2px",
+          borderColor: color,
+          backgroundColor: "transparent",
+          borderRadius: "2px",
+          paddingTop: "0.75rem",
+          paddingBottom: "calc(0.75rem - 2px)",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        },
+      },
+
+
+
       //menu class
       ".menu": {
         position: "relative",

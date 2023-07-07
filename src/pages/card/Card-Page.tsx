@@ -21,14 +21,14 @@ const getCards =  () => {
   return cardComponents
 }
 
-const CardsPage = () => {
+const CardPage = () => {
   return (
     <Page 
-      name="Cards"
+      name="Card"
       desc="Used to contain a group of elements"
       components={ getCards() }
     />
   )
 }
 
-export default CardsPage
+export default CardPage
