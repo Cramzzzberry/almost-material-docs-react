@@ -325,6 +325,8 @@ const AddComponents = (color, shades) => {
           visibility: "hidden",
           transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 38ms ${ easeInOut }`,
           transform: "scale(0.9, 0.9)",
+          "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+          filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
         },
 
         "& > label:focus ~ .menu-content": {

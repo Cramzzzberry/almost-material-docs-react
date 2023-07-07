@@ -67,7 +67,7 @@ const almostMaterialPlugin = plugin(
 			"@font-face": {
 				fontFamily: "'openSans'",
 				fontWeight: "normal",
-				src: "url('/almost-material/Inter-Variable.ttf') format('truetype')",
+				src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype')",
 			},
 
 			"body": {
