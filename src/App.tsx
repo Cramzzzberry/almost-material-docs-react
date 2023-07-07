@@ -1,9 +1,9 @@
 import 'material-icons/iconfont/material-icons.css'
 import { BrowserRouter, Routes, Route, Navigate, NavLink } from "react-router-dom"
 import Home from "./pages/Home"
-import ButtonsPage from "./pages/buttons/Buttons-Page"
-import BadgesPage from "./pages/badges/Badges-Page"
-import CardsPage from "./pages/cards/Cards-Page"
+import ButtonsPage from "./pages/button/Buttons-Page"
+import BadgesPage from "./pages/badge/Badges-Page"
+import CardsPage from "./pages/card/Cards-Page"
 import CheckboxPage from "./pages/checkbox/Checkbox-Page"
 import DividerPage from "./pages/divider/Divider-Page"
 import MenuPage from "./pages/menu/Menu-Page"
