@@ -34,7 +34,7 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       {/* first block */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
         <div className="flex flex-row gap-2 items-center">
-          <h3 className="font-semibold">{ componentName }</h3>
+          <h4 className="font-semibold">{ componentName }</h4>
         </div>
         <div className="flex flex-row gap-2 items-center">
           <button className={"btn btn-sm " + previewActive}

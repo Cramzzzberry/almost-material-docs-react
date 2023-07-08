@@ -76,10 +76,11 @@ export const ButtonSnippets = {
       <button className="btn btn-sm">Small</button>
       <button className="btn">Default</button>
       <button className="btn btn-lg">Large</button>
+      <button className="btn btn-xl">Laaaaargeee</button>
       </>
     ),
-    htmlCode: "<button class=\"btn btn-sm\">Small</button>\n<button class=\"btn\">Default</button>\n<button class=\"btn btn-lg\">Large</button>",
-    jsxCode: "<button className=\"btn btn-sm\">Small</button>\n<button className=\"btn\">Default</button>\n<button className=\"btn btn-lg\">Large</button>",
+    htmlCode: "<button class=\"btn btn-sm\">Small</button>\n<button class=\"btn\">Default</button>\n<button class=\"btn btn-lg\">Large</button>\n<button class=\"btn btn-xl\">Large</button>",
+    jsxCode: "<button className=\"btn btn-sm\">Small</button>\n<button className=\"btn\">Default</button>\n<button className=\"btn btn-lg\">Large</button>\n<button className=\"btn btn-xl\">Large</button>",
   },
   "Active Button": {
     preview: (

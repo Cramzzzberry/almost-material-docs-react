@@ -37,19 +37,17 @@ const AddComponents = (color, shades) => {
         // },
   
         "&.badge-sm": { //badge-sm
-          paddingLeft: "0.25rem",
-          paddingRight: "0.25rem",
-          fontSize: "0.875rem",
-          lineHeight: "1.25rem",
+          paddingLeft: "0.5rem",
+          paddingRight: "0.5rem",
+          fontSize: "0.75rem",
         },
   
         "&.badge-lg": { //badge-lg
-          paddingTop: "0.25rem",
-          paddingBottom: "0.25rem",
+          // paddingTop: "0.25rem",
+          // paddingBottom: "0.25rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
-          fontSize: "1.125rem",
-          lineHeight: "1.75rem",
+          fontSize: "1.375rem",
         },
       },
   
@@ -60,10 +58,10 @@ const AddComponents = (color, shades) => {
         backgroundColor: color,
         borderColor: color,
         display: "flex", 
-        paddingTop: "1rem",
-        paddingBottom: "1rem", 
-        paddingLeft: "1.5rem",
-        paddingRight: "1.5rem",
+        paddingTop: "0.75rem",
+        paddingBottom: "0.75rem", 
+        paddingLeft: "1.25rem",
+        paddingRight: "1.25rem",
         height: "fit-content",
         width: "fit-content",
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
@@ -116,10 +114,10 @@ const AddComponents = (color, shades) => {
         },
   
         "&.btn-circle": { //btn-circle
-          padding: "1rem",
+          padding: "0.75rem",
           borderRadius: "9999px",
           "&.btn-ghost": {
-            padding: "1rem",
+            padding: "0.75rem",
             borderRadius: "9999px",
             "&:hover:not([disabled])": {
               background: "rgba(0,0,0,0.05)",
@@ -135,7 +133,15 @@ const AddComponents = (color, shades) => {
           },
   
           "&.btn-lg": {
-            padding: "1.25rem",
+            padding: "1rem",
+            fontSize: "1.625rem",
+            "& > *": {
+              fontSize: "1.625rem",
+            }
+          },
+  
+          "&.btn-xl": {
+            padding: "1.5rem",
             fontSize: "2rem",
             "& > *": {
               fontSize: "2rem",
@@ -166,20 +172,32 @@ const AddComponents = (color, shades) => {
           paddingBottom: "0.5rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
+          gap: "0.25rem",
           fontSize: "0.875rem",
           "& > *": {
-            fontSize: "1rem",
+            fontSize: "1.375rem",
           }
         },
   
         "&.btn-lg": { //btn-lg
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+          fontSize: "1.375rem",
+          "& > *": {
+            fontSize: "1.625rem",
+          }
+        },
+  
+        "&.btn-xl": { //btn-lg
           paddingTop: "1.5rem",
           paddingBottom: "1.5rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
-          fontSize: "1.25rem",
+          fontSize: "1.5rem",
           "& > *": {
-            fontSize: "1.75rem",
+            fontSize: "2rem",
           }
         },
       },
@@ -309,10 +327,10 @@ const AddComponents = (color, shades) => {
 
       //input class
       ".input": {
-        paddingTop: "calc(1.25rem - 2px)",
-        paddingBottom: "calc(1.25rem - 2px)",
-        paddingLeft: "1.5rem",
-        paddingRight: "1.5rem",
+        paddingTop: "calc(0.75rem - 2px)",
+        paddingBottom: "calc(0.75rem - 2px)",
+        paddingLeft: "1.25rem",
+        paddingRight: "1.25rem",
         backgroundColor: "#ffffff",
         borderRadius: "9999px",
         borderWidth: "2px",
@@ -340,10 +358,10 @@ const AddComponents = (color, shades) => {
           borderColor: color,
           backgroundColor: "transparent",
           borderRadius: "2px",
-          paddingTop: "0.75rem",
-          paddingBottom: "calc(0.75rem - 2px)",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
+          paddingTop: "0.5rem",
+          paddingBottom: "calc(0.5rem - 2px)",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
         },
       },
 
