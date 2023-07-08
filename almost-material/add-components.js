@@ -395,7 +395,7 @@ const AddComponents = (color, shades) => {
           visibility: "visible",
         },
 
-        "& > .menu-content:focus": { //this is important so that the menu doesnt close
+        "&:focus-within > .menu-content": { //this is important so that the menu doesnt close
           transform: "scale(1, 1)",
           opacity: "1",
           visibility: "visible",
