@@ -17,32 +17,20 @@ export default function App() {
         <div className="drawer-side bg-primary-90 xl:h-screen border-r xl:basis-[320px]"> {/* drawer side */}
           <ul className="drawer-menu p-4"> {/* drawer menu */} 
             <li><NavLink to="/home" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
-            <li>
-              <div className="flex flex-row justify-between py-0">
-                Components
-                <div className="menu menu-right">
-                  <label tabIndex="0" className="btn btn-circle btn-ghost">
-                    <span class="material-icons">navigate_next</span>
-                  </label>
-                  <ul tabIndex="0" className="menu-content z-[1] h-[600px] overflow-y-auto">
-                    <li><NavLink to="/button" className={({ isActive }) => isActive ? "active" : ""}>Button</NavLink></li>
-                    <li><NavLink to="/badge" className={({ isActive }) => isActive ? "active" : ""}>Badge</NavLink></li>
-                    <li><NavLink to="/card" className={({ isActive }) => isActive ? "active" : ""}>Card</NavLink></li>
-                    <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "active" : ""}>Checkbox</NavLink></li>
-                    <li><NavLink to="/divider" className={({ isActive }) => isActive ? "active" : ""}>Divider</NavLink></li>
-                    <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "active" : ""}>Input Fields</NavLink></li>
-                    <li><NavLink to="/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu</NavLink></li>
-                    <li><NavLink to="#">Modals</NavLink></li>
-                    <li><NavLink to="#">Navigation Bars</NavLink></li>
-                    <li><NavLink to="#">Navigation Drawer</NavLink></li>
-                    <li><NavLink to="#">Progress Bars</NavLink></li>
-                    <li><NavLink to="#">Radio Button</NavLink></li>
-                    <li><NavLink to="#">Snackbar</NavLink></li>
-                    <li><NavLink to="#">Switch</NavLink></li>
-                  </ul>
-                </div>
-              </div>
-            </li>
+            <li><NavLink to="/button" className={({ isActive }) => isActive ? "active" : ""}>Button</NavLink></li>
+            <li><NavLink to="/badge" className={({ isActive }) => isActive ? "active" : ""}>Badge</NavLink></li>
+            <li><NavLink to="/card" className={({ isActive }) => isActive ? "active" : ""}>Card</NavLink></li>
+            <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "active" : ""}>Checkbox</NavLink></li>
+            <li><NavLink to="/divider" className={({ isActive }) => isActive ? "active" : ""}>Divider</NavLink></li>
+            <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "active" : ""}>Input Fields</NavLink></li>
+            <li><NavLink to="/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu</NavLink></li>
+            <li><NavLink to="#">Modals</NavLink></li>
+            <li><NavLink to="#">Navigation Bars</NavLink></li>
+            <li><NavLink to="#">Navigation Drawer</NavLink></li>
+            <li><NavLink to="#">Progress Bars</NavLink></li>
+            <li><NavLink to="#">Radio Button</NavLink></li>
+            <li><NavLink to="#">Snackbar</NavLink></li>
+            <li><NavLink to="#">Switch</NavLink></li>
           </ul>
         </div>
 

@@ -33,6 +33,11 @@ const MatchComponents = (shades) => {
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
           backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
         },
+
+        "&:active:not([disabled])": {
+          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+        },
   
         "&.btn-outlined": { //btn-outlined
           color: color,
@@ -41,6 +46,11 @@ const MatchComponents = (shades) => {
             borderColor: color,
             color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
           },
+
+          "&:active": {
+            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+            borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+          },
         },
   
         "&.btn-ghost": { //btn-ghost
@@ -48,6 +58,12 @@ const MatchComponents = (shades) => {
   
           "&.active": { //btn-active
             color: color,
+
+            "&:active:not([disabled])": { //when clicked, retain their colors
+              borderColor: "transparent",
+              backgroundColor: "rgba(0,0,0,0.05)",
+              color: color,
+            },
           },
         },
   
@@ -58,7 +74,7 @@ const MatchComponents = (shades) => {
           "&:hover:not([disabled])": {
             borderColor: color,
             backgroundColor: color,
-          }
+          },
         },
   
         "&:disabled": { //disabled btn

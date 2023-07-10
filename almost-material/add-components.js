@@ -72,6 +72,7 @@ const AddComponents = (color, shades) => {
         gap: "0.5rem",
         fontWeight: "600",
         borderWidth: "1px",
+        // transition: `background-color 150ms ${ easeInOut }, border-color 300ms ${ easeInOut }`,
         "-webkit-user-select": "none",
         "-ms-user-select": "none",
         "user-select": "none",
@@ -79,6 +80,11 @@ const AddComponents = (color, shades) => {
           cursor: "pointer",
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
           backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+        },
+
+        "&:active:not([disabled])": {
+          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
         },
   
         "&.btn-outlined": { //btn-outlined
@@ -91,6 +97,11 @@ const AddComponents = (color, shades) => {
             color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
             opacity: "1",
           },
+
+          "&:active": {
+            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+            borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+          },
         },
   
         "&.btn-ghost": { //btn-ghost
@@ -101,6 +112,10 @@ const AddComponents = (color, shades) => {
             borderColor: "transparent",
             background: "rgba(0,0,0,0.05)",
           },
+
+          "&:active:not([disabled])": {
+            background: "rgba(0,0,0,0.1)",
+          },
   
           "&.active": { //btn-active
             backgroundColor: "rgba(0,0,0,0.05)",
@@ -109,7 +124,13 @@ const AddComponents = (color, shades) => {
             "&:hover:not([disabled])": {
               borderColor: "transparent",
               backgroundColor: "rgba(0,0,0,0.05)",
-            }
+            },
+
+            "&:active:not([disabled])": { //when clicked, retain their colors
+              borderColor: "transparent",
+              backgroundColor: "rgba(0,0,0,0.05)",
+              color: color,
+            },
           },
         },
   
@@ -121,6 +142,10 @@ const AddComponents = (color, shades) => {
             borderRadius: "9999px",
             "&:hover:not([disabled])": {
               background: "rgba(0,0,0,0.05)",
+            },
+
+            "&:active:not([disabled])": {
+              background: "rgba(0,0,0,0.1)",
             },
           },
   
@@ -363,6 +388,35 @@ const AddComponents = (color, shades) => {
           paddingLeft: "0.75rem",
           paddingRight: "0.75rem",
         },
+
+        "&.input-sm": {
+          paddingTop: "0.5rem",
+          paddingBottom: "0.5rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          fontSize: "0.875rem",
+        },
+
+        "&.input-lg": {
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+          fontSize: "1.375rem",
+        },
+
+        "&.input-xl": {
+          paddingTop: "1.5rem",
+          paddingBottom: "1.5rem",
+          paddingLeft: "2rem",
+          paddingRight: "2rem",
+          fontSize: "1.5rem",
+        },
+  
+        "&:disabled": {
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
       },
 
 
@@ -395,7 +449,7 @@ const AddComponents = (color, shades) => {
           visibility: "visible",
         },
 
-        "&:focus-within > .menu-content": { //this is important so that the menu doesnt close
+        "&:focus-within > .menu-content": { //this is important so that the menu doesnt close when you click the contents
           transform: "scale(1, 1)",
           opacity: "1",
           visibility: "visible",
