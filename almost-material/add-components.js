@@ -38,6 +38,7 @@ const AddComponents = (color, shades) => {
   
       //btn class
       ".btn": {
+        textTransform: "capitalize",
         backgroundColor: color,
         borderColor: color,
         display: "flex", 
@@ -452,6 +453,7 @@ const AddComponents = (color, shades) => {
 
       //menu class
       "ul.menu": {
+        textTransform: "capitalize",
         display: "flex",
         padding: "0.5rem",
         flexDirection: "column",
@@ -526,6 +528,20 @@ const AddComponents = (color, shades) => {
         "&:checked+.modal": { opacity: "1", visibility: "visible" },
         "&:checked+.modal > .modal-content": { transform: "scale(1, 1)" },
       },
+
+
+
+      //navbar class
+      ".navbar": {
+        display:"flex",
+        position:"absolute",
+        top:"0",
+        padding:"0.25rem",
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+        width:"100%",
+      }
     }
   )
 }

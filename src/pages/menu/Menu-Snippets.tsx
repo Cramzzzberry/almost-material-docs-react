@@ -9,8 +9,8 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
   "Horizontal Menu": {
     preview: (
@@ -22,8 +22,8 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-horizontal\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-horizontal\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
   "Menu w/ Icons": {
     preview: (
@@ -35,8 +35,8 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a><!--icon here-->Home</a></li>\n    <li><a><!--icon here-->Info</a></li>\n    <li><a><!--icon here-->Watch Later</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>{/*icon here*/}Home</a></li>\n    <li><a>{/*icon here*/}Info</a></li>\n    <li><a>{/*icon here*/}Watch Later</a></li>\n  </ul>\n</div>",
   },
   "Menu w/ Icons only": {
     preview: (
@@ -48,8 +48,8 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu\">\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu\">\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n  </ul>\n</div>",
   },
   "Horizontal Menu w/ Icons": {
     preview: (
@@ -61,8 +61,8 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-horizontal\">\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-horizontal\">\n    <li><a>{/*icon here*/}Home</a></li>\n    <li><a>{/*icon here*/}Info</a></li>\n    <li><a>{/*icon here*/}Watch Later</a></li>\n  </ul>\n</div>",
   },
   "Horizontal Menu w/ Icons only": {
     preview: (
@@ -74,7 +74,7 @@ export const MenuSnippets = {
         </ul>
       </div>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-horizontal\">\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-horizontal\">\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n  </ul>\n</div>",
   },
 }

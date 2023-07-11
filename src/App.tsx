@@ -16,21 +16,16 @@ export default function App() {
   return(
     <BrowserRouter>
       {/* the whole drawer */}
-      <div className="bg-primary-90 px-4 py-2 flex flex-row justify-between items-center absolute top-0 w-full z-[0]">
-        <ul className="flex flex-row items-center font-semibold">
-          <li><NavLink to="/home" className={({ isActive }) => isActive ? "btn btn-primary btn-circle active" : "btn btn-circle btn-ghost"}>
-            <span className="material-icons">
-              home
-            </span>
-          </NavLink></li>
-          <li><a className="btn btn-ghost">Item 2</a></li>
+      <div className="navbar bg-primary-90">
+        <ul className="menu menu-horizontal">
+          <li><NavLink to="/home"><span className="material-icons">home</span>home</NavLink></li>
         </ul>
 
-        <div className="">
-          <a href="/home" className="btn btn-ghost">Almost Material</a>
-        </div>
+        <ul className="menu menu-horizontal">
+          <li><NavLink to="/home">Almost Material</NavLink></li>
+        </ul>
       </div>
-      <div className="drawer xl:flex xl:flex-row xl:h-screen pt-[4.125rem]">
+      <div className="drawer xl:flex xl:flex-row xl:h-screen pt-[4rem]">
         <div className="drawer-side bg-primary-95 border-r xl:basis-[320px]"> {/* drawer side:left side */}
           <ul className="drawer-menu p-4"> {/* drawer menu */} 
             <li><NavLink to="/button" className={({ isActive }) => isActive ? "active" : ""}>Button</NavLink></li>

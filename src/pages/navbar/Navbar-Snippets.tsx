@@ -1,15 +1,15 @@
 export const NavbarSnippets = {
   "Navigation Bar": {
     preview: (
-      <div className="bg-white px-4 py-2 flex flex-row justify-between items-center w-full z-[0]">
-        <ul className="flex flex-row items-center font-semibold">
-          <li><a className="btn btn-ghost">Item 1</a></li>
-          <li><a className="btn btn-ghost">Item 2</a></li>
+      <div className="bg-white p-1 flex flex-row justify-between items-center w-full z-[0]">
+        <ul className="menu menu-horizontal">
+          <li><a>Almost Material</a></li>
         </ul>
 
-        <div className="">
-          <a className="btn btn-ghost">Almost Material</a>
-        </div>
+        <ul className="menu menu-horizontal">
+          <li><a>Home</a></li>
+          <li><a>About Us</a></li>
+        </ul>
       </div>
     ),
     htmlCode: "",
