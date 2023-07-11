@@ -1,4 +1,4 @@
-import Block from "../../components/Special-Blocks"
+import Block from "../../components/Component-Blocks"
 import Page from "../../components/Component-Page"
 import { MenuSnippets } from "./Menu-Snippets"
 
@@ -24,7 +24,7 @@ const MenuPage = () => {
   return (
     <Page 
       name="Menu"
-      desc="Blah blah here"
+      desc="Used to group links"
       components={ getMenus() }
     />
   )

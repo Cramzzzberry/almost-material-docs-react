@@ -61,7 +61,8 @@ const almostMaterialPlugin = plugin(
 		addBase({
 			// or whichever color you"d like
 			"html": {
-				color: ShadeHexColor(userPalette.primary, shades[10])
+				color: ShadeHexColor(userPalette.primary, shades[10]),
+				fontSize: "1rem",
 			},
 
 			"@font-face": {

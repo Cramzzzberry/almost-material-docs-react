@@ -28,27 +28,10 @@ const AddComponents = (color, shades) => {
           borderColor: color,
           fontWeight: "normal",
         },
-        
-        // "&.badge-dot": { //badge-dot
-        //   padding: "0",
-        //   backgroundColor: color,
-        //   width: "0.5rem",
-        //   height: "0.5rem",
-        // },
   
-        "&.badge-sm": { //badge-sm
-          paddingLeft: "0.5rem",
-          paddingRight: "0.5rem",
-          fontSize: "0.75rem",
-        },
+        "&.badge-sm": { paddingLeft: "0.5rem", paddingRight: "0.5rem", fontSize: "0.75rem" },
   
-        "&.badge-lg": { //badge-lg
-          // paddingTop: "0.25rem",
-          // paddingBottom: "0.25rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          fontSize: "1.375rem",
-        },
+        "&.badge-lg": { paddingLeft: "1rem", paddingRight: "1rem", fontSize: "1.375rem" },
       },
   
   
@@ -58,12 +41,12 @@ const AddComponents = (color, shades) => {
         backgroundColor: color,
         borderColor: color,
         display: "flex", 
-        paddingTop: "0.75rem",
-        paddingBottom: "0.75rem", 
+        minHeight: "3.25rem",
+        maxHeight: "3.25rem",
         paddingLeft: "1.25rem",
         paddingRight: "1.25rem",
-        height: "fit-content",
         width: "fit-content",
+        whiteSpace: "nowrap",
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         flexDirection: "row", 
         justifyContent: "center", 
@@ -72,7 +55,6 @@ const AddComponents = (color, shades) => {
         gap: "0.5rem",
         fontWeight: "600",
         borderWidth: "1px",
-        // transition: `background-color 150ms ${ easeInOut }, border-color 300ms ${ easeInOut }`,
         "-webkit-user-select": "none",
         "-ms-user-select": "none",
         "user-select": "none",
@@ -135,42 +117,41 @@ const AddComponents = (color, shades) => {
         },
   
         "&.btn-circle": { //btn-circle
-          padding: "0.75rem",
+          minHeight: "3.25rem",
+          maxHeight: "3.25rem",
+          minWidth: "3.25rem",
+          maxWidth: "3.25rem",
           borderRadius: "9999px",
           "&.btn-ghost": {
             padding: "0.75rem",
             borderRadius: "9999px",
-            "&:hover:not([disabled])": {
-              background: "rgba(0,0,0,0.05)",
-            },
+            "&:hover:not([disabled])": { background: "rgba(0,0,0,0.05)" },
 
-            "&:active:not([disabled])": {
-              background: "rgba(0,0,0,0.1)",
-            },
+            "&:active:not([disabled])": { background: "rgba(0,0,0,0.1)" },
           },
   
           "&.btn-sm": {
-            padding: "0.5rem",
-            fontSize: "0.875rem",
-            "& > *": {
-              fontSize: "0.875rem",
-            }
-          },
-  
+            minHeight: "2.5rem",
+            maxHeight: "2.5rem",
+            minWidth: "2.5rem",
+            maxWidth: "2.5rem",
+            fontSize: "1.375rem",
+            "& > *": { fontSize: "1.375rem" } },
           "&.btn-lg": {
-            padding: "1rem",
+            minHeight: "3.75rem",
+            maxHeight: "3.75rem",
+            minWidth: "3.75rem",
+            maxWidth: "3.75rem",
             fontSize: "1.625rem",
-            "& > *": {
-              fontSize: "1.625rem",
-            }
+            "& > *": { fontSize: "1.625rem" }
           },
-  
           "&.btn-xl": {
-            padding: "1.5rem",
+            minHeight: "4.5rem",
+            maxHeight: "4.5rem",
+            minWidth: "4.5rem",
+            maxWidth: "4.5rem",
             fontSize: "2rem",
-            "& > *": {
-              fontSize: "2rem",
-            }
+            "& > *": { fontSize: "2rem" }
           },
         },
   
@@ -192,9 +173,9 @@ const AddComponents = (color, shades) => {
           cursor: "not-allowed",
         },
   
-        "&.btn-sm": { //btn-sm
-          paddingTop: "0.5rem",
-          paddingBottom: "0.5rem",
+        "&.btn-sm": {
+          minHeight: "2.5rem",
+          maxHeight: "2.5rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           gap: "0.25rem",
@@ -204,9 +185,9 @@ const AddComponents = (color, shades) => {
           }
         },
   
-        "&.btn-lg": { //btn-lg
-          paddingTop: "1rem",
-          paddingBottom: "1rem",
+        "&.btn-lg": {
+          minHeight: "3.75rem",
+          maxHeight: "3.75rem",
           paddingLeft: "1.5rem",
           paddingRight: "1.5rem",
           fontSize: "1.375rem",
@@ -215,9 +196,9 @@ const AddComponents = (color, shades) => {
           }
         },
   
-        "&.btn-xl": { //btn-lg
-          paddingTop: "1.5rem",
-          paddingBottom: "1.5rem",
+        "&.btn-xl": {
+          minHeight: "4.5rem",
+          maxHeight: "4.5rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
           fontSize: "1.5rem",
@@ -231,17 +212,15 @@ const AddComponents = (color, shades) => {
   
       //card class
       ".card": {
-        height: "auto",
-        overflow: "hidden",
+        width: "auto",
+        height: "fit-content",
         borderRadius: "1.5rem",
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
-        "& > .card-body": {
+        "& > .card-body": { //for card body
           padding: "1.25rem",
 
-          "& > .card-title": {
-            fontWeight: "bold",
-          },
+          "& > .card-title": { fontWeight: "bold" },
   
           "& > .card-actions": {
             paddingTop: "0.75rem",
@@ -307,9 +286,8 @@ const AddComponents = (color, shades) => {
         "&:checked": {
           borderColor: color,
           backgroundColor: color,
-          "&:after": {
-            display: "block",
-          },
+
+          "&:after": { display: "block" },
         },
         "&:after": {
           display: "none",
@@ -352,30 +330,24 @@ const AddComponents = (color, shades) => {
 
       //input class
       ".input": {
-        paddingTop: "calc(0.75rem - 2px)",
-        paddingBottom: "calc(0.75rem - 2px)",
+        minHeight: "3.25rem",
+        maxHeight: "3.25rem",
         paddingLeft: "1.25rem",
         paddingRight: "1.25rem",
         backgroundColor: "#ffffff",
         borderRadius: "9999px",
-        borderWidth: "2px",
+        borderWidth: "1px",
         borderColor: "#ffffff",
         "&:focus": {
           outline: `2px solid ${ color }`,
           outlineOffset: "2px",
-          "&.input-underlined": {
-            outline: "none",
-          },
+
+          "&.input-underlined": { outline: "none" },
         },
 
-        "&.input-bordered": {
-          borderColor: color,
-        },
+        "&.input-bordered": { borderColor: color },
 
-        "&.input-ghost": {
-          borderColor: "transparent",
-          backgroundColor: "transparent",
-        },
+        "&.input-ghost": { borderColor: "transparent", backgroundColor: "transparent" },
 
         "&.input-underlined": {
           borderWidth: "0px",
@@ -390,41 +362,37 @@ const AddComponents = (color, shades) => {
         },
 
         "&.input-sm": {
-          paddingTop: "0.5rem",
-          paddingBottom: "0.5rem",
+          minHeight: "2.5rem",
+          maxHeight: "2.5rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           fontSize: "0.875rem",
         },
-
         "&.input-lg": {
-          paddingTop: "1rem",
-          paddingBottom: "1rem",
+          minHeight: "3.75rem",
+          maxHeight: "3.75rem",
           paddingLeft: "1.5rem",
           paddingRight: "1.5rem",
           fontSize: "1.375rem",
         },
-
         "&.input-xl": {
-          paddingTop: "1.5rem",
-          paddingBottom: "1.5rem",
+          minHeight: "4.5rem",
+          maxHeight: "4.5rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
           fontSize: "1.5rem",
         },
-  
-        "&:disabled": {
-          opacity: "70%",
-          cursor: "not-allowed",
-        },
+        
+        "&:disabled": { opacity: "70%", cursor: "not-allowed" },
       },
 
 
 
-      //menu class
-      ".menu": {
+      //dropdown class
+      ".dropdown": {
         position: "relative",
-        "& > .menu-content": { //default position
+        width: "fit-content",
+        "& > .dropdown-content": { //default position
           transformOrigin: "10% 10%",
           top: "calc(100% + 8px)",
           bottom: "auto",
@@ -432,30 +400,23 @@ const AddComponents = (color, shades) => {
           right: "auto",
           overflowY: "auto",
           position: "absolute",
-          backgroundColor: "#ffffff",
-          opacity: "1",
-          borderRadius: "1.5rem",
-          minWidth: "240px",
+          opacity: "0",
           visibility: "hidden",
-          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 38ms ${ easeInOut }`,
-          transform: "scale(0.9, 0.9)",
+          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 75ms ${ easeInOut }`,
+          transform: "scale(0.85, 0.85)",
           "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
           filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
         },
 
-        "& > label:focus ~ .menu-content": {
+        "& > label:focus ~ .dropdown-content": { transform: "scale(1, 1)", opacity: "1", visibility: "visible" },
+
+        "&:focus-within > .dropdown-content": { //this is important so that the dropdown doesnt close when you click the contents
           transform: "scale(1, 1)",
           opacity: "1",
           visibility: "visible",
         },
 
-        "&:focus-within > .menu-content": { //this is important so that the menu doesnt close when you click the contents
-          transform: "scale(1, 1)",
-          opacity: "1",
-          visibility: "visible",
-        },
-
-        "& > .menu-content > li > a": {
+        "& > .dropdown-content > li > a": {
           display: "flex",
           padding: "1.5rem",
           paddingTop: "1.25rem",
@@ -464,65 +425,107 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
-        "& > .menu-content > li > a:hover": {
+        "& > .dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
+
+        "&.dropdown-top": { //top dropdown
+          "& > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
+        },
+
+        "&.dropdown-bottom": { //bottom dropdown
+          "& > .dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
+        },
+
+        "&.dropdown-left": { //left dropdown
+          "& > .dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
+        },
+
+        "&.dropdown-right": { //right dropdown
+          "& > .dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
+        },
+      },
+
+
+
+      //menu class
+      "ul.menu": {
+        display: "flex",
+        padding: "0.5rem",
+        flexDirection: "column",
+        fontWeight: "600",
+        "& > *": { fontSize: "1rem" },
+
+        "& > li > a": { //list items under menu
+          display: "flex",
+          flexDirection: "row",
+          gap: "1rem",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          paddingTop: "0.5rem",
+          paddingBottom: "0.5rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          borderRadius: "9999px",
+          width: "100%",
+          whiteSpace: "nowrap",
           cursor: "pointer",
-          backgroundColor: "rgba(0,0,0,0.06)",
-          top: "calc(100% + 8px)",
+          "-webkit-user-select": "none",
+          "-ms-user-select": "none",
+          "user-select": "none",
+
+          "&:hover": { background: "rgba(0,0,0,0.05)" },
+
+          "&:active": { background: "rgba(0,0,0,0.1)" },
         },
 
-        "&.menu-top": { //top menu
-          "& > .menu-content": {
-            transformOrigin: "10% 90%",
-            top: "auto",
-            bottom: "calc(100% + 8px)",
-          },
-          "&.menu-end > .menu-content": {
-            transformOrigin: "90% 90%",
-            top: "auto",
-            right: "0%",
-          },
+        "&.menu-horizontal": {
+          flexDirection: "row",
         },
+      },
 
-        "&.menu-bottom": { //bottom menu
-          "& > .menu-content": {
-            top: "calc(100% + 8px)",
-            bottom: "auto",
-          },
-          "&.menu-end > .menu-content": {
-            transformOrigin: "90% 10%",
-            top: "calc(100% + 8px)",
-            right: "0%",
-          },
-        },
 
-        "&.menu-left": { //left menu
-          "& > .menu-content": {
-            transformOrigin: "90% 10%",
-            top: "0%",
-            right: "calc(100% + 8px)"
-          },
-          "&.menu-end > .menu-content": {
-            transformOrigin: "90% 90%",
-            top: "auto",
-            bottom: "0%",
-            right: "calc(100% + 8px)",
-          },
-        },
 
-        "&.menu-right": { //right menu
-          "& > .menu-content": {
-            transformOrigin: "10% 10%",
-            top: "0%",
-            left: "calc(100% + 8px)"
-          },
-          "&.menu-end > .menu-content": {
-            transformOrigin: "10% 90%",
-            top: "auto",
-            bottom: "0%",
-            left: "calc(100% + 8px)",
-          },
-        },
-      }
+      //modal class
+      ".modal": {
+        position:"absolute",
+        top:"0",
+        left:"0",
+        width:"100vw",
+        height:"100vh",
+        background:"rgba(0,0,0,0.2)",
+        transition: `opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
+        opacity: "0",
+        visibility: "hidden",
+
+        "& > .modal-content": {
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          width:"100%",
+          height:"100%",
+          transition: `transform 125ms ${ easeInOut }`,
+          transform: "scale(0.9, 0.9)",
+
+          "& > .modal-backdrop": {
+            position:"absolute",
+            top:"0",
+            left:"0",
+            width:"100vw",
+            height:"100vh",
+            zIndex: "-1",
+          }
+        }
+      },
+
+      "input[type='checkbox'].modal-toggle": {
+        position: "absolute",
+        top: "-100px",
+        "&:checked+.modal": { opacity: "1", visibility: "visible" },
+        "&:checked+.modal > .modal-content": { transform: "scale(1, 1)" },
+      },
     }
   )
 }

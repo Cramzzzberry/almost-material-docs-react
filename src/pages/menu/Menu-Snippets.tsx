@@ -1,137 +1,80 @@
 export const MenuSnippets = {
   "Menu": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-start">
-        <div className="menu">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu w-56">
+          <li><a>Link 1</a></li>
+          <li><a>Link 2</a></li>
+          <li><a>Link 3</a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
-  "Menu top": {
+  "Horizontal Menu": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-end">
-        <div className="menu menu-top">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu menu-horizontal">
+          <li><a>Link 1</a></li>
+          <li><a>Link 2</a></li>
+          <li><a>Link 3</a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu menu-top\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-top\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
-  "Menu top aligned to end": {
+  "Menu w/ Icons": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-end">
-        <div className="menu menu-top menu-end">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu w-56">
+          <li><a><span class="material-icons">home</span>Home</a></li>
+          <li><a><span class="material-icons">info</span>Info</a></li>
+          <li><a><span class="material-icons">watch_later</span>Watch Later</a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu menu-top menu-end\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-top menu-end\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
-  "Menu bottom": {
+  "Menu w/ Icons only": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-start">
-        <div className="menu menu-bottom">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu">
+          <li><a><span class="material-icons">home</span></a></li>
+          <li><a><span class="material-icons">info</span></a></li>
+          <li><a><span class="material-icons">watch_later</span></a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu menu-bottom\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-bottom\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
-  "Menu bottom aligned to end": {
+  "Horizontal Menu w/ Icons": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-start">
-        <div className="menu menu-bottom menu-end">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu menu-horizontal">
+          <li><a><span class="material-icons">home</span>Home</a></li>
+          <li><a><span class="material-icons">info</span>Info</a></li>
+          <li><a><span class="material-icons">watch_later</span>Watch Later</a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu menu-bottom menu-end\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-bottom menu-end\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
-  "Menu left": {
+  "Horizontal Menu w/ Icons only": {
     preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-center">
-        <div className="menu menu-left">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
+      <div className="card">
+        <ul className="menu menu-horizontal">
+          <li><a><span class="material-icons">home</span></a></li>
+          <li><a><span class="material-icons">info</span></a></li>
+          <li><a><span class="material-icons">watch_later</span></a></li>
+        </ul>
       </div>
     ),
-    htmlCode: "<div class=\"menu menu-left\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-left\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-  },
-  "Menu left aligned to end": {
-    preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-center">
-        <div className="menu menu-left menu-end">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
-      </div>
-    ),
-    htmlCode: "<div class=\"menu menu-left menu-end\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-left menu-end\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-  },
-  "Menu right": {
-    preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-center">
-        <div className="menu menu-right">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
-      </div>
-    ),
-    htmlCode: "<div class=\"menu menu-right\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-right\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-  },
-  "Menu right aligned to end": {
-    preview: (
-      <div className="card card-primary-80 min-h-[250px] p-5 flex flex-row gap-2 justify-center items-center">
-        <div className="menu menu-right menu-end">
-          <label tabIndex="0" className="btn">Menu</label>
-          <ul tabIndex="0" className="menu-content z-[1]">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
-      </div>
-    ),
-    htmlCode: "<div class=\"menu menu-right menu-end\">\n  <label tabIndex=\"0\" class=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" class=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"menu menu-right menu-end\">\n  <label tabIndex=\"0\" className=\"btn\">Menu</label>\n  <ul tabIndex=\"0\" className=\"menu-content z-[1]\">\n    <li><a>Item 1</a></li>\n    <li><a>Item 2</a></li>\n  </ul>\n</div>",
+    htmlCode: "",
+    jsxCode: "",
   },
 }
