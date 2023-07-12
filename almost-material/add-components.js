@@ -337,7 +337,7 @@ const AddComponents = (color, shades) => {
         paddingRight: "1.25rem",
         backgroundColor: "#ffffff",
         borderRadius: "9999px",
-        borderWidth: "1px",
+        borderWidth: "2px",
         borderColor: "#ffffff",
         "&:focus": {
           outline: `2px solid ${ color }`,
@@ -452,24 +452,25 @@ const AddComponents = (color, shades) => {
 
 
       //menu class
-      "ul.menu": {
+      ".menu": {
         textTransform: "capitalize",
         display: "flex",
         padding: "0.5rem",
         flexDirection: "column",
         fontWeight: "600",
         "& > *": { fontSize: "1rem" },
+        color: color,
 
         "& > li > a": { //list items under menu
+          minHeight: "3.25rem",
+          maxHeight: "3.25rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
           display: "flex",
           flexDirection: "row",
           gap: "1rem",
           justifyContent: "flex-start",
           alignItems: "center",
-          paddingTop: "0.5rem",
-          paddingBottom: "0.5rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
           borderRadius: "9999px",
           width: "100%",
           whiteSpace: "nowrap",
@@ -481,6 +482,8 @@ const AddComponents = (color, shades) => {
           "&:hover": { background: "rgba(0,0,0,0.05)" },
 
           "&:active": { background: "rgba(0,0,0,0.1)" },
+
+          "&.active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
 
         "&.menu-horizontal": {
@@ -533,15 +536,79 @@ const AddComponents = (color, shades) => {
 
       //navbar class
       ".navbar": {
-        display:"flex",
-        position:"absolute",
-        top:"0",
-        padding:"0.25rem",
-        flexDirection:"row",
-        justifyContent:"space-between",
-        alignItems:"center",
-        width:"100%",
-      }
+        display: "flex",
+        position: "sticky",
+        top: "0",
+        padding: "0.25rem",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+      },
+
+
+
+      //navdrawer class
+      ".navdrawer": {
+        display: "flex",
+        flexDirection: "row",
+        height: "100vh",
+
+        "& > .navdrawer-content": {
+          overflowY: "auto",
+          width: "100%",
+        },
+
+        "& > .navdrawer-sidebar": {
+          position: "absolute",
+          top: "0",
+          left: "0",
+          // borderRightWidth: "1px",
+          height: "100vh",
+          opacity: "0",
+          visibility: "hidden",
+          transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
+
+          "& > .navdrawer-sidebar-content": { 
+            position: "absolute",
+            height: "100vh",
+            left: "-23rem",
+            width: "23rem",
+            zIndex: "1",
+            transition: `left 250ms ${ easeInOut }`,
+
+            "& > *": {
+              height: "100%",
+              backgroundColor: "#FFFFFF",
+              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))",
+            },
+          },
+
+          "& > .navdrawer-overlay": {
+            "position":"absolute",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.5)",
+            cursor: "pointer",
+          }
+        },
+
+        "& > input[type='checkbox'].navdrawer-toggle": {
+          position: "absolute",
+          top: "-2.5rem",
+        },
+
+        "& > input[type='checkbox'].navdrawer-toggle:checked ~ .navdrawer-sidebar": {
+          opacity: "1",
+          visibility: "visible",
+        },
+
+        "& > input[type='checkbox'].navdrawer-toggle:checked ~ .navdrawer-sidebar > .navdrawer-sidebar-content": {
+          left: "0%",
+        },
+      },
     }
   )
 }

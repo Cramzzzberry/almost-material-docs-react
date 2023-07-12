@@ -131,6 +131,21 @@ const MatchComponents = (shades) => {
           borderColor: color,
         },
       }),
+
+
+
+      //menu class
+      "menu": (color) => ({
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+
+        "& > li > a": { //list items under menu
+          "&:hover": { background: "rgba(0,0,0,0.05)" },
+
+          "&:active": { background: "rgba(0,0,0,0.1)" },
+
+          "&.active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+        },
+      }),
     }
   )
 }
