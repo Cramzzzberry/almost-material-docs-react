@@ -19,7 +19,7 @@ export default function App() {
       {/* the whole drawer */}
       <div className="navdrawer xl:navdrawer-open">
         <input type="checkbox" className="navdrawer-toggle" id="myDrawer"/>
-        <div className="navdrawer-content">
+        <div className="navdrawer-page-content">
           {/* page content here */}
           <div className="navbar bg-white xl:hidden"> {/* navbar */}
             <ul className="menu menu-horizontal">

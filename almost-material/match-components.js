@@ -1,3 +1,8 @@
+//this function returns an object that will be used on matchComponents() plugin function of tailwind css
+//some day, i will also clean up some mess here and organize all styles so that it will be easier to read
+//also stucked between using js variable for some styles or using a hard-coded value, dunno if it will impact performance but
+//will definetely impact code readability
+
 import { ShadeHexColor, LightOrDark } from "./misc"
 
 const MatchComponents = (shades) => {
@@ -56,7 +61,7 @@ const MatchComponents = (shades) => {
         "&.btn-ghost": { //btn-ghost
           color: color,
   
-          "&.btn-active": { //btn-active
+          "&.btn-active": { //btn-ghost btn-active
             color: color,
 
             "&:active:not([disabled])": { //when clicked, retain their colors
@@ -98,7 +103,7 @@ const MatchComponents = (shades) => {
           borderColor: color,
           backgroundColor: color,
         },
-        "&:after": {
+        "&:after": { //will use my own check icon in the future, for now it its a placeholder
           content: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="1 3 22 22" width="1rem"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }" stroke-width="2"/></svg>')`,
         },
       }),
@@ -128,6 +133,7 @@ const MatchComponents = (shades) => {
         },
 
         "&.input-underlined": {
+          backgroundColor: "transparent",
           borderColor: color,
         },
       }),
@@ -136,7 +142,7 @@ const MatchComponents = (shades) => {
 
       //menu class
       "menu": (color) => ({
-        "& li > ul,ol": { //ul sub menus under li element
+        "& li > ul,ol": { //sub ul and/or ol under li element
           "& > li > a": { //list items under sub-menu
             "&:hover": { background: "rgba(0,0,0,0.05)" },
   

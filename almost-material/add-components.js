@@ -1,3 +1,8 @@
+//this function returns an object that will be used on addComponents() plugin function of tailwind css
+//some day, i will clean up some mess here and organize all styles so that it will be easier to read
+//stucked between using js variable for some styles or using a hard-coded value, dunno if it will impact performance but
+//will definetely impact code readability
+
 import { ShadeHexColor, LightOrDark } from "./misc"
 
 const AddComponents = (color, shades) => {
@@ -29,6 +34,7 @@ const AddComponents = (color, shades) => {
           fontWeight: "normal",
         },
   
+        //sizes for badge
         "&.badge-sm": { paddingLeft: "0.5rem", paddingRight: "0.5rem", fontSize: "0.75rem" },
   
         "&.badge-lg": { paddingLeft: "1rem", paddingRight: "1rem", fontSize: "1.375rem" },
@@ -37,6 +43,9 @@ const AddComponents = (color, shades) => {
   
   
       //btn class
+      //this class is complicated for me, but all :active class does is display the style "when clicked"
+      //I made the button height based on set max and min heights (instead of its own, like padding-based size), using this
+      //method make all buttons uniformed, this is the same method used for input sizes
       ".btn": {
         textTransform: "capitalize",
         backgroundColor: color,
@@ -131,6 +140,7 @@ const AddComponents = (color, shades) => {
             "&:active:not([disabled])": { background: "rgba(0,0,0,0.1)" },
           },
   
+          //sizes for btn-circle
           "&.btn-sm": {
             minHeight: "2.5rem",
             maxHeight: "2.5rem",
@@ -174,6 +184,7 @@ const AddComponents = (color, shades) => {
           cursor: "not-allowed",
         },
   
+        //sizes for different buttons except btn-circle
         "&.btn-sm": {
           minHeight: "2.5rem",
           maxHeight: "2.5rem",
@@ -231,7 +242,7 @@ const AddComponents = (color, shades) => {
             gap: "0.5rem",
           },
 
-          "& > figure": {
+          "& > figure": { //image inside card body, it will look like the image has frame
             width: "100%",
             height: "auto",
             display: "flex",
@@ -251,7 +262,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "& > figure": {
+        "& > figure": { //no frame image
           width: "100%",
           height: "auto",
           display: "flex",
@@ -290,7 +301,7 @@ const AddComponents = (color, shades) => {
 
           "&::after": { display: "block" },
         },
-        "&::after": {
+        "&::after": { //will put my own checkbox icon here
           display: "none",
           height: "1.25rem",
           width: "1.25rem",
@@ -318,7 +329,7 @@ const AddComponents = (color, shades) => {
           paddingLeft: "1rem",
           paddingRight: "1rem",
         },
-        "&::before, &::after": {
+        "&::before, &::after": { //the line itself
           flex: "1",
           backgroundColor: "rgba(0,0,0,0.05)",
           content: "''",
@@ -362,6 +373,7 @@ const AddComponents = (color, shades) => {
           paddingRight: "0.75rem",
         },
 
+        //input different sizes
         "&.input-sm": {
           minHeight: "2.5rem",
           maxHeight: "2.5rem",
@@ -405,7 +417,7 @@ const AddComponents = (color, shades) => {
           visibility: "hidden",
           transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 75ms ${ easeInOut }`,
           transform: "scale(0.85, 0.85)",
-          "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+          "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))", //drop shadow came from tailwind css dropshadow-md
           filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
         },
 
@@ -475,15 +487,14 @@ const AddComponents = (color, shades) => {
           fontSize: "0.875rem",
         },
 
-        "& li > ul,ol": { //ul sub menus under li element
+        "& li > ul,ol": { //sub ul and/or ol under li element
           position: "relative",
           display: "flex",
           flexDirection: "column",
           marginLeft: "1.25rem",
           paddingLeft: "1rem",
 
-          //put line on the left side of sub-ul
-          "&::before": {
+          "&::before": { //line on the left side of sub-ul
             position: "absolute",
             left: "0",
             top: "1.25rem",
@@ -560,7 +571,7 @@ const AddComponents = (color, shades) => {
         visibility: "hidden",
         zIndex: "9999",
 
-        "& > .modal-content": {
+        "& > .modal-content": { //wrapper for the content
           "display": "flex",
           "justifyContent": "center",
           "alignItems": "center",
@@ -569,7 +580,7 @@ const AddComponents = (color, shades) => {
           transition: `transform 125ms ${ easeInOut }`,
           transform: "scale(0.9, 0.9)",
 
-          "& > .modal-backdrop": {
+          "& > .modal-backdrop": { //the transparent background
             position:"absolute",
             top:"0",
             left:"0",
@@ -580,7 +591,7 @@ const AddComponents = (color, shades) => {
         }
       },
 
-      "input[type='checkbox'].modal-toggle": {
+      "input[type='checkbox'].modal-toggle": { //the one that will trigger modal opening
         position: "absolute",
         top: "-100px",
         "&:checked+.modal": { opacity: "1", visibility: "visible" },
@@ -611,7 +622,7 @@ const AddComponents = (color, shades) => {
         flexDirection: "row-reverse",
         height: "100vh",
 
-        "& > .navdrawer-content": {
+        "& > .navdrawer-page-content": { //wrapper for the page content
           overflowY: "auto",
           width: "100%",
         },
@@ -620,13 +631,13 @@ const AddComponents = (color, shades) => {
           position: "absolute",
           top: "0",
           left: "0",
-          // borderRightWidth: "1px",
+          // borderRightWidth: "1px", //commented, not sure if i will use it for opened drawer or i will let the user do this by using border-r
           height: "100vh",
           opacity: "0",
           visibility: "hidden",
           transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
 
-          "& > .navdrawer-sidebar-content": { 
+          "& > .navdrawer-sidebar-content": {  //wrapper for the sidebar content
             position: "absolute",
             height: "100vh",
             left: "-23rem",
@@ -637,11 +648,11 @@ const AddComponents = (color, shades) => {
             "& > *": {
               height: "100%",
               backgroundColor: "#FFFFFF",
-              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))",
+              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
             },
           },
 
-          "& > .navdrawer-overlay": {
+          "& > .navdrawer-overlay": { //the transparent background
             "position":"absolute",
             top: "0",
             left: "0",
@@ -652,7 +663,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "& > input[type='checkbox'].navdrawer-toggle": {
+        "& > input[type='checkbox'].navdrawer-toggle": { //the drawer....triggerer xD
           position: "absolute",
           top: "-2.5rem",
           "&:checked ~ .navdrawer-sidebar": {
@@ -664,7 +675,7 @@ const AddComponents = (color, shades) => {
           }
         },
 
-        "&.navdrawer-open": { // forever opened drawer
+        "&.navdrawer-open": { // forever opened drawer :>
           "& > .navdrawer-content": {
             overflowY: "auto",
             width: "100%",
