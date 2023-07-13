@@ -57,24 +57,29 @@ export default function App() {
 
         <div className="navdrawer-sidebar"> {/* drawer side:left side */}
           <div className="navdrawer-sidebar-content p-4 xl:p-1">
-            <div className="card">
+            <div className="card overflow-y-auto">
               <ul className="menu menu-primary">
                 <li className="hidden xl:block"><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}>home</NavLink></li>
-                <li><NavLink to="/button" className={({ isActive }) => isActive ? "menu-active" : ""}>Button</NavLink></li>
-                <li><NavLink to="/badge" className={({ isActive }) => isActive ? "menu-active" : ""}>Badge</NavLink></li>
-                <li><NavLink to="/card" className={({ isActive }) => isActive ? "menu-active" : ""}>Card</NavLink></li>
-                <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "menu-active" : ""}>Checkbox</NavLink></li>
-                <li><NavLink to="/divider" className={({ isActive }) => isActive ? "menu-active" : ""}>Divider</NavLink></li>
-                <li><NavLink to="/dropdown" className={({ isActive }) => isActive ? "menu-active" : ""}>Dropdown</NavLink></li>
-                <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "menu-active" : ""}>Input Fields</NavLink></li>
-                <li><NavLink to="/menu" className={({ isActive }) => isActive ? "menu-active" : ""}>Menu</NavLink></li>
-                <li><NavLink to="/modal" className={({ isActive }) => isActive ? "menu-active" : ""}>Modals</NavLink></li>
-                <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Bars</NavLink></li>
-                <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Drawer</NavLink></li>
-                <li><a href="#" className="bg-error">Progress Bars</a></li>
-                <li><a href="#" className="bg-error">Radio Button</a></li>
-                <li><a href="#" className="bg-error">Snackbar</a></li>
-                <li><a href="#" className="bg-error">Switch</a></li>
+                <li>
+                  <span className="menu-title">Components</span>
+                  <ul>
+                    <li><NavLink to="/button" className={({ isActive }) => isActive ? "menu-active" : ""}>Button</NavLink></li>
+                    <li><NavLink to="/badge" className={({ isActive }) => isActive ? "menu-active" : ""}>Badge</NavLink></li>
+                    <li><NavLink to="/card" className={({ isActive }) => isActive ? "menu-active" : ""}>Card</NavLink></li>
+                    <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "menu-active" : ""}>Checkbox</NavLink></li>
+                    <li><NavLink to="/divider" className={({ isActive }) => isActive ? "menu-active" : ""}>Divider</NavLink></li>
+                    <li><NavLink to="/dropdown" className={({ isActive }) => isActive ? "menu-active" : ""}>Dropdown</NavLink></li>
+                    <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "menu-active" : ""}>Input Fields</NavLink></li>
+                    <li><NavLink to="/menu" className={({ isActive }) => isActive ? "menu-active" : ""}>Menu</NavLink></li>
+                    <li><NavLink to="/modal" className={({ isActive }) => isActive ? "menu-active" : ""}>Modals</NavLink></li>
+                    <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Bars</NavLink></li>
+                    <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Drawer</NavLink></li>
+                    <li><a href="#" className="bg-error">Progress Bars</a></li>
+                    <li><a href="#" className="bg-error">Radio Button</a></li>
+                    <li><a href="#" className="bg-error">Snackbar</a></li>
+                    <li><a href="#" className="bg-error">Switch</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>

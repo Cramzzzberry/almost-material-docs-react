@@ -216,7 +216,6 @@ const AddComponents = (color, shades) => {
         width: "auto",
         height: "fit-content",
         borderRadius: "1.5rem",
-        overflow: "auto",
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
         "& > .card-body": { //for card body
@@ -559,6 +558,7 @@ const AddComponents = (color, shades) => {
         transition: `opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
         opacity: "0",
         visibility: "hidden",
+        zIndex: "9999",
 
         "& > .modal-content": {
           "display": "flex",
