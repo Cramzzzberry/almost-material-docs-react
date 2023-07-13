@@ -3,12 +3,12 @@ export const NavdrawerSnippets = {
     preview: (
       <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
         <div className="navdrawer h-fit">
+          <input type="checkbox" className="navdrawer-toggle" id="sampleDrawer1"/>
           <div className="navdrawer-content">
             {/* page content here */}
             <label htmlFor="sampleDrawer1" className="btn">drawer</label>
           </div>
 
-          <input type="checkbox" className="navdrawer-toggle" id="sampleDrawer1"/>
           <div className="navdrawer-sidebar z-[1]">
             <div className="navdrawer-sidebar-content">
               {/* sidebar content here */}
@@ -33,12 +33,11 @@ export const NavdrawerSnippets = {
     preview: (
       <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
         <div className="navdrawer h-fit">
+          <input type="checkbox" className="navdrawer-toggle" id="sampleDrawer2"/>
           <div className="navdrawer-content">
             {/* page content here */}
             <label htmlFor="sampleDrawer2" className="btn">card drawer</label>
           </div>
-
-          <input type="checkbox" className="navdrawer-toggle" id="sampleDrawer2"/>
           <div className="navdrawer-sidebar z-[1]">
             <div className="navdrawer-sidebar-content p-4"> {/* add paddings here */}
               {/* sidebar content here */}
@@ -63,7 +62,7 @@ export const NavdrawerSnippets = {
     preview: (
       <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 items-center flex-wrap">
         {/* sidebar content here */}
-        <div className="card rounded-none w-[23rem]">
+        <div className="bg-white w-[23rem]">
           <ul className="menu menu-primary">
             <li><a href="#">Item 1</a></li>
             <li><a href="#">Item 2</a></li>

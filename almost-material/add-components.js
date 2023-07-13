@@ -216,6 +216,7 @@ const AddComponents = (color, shades) => {
         width: "auto",
         height: "fit-content",
         borderRadius: "1.5rem",
+        overflow: "auto",
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
         "& > .card-body": { //for card body
@@ -461,6 +462,62 @@ const AddComponents = (color, shades) => {
         "& > *": { fontSize: "1rem" },
         color: color,
 
+        "&.menu-horizontal": { flexDirection: "row" },
+
+        "& .menu-title": { //menu title in almost all wrapper elements
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          minHeight: "3.25rem",
+          maxHeight: "3.25rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          color: "#ABABAB",
+          fontSize: "1rem",
+        },
+
+        "& > li > ul": { //ul sub menus under li element
+          position: "relative",
+          marginLeft: "1.25rem",
+          paddingLeft: "0.25rem",
+
+          //put line on the left side of sub-ul
+          "&::before": {
+            position: "absolute",
+            left: "0",
+            top: "1.25rem",
+            bottom: "1.25rem",
+            content: "''",
+            width: "2px",
+            backgroundColor: "#EBEBEB",
+          },
+
+          "& > li > a": { //list items under sub-menu
+            minHeight: "3.25rem",
+            maxHeight: "3.25rem",
+            paddingLeft: "1.25rem",
+            paddingRight: "1.25rem",
+            display: "flex",
+            flexDirection: "row",
+            gap: "1rem",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            borderRadius: "9999px",
+            width: "100%",
+            whiteSpace: "nowrap",
+            cursor: "pointer",
+            "-webkit-user-select": "none",
+            "-ms-user-select": "none",
+            "user-select": "none",
+  
+            "&:hover": { background: "rgba(0,0,0,0.05)" },
+  
+            "&:active": { background: "rgba(0,0,0,0.1)" },
+  
+            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          },
+        },
+
         "& > li > a": { //list items under menu
           minHeight: "3.25rem",
           maxHeight: "3.25rem",
@@ -484,10 +541,6 @@ const AddComponents = (color, shades) => {
           "&:active": { background: "rgba(0,0,0,0.1)" },
 
           "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
-        },
-
-        "&.menu-horizontal": {
-          flexDirection: "row",
         },
       },
 
@@ -628,7 +681,7 @@ const AddComponents = (color, shades) => {
               position: "static",
               height: "100vh",
               left: "0",
-              width: "23rem",
+              width: "21rem",
               zIndex: "0",
             },
   

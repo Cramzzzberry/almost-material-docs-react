@@ -59,7 +59,7 @@ export default function App() {
           <div className="navdrawer-sidebar-content p-4 xl:p-1">
             <div className="card">
               <ul className="menu menu-primary">
-                <li><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}>home</NavLink></li>
+                <li className="hidden xl:block"><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}>home</NavLink></li>
                 <li><NavLink to="/button" className={({ isActive }) => isActive ? "menu-active" : ""}>Button</NavLink></li>
                 <li><NavLink to="/badge" className={({ isActive }) => isActive ? "menu-active" : ""}>Badge</NavLink></li>
                 <li><NavLink to="/card" className={({ isActive }) => isActive ? "menu-active" : ""}>Card</NavLink></li>
