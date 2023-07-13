@@ -56,7 +56,7 @@ const MatchComponents = (shades) => {
         "&.btn-ghost": { //btn-ghost
           color: color,
   
-          "&.active": { //btn-active
+          "&.btn-active": { //btn-active
             color: color,
 
             "&:active:not([disabled])": { //when clicked, retain their colors
@@ -67,7 +67,7 @@ const MatchComponents = (shades) => {
           },
         },
   
-        "&.active": { //btn with active state
+        "&.btn-active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
           color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
@@ -143,7 +143,7 @@ const MatchComponents = (shades) => {
 
           "&:active": { background: "rgba(0,0,0,0.1)" },
 
-          "&.active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
     }

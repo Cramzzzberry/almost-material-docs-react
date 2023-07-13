@@ -85,19 +85,19 @@ export const ButtonSnippets = {
   "Active Button": {
     preview: (
       <>
-      <button className="btn active">Default</button>
-      <button className="btn btn-primary active">Primary</button>
-      <button className="btn btn-secondary active">Secondary</button>
-      <button className="btn btn-surface active">Surface</button>
-      <button className="btn btn-info active">Info</button>
-      <button className="btn btn-warning active">Warning</button>
-      <button className="btn btn-success active">Success</button>
-      <button className="btn btn-error active">Error</button>
-      <button className="btn btn-ghost active">Ghost</button>
+      <button className="btn btn-active">Default</button>
+      <button className="btn btn-primary btn-active">Primary</button>
+      <button className="btn btn-secondary btn-active">Secondary</button>
+      <button className="btn btn-surface btn-active">Surface</button>
+      <button className="btn btn-info btn-active">Info</button>
+      <button className="btn btn-warning btn-active">Warning</button>
+      <button className="btn btn-success btn-active">Success</button>
+      <button className="btn btn-error btn-active">Error</button>
+      <button className="btn btn-ghost btn-active">Ghost</button>
       </>
     ),
-    htmlCode: "<button class=\"btn active\">Default</button>\n<button class=\"btn btn-primary active\">Primary</button>\n<button class=\"btn btn-secondary active\">Secondary</button>\n<button class=\"btn btn-surface active\">Surface</button>\n<button class=\"btn btn-info active\">Info</button>\n<button class=\"btn btn-warning active\">Warning</button>\n<button class=\"btn btn-success active\">Success</button>\n<button class=\"btn btn-error active\">Error</button>\n<button class=\"btn btn-ghost active\">Ghost</button>",
-    jsxCode: "<button className=\"btn active\">Default</button>\n<button className=\"btn btn-primary active\">Primary</button>\n<button className=\"btn btn-secondary active\">Secondary</button>\n<button className=\"btn btn-surface active\">Surface</button>\n<button className=\"btn btn-info active\">Info</button>\n<button className=\"btn btn-warning active\">Warning</button>\n<button className=\"btn btn-success active\">Success</button>\n<button className=\"btn btn-error active\">Error</button>\n<button className=\"btn btn-ghost active\">Ghost</button>",
+    htmlCode: "<button class=\"btn btn-active\">Default</button>\n<button class=\"btn btn-primary btn-active\">Primary</button>\n<button class=\"btn btn-secondary btn-active\">Secondary</button>\n<button class=\"btn btn-surface btn-active\">Surface</button>\n<button class=\"btn btn-info btn-active\">Info</button>\n<button class=\"btn btn-warning btn-active\">Warning</button>\n<button class=\"btn btn-success btn-active\">Success</button>\n<button class=\"btn btn-error btn-active\">Error</button>\n<button class=\"btn btn-ghost btn-active\">Ghost</button>",
+    jsxCode: "<button className=\"btn btn-active\">Default</button>\n<button className=\"btn btn-primary btn-active\">Primary</button>\n<button className=\"btn btn-secondary btn-active\">Secondary</button>\n<button className=\"btn btn-surface btn-active\">Surface</button>\n<button className=\"btn btn-info btn-active\">Info</button>\n<button className=\"btn btn-warning btn-active\">Warning</button>\n<button className=\"btn btn-success btn-active\">Success</button>\n<button className=\"btn btn-error btn-active\">Error</button>\n<button className=\"btn btn-ghost btn-active\">Ghost</button>",
   },
   "Disabled Button": {
     preview: (

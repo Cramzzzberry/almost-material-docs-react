@@ -20,15 +20,15 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       </SyntaxHighlighter>
     ),
   }
-  const [previewActive, setPreviewActive] = useState("btn-primary active")
+  const [previewActive, setPreviewActive] = useState("btn-primary btn-active")
   const [htmlActive, setHtmlActive] = useState("btn-ghost")
   const [jsxActive, setJsxActive] = useState("btn-ghost")
   const [secondBlock, setSecondBlock] = useState(tabContent["preview"])
 
   const tabHandler = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "btn-primary active" : "btn-ghost")
-    setHtmlActive(activeTab === "html" ? "btn-primary active" : "btn-ghost")
-    setJsxActive(activeTab === "jsx" ? "btn-primary active" : "btn-ghost")
+    setPreviewActive(activeTab === "preview" ? "btn-primary btn-active" : "btn-ghost")
+    setHtmlActive(activeTab === "html" ? "btn-primary btn-active" : "btn-ghost")
+    setJsxActive(activeTab === "jsx" ? "btn-primary btn-active" : "btn-ghost")
     setSecondBlock(tabContent[activeTab])
   }
 

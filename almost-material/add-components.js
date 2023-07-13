@@ -100,7 +100,7 @@ const AddComponents = (color, shades) => {
             background: "rgba(0,0,0,0.1)",
           },
   
-          "&.active": { //btn-active
+          "&.btn-active": { //btn-active
             backgroundColor: "rgba(0,0,0,0.05)",
             borderColor: "transparent",
             color: color,
@@ -156,7 +156,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "&.active": { //btn with active state
+        "&.btn-active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
           color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
@@ -288,9 +288,9 @@ const AddComponents = (color, shades) => {
           borderColor: color,
           backgroundColor: color,
 
-          "&:after": { display: "block" },
+          "&::after": { display: "block" },
         },
-        "&:after": {
+        "&::after": {
           display: "none",
           height: "1.25rem",
           width: "1.25rem",
@@ -318,7 +318,7 @@ const AddComponents = (color, shades) => {
           paddingLeft: "1rem",
           paddingRight: "1rem",
         },
-        "&:before, &:after": {
+        "&::before, &::after": {
           flex: "1",
           backgroundColor: "rgba(0,0,0,0.05)",
           content: "''",
@@ -483,7 +483,7 @@ const AddComponents = (color, shades) => {
 
           "&:active": { background: "rgba(0,0,0,0.1)" },
 
-          "&.active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
 
         "&.menu-horizontal": {
@@ -544,6 +544,8 @@ const AddComponents = (color, shades) => {
         justifyContent: "space-between",
         alignItems: "center",
         width: "100%",
+        minheight: "4.75rem",
+        mxheight: "4.75rem",
       },
 
 
@@ -551,7 +553,7 @@ const AddComponents = (color, shades) => {
       //navdrawer class
       ".navdrawer": {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "row-reverse",
         height: "100vh",
 
         "& > .navdrawer-content": {
@@ -592,22 +594,49 @@ const AddComponents = (color, shades) => {
             height: "100vh",
             background: "rgba(0,0,0,0.5)",
             cursor: "pointer",
-          }
+          },
         },
 
         "& > input[type='checkbox'].navdrawer-toggle": {
           position: "absolute",
           top: "-2.5rem",
+          "&:checked ~ .navdrawer-sidebar": {
+            opacity: "1",
+            visibility: "visible",
+            "& > .navdrawer-sidebar-content": {
+              left: "0%",
+            },
+          }
         },
 
-        "& > input[type='checkbox'].navdrawer-toggle:checked ~ .navdrawer-sidebar": {
-          opacity: "1",
-          visibility: "visible",
-        },
-
-        "& > input[type='checkbox'].navdrawer-toggle:checked ~ .navdrawer-sidebar > .navdrawer-sidebar-content": {
-          left: "0%",
-        },
+        "&.navdrawer-open": { // forever opened drawer
+          "& > .navdrawer-content": {
+            overflowY: "auto",
+            width: "100%",
+          },
+  
+          "& > .navdrawer-sidebar": {
+            position: "static",
+            top: "0",
+            left: "0",
+            borderRightWidth: "1px",
+            height: "100vh",
+            opacity: "1",
+            visibility: "visible",
+  
+            "& > .navdrawer-sidebar-content": { 
+              position: "static",
+              height: "100vh",
+              left: "0",
+              width: "23rem",
+              zIndex: "0",
+            },
+  
+            "& > .navdrawer-overlay": {
+              visibility: "hidden",
+            },
+          },
+        }
       },
     }
   )

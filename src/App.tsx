@@ -17,18 +17,18 @@ export default function App() {
   return(
     <BrowserRouter>
       {/* the whole drawer */}
-      <div className="navdrawer">
+      <div className="navdrawer xl:navdrawer-open">
+        <input type="checkbox" className="navdrawer-toggle" id="myDrawer"/>
         <div className="navdrawer-content">
           {/* page content here */}
-
-          <div className="navbar bg-white"> {/* navbar */}
+          <div className="navbar bg-white xl:hidden"> {/* navbar */}
             <ul className="menu menu-horizontal">
               <li>
-                <label htmlFor="myDrawer" className="btn btn-ghost btn-circle">
-                  <span class="material-icons-round">menu</span>
+                <label htmlFor="myDrawer" className="btn btn-ghost btn-circle xl:hidden">
+                  <span className="material-icons-round">menu</span>
                 </label>
               </li>
-              <li><a href="/home">home</a></li>
+              <li><NavLink to="/home">home</NavLink></li>
             </ul>
 
             <ul className="menu menu-horizontal">
@@ -36,7 +36,7 @@ export default function App() {
             </ul>
           </div>
 
-          <div class="p-4"> {/* content itself */}
+          <div className="p-4"> {/* content itself */}
             <Routes>
               <Route path="/home" element={ <Home /> } />
               <Route path="/" element={ <Navigate to="/home" /> }></Route>
@@ -55,22 +55,22 @@ export default function App() {
           </div>
         </div>
 
-        <input type="checkbox" className="navdrawer-toggle" id="myDrawer"/>
         <div className="navdrawer-sidebar"> {/* drawer side:left side */}
-          <div className="navdrawer-sidebar-content p-4">
+          <div className="navdrawer-sidebar-content p-4 xl:p-1">
             <div className="card">
               <ul className="menu menu-primary">
-                <li><NavLink to="/button" className={({ isActive }) => isActive ? "active" : ""}>Button</NavLink></li>
-                <li><NavLink to="/badge" className={({ isActive }) => isActive ? "active" : ""}>Badge</NavLink></li>
-                <li><NavLink to="/card" className={({ isActive }) => isActive ? "active" : ""}>Card</NavLink></li>
-                <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "active" : ""}>Checkbox</NavLink></li>
-                <li><NavLink to="/divider" className={({ isActive }) => isActive ? "active" : ""}>Divider</NavLink></li>
-                <li><NavLink to="/dropdown" className={({ isActive }) => isActive ? "active" : ""}>Dropdown</NavLink></li>
-                <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "active" : ""}>Input Fields</NavLink></li>
-                <li><NavLink to="/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu</NavLink></li>
-                <li><NavLink to="/modal" className={({ isActive }) => isActive ? "active" : ""}>Modals</NavLink></li>
-                <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "active" : ""}>Navigation Bars</NavLink></li>
-                <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "active" : ""}>Navigation Drawer</NavLink></li>
+                <li><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}>home</NavLink></li>
+                <li><NavLink to="/button" className={({ isActive }) => isActive ? "menu-active" : ""}>Button</NavLink></li>
+                <li><NavLink to="/badge" className={({ isActive }) => isActive ? "menu-active" : ""}>Badge</NavLink></li>
+                <li><NavLink to="/card" className={({ isActive }) => isActive ? "menu-active" : ""}>Card</NavLink></li>
+                <li><NavLink to="/checkbox" className={({ isActive }) => isActive ? "menu-active" : ""}>Checkbox</NavLink></li>
+                <li><NavLink to="/divider" className={({ isActive }) => isActive ? "menu-active" : ""}>Divider</NavLink></li>
+                <li><NavLink to="/dropdown" className={({ isActive }) => isActive ? "menu-active" : ""}>Dropdown</NavLink></li>
+                <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "menu-active" : ""}>Input Fields</NavLink></li>
+                <li><NavLink to="/menu" className={({ isActive }) => isActive ? "menu-active" : ""}>Menu</NavLink></li>
+                <li><NavLink to="/modal" className={({ isActive }) => isActive ? "menu-active" : ""}>Modals</NavLink></li>
+                <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Bars</NavLink></li>
+                <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Drawer</NavLink></li>
                 <li><a href="#" className="bg-error">Progress Bars</a></li>
                 <li><a href="#" className="bg-error">Radio Button</a></li>
                 <li><a href="#" className="bg-error">Snackbar</a></li>
