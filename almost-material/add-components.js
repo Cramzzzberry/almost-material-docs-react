@@ -456,8 +456,8 @@ const AddComponents = (color, shades) => {
       ".menu": {
         textTransform: "capitalize",
         display: "flex",
-        padding: "0.5rem",
         flexDirection: "column",
+        padding: "0.5rem",
         fontWeight: "600",
         "& > *": { fontSize: "1rem" },
         color: color,
@@ -468,18 +468,20 @@ const AddComponents = (color, shades) => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          minHeight: "3.25rem",
-          maxHeight: "3.25rem",
+          minHeight: "2.5rem",
+          maxHeight: "2.5rem",
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",
           color: "#ABABAB",
-          fontSize: "1rem",
+          fontSize: "0.875rem",
         },
 
-        "& > li > ul": { //ul sub menus under li element
+        "& li > ul,ol": { //ul sub menus under li element
           position: "relative",
+          display: "flex",
+          flexDirection: "column",
           marginLeft: "1.25rem",
-          paddingLeft: "0.25rem",
+          paddingLeft: "1rem",
 
           //put line on the left side of sub-ul
           "&::before": {
