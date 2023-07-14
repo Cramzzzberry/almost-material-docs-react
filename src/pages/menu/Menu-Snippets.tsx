@@ -199,6 +199,36 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
+  "Horizontal Menu and Collapsible Sub-menu": {
+    preview: (
+      <div className="card">
+        <ul className="menu menu-horizontal">
+          <li><a>Link 1</a></li>
+          <li>
+            <details>
+              <summary>Collapsed</summary>
+              <ul>
+                <li><a>Child Link 1</a></li>
+                <li><a>Child Link 2</a></li>
+                <li>
+                  <details>
+                    <summary>Collapsed</summary>
+                    <ul>
+                      <li><a>Child Link 1</a></li>
+                      <li><a>Child Link 2</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li><a>Link 3</a></li>
+        </ul>
+      </div>
+    ),
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+  },
   "Menu with different colors": {
     preview: (
       <>

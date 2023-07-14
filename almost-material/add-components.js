@@ -474,7 +474,34 @@ const AddComponents = (color, shades) => {
         color: color,
 
         "&.menu-horizontal": { //horizontal menu
-          flexDirection: "row"
+          flexDirection: "row",
+
+          "& > li": {
+            "& > details": { //collapsible list under menu
+              position: "relative",
+
+              "& > ul, ol": { //sub ul and/or ol under li element
+                position: "absolute",
+                top: "calc(100% + 16px)",
+                left: "0",
+                // paddingTop: "0.5rem",
+                // paddingBottom: "0.5rem",
+                // paddingRight: "0.5rem",
+                // paddingLeft: "2.25rem",
+                padding: "0.5rem",
+                marginLeft: "0",
+                borderRadius: "1.5rem",
+                color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
+                backgroundColor: "#FFFFFF",
+                "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))", //drop shadow came from tailwind css dropshadow-md
+                filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+
+                "&::before": { //line on the left side of sub-ul
+                  width: "0",
+                },
+              },
+            }
+          },
         },
 
         "& .menu-title": { //menu title in almost all wrapper elements
