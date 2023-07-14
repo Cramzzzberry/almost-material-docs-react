@@ -61,9 +61,9 @@ const AddComponents = (color, shades) => {
         flexDirection: "row", 
         justifyContent: "center", 
         alignItems: "center", 
-        borderRadius: "9999px", 
+        borderRadius: "9999px",
         gap: "0.5rem",
-        fontWeight: "600",
+        fontWeight: "bold",
         borderWidth: "1px",
         "-webkit-user-select": "none",
         "-ms-user-select": "none",
@@ -147,7 +147,9 @@ const AddComponents = (color, shades) => {
             minWidth: "2.5rem",
             maxWidth: "2.5rem",
             fontSize: "1.375rem",
-            "& > *": { fontSize: "1.375rem" } },
+            "& > *": { fontSize: "1.375rem" }
+          },
+
           "&.btn-lg": {
             minHeight: "3.75rem",
             maxHeight: "3.75rem",
@@ -156,6 +158,7 @@ const AddComponents = (color, shades) => {
             fontSize: "1.625rem",
             "& > *": { fontSize: "1.625rem" }
           },
+
           "&.btn-xl": {
             minHeight: "4.5rem",
             maxHeight: "4.5rem",
@@ -469,7 +472,7 @@ const AddComponents = (color, shades) => {
         display: "flex",
         flexDirection: "column",
         padding: "0.5rem",
-        fontWeight: "600",
+        fontWeight: "bold",
         "& > *": { fontSize: "1rem" },
         color: color,
 
@@ -607,6 +610,114 @@ const AddComponents = (color, shades) => {
             //summary styled when details is open
             "&[open] > summary": { background: "rgba(0,0,0,0.1)" }
           }
+        },
+
+        //menu sizes
+        "&.menu-sm": {
+          "& .menu-title": { //menu title in almost all wrapper elements
+            minHeight: "1.75rem",
+            maxHeight: "1.75rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            fontSize: "0.75rem",
+          },
+          "& li": {
+            "& > a": { //list items under menu
+              minHeight: "2.5rem",
+              maxHeight: "2.5rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+              gap: "0.25rem",
+              fontSize: "0.875rem",
+              "& > *": {
+                fontSize: "1.375rem",
+              }
+            },
+  
+            "& > details": { //collapsible list under menu
+              "& > summary": { //the summary tag
+                minHeight: "2.5rem",
+                maxHeight: "2.5rem",
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
+                gap: "0.25rem",
+                fontSize: "0.875rem",
+                "& > *": {
+                  fontSize: "1.375rem",
+                }
+              },
+            }
+          },
+        },
+        
+        "&.menu-lg": {
+          "& .menu-title": { //menu title in almost all wrapper elements
+            minHeight: "3.25rem",
+            maxHeight: "3.25rem",
+            paddingLeft: "1.5rem",
+            paddingRight: "1.5rem",
+            fontSize: "1.25rem",
+          },
+          "& li": {
+            "& > a": { //list items under menu
+              minHeight: "3.75rem",
+              maxHeight: "3.75rem",
+              paddingLeft: "1.5rem",
+              paddingRight: "1.5rem",
+              fontSize: "1.375rem",
+              "& > *": {
+                fontSize: "1.625rem",
+              }
+            },
+  
+            "& > details": { //collapsible list under menu
+              "& > summary": { //the summary tag
+                minHeight: "3.75rem",
+                maxHeight: "3.75rem",
+                paddingLeft: "1.5rem",
+                paddingRight: "1.5rem",
+                fontSize: "1.375rem",
+                "& > *": {
+                  fontSize: "1.625rem",
+                }
+              },
+            }
+          },
+        },
+        
+        "&.menu-xl": {
+          "& .menu-title": { //menu title in almost all wrapper elements
+            minHeight: "4rem",
+            maxHeight: "4rem",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+            fontSize: "1.125rem",
+          },
+          "& li": {
+            "& > a": { //list items under menu
+              minHeight: "4.5rem",
+              maxHeight: "4.5rem",
+              paddingLeft: "2rem",
+              paddingRight: "2rem",
+              fontSize: "1.5rem",
+              "& > *": {
+                fontSize: "2rem",
+              }
+            },
+  
+            "& > details": { //collapsible list under menu
+              "& > summary": { //the summary tag
+                minHeight: "4.5rem",
+                maxHeight: "4.5rem",
+                paddingLeft: "2rem",
+                paddingRight: "2rem",
+                fontSize: "1.5rem",
+                "& > *": {
+                  fontSize: "2rem",
+                }
+              },
+            }
+          },
         },
       },
 

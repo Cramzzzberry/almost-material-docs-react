@@ -60,15 +60,15 @@ export const ButtonSnippets = {
       <>
       <button className="btn btn-primary">Primary</button>
       <button className="btn btn-secondary">Secondary</button>
-      <button className="btn btn-surface">Surface</button>
+      <button className="btn btn-tertiary">tertiary</button>
       <button className="btn btn-info">Info</button>
       <button className="btn btn-warning">Warning</button>
       <button className="btn btn-success">Success</button>
       <button className="btn btn-error">Error</button>
       </>
     ),
-    htmlCode: "<button class=\"btn btn-primary\">Primary</button>\n<button class=\"btn btn-secondary\">Secondary</button>\n<button class=\"btn btn-surface\">Surface</button>\n<button class=\"btn btn-info\">Info</button>\n<button class=\"btn btn-warning\">Warning</button>\n<button class=\"btn btn-success\">Success</button>\n<button class=\"btn btn-error\">Error</button>",
-    jsxCode: "<button className=\"btn btn-primary\">Primary</button>\n<button className=\"btn btn-secondary\">Secondary</button>\n<button className=\"btn btn-surface\">Surface</button>\n<button className=\"btn btn-info\">Info</button>\n<button className=\"btn btn-warning\">Warning</button>\n<button className=\"btn btn-success\">Success</button>\n<button className=\"btn btn-error\">Error</button>",
+    htmlCode: "<button class=\"btn btn-primary\">Primary</button>\n<button class=\"btn btn-secondary\">Secondary</button>\n<button class=\"btn btn-tertiary\">tertiary</button>\n<button class=\"btn btn-info\">Info</button>\n<button class=\"btn btn-warning\">Warning</button>\n<button class=\"btn btn-success\">Success</button>\n<button class=\"btn btn-error\">Error</button>",
+    jsxCode: "<button className=\"btn btn-primary\">Primary</button>\n<button className=\"btn btn-secondary\">Secondary</button>\n<button className=\"btn btn-tertiary\">tertiary</button>\n<button className=\"btn btn-info\">Info</button>\n<button className=\"btn btn-warning\">Warning</button>\n<button className=\"btn btn-success\">Success</button>\n<button className=\"btn btn-error\">Error</button>",
   },
   "Button Size": {
     preview: (
@@ -88,7 +88,7 @@ export const ButtonSnippets = {
       <button className="btn btn-active">Default</button>
       <button className="btn btn-primary btn-active">Primary</button>
       <button className="btn btn-secondary btn-active">Secondary</button>
-      <button className="btn btn-surface btn-active">Surface</button>
+      <button className="btn btn-tertiary btn-active">tertiary</button>
       <button className="btn btn-info btn-active">Info</button>
       <button className="btn btn-warning btn-active">Warning</button>
       <button className="btn btn-success btn-active">Success</button>
@@ -96,8 +96,8 @@ export const ButtonSnippets = {
       <button className="btn btn-ghost btn-active">Ghost</button>
       </>
     ),
-    htmlCode: "<button class=\"btn btn-active\">Default</button>\n<button class=\"btn btn-primary btn-active\">Primary</button>\n<button class=\"btn btn-secondary btn-active\">Secondary</button>\n<button class=\"btn btn-surface btn-active\">Surface</button>\n<button class=\"btn btn-info btn-active\">Info</button>\n<button class=\"btn btn-warning btn-active\">Warning</button>\n<button class=\"btn btn-success btn-active\">Success</button>\n<button class=\"btn btn-error btn-active\">Error</button>\n<button class=\"btn btn-ghost btn-active\">Ghost</button>",
-    jsxCode: "<button className=\"btn btn-active\">Default</button>\n<button className=\"btn btn-primary btn-active\">Primary</button>\n<button className=\"btn btn-secondary btn-active\">Secondary</button>\n<button className=\"btn btn-surface btn-active\">Surface</button>\n<button className=\"btn btn-info btn-active\">Info</button>\n<button className=\"btn btn-warning btn-active\">Warning</button>\n<button className=\"btn btn-success btn-active\">Success</button>\n<button className=\"btn btn-error btn-active\">Error</button>\n<button className=\"btn btn-ghost btn-active\">Ghost</button>",
+    htmlCode: "<button class=\"btn btn-active\">Default</button>\n<button class=\"btn btn-primary btn-active\">Primary</button>\n<button class=\"btn btn-secondary btn-active\">Secondary</button>\n<button class=\"btn btn-tertiary btn-active\">tertiary</button>\n<button class=\"btn btn-info btn-active\">Info</button>\n<button class=\"btn btn-warning btn-active\">Warning</button>\n<button class=\"btn btn-success btn-active\">Success</button>\n<button class=\"btn btn-error btn-active\">Error</button>\n<button class=\"btn btn-ghost btn-active\">Ghost</button>",
+    jsxCode: "<button className=\"btn btn-active\">Default</button>\n<button className=\"btn btn-primary btn-active\">Primary</button>\n<button className=\"btn btn-secondary btn-active\">Secondary</button>\n<button className=\"btn btn-tertiary btn-active\">tertiary</button>\n<button className=\"btn btn-info btn-active\">Info</button>\n<button className=\"btn btn-warning btn-active\">Warning</button>\n<button className=\"btn btn-success btn-active\">Success</button>\n<button className=\"btn btn-error btn-active\">Error</button>\n<button className=\"btn btn-ghost btn-active\">Ghost</button>",
   },
   "Disabled Button": {
     preview: (

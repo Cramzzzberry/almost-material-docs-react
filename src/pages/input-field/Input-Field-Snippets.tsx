@@ -32,15 +32,15 @@ export const InputFieldSnippets = {
       <>
       <input type="text" placeholder="Primary" className="input input-bordered input-primary" />
       <input type="text" placeholder="Secondary" className="input input-bordered input-secondary" />
-      <input type="text" placeholder="Surface" className="input input-bordered input-surface" />
+      <input type="text" placeholder="tertiary" className="input input-bordered input-tertiary" />
       <input type="text" placeholder="Info" className="input input-bordered input-info" />
       <input type="text" placeholder="Warning" className="input input-bordered input-warning" />
       <input type="text" placeholder="Success" className="input input-bordered input-success" />
       <input type="text" placeholder="Error" className="input input-bordered input-error" />
       </>
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-bordered input-primary\" />\n<input type=\"text\" class=\"input input-bordered input-secondary\" />\n<input type=\"text\" class=\"input input-bordered input-surface\" />\n<input type=\"text\" class=\"input input-bordered input-info\" />\n<input type=\"text\" class=\"input input-bordered input-warning\" />\n<input type=\"text\" class=\"input input-bordered input-success\" />\n<input type=\"text\" class=\"input input-bordered input-error\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-bordered input-primary\" />\n<input type=\"text\" className=\"input input-bordered input-secondary\" />\n<input type=\"text\" className=\"input input-bordered input-surface\" />\n<input type=\"text\" className=\"input input-bordered input-info\" />\n<input type=\"text\" className=\"input input-bordered input-warning\" />\n<input type=\"text\" className=\"input input-bordered input-success\" />\n<input type=\"text\" className=\"input input-bordered input-error\" />",
+    htmlCode: "<input type=\"text\" class=\"input input-bordered input-primary\" />\n<input type=\"text\" class=\"input input-bordered input-secondary\" />\n<input type=\"text\" class=\"input input-bordered input-tertiary\" />\n<input type=\"text\" class=\"input input-bordered input-info\" />\n<input type=\"text\" class=\"input input-bordered input-warning\" />\n<input type=\"text\" class=\"input input-bordered input-success\" />\n<input type=\"text\" class=\"input input-bordered input-error\" />",
+    jsxCode: "<input type=\"text\" className=\"input input-bordered input-primary\" />\n<input type=\"text\" className=\"input input-bordered input-secondary\" />\n<input type=\"text\" className=\"input input-bordered input-tertiary\" />\n<input type=\"text\" className=\"input input-bordered input-info\" />\n<input type=\"text\" className=\"input input-bordered input-warning\" />\n<input type=\"text\" className=\"input input-bordered input-success\" />\n<input type=\"text\" className=\"input input-bordered input-error\" />",
   },
   "Text Input Sizes": {
     preview: (

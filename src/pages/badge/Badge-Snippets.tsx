@@ -25,15 +25,15 @@ export const BadgeSnippets = {
       <>
       <span className="badge badge-primary">Primary</span>
       <span className="badge badge-secondary">Secondary</span>
-      <span className="badge badge-surface">Surface</span>
+      <span className="badge badge-tertiary">tertiary</span>
       <span className="badge badge-info">Info</span>
       <span className="badge badge-warning">Warning</span>
       <span className="badge badge-success">Success</span>
       <span className="badge badge-error">Error</span>
       </>
     ),
-    htmlCode: "<span class=\"badge badge-primary\">Primary</span>\n<span class=\"badge badge-secondary\">Secondary</span>\n<span class=\"badge badge-surface\">Surface</span>\n<span class=\"badge badge-info\">Info</span>\n<span class=\"badge badge-warning\">Warning</span>\n<span class=\"badge badge-success\">Success</span>\n<span class=\"badge badge-error\">Error</span>",
-    jsxCode: "<span className=\"badge badge-primary\">Primary</span>\n<span className=\"badge badge-secondary\">Secondary</span>\n<span className=\"badge badge-surface\">Surface</span>\n<span className=\"badge badge-info\">Info</span>\n<span className=\"badge badge-warning\">Warning</span>\n<span className=\"badge badge-success\">Success</span>\n<span className=\"badge badge-error\">Error</span>",
+    htmlCode: "<span class=\"badge badge-primary\">Primary</span>\n<span class=\"badge badge-secondary\">Secondary</span>\n<span class=\"badge badge-tertiary\">tertiary</span>\n<span class=\"badge badge-info\">Info</span>\n<span class=\"badge badge-warning\">Warning</span>\n<span class=\"badge badge-success\">Success</span>\n<span class=\"badge badge-error\">Error</span>",
+    jsxCode: "<span className=\"badge badge-primary\">Primary</span>\n<span className=\"badge badge-secondary\">Secondary</span>\n<span className=\"badge badge-tertiary\">tertiary</span>\n<span className=\"badge badge-info\">Info</span>\n<span className=\"badge badge-warning\">Warning</span>\n<span className=\"badge badge-success\">Success</span>\n<span className=\"badge badge-error\">Error</span>",
   },
   "Badge Sizes": {
     preview: (
