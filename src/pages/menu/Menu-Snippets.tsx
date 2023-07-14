@@ -12,13 +12,19 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Menu w/ Icons": {
+  "Menu w/ Icons and badge": {
     preview: (
       <div className="card">
-        <ul className="menu w-56">
+        <ul className="menu w-72">
           <li><a><span className="material-icons">home</span>Home</a></li>
           <li><a><span className="material-icons">info</span>Info</a></li>
-          <li><a><span className="material-icons">watch_later</span>Watch Later</a></li>
+          <li>
+            <a>
+              <span className="material-icons">watch_later</span>
+              Watch Later
+              <span className="badge badge-error">+999</span>
+            </a>
+          </li>
         </ul>
       </div>
     ),
@@ -89,6 +95,36 @@ export const MenuSnippets = {
                 </ul>
               </li>
             </ul>
+          </li>
+          <li><a>Link 3</a></li>
+        </ul>
+      </div>
+    ),
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+  },
+  "Collapsible Sub-menu using Details and Summary": {
+    preview: (
+      <div className="card">
+        <ul className="menu w-56">
+          <li><a>Link 1</a></li>
+          <li>
+            <details open>
+              <summary>Collapse</summary>
+              <ul>
+                <li><a>Child Link 1</a></li>
+                <li><a>Child Link 2</a></li>
+                <li>
+                  <details>
+                    <summary>Collapsed</summary>
+                    <ul>
+                      <li><a>Child Link 1</a></li>
+                      <li><a>Child Link 2</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
           </li>
           <li><a>Link 3</a></li>
         </ul>

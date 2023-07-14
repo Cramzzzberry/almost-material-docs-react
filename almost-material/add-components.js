@@ -45,7 +45,7 @@ const AddComponents = (color, shades) => {
       //btn class
       //this class is complicated for me, but all :active class does is display the style "when clicked"
       //I made the button height based on set max and min heights (instead of its own, like padding-based size), using this
-      //method make all buttons uniformed, this is the same method used for input sizes
+      //method made all buttons uniformed, this is the same method used for input sizes
       ".btn": {
         textTransform: "capitalize",
         backgroundColor: color,
@@ -473,7 +473,9 @@ const AddComponents = (color, shades) => {
         "& > *": { fontSize: "1rem" },
         color: color,
 
-        "&.menu-horizontal": { flexDirection: "row" },
+        "&.menu-horizontal": { //horizontal menu
+          flexDirection: "row"
+        },
 
         "& .menu-title": { //menu title in almost all wrapper elements
           display: "flex",
@@ -487,35 +489,37 @@ const AddComponents = (color, shades) => {
           fontSize: "0.875rem",
         },
 
-        "& li > ul,ol": { //sub ul and/or ol under li element
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          marginLeft: "1.25rem",
-          paddingLeft: "1rem",
-
-          "&::before": { //line on the left side of sub-ul
-            position: "absolute",
-            left: "0",
-            top: "1.25rem",
-            bottom: "1.25rem",
-            content: "''",
-            width: "2px",
-            backgroundColor: "#EBEBEB",
+        "& li": {
+          "& > ul, ol": { //sub ul and/or ol under li element
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: "1.25rem",
+            paddingLeft: "1rem",
+  
+            "&::before": { //line on the left side of sub-ul
+              position: "absolute",
+              left: "0",
+              top: "1.25rem",
+              bottom: "1.25rem",
+              content: "''",
+              width: "2px",
+              backgroundColor: "#EBEBEB",
+            },
           },
 
-          "& > li > a": { //list items under sub-menu
+          "& > a": { //list items under menu
             minHeight: "3.25rem",
             maxHeight: "3.25rem",
             paddingLeft: "1.25rem",
             paddingRight: "1.25rem",
-            display: "flex",
-            flexDirection: "row",
+            display: "grid",
+            gridAutoFlow: "column",
+            gridAutoColumns: "max-content auto max-content",
             gap: "1rem",
-            justifyContent: "flex-start",
             alignItems: "center",
             borderRadius: "9999px",
-            width: "100%",
+            // width: "100%", //commented because it is unnecessary
             whiteSpace: "nowrap",
             cursor: "pointer",
             "-webkit-user-select": "none",
@@ -528,31 +532,54 @@ const AddComponents = (color, shades) => {
   
             "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
-        },
 
-        "& > li > a": { //list items under menu
-          minHeight: "3.25rem",
-          maxHeight: "3.25rem",
-          paddingLeft: "1.25rem",
-          paddingRight: "1.25rem",
-          display: "flex",
-          flexDirection: "row",
-          gap: "1rem",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          borderRadius: "9999px",
-          width: "100%",
-          whiteSpace: "nowrap",
-          cursor: "pointer",
-          "-webkit-user-select": "none",
-          "-ms-user-select": "none",
-          "user-select": "none",
+          "& > details": { //collapsible list under menu
+            "& > ul, ol": { //sub ul and/or ol under li element
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: "1.25rem",
+              paddingLeft: "1rem",
+    
+              "&::before": { //line on the left side of sub-ul
+                position: "absolute",
+                left: "0",
+                top: "1.25rem",
+                bottom: "1.25rem",
+                content: "''",
+                width: "2px",
+                backgroundColor: "#EBEBEB",
+              },
+            },
 
-          "&:hover": { background: "rgba(0,0,0,0.05)" },
+            "& > summary": { //the summary tag
+              minHeight: "3.25rem",
+              maxHeight: "3.25rem",
+              paddingLeft: "1.25rem",
+              paddingRight: "1.25rem",
+              display: "flex",
+              flexDirection: "row",
+              gap: "1rem",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              borderRadius: "9999px",
+              width: "100%",
+              whiteSpace: "nowrap",
+              cursor: "pointer",
+              "-webkit-user-select": "none",
+              "-ms-user-select": "none",
+              "user-select": "none",
+              listStyle: "none",
+              "&::-webkit-details-marker": { display: "none" },
+    
+              "&:hover": { background: "rgba(0,0,0,0.05)" },
+    
+              "&:active": { background: "rgba(0,0,0,0.1)" },
+            },
 
-          "&:active": { background: "rgba(0,0,0,0.1)" },
-
-          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            //summary styled when details is open
+            "&[open] > summary": { background: "rgba(0,0,0,0.1)" }
+          }
         },
       },
 
