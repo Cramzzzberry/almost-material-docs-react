@@ -1,5 +1,3 @@
-import thumbnailSample from "../../assets/thumbnailSample.jpg"
-
 export const CardSnippets = {
   "Card": {
     preview: (

@@ -160,6 +160,18 @@ const MatchComponents = (shades) => {
           "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
+
+
+
+      //radio class
+      "radio": (color) => ({
+        "&:checked": {
+          borderColor: color,
+        },
+        "&::after": { //will put my own checkbox icon here
+          backgroundColor: color,
+        },
+      }),
     }
   )
 }

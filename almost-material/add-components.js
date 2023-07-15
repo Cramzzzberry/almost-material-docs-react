@@ -485,7 +485,7 @@ const AddComponents = (color, shades) => {
 
               "& > ul, ol": { //sub ul and/or ol under li element
                 position: "absolute",
-                top: "calc(100% + 16px)",
+                top: "calc(100% + 8px)",
                 left: "0",
                 // paddingTop: "0.5rem",
                 // paddingBottom: "0.5rem",
@@ -768,15 +768,44 @@ const AddComponents = (color, shades) => {
       //navbar class
       ".navbar": {
         display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
         position: "sticky",
         top: "0",
         padding: "0.25rem",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
         width: "100%",
         minheight: "4.75rem",
-        mxheight: "4.75rem",
+        maxheight: "4.75rem",
+        fontWeight: "bold",
+      },
+
+      //navbar item positions
+      //I put these all outside so that hidden utility class is not overridden
+      ".navbar-start": {
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "1",
+        flexBasis: "0",
+        justifyContent: "flex-start",
+        order: "0",
+      },
+      
+      ".navbar-center": {
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "1",
+        flexBasis: "0",
+        justifyContent: "center",
+        order: "1",
+      },
+      
+      ".navbar-end": {
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "1",
+        flexBasis: "0",
+        justifyContent: "flex-end",
+        order: "2",
       },
 
 
@@ -812,6 +841,7 @@ const AddComponents = (color, shades) => {
 
             "& > *": {
               height: "100%",
+              overflowY: "auto",
               backgroundColor: "#FFFFFF",
               // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
             },
@@ -848,8 +878,6 @@ const AddComponents = (color, shades) => {
   
           "& > .navdrawer-sidebar": {
             position: "static",
-            top: "0",
-            left: "0",
             borderRightWidth: "1px",
             height: "100vh",
             opacity: "1",
@@ -858,7 +886,6 @@ const AddComponents = (color, shades) => {
             "& > .navdrawer-sidebar-content": { 
               position: "static",
               height: "100vh",
-              left: "0",
               width: "21rem",
               zIndex: "0",
             },
@@ -867,8 +894,39 @@ const AddComponents = (color, shades) => {
               visibility: "hidden",
             },
           },
-        }
+        },
       },
+
+
+
+      //radio class
+      ".radio": {
+        display: "flex",
+        appearance: "none",
+        "-webkit-appearance": "none",
+        height: "1.25rem",
+        width: "1.25rem",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "transparent",
+        borderWidth: "2px",
+        borderColor: "#C7C7C7",
+        borderRadius: "100%",
+        cursor: "pointer",
+        "&:checked": {
+          borderColor: color,
+
+          "&::after": { display: "block" },
+        },
+        "&::after": { //will put my own checkbox icon here
+          content: "''",
+          display: "none",
+          height: "0.65rem",
+          width: "0.65rem",
+          borderRadius: "100%",
+          backgroundColor: color,
+        },
+      }
     }
   )
 }

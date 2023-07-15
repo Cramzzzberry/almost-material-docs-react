@@ -12,6 +12,8 @@ import MenuPage from "./pages/menu/Menu-Page"
 import ModalPage from "./pages/modal/Modal-Page"
 import NavbarPage from "./pages/navbar/Navbar-Page"
 import NavdrawerPage from "./pages/navdrawer/Navdrawer-Page"
+import RadiobuttonPage from "./pages/radiobutton/Radiobutton-Page"
+// import ProgressbarPage from "./pages/progressbar/Progressbar-Page" //archived
 
 export default function App() {
   return(
@@ -22,18 +24,22 @@ export default function App() {
         <div className="navdrawer-page-content">
           {/* page content here */}
           <div className="navbar bg-white xl:hidden"> {/* navbar */}
-            <ul className="menu menu-horizontal">
-              <li>
-                <label htmlFor="myDrawer" className="btn btn-ghost btn-circle xl:hidden">
-                  <span className="material-icons-round">menu</span>
-                </label>
-              </li>
-              <li><NavLink to="/home">home</NavLink></li>
-            </ul>
+            <div className="navbar-start">
+              <ul className="menu menu-horizontal">
+                <li>
+                  <label htmlFor="myDrawer" className="btn btn-ghost btn-circle xl:hidden">
+                    <span className="material-icons-round">menu</span>
+                  </label>
+                </li>
+                <li><NavLink to="/home">home</NavLink></li>
+              </ul>
+            </div>
 
-            <ul className="menu menu-horizontal">
-              <li><a>Almost Material</a></li>
-            </ul>
+            <div className="navbar-end">
+              <ul className="menu menu-horizontal">
+                <li className="px-5">Almost Material</li>
+              </ul>
+            </div>
           </div>
 
           <div className="p-4"> {/* content itself */}
@@ -51,13 +57,15 @@ export default function App() {
               <Route path="/modal" element={ <ModalPage /> } />
               <Route path="/navbar" element={ <NavbarPage /> } />
               <Route path="/navdrawer" element={ <NavdrawerPage /> } />
+              <Route path="/radio-button" element={ <RadiobuttonPage /> } />
+              {/* <Route path="/progress-bar" element={ <ProgressbarPage /> } /> */} {/* archived */}
             </Routes>
           </div>
         </div>
 
         <div className="navdrawer-sidebar"> {/* drawer side:left side */}
-          <div className="navdrawer-sidebar-content p-4 xl:p-1">
-            <div className="card overflow-y-auto">
+          <div className="navdrawer-sidebar-content">
+            <div>
               <ul className="menu menu-primary">
                 <li className="hidden xl:block"><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}>home</NavLink></li>
                 <li>
@@ -74,8 +82,8 @@ export default function App() {
                     <li><NavLink to="/modal" className={({ isActive }) => isActive ? "menu-active" : ""}>Modals</NavLink></li>
                     <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Bars</NavLink></li>
                     <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Drawer</NavLink></li>
-                    <li><a href="#" className="bg-error">Progress Bars</a></li>
-                    <li><a href="#" className="bg-error">Radio Button</a></li>
+                    {/* <li><NavLink to="/progress-bar" className={({ isActive }) => isActive ? "menu-active" : ""}>Progress Bars</NavLink></li> */} {/* archived */}
+                    <li><NavLink to="/radio-button" className={({ isActive }) => isActive ? "menu-active" : ""}>Radio Button</NavLink></li>
                     <li><a href="#" className="bg-error">Snackbar</a></li>
                     <li><a href="#" className="bg-error">Switch</a></li>
                   </ul>
