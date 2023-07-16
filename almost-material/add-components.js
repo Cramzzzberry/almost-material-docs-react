@@ -338,6 +338,16 @@ const AddComponents = (color, shades) => {
             width: "0.875rem",
             content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderWidth: "3px",
+            borderTopWidth: "6px",
+            borderBottomWidth: "6px",
+  
+            "&::after": {
+              content: "''",
+            }
+          },
         },
 
         "&.checkbox-lg": {
@@ -355,6 +365,15 @@ const AddComponents = (color, shades) => {
             height: "1.625rem",
             width: "1.625rem",
             content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderTopWidth: "11px",
+            borderBottomWidth: "11px",
+  
+            "&::after": {
+              content: "''",
+            }
           },
         },
 
@@ -374,6 +393,38 @@ const AddComponents = (color, shades) => {
             width: "2rem",
             content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderTopWidth: "14px",
+            borderBottomWidth: "14px",
+  
+            "&::after": {
+              content: "''",
+            }
+          },
+        },
+
+        "&:disabled": {//disabled checkbox
+          backgroundColor: "#C7C7C7",
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
+
+        "&:checked:disabled": {//checked and disabled checkbox
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
+
+        "&:indeterminate": {//indeterminate checkbox
+          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+          borderColor: color,
+          borderWidth: "4px",
+          borderTopWidth: "9px",
+          borderBottomWidth: "9px",
+
+          "&::after": {
+            content: "''",
+          }
         },
       },
   
@@ -1018,6 +1069,18 @@ const AddComponents = (color, shades) => {
             borderWidth: "10px",
           },
         },
+
+        "&:disabled": {//disabled radio
+          backgroundColor: "#C7C7C7",
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
+
+        "&:checked:disabled": {//checked and disabled radio
+          backgroundColor: "transparent",
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
       },
 
 
@@ -1082,6 +1145,12 @@ const AddComponents = (color, shades) => {
               left: "calc(100% - 0.5rem - 3px)",
             }
           },
+
+          "&:indeterminate": {//indeterminate switch
+            "&::after": {
+              left: "calc(50% - 0.5rem/2)",
+            }
+          },
         },
 
         "&.switch-lg": {
@@ -1100,6 +1169,12 @@ const AddComponents = (color, shades) => {
           "&:checked": {
             "&::after": {
               left: "calc(100% - 1.25rem - 3px)",
+            }
+          },
+
+          "&:indeterminate": {//indeterminate switch
+            "&::after": {
+              left: "calc(50% - 1.25rem/2)",
             }
           },
         },
@@ -1122,6 +1197,28 @@ const AddComponents = (color, shades) => {
               left: "calc(100% - 1.625rem - 3px)",
             }
           },
+
+          "&:indeterminate": {//indeterminate switch
+            "&::after": {
+              left: "calc(50% - 1.625rem/2)",
+            }
+          },
+        },
+
+        "&:disabled": {//disabled switch
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
+
+        "&:checked:disabled": {//checked and disabled switch
+          opacity: "70%",
+          cursor: "not-allowed",
+        },
+
+        "&:indeterminate": {//indeterminate switch
+          "&::after": {
+            left: "calc(50% - 0.875rem/2)",
+          }
         },
       }
     }

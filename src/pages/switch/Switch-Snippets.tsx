@@ -33,4 +33,23 @@ export const SwitchSnippets = {
     htmlCode: "",
     jsxCode: "",
   },
+  "Disabled Switch": {
+    preview: (
+      <>
+      <input type="checkbox" className="switch" disabled />
+      <input type="checkbox" className="switch" disabled checked />
+      </>
+    ),
+    htmlCode: "",
+    jsxCode: "",
+  },
+  "Indeterminate Switch": {
+    preview: (
+      <>
+      <input type="checkbox" className="switch" id="indeterminate-switch"/>
+      </>
+    ),
+    htmlCode: "",
+    jsxCode: "",
+  },
 }

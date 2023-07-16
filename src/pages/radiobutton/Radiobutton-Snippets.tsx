@@ -105,5 +105,15 @@ export const RadiobuttonSnippets = {
     ),
     htmlCode: "",
     jsxCode: "",
-  }
+  },
+  "Disabled Radiobutton": {
+    preview: (
+      <>
+      <input type="radio" className="radio" name="default_radio" disabled />
+      <input type="radio" className="radio" name="default_radio" defaultChecked disabled />
+      </>
+    ),
+    htmlCode: "",
+    jsxCode: "",
+  },
 }

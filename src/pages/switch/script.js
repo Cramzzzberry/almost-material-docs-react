@@ -1,0 +1,1 @@
+document.getElementById("indeterminate-switch").indeterminate = true
