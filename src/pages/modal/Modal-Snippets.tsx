@@ -13,7 +13,7 @@ export const ModalSnippets = {
               <span>Im Open!</span>
 
               <div className="card-actions justify-end">
-                <label htmlFor="myModal" class="btn btn-error">Close</label>
+                <label htmlFor="myModal" className="btn btn-error">Close</label>
               </div>
             </div>
           </div>

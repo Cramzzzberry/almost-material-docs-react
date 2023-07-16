@@ -86,10 +86,10 @@ export const NavbarSnippets = {
               <li><a>Meals</a></li>
               <li><a>Mix & Match</a></li>
               <li>
-                <div class="dropdown">
-                  <button tabIndex="0" class="btn btn-ghost">More</button>
-                  <div tabIndex="0" class="dropdown-content z-[1] card">
-                    <ul class="menu w-56">
+                <div className="dropdown">
+                  <button tabIndex="0" className="btn btn-ghost">More</button>
+                  <div tabIndex="0" className="dropdown-content z-[1] card">
+                    <ul className="menu w-56">
                       <li><a>Link 1</a></li>
                       <li><a>Link 2</a></li>
                       <li><a>Link 3</a></li>

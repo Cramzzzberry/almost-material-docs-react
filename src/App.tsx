@@ -13,6 +13,7 @@ import ModalPage from "./pages/modal/Modal-Page"
 import NavbarPage from "./pages/navbar/Navbar-Page"
 import NavdrawerPage from "./pages/navdrawer/Navdrawer-Page"
 import RadiobuttonPage from "./pages/radiobutton/Radiobutton-Page"
+import SwitchPage from "./pages/switch/Switch-Page"
 // import ProgressbarPage from "./pages/progressbar/Progressbar-Page" //archived
 
 export default function App() {
@@ -58,6 +59,7 @@ export default function App() {
               <Route path="/navbar" element={ <NavbarPage /> } />
               <Route path="/navdrawer" element={ <NavdrawerPage /> } />
               <Route path="/radio-button" element={ <RadiobuttonPage /> } />
+              <Route path="/switch" element={ <SwitchPage /> } />
               {/* <Route path="/progress-bar" element={ <ProgressbarPage /> } /> */} {/* archived */}
             </Routes>
           </div>
@@ -84,8 +86,7 @@ export default function App() {
                     <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "menu-active" : ""}>Navigation Drawer</NavLink></li>
                     {/* <li><NavLink to="/progress-bar" className={({ isActive }) => isActive ? "menu-active" : ""}>Progress Bars</NavLink></li> */} {/* archived */}
                     <li><NavLink to="/radio-button" className={({ isActive }) => isActive ? "menu-active" : ""}>Radio Button</NavLink></li>
-                    <li><a href="#" className="bg-error">Snackbar</a></li>
-                    <li><a href="#" className="bg-error">Switch</a></li>
+                    <li><NavLink to="/switch" className={({ isActive }) => isActive ? "menu-active" : ""}>Switch</NavLink></li>
                   </ul>
                 </li>
               </ul>

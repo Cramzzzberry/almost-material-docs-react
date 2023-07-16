@@ -21,4 +21,16 @@ export const CheckboxSnippets = {
     htmlCode: "<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-primary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-secondary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-tertiary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-info\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-warning\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-success\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-error\" />",
     jsxCode: "<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-primary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-secondary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-tertiary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-info\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-warning\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-success\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-error\" />",
   },
+  "Checkbox sizes": {
+    preview: (
+      <>
+      <input type="checkbox" defaultChecked="checked" className="checkbox checkbox-sm" />
+      <input type="checkbox" defaultChecked="checked" className="checkbox" />
+      <input type="checkbox" defaultChecked="checked" className="checkbox checkbox-lg" />
+      <input type="checkbox" defaultChecked="checked" className="checkbox checkbox-xl" />
+      </>
+    ),
+    htmlCode: "<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-primary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-secondary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-tertiary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-info\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-warning\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-success\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" class=\"checkbox checkbox-error\" />",
+    jsxCode: "<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-primary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-secondary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-tertiary\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-info\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-warning\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-success\" />\n<input type=\"checkbox\" defaultChecked=\"checked\" className=\"checkbox checkbox-error\" />",
+  },
 }

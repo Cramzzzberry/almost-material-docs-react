@@ -289,26 +289,91 @@ const AddComponents = (color, shades) => {
 
       //checkbox class
       ".checkbox": {
+        position: "relative",
+        display: "flex",
         appearance: "none",
         "-webkit-appearance": "none",
-        height: "1.25rem",
-        width: "1.25rem",
+        minWidth: "1.25rem",
+        maxWidth: "1.25rem",
+        minHeight: "1.25rem",
+        maxHeight: "1.25rem",
+        alignItems: "center",
+        justifyContent: "center",
         backgroundColor: "transparent",
         borderWidth: "2px",
         borderColor: "#C7C7C7",
         borderRadius: "4px",
         cursor: "pointer",
+        transition: `border-width 100ms ${ easeInOut }, border-color 100ms ${ easeInOut }`,
         "&:checked": {
           borderColor: color,
-          backgroundColor: color,
+          borderWidth: "10px",
 
-          "&::after": { display: "block" },
+          "&::after": { opacity: "1" },
         },
-        "&::after": { //will put my own checkbox icon here
-          display: "none",
+        
+        "&::after": { //my own checkbox :>
+          position: "relative",
+          top: "-1px",
           height: "1.25rem",
           width: "1.25rem",
-          content: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="1 3 22 22" width="1rem"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }" stroke-width="2"/></svg>')`,
+          opacity: "0",
+          content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+        },
+
+        //checkbox sizes
+        "&.checkbox-sm": {
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
+
+          "&:checked": {
+            borderWidth: "7px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "-6px",
+            height: "0.875rem",
+            width: "0.875rem",
+            content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+        },
+
+        "&.checkbox-lg": {
+          minWidth: "1.625rem",
+          maxWidth: "1.625rem",
+          minHeight: "1.625rem",
+          maxHeight: "1.625rem",
+
+          "&:checked": {
+            borderWidth: "13px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "4px",
+            height: "1.625rem",
+            width: "1.625rem",
+            content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+        },
+
+        "&.checkbox-xl": {
+          minWidth: "2rem",
+          maxWidth: "2rem",
+          minHeight: "2rem",
+          maxHeight: "2rem",
+
+          "&:checked": {
+            borderWidth: "16px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "6px",
+            height: "2rem",
+            width: "2rem",
+            content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
         },
       },
   
@@ -901,11 +966,12 @@ const AddComponents = (color, shades) => {
 
       //radio class
       ".radio": {
-        display: "flex",
         appearance: "none",
         "-webkit-appearance": "none",
-        height: "1.25rem",
-        width: "1.25rem",
+        minWidth: "1.25rem",
+        maxWidth: "1.25rem",
+        minHeight: "1.25rem",
+        maxHeight: "1.25rem",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "transparent",
@@ -913,18 +979,149 @@ const AddComponents = (color, shades) => {
         borderColor: "#C7C7C7",
         borderRadius: "100%",
         cursor: "pointer",
+        transition: `border-width 75ms ${ easeInOut }, borderColor 75ms ${ easeInOut }`,
         "&:checked": {
           borderColor: color,
-
-          "&::after": { display: "block" },
+          borderWidth: "6px",
         },
-        "&::after": { //will put my own checkbox icon here
+
+        //radio sizes
+        "&.radio-sm": {
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
+
+          "&:checked": {
+            borderWidth: "4px",
+          },
+        },
+
+        "&.radio-lg": {
+          minWidth: "1.625rem",
+          maxWidth: "1.625rem",
+          minHeight: "1.625rem",
+          maxHeight: "1.625rem",
+
+          "&:checked": {
+            borderWidth: "8px",
+          },
+        },
+
+        "&.radio-xl": {
+          minWidth: "2rem",
+          maxWidth: "2rem",
+          minHeight: "2rem",
+          maxHeight: "2rem",
+
+          "&:checked": {
+            borderWidth: "10px",
+          },
+        },
+      },
+
+
+
+      //switch class
+      ".switch": {
+        display: "flex",
+        position: "relative",
+        flexDirection: "row",
+        alignItems: "center",
+        appearance: "none",
+        "-webkit-appearance": "none",
+        minWidth: "2.25rem",
+        maxWidth: "2.25rem",
+        minHeight: "1.25rem",
+        maxHeight: "1.25rem",
+        borderColor: ShadeHexColor(color, shades[99]),
+        backgroundColor: ShadeHexColor(color, shades[99]),
+        borderRadius: "9999px",
+        cursor: "pointer",
+        transition: `background-color 125ms ${ easeInOut }`,
+
+        "&::after": {
           content: "''",
-          display: "none",
-          height: "0.65rem",
-          width: "0.65rem",
+          position: "absolute",
+          top: "3px",
+          left: "3px",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
           borderRadius: "100%",
+          backgroundColor: ShadeHexColor(color, shades[10]),
+          transition: `left 125ms ${ easeInOut }, background-color 125ms ${ easeInOut }`,
+        },
+
+        "&:checked": {
           backgroundColor: color,
+
+          "&::after": {
+            backgroundColor: ShadeHexColor(color, shades[99]),
+            left: "calc(100% - 0.875rem - 3px)",
+          }
+        },
+
+        //checkbox sizes
+        "&.switch-sm": {
+          minWidth: "1.625rem",
+          maxWidth: "1.625rem",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
+
+          "&::after": {
+            minHeight: "0.5rem",
+            maxHeight: "0.5rem",
+            minWidth: "0.5rem",
+            maxWidth: "0.5rem",
+          },
+
+          "&:checked": {
+            "&::after": {
+              left: "calc(100% - 0.5rem - 3px)",
+            }
+          },
+        },
+
+        "&.switch-lg": {
+          minWidth: "2.7375rem",
+          maxWidth: "2.7375rem",
+          minHeight: "1.625rem",
+          maxHeight: "1.625rem",
+
+          "&::after": {
+            minHeight: "1.25rem",
+            maxHeight: "1.25rem",
+            minWidth: "1.25rem",
+            maxWidth: "1.25rem",
+          },
+
+          "&:checked": {
+            "&::after": {
+              left: "calc(100% - 1.25rem - 3px)",
+            }
+          },
+        },
+
+        "&.switch-xl": {
+          minWidth: "3.45rem",
+          maxWidth: "3.45rem",
+          minHeight: "2rem",
+          maxHeight: "2rem",
+
+          "&::after": {
+            minHeight: "1.625rem",
+            maxHeight: "1.625rem",
+            minWidth: "1.625rem",
+            maxWidth: "1.625rem",
+          },
+
+          "&:checked": {
+            "&::after": {
+              left: "calc(100% - 1.625rem - 3px)",
+            }
+          },
         },
       }
     }
