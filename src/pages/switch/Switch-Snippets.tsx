@@ -1,55 +1,55 @@
 export const SwitchSnippets = {
   "Switch": {
     preview: (
-      <input type="checkbox" className="switch" defaultChecked />
+      <input className="switch" type="checkbox" defaultChecked />
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<input class=\"switch\" type=\"checkbox\" checked />",
+    jsxCode: "<input className=\"switch\" type=\"checkbox\" checked />",
   },
   "Switch w/ colors": {
     preview: (
       <>
-      <input type="checkbox" className="switch switch-primary" defaultChecked />
-      <input type="checkbox" className="switch switch-secondary" defaultChecked />
-      <input type="checkbox" className="switch switch-tertiary" defaultChecked />
-      <input type="checkbox" className="switch switch-info" defaultChecked />
-      <input type="checkbox" className="switch switch-warning" defaultChecked />
-      <input type="checkbox" className="switch switch-success" defaultChecked />
-      <input type="checkbox" className="switch switch-error" defaultChecked />
+      <input className="switch switch-primary" type="checkbox" defaultChecked />
+      <input className="switch switch-secondary" type="checkbox" defaultChecked />
+      <input className="switch switch-tertiary" type="checkbox" defaultChecked />
+      <input className="switch switch-info" type="checkbox" defaultChecked />
+      <input className="switch switch-warning" type="checkbox" defaultChecked />
+      <input className="switch switch-success" type="checkbox" defaultChecked />
+      <input className="switch switch-error" type="checkbox" defaultChecked />
       </>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<input class=\"switch switch-primary\" type=\"checkbox\" checked />\n<input class=\"switch switch-secondary\" type=\"checkbox\" checked />\n<input class=\"switch switch-tertiary\" type=\"checkbox\" checked />\n<input class=\"switch switch-info\" type=\"checkbox\" checked />\n<input class=\"switch switch-warning\" type=\"checkbox\" checked />\n<input class=\"switch switch-success\" type=\"checkbox\" checked />\n<input class=\"switch switch-error\" type=\"checkbox\" checked />",
+    jsxCode: "<input className=\"switch switch-primary\" type=\"checkbox\" checked />\n<input className=\"switch switch-secondary\" type=\"checkbox\" checked />\n<input className=\"switch switch-tertiary\" type=\"checkbox\" checked />\n<input className=\"switch switch-info\" type=\"checkbox\" checked />\n<input className=\"switch switch-warning\" type=\"checkbox\" checked />\n<input className=\"switch switch-success\" type=\"checkbox\" checked />\n<input className=\"switch switch-error\" type=\"checkbox\" checked />",
   },
   "Switch Sizes": {
     preview: (
       <>
-      <input type="checkbox" className="switch switch-sm" defaultChecked />
-      <input type="checkbox" className="switch" defaultChecked />
-      <input type="checkbox" className="switch switch-lg" defaultChecked />
-      <input type="checkbox" className="switch switch-xl" defaultChecked />
+      <input className="switch --sm" type="checkbox" defaultChecked />
+      <input className="switch" type="checkbox" defaultChecked />
+      <input className="switch --lg" type="checkbox" defaultChecked />
+      <input className="switch --xl" type="checkbox" defaultChecked />
       </>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<input class=\"switch --sm\" type=\"checkbox\" checked />\n<input class=\"switch\" type=\"checkbox\" checked />\n<input class=\"switch --lg\" type=\"checkbox\" checked />\n<input class=\"switch --xl\" type=\"checkbox\" checked />",
+    jsxCode: "<input className=\"switch --sm\" type=\"checkbox\" checked />\n<input className=\"switch\" type=\"checkbox\" checked />\n<input className=\"switch --lg\" type=\"checkbox\" checked />\n<input className=\"switch --xl\" type=\"checkbox\" checked />",
   },
   "Disabled Switch": {
     preview: (
       <>
-      <input type="checkbox" className="switch" disabled />
-      <input type="checkbox" className="switch" disabled checked />
+      <input className="switch" type="checkbox" disabled />
+      <input className="switch" type="checkbox" disabled checked />
       </>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<input class=\"switch\" type=\"checkbox\" disabled />\n<input class=\"switch\" type=\"checkbox\" disabled checked />",
+    jsxCode: "<input className=\"switch\" type=\"checkbox\" disabled />\n<input className=\"switch\" type=\"checkbox\" disabled checked />",
   },
   "Indeterminate Switch": {
     preview: (
       <>
-      <input type="checkbox" className="switch" id="indeterminate-switch"/>
+      <input className="switch" type="checkbox" id="indeterminate-switch"/>
       </>
     ),
-    htmlCode: "",
-    jsxCode: "",
+    htmlCode: "<script>\n  document.getElementById(\"my-switch\").indeterminate = true\n</script>\n<input class=\"switch\" type=\"checkbox\" id=\"\"my-switch\"/>",
+    jsxCode: "<script>\n  document.getElementById(\"my-switch\").indeterminate = true\n</script>\n<input className=\"switch\" type=\"checkbox\" id=\"\"my-switch\"/>",
   },
 }

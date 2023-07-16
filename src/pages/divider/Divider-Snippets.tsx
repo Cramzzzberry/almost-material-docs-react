@@ -2,17 +2,17 @@ export const DividerSnippets = {
   "Divider": {
     preview: (
       <div className="flex flex-col w-full">
-        <div className="card flex justify-center items-center h-20 w-full">
+        <div className="card flex justify-center items-center h-20">
           Content
         </div>
         <span className="divider"></span>
-        <div className="card flex justify-center items-center h-20 w-full">
+        <div className="card flex justify-center items-center h-20">
           Content
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"flex flex-col w-full\">\n  <div class=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n  <span class=\"divider\"></span>\n  <div class=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n</div>",
-    jsxCode: "<div className=\"flex flex-col w-full\">\n  <div className=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n  <span className=\"divider\"></span>\n  <div className=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n</div>",
+    htmlCode: "<span class=\"divider\"></span>",
+    jsxCode: "<span className=\"divider\"></span>",
   },
   "Divider horizontal": {
     preview: (
@@ -20,14 +20,14 @@ export const DividerSnippets = {
         <div className="card flex justify-center items-center h-20 w-full">
           Content
         </div>
-        <span className="divider divider-horizontal"></span>
+        <span className="divider --horizontal"></span>
         <div className="card flex justify-center items-center h-20 w-full">
           Content
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"flex flex-row w-full h-20\">\n  <div class=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n  <span class=\"divider divider-horizontal\"></span>\n  <div class=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n</div>",
-    jsxCode: "<div className=\"flex flex-row w-full h-20\">\n  <div className=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n  <span className=\"divider divider-horizontal\"></span>\n  <div className=\"card flex justify-center items-center h-20 w-full\">\n    Content\n  </div>\n</div>",
+    htmlCode: "<span class=\"divider --horizontal\"></span>",
+    jsxCode: "<span className=\"divider --horizontal\"></span>",
   },
   "Divider w/ colors": {
     preview: (
@@ -41,7 +41,7 @@ export const DividerSnippets = {
         <span className="divider divider-error"></span>
       </div>
     ),
-    htmlCode: "<div class=\"flex flex-col w-full\">\n  <span class=\"divider divider-primary\"></span>\n  <span class=\"divider divider-secondary\"></span>\n  <span class=\"divider divider-tertiary\"></span>\n  <span class=\"divider divider-info\"></span>\n  <span class=\"divider divider-warning\"></span>\n  <span class=\"divider divider-success\"></span>\n  <span class=\"divider divider-error\"></span>\n</div>",
-    jsxCode: "<div className=\"flex flex-col w-full\">\n  <span className=\"divider divider-primary\"></span>\n  <span className=\"divider divider-secondary\"></span>\n  <span className=\"divider divider-tertiary\"></span>\n  <span className=\"divider divider-info\"></span>\n  <span className=\"divider divider-warning\"></span>\n  <span className=\"divider divider-success\"></span>\n  <span className=\"divider divider-error\"></span>\n</div>",
+    htmlCode: "<span class=\"divider divider-primary\"></span>\n<span class=\"divider divider-secondary\"></span>\n<span class=\"divider divider-tertiary\"></span>\n<span class=\"divider divider-info\"></span>\n<span class=\"divider divider-warning\"></span>\n<span class=\"divider divider-success\"></span>\n<span class=\"divider divider-error\"></span>",
+    jsxCode: "<span className=\"divider divider-primary\"></span>\n<span className=\"divider divider-secondary\"></span>\n<span className=\"divider divider-tertiary\"></span>\n<span className=\"divider divider-info\"></span>\n<span className=\"divider divider-warning\"></span>\n<span className=\"divider divider-success\"></span>\n<span className=\"divider divider-error\"></span>",
   },
 }

@@ -8,10 +8,10 @@ export const BadgeSnippets = {
   },
   "Outlined Badge": {
     preview: (
-      <span className="badge badge-outlined">Outlined</span>
+      <span className="badge --outlined">Outlined</span>
     ),
-    htmlCode: "<span class=\"badge badge-outlined\">Outlined</span>",
-    jsxCode: "<span className=\"badge badge-outlined\">Outlined</span>",
+    htmlCode: "<span class=\"badge --outlined\">Outlined</span>",
+    jsxCode: "<span className=\"badge --outlined\">Outlined</span>",
   },
   // "Dot Badge": {
   //   preview: (
@@ -38,9 +38,9 @@ export const BadgeSnippets = {
   "Badge Sizes": {
     preview: (
       <>
-      <span className="badge badge-sm">Small</span>
+      <span className="badge --sm">Small</span>
       <span className="badge">Default</span>
-      <span className="badge badge-lg">Large</span>
+      <span className="badge --lg">Large</span>
       </>
     ),
     htmlCode: "<span class=\"badge badge-sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge badge-lg\">Large</span>",

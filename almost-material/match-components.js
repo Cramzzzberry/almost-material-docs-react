@@ -44,7 +44,7 @@ const MatchComponents = (shades) => {
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
         },
   
-        "&.btn-outlined": { //btn-outlined
+        "&.--outlined": { //btn-outlined
           color: color,
           "&:hover": {
             backgroundColor: color,
@@ -58,10 +58,10 @@ const MatchComponents = (shades) => {
           },
         },
   
-        "&.btn-ghost": { //btn-ghost
+        "&.--ghost": { //btn-ghost
           color: color,
   
-          "&.btn-active": { //btn-ghost btn-active
+          "&.--active": { //btn-ghost btn-active
             color: color,
 
             "&:active:not([disabled])": { //when clicked, retain their colors
@@ -72,7 +72,7 @@ const MatchComponents = (shades) => {
           },
         },
   
-        "&.btn-active": { //btn with active state
+        "&.--active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
           color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
@@ -98,7 +98,7 @@ const MatchComponents = (shades) => {
 
 
       //checkbox class
-      "checkbox": (color) =>  ({
+      "check": (color) =>  ({
         "&:checked": {
           borderColor: color,
         },
@@ -108,19 +108,19 @@ const MatchComponents = (shades) => {
         },
 
         //checkbox sizes
-        "&.checkbox-sm": {
+        "&.--sm": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
         },
 
-        "&.checkbox-lg": {
+        "&.--lg": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
         },
 
-        "&.checkbox-xl": {
+        "&.--xl": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
@@ -147,11 +147,11 @@ const MatchComponents = (shades) => {
           outlineOffset: "2px",
         },
 
-        "&.input-bordered": {
+        "&.--bordered": {
           borderColor: color,
         },
 
-        "&.input-underlined": {
+        "&.--underlined": {
           backgroundColor: "transparent",
           borderColor: color,
         },
@@ -167,7 +167,7 @@ const MatchComponents = (shades) => {
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&.--active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
         },
 
@@ -176,7 +176,7 @@ const MatchComponents = (shades) => {
 
           "&:active": { background: "rgba(0,0,0,0.1)" },
 
-          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          "&.--active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
 

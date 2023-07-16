@@ -1,64 +1,64 @@
 export const InputFieldSnippets = {
   "Text Input": {
     preview: (
-      <input type="text" placeholder="Type here..." className="input" />
+      <input className="input" type="text" placeholder="Type here..." />
     ),
-    htmlCode: "<input type=\"text\" class=\"input\" />",
-    jsxCode: "<input type=\"text\" className=\"input\" />",
+    htmlCode: "<input class=\"input\" type=\"text\" />",
+    jsxCode: "<input className=\"input\" type=\"text\" />",
   },
   "Text Input Bordered": {
     preview: (
-      <input type="text" placeholder="I have borders!" className="input input-bordered" />
+      <input className="input --bordered" type="text" placeholder="I have borders!" />
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-bordered\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-bordered\" />",
+    htmlCode: "<input class=\"input --bordered\" type=\"text\" />",
+    jsxCode: "<input className=\"input --bordered\" type=\"text\" />",
   },
   "Text Input Ghost": {
     preview: (
-      <input type="text" placeholder="Boo!" className="input input-ghost" />
+      <input className="input --ghost" type="text" placeholder="Boo!" />
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-ghost\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-ghost\" />",
+    htmlCode: "<input class=\"input --ghost\" type=\"text\" />",
+    jsxCode: "<input className=\"input --ghost\" type=\"text\" />",
   },
   "Text Input Underlined": {
     preview: (
-      <input type="text" placeholder="__Underlined__" className="input input-underlined" />
+      <input className="input --underlined" type="text" placeholder="A line underneath!" />
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-underlined\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-underlined\" />",
+    htmlCode: "<input class=\"input --underlined\" type=\"text\" />",
+    jsxCode: "<input className=\"input --underlined\" type=\"text\" />",
   },
   "Text Input w/ Colors": {
     preview: (
       <>
-      <input type="text" placeholder="Primary" className="input input-bordered input-primary" />
-      <input type="text" placeholder="Secondary" className="input input-bordered input-secondary" />
-      <input type="text" placeholder="tertiary" className="input input-bordered input-tertiary" />
-      <input type="text" placeholder="Info" className="input input-bordered input-info" />
-      <input type="text" placeholder="Warning" className="input input-bordered input-warning" />
-      <input type="text" placeholder="Success" className="input input-bordered input-success" />
-      <input type="text" placeholder="Error" className="input input-bordered input-error" />
+      <input className="input --bordered input-primary" type="text" placeholder="Primary" />
+      <input className="input --bordered input-secondary" type="text" placeholder="Secondary" />
+      <input className="input --bordered input-tertiary" type="text" placeholder="tertiary" />
+      <input className="input --bordered input-info" type="text" placeholder="Info" />
+      <input className="input --bordered input-warning" type="text" placeholder="Warning" />
+      <input className="input --bordered input-success" type="text" placeholder="Success" />
+      <input className="input --bordered input-error" type="text" placeholder="Error" />
       </>
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-bordered input-primary\" />\n<input type=\"text\" class=\"input input-bordered input-secondary\" />\n<input type=\"text\" class=\"input input-bordered input-tertiary\" />\n<input type=\"text\" class=\"input input-bordered input-info\" />\n<input type=\"text\" class=\"input input-bordered input-warning\" />\n<input type=\"text\" class=\"input input-bordered input-success\" />\n<input type=\"text\" class=\"input input-bordered input-error\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-bordered input-primary\" />\n<input type=\"text\" className=\"input input-bordered input-secondary\" />\n<input type=\"text\" className=\"input input-bordered input-tertiary\" />\n<input type=\"text\" className=\"input input-bordered input-info\" />\n<input type=\"text\" className=\"input input-bordered input-warning\" />\n<input type=\"text\" className=\"input input-bordered input-success\" />\n<input type=\"text\" className=\"input input-bordered input-error\" />",
+    htmlCode: "<input class=\"input --bordered input-primary\" type=\"text\" />\n<input class=\"input --bordered input-secondary\" type=\"text\" />\n<input class=\"input --bordered input-tertiary\" type=\"text\" />\n<input class=\"input --bordered input-info\" type=\"text\" />\n<input class=\"input --bordered input-warning\" type=\"text\" />\n<input class=\"input --bordered input-success\" type=\"text\" />\n<input class=\"input --bordered input-error\" type=\"text\" />",
+    jsxCode: "<input className=\"input --bordered input-primary\" type=\"text\" />\n<input className=\"input --bordered input-secondary\" type=\"text\" />\n<input className=\"input --bordered input-tertiary\" type=\"text\" />\n<input className=\"input --bordered input-info\" type=\"text\" />\n<input className=\"input --bordered input-warning\" type=\"text\" />\n<input className=\"input --bordered input-success\" type=\"text\" />\n<input className=\"input --bordered input-error\" type=\"text\" />",
   },
   "Text Input Sizes": {
     preview: (
       <>
-      <input type="text" placeholder="Small" className="input input-sm" />
-      <input type="text" placeholder="Default" className="input" />
-      <input type="text" placeholder="Large" className="input input-lg" />
-      <input type="text" placeholder="RAWR" className="input input-xl" />
+      <input className="input --sm" type="text" placeholder="Small" />
+      <input className="input" type="text" placeholder="Default" />
+      <input className="input --lg" type="text" placeholder="Large" />
+      <input className="input --xl" type="text" placeholder="RAWR" />
       </>
     ),
-    htmlCode: "<input type=\"text\" class=\"input input-sm\" />\n<input type=\"text\" class=\"input\" />\n<input type=\"text\" class=\"input input-lg\" />\n<input type=\"text\" class=\"input input-xl\" />",
-    jsxCode: "<input type=\"text\" className=\"input input-sm\" />\n<input type=\"text\" className=\"input\" />\n<input type=\"text\" className=\"input input-lg\" />\n<input type=\"text\" className=\"input input-xl\" />",
+    htmlCode: "<input class=\"input --sm\" type=\"text\" />\n<input class=\"input\" type=\"text\" />\n<input class=\"input --lg\" type=\"text\" />\n<input class=\"input --xl\" type=\"text\" />",
+    jsxCode: "<input className=\"input --sm\" type=\"text\" />\n<input className=\"input\" type=\"text\" />\n<input className=\"input --lg\" type=\"text\" />\n<input className=\"input --xl\" type=\"text\" />",
   },
   "Disabled Text Input": {
     preview: (
-      <input type="text" placeholder="Disabled :(" className="input" disabled="disabled"/>
+      <input className="input" type="text" placeholder="Disabled :(" disabled />
     ),
-    htmlCode: "<input type=\"text\" class=\"input\" disabled=\"disabled\"/>",
-    jsxCode: "<input type=\"text\" className=\"input\" disabled=\"disabled\"/>",
+    htmlCode: "<input class=\"input\" type=\"text\" disabled />",
+    jsxCode: "<input className=\"input\" type=\"text\" disabled />",
   },
 }

@@ -4,7 +4,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Block = ({preview, htmlCode, jsxCode, componentName}) => {
   const tabContent = {
-    "preview": preview,
+    "preview": ( preview ),
     "html": (
       <SyntaxHighlighter className="card card-primary-80" language="cshtml" style={ darcula }>
         { htmlCode }
@@ -16,15 +16,15 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       </SyntaxHighlighter>
     ),
   }
-  const [previewActive, setPreviewActive] = useState("btn-primary btn-active")
-  const [htmlActive, setHtmlActive] = useState("btn-ghost")
-  const [jsxActive, setJsxActive] = useState("btn-ghost")
+  const [previewActive, setPreviewActive] = useState("btn-primary --active")
+  const [htmlActive, setHtmlActive] = useState("--ghost")
+  const [jsxActive, setJsxActive] = useState("--ghost")
   const [secondBlock, setSecondBlock] = useState(tabContent["preview"])
 
   const tabHandler = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "btn-primary btn-active" : "btn-ghost")
-    setHtmlActive(activeTab === "html" ? "btn-primary btn-active" : "btn-ghost")
-    setJsxActive(activeTab === "jsx" ? "btn-primary btn-active" : "btn-ghost")
+    setPreviewActive(activeTab === "preview" ? "btn-primary --active" : "--ghost")
+    setHtmlActive(activeTab === "html" ? "btn-primary --active" : "--ghost")
+    setJsxActive(activeTab === "jsx" ? "btn-primary --active" : "--ghost")
     setSecondBlock(tabContent[activeTab])
   }
 
@@ -37,13 +37,13 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
           <h4 className="font-semibold">{ componentName }</h4>
         </div>
         <div className="flex flex-row gap-2 items-center">
-          <button className={"btn btn-sm " + previewActive}
+          <button className={"btn --sm " + previewActive}
             onClick={ () => tabHandler("preview") }
             >Preview</button>
-          <button className={"btn btn-sm " + htmlActive}
+          <button className={"btn --sm " + htmlActive}
             onClick={ () => tabHandler("html") }
             >HTML</button>
-          <button className={"btn btn-sm " + jsxActive}
+          <button className={"btn --sm " + jsxActive}
             onClick={ () => tabHandler("jsx") }
             >JSX</button>
         </div>

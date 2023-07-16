@@ -11,33 +11,34 @@ const AddComponents = (color, shades) => {
   return (
     {
       //badge class
+      //i need to rework badge class
       ".badge": {
         display: "flex",
-        paddingLeft: "0.75rem",
-        paddingRight: "0.75rem",
-        fontSize: "16px",
-        height: "fit-content",
-        width: "fit-content",
-        backgroundColor: color,
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        height: "fit-content",
+        width: "fit-content",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
         borderRadius: "9999px",
         borderWidth: "1px",
         borderColor: color,
+        fontSize: "16px",
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        backgroundColor: color,
         fontWeight: "bold",
-        "&.badge-outlined": { //badge-outlined
-          backgroundColor: "transparent",
-          color: color,
+        "&.--outlined": { //badge-outlined
           borderColor: color,
           fontWeight: "normal",
+          color: color,
+          backgroundColor: "transparent",
         },
   
         //sizes for badge
-        "&.badge-sm": { paddingLeft: "0.5rem", paddingRight: "0.5rem", fontSize: "0.75rem" },
+        "&.--sm": { paddingLeft: "0.5rem", paddingRight: "0.5rem", fontSize: "0.75rem" },
   
-        "&.badge-lg": { paddingLeft: "1rem", paddingRight: "1rem", fontSize: "1.375rem" },
+        "&.--lg": { paddingLeft: "1rem", paddingRight: "1rem", fontSize: "1.375rem" },
       },
   
   
@@ -79,7 +80,7 @@ const AddComponents = (color, shades) => {
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
         },
   
-        "&.btn-outlined": { //btn-outlined
+        "&.--outlined": { //btn-outlined
           backgroundColor: "transparent",
           borderColor: "#C7C7C7",
           color: color,
@@ -96,7 +97,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "&.btn-ghost": { //btn-ghost
+        "&.--ghost": { //btn-ghost
           backgroundColor: "transparent",
           borderColor: "transparent",
           color: color,
@@ -109,7 +110,7 @@ const AddComponents = (color, shades) => {
             background: "rgba(0,0,0,0.1)",
           },
   
-          "&.btn-active": { //btn-active
+          "&.--active": { //btn-active
             backgroundColor: "rgba(0,0,0,0.05)",
             borderColor: "transparent",
             color: color,
@@ -126,7 +127,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "&.btn-circle": { //btn-circle
+        "&.--circle": { //btn-circle
           minHeight: "3.25rem",
           maxHeight: "3.25rem",
           minWidth: "3.25rem",
@@ -141,7 +142,7 @@ const AddComponents = (color, shades) => {
           },
   
           //sizes for btn-circle
-          "&.btn-sm": {
+          "&.--sm": {
             minHeight: "2.5rem",
             maxHeight: "2.5rem",
             minWidth: "2.5rem",
@@ -150,7 +151,7 @@ const AddComponents = (color, shades) => {
             "& > *": { fontSize: "1.375rem" }
           },
 
-          "&.btn-lg": {
+          "&.--lg": {
             minHeight: "3.75rem",
             maxHeight: "3.75rem",
             minWidth: "3.75rem",
@@ -159,7 +160,7 @@ const AddComponents = (color, shades) => {
             "& > *": { fontSize: "1.625rem" }
           },
 
-          "&.btn-xl": {
+          "&.--xl": {
             minHeight: "4.5rem",
             maxHeight: "4.5rem",
             minWidth: "4.5rem",
@@ -169,7 +170,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "&.btn-active": { //btn with active state
+        "&.--active": { //btn with active state
           backgroundColor: color,
           borderColor: color,
           color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
@@ -188,7 +189,7 @@ const AddComponents = (color, shades) => {
         },
   
         //sizes for different buttons except btn-circle
-        "&.btn-sm": {
+        "&.--sm": {
           minHeight: "2.5rem",
           maxHeight: "2.5rem",
           paddingLeft: "1rem",
@@ -200,7 +201,7 @@ const AddComponents = (color, shades) => {
           }
         },
   
-        "&.btn-lg": {
+        "&.--lg": {
           minHeight: "3.75rem",
           maxHeight: "3.75rem",
           paddingLeft: "1.5rem",
@@ -211,7 +212,7 @@ const AddComponents = (color, shades) => {
           }
         },
   
-        "&.btn-xl": {
+        "&.--xl": {
           minHeight: "4.5rem",
           maxHeight: "4.5rem",
           paddingLeft: "2rem",
@@ -288,7 +289,7 @@ const AddComponents = (color, shades) => {
 
 
       //checkbox class
-      ".checkbox": {
+      ".check": {
         position: "relative",
         display: "flex",
         appearance: "none",
@@ -322,7 +323,7 @@ const AddComponents = (color, shades) => {
         },
 
         //checkbox sizes
-        "&.checkbox-sm": {
+        "&.--sm": {
           minWidth: "0.875rem",
           maxWidth: "0.875rem",
           minHeight: "0.875rem",
@@ -350,7 +351,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.checkbox-lg": {
+        "&.--lg": {
           minWidth: "1.625rem",
           maxWidth: "1.625rem",
           minHeight: "1.625rem",
@@ -377,7 +378,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.checkbox-xl": {
+        "&.--xl": {
           minWidth: "2rem",
           maxWidth: "2rem",
           minHeight: "2rem",
@@ -440,7 +441,7 @@ const AddComponents = (color, shades) => {
         paddingBottom: "1rem",
         paddingLeft: "0",
         paddingRight: "0",
-        "&.divider-horizontal": {
+        "&.--horizontal": {
           width: "0%",
           flexDirection: "column",
           paddingTop: "0",
@@ -455,67 +456,6 @@ const AddComponents = (color, shades) => {
           borderRadius: "9999px",
           padding: "1px",				
         },
-      },
-
-
-
-      //input class
-      ".input": {
-        minHeight: "3.25rem",
-        maxHeight: "3.25rem",
-        paddingLeft: "1.25rem",
-        paddingRight: "1.25rem",
-        backgroundColor: "#ffffff",
-        borderRadius: "9999px",
-        borderWidth: "2px",
-        borderColor: "#ffffff",
-        "&:focus": {
-          outline: `2px solid ${ color }`,
-          outlineOffset: "2px",
-
-          "&.input-underlined": { outline: "none" },
-        },
-
-        "&.input-bordered": { borderColor: color },
-
-        "&.input-ghost": { borderColor: "transparent", backgroundColor: "transparent" },
-
-        "&.input-underlined": {
-          borderWidth: "0px",
-          borderBottomWidth: "2px",
-          borderColor: color,
-          backgroundColor: "transparent",
-          borderRadius: "2px",
-          paddingTop: "0.5rem",
-          paddingBottom: "calc(0.5rem - 2px)",
-          paddingLeft: "0.75rem",
-          paddingRight: "0.75rem",
-        },
-
-        //input different sizes
-        "&.input-sm": {
-          minHeight: "2.5rem",
-          maxHeight: "2.5rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          fontSize: "0.875rem",
-        },
-        "&.input-lg": {
-          minHeight: "3.75rem",
-          maxHeight: "3.75rem",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-          fontSize: "1.375rem",
-        },
-        "&.input-xl": {
-          minHeight: "4.5rem",
-          maxHeight: "4.5rem",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
-          fontSize: "1.5rem",
-        },
-        
-        "&:disabled": { opacity: "70%", cursor: "not-allowed" },
       },
 
 
@@ -559,25 +499,86 @@ const AddComponents = (color, shades) => {
 
         "& > .dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
 
-        "&.dropdown-top": { //top dropdown
+        "&.--top": { //top dropdown
           "& > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
-          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
+          "&.--end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
         },
 
-        "&.dropdown-bottom": { //bottom dropdown
+        "&.--bottom": { //bottom dropdown
           "& > .dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
-          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
+          "&.--end > .dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
         },
 
-        "&.dropdown-left": { //left dropdown
+        "&.--left": { //left dropdown
           "& > .dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
-          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
+          "&.--end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
         },
 
-        "&.dropdown-right": { //right dropdown
+        "&.--right": { //right dropdown
           "& > .dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
-          "&.dropdown-end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
+          "&.--end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
         },
+      },
+
+
+
+      //input class
+      ".input": {
+        minHeight: "3.25rem",
+        maxHeight: "3.25rem",
+        paddingLeft: "1.25rem",
+        paddingRight: "1.25rem",
+        backgroundColor: "#ffffff",
+        borderRadius: "9999px",
+        borderWidth: "2px",
+        borderColor: "#ffffff",
+        "&:focus": {
+          outline: `2px solid ${ color }`,
+          outlineOffset: "2px",
+
+          "&.--underlined": { outline: "none" },
+        },
+
+        "&.--bordered": { borderColor: color },
+
+        "&.--ghost": { borderColor: "transparent", backgroundColor: "transparent" },
+
+        "&.--underlined": {
+          borderWidth: "0px",
+          borderBottomWidth: "2px",
+          borderColor: color,
+          backgroundColor: "transparent",
+          borderRadius: "2px",
+          paddingTop: "0.5rem",
+          paddingBottom: "calc(0.5rem - 2px)",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+        },
+
+        //input different sizes
+        "&.--sm": {
+          minHeight: "2.5rem",
+          maxHeight: "2.5rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          fontSize: "0.875rem",
+        },
+        "&.--lg": {
+          minHeight: "3.75rem",
+          maxHeight: "3.75rem",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+          fontSize: "1.375rem",
+        },
+        "&.--xl": {
+          minHeight: "4.5rem",
+          maxHeight: "4.5rem",
+          paddingLeft: "2rem",
+          paddingRight: "2rem",
+          fontSize: "1.5rem",
+        },
+        
+        "&:disabled": { opacity: "70%", cursor: "not-allowed" },
       },
 
 
@@ -592,7 +593,7 @@ const AddComponents = (color, shades) => {
         "& > *": { fontSize: "1rem" },
         color: color,
 
-        "&.menu-horizontal": { //horizontal menu
+        "&.--horizontal": { //horizontal menu
           flexDirection: "row",
 
           "& > li": {
@@ -676,7 +677,7 @@ const AddComponents = (color, shades) => {
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&.-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
 
           "& > details": { //collapsible list under menu
@@ -729,7 +730,7 @@ const AddComponents = (color, shades) => {
         },
 
         //menu sizes
-        "&.menu-sm": {
+        "&.--sm": {
           "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "1.75rem",
             maxHeight: "1.75rem",
@@ -766,7 +767,7 @@ const AddComponents = (color, shades) => {
           },
         },
         
-        "&.menu-lg": {
+        "&.--lg": {
           "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "3.25rem",
             maxHeight: "3.25rem",
@@ -801,7 +802,7 @@ const AddComponents = (color, shades) => {
           },
         },
         
-        "&.menu-xl": {
+        "&.--xl": {
           "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "4rem",
             maxHeight: "4rem",
@@ -893,6 +894,7 @@ const AddComponents = (color, shades) => {
         minheight: "4.75rem",
         maxheight: "4.75rem",
         fontWeight: "bold",
+        zIndex: "9997",
       },
 
       //navbar item positions
@@ -945,6 +947,7 @@ const AddComponents = (color, shades) => {
           height: "100vh",
           opacity: "0",
           visibility: "hidden",
+          zIndex: "9997",
           transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
 
           "& > .navdrawer-sidebar-content": {  //wrapper for the sidebar content
@@ -952,7 +955,7 @@ const AddComponents = (color, shades) => {
             height: "100vh",
             left: "-23rem",
             width: "23rem",
-            zIndex: "1",
+            zIndex: "9998",
             transition: `left 250ms ${ easeInOut }`,
 
             "& > *": {
@@ -986,7 +989,7 @@ const AddComponents = (color, shades) => {
           }
         },
 
-        "&.navdrawer-open": { // forever opened drawer :>
+        "&.--open": { // forever opened drawer :>
           "& > .navdrawer-content": {
             overflowY: "auto",
             width: "100%",
@@ -998,6 +1001,7 @@ const AddComponents = (color, shades) => {
             height: "100vh",
             opacity: "1",
             visibility: "visible",
+            zIndex: "0",
   
             "& > .navdrawer-sidebar-content": { 
               position: "static",
@@ -1037,7 +1041,7 @@ const AddComponents = (color, shades) => {
         },
 
         //radio sizes
-        "&.radio-sm": {
+        "&.--sm": {
           minWidth: "0.875rem",
           maxWidth: "0.875rem",
           minHeight: "0.875rem",
@@ -1048,7 +1052,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.radio-lg": {
+        "&.--lg": {
           minWidth: "1.625rem",
           maxWidth: "1.625rem",
           minHeight: "1.625rem",
@@ -1059,7 +1063,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.radio-xl": {
+        "&.--xl": {
           minWidth: "2rem",
           maxWidth: "2rem",
           minHeight: "2rem",
@@ -1127,7 +1131,7 @@ const AddComponents = (color, shades) => {
         },
 
         //checkbox sizes
-        "&.switch-sm": {
+        "&.--sm": {
           minWidth: "1.625rem",
           maxWidth: "1.625rem",
           minHeight: "0.875rem",
@@ -1153,7 +1157,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.switch-lg": {
+        "&.--lg": {
           minWidth: "2.7375rem",
           maxWidth: "2.7375rem",
           minHeight: "1.625rem",
@@ -1179,7 +1183,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.switch-xl": {
+        "&.--xl": {
           minWidth: "3.45rem",
           maxWidth: "3.45rem",
           minHeight: "2rem",
