@@ -14,7 +14,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Menu w/ Icons and badge": {
+  "Menu w/ Icons and Badge": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -35,7 +35,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-72\">\n    <li><a><span class=\"material-icons\">home</span>Home</a></li>\n    <li><a><span class=\"material-icons\">info</span>Info</a></li>\n    <li>\n      <a>\n        <!-- icon here -->\n        Watch Later\n        <span class=\"badge badge-error\">+999</span>\n      </a>\n    </li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-72\">\n    <li><a><span className=\"material-icons\">home</span>Home</a></li>\n    <li><a><span className=\"material-icons\">info</span>Info</a></li>\n    <li>\n      <a>\n        {/* icon here */}\n        Watch Later\n        <span className=\"badge badge-error\">+999</span>\n      </a>\n    </li>\n  </ul>\n</div>",
   },
-  "Menu w/ Icons only": {
+  "Menu w/ Icons Only": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -50,7 +50,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu\">\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu\">\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n  </ul>\n</div>",
   },
-  "Menu w/ title": {
+  "Menu w/ Title": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -66,7 +66,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li class=\"menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li className=\"menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Menu w/ title as a parent": {
+  "Menu w/ Title as a Parent": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -86,7 +86,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li>\n      <span class=\"menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li>\n      <span className=\"menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
   },
-  "Menu and Sub-menu": {
+  "Menu and Submenu": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -115,7 +115,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li>\n      <a>Parent</a>\n      <ul>\n        <li><a>Child 1</a></li>\n        <li><a>Child 2</a></li>\n        <li>\n          <a>Parent</a>\n          <ul>\n            <li><a>Child 1</a></li>\n            <li><a>Child 2</a></li>\n            <li><a>Child 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li><a>Link 1</a></li>\n    <li>\n      <a>Parent</a>\n      <ul>\n        <li><a>Child 1</a></li>\n        <li><a>Child 2</a></li>\n        <li>\n          <a>Parent</a>\n          <ul>\n            <li><a>Child 1</a></li>\n            <li><a>Child 2</a></li>\n            <li><a>Child 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Collapsible Sub-menu using Details and Summary": {
+  "Collapsible Submenu using Details and Summary": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
@@ -177,7 +177,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu --horizontal\">\n    <li><a><!--icon here-->home</a></li>\n    <li><a><!--icon here-->info</a></li>\n    <li><a><!--icon here-->watch later</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu --horizontal\">\n    <li><a>{/*icon here*/}home</a></li>\n    <li><a>{/*icon here*/}info</a></li>\n    <li><a>{/*icon here*/}watch later</a></li>\n  </ul>\n</div>",
   },
-  "Horizontal Menu w/ Icons only": {
+  "Horizontal Menu w/ Icons Only": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -192,7 +192,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-horizontal\">\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n    <li><a><!--icon here--></a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-horizontal\">\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n    <li><a>{/*icon here*/}</a></li>\n  </ul>\n</div>",
   },
-  "Horizontal Menu and Sub-menu": {
+  "Horizontal Menu and Submenu": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
@@ -221,7 +221,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu --horizontal\">\n    <li><a>Link 1</a></li>\n    <li>\n      <a>Parent</a>\n      <ul>\n        <li><a>Child 1</a></li>\n        <li><a>Child 2</a></li>\n        <li>\n          <a>Parent</a>\n          <ul>\n            <li><a>Child 1</a></li>\n            <li><a>Child 2</a></li>\n            <li><a>Child 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu --horizontal\">\n    <li><a>Link 1</a></li>\n    <li>\n      <a>Parent</a>\n      <ul>\n        <li><a>Child 1</a></li>\n        <li><a>Child 2</a></li>\n        <li>\n          <a>Parent</a>\n          <ul>\n            <li><a>Child 1</a></li>\n            <li><a>Child 2</a></li>\n            <li><a>Child 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Horizontal Menu and Collapsible Sub-menu": {
+  "Horizontal Menu and Collapsible Submenu": {
     preview: (
       <div className="card card-primary-80 min-h-[392px] p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
@@ -253,7 +253,7 @@ export const MenuSnippets = {
     htmlCode: "<div class=\"card\">\n  <ul class=\"menu --horizontal\">\n    <li><a>Link 1</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Link 1</a></li>\n          <li><a>Link 2</a></li>\n          <li>\n            <details>\n              <summary>collapsed</summary>\n              <ul>\n                <li><a>Link 1</a></li>\n                <li><a>Link 2</a></li>\n              </ul>\n            </details>\n          </li>\n        </ul>\n      </details>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
     jsxCode: "<div className=\"card\">\n  <ul className=\"menu --horizontal\">\n    <li><a>Link 1</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Link 1</a></li>\n          <li><a>Link 2</a></li>\n          <li>\n            <details>\n              <summary>collapsed</summary>\n              <ul>\n                <li><a>Link 1</a></li>\n                <li><a>Link 2</a></li>\n              </ul>\n            </details>\n          </li>\n        </ul>\n      </details>\n    </li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
-  "Menu with different colors": {
+  "Menu with Colors": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">

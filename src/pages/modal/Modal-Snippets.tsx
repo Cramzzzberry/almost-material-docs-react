@@ -25,7 +25,7 @@ export const ModalSnippets = {
     htmlCode: "<!-- button for opening the modal -->\n<label for=\"myModal\" class=\"btn\">Click Me</label>\n\n<input class=\"modal-toggle\" type=\"checkbox\" id=\"myModal\" />\n<div class=\"modal\">\n  <div class=\"modal-content\">\n    <div class=\"card w-96 text-center\">\n      <div class=\"card-body\">\n        <h4 class=\"font-bold\">This is an opened modal!</h4>\n\n        <div class=\"card-actions justify-center\">\n          <!-- button for closing modal -->\n          <label for=\"myModal\" class=\"btn btn-error\">Close</label>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
     jsxCode: "{/* button for opening the modal */}\n<label htmlFor=\"myModal\" className=\"btn\">Click Me</label>\n\n<input className=\"modal-toggle\" type=\"checkbox\" id=\"myModal\" />\n<div className=\"modal\">\n  <div className=\"modal-content\">\n    <div className=\"card w-96 text-center\">\n      <div className=\"card-body\">\n        <h4 className=\"font-bold\">This is an opened modal!</h4>\n\n        <div className=\"card-actions justify-center\">\n          {/* button for closing modal */}\n          <label htmlFor=\"myModal\" className=\"btn btn-error\">Close</label>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
   },
-  "Modal that closes outside": {
+  "Modal that Closes Outside": {
     preview: (
       <>
       {/* button for opening the modal */}

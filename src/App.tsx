@@ -82,10 +82,28 @@ export default function App() {
                     <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "--active" : ""}>Input Fields</NavLink></li>
                     <li><NavLink to="/menu" className={({ isActive }) => isActive ? "--active" : ""}>Menu</NavLink></li>
                     <li><NavLink to="/modal" className={({ isActive }) => isActive ? "--active" : ""}>Modals</NavLink></li>
-                    <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "--active" : ""}>Navigation Bars</NavLink></li>
-                    <li><NavLink to="/navdrawer" className={({ isActive }) => isActive ? "--active" : ""}>Navigation Drawer</NavLink></li>
+                    <li>
+                      <NavLink to="/navbar" className={({ isActive }) => isActive ? "--active" : ""}>
+                        Navigation Bars
+                        <span></span>
+                        <span className="badge badge-error">Inc</span>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/navdrawer" className={({ isActive }) => isActive ? "--active" : ""}>
+                        Navigation Drawer
+                        <span></span>
+                        <span className="badge badge-error">Inc</span>
+                      </NavLink>
+                    </li>
                     {/* <li><NavLink to="/progress-bar" className={({ isActive }) => isActive ? "--active" : ""}>Progress Bars</NavLink></li> */} {/* archived */}
-                    <li><NavLink to="/radio-button" className={({ isActive }) => isActive ? "--active" : ""}>Radio Button</NavLink></li>
+                    <li>
+                      <NavLink to="/radio-button" className={({ isActive }) => isActive ? "--active" : ""}>
+                        Radio Button
+                        <span></span>
+                        <span className="badge badge-warning">Review</span>
+                      </NavLink>
+                    </li>
                     <li><NavLink to="/switch" className={({ isActive }) => isActive ? "--active" : ""}>Switch</NavLink></li>
                   </ul>
                 </li>

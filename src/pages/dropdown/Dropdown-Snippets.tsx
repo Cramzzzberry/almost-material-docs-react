@@ -17,7 +17,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown top": {
+  "Dropdown Top": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-end">
         <div className="dropdown --top">
@@ -35,7 +35,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --top\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --top\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown top aligned to end": {
+  "Dropdown Top Aligned to End": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-end">
         <div className="dropdown --top --end">
@@ -53,7 +53,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --top --end\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --top --end\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown bottom": {
+  "Dropdown Bottom": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
         <div className="dropdown --bottom">
@@ -71,7 +71,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --bottom\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --bottom\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown bottom aligned to end": {
+  "Dropdown Bottom Aligned to End": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
         <div className="dropdown --bottom --end">
@@ -89,7 +89,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --bottom --end\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --bottom --end\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown left": {
+  "Dropdown Left": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown --left">
@@ -107,7 +107,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --left\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --left\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown left aligned to end": {
+  "Dropdown Left Aligned to End": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown --left --end">
@@ -125,7 +125,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --left --end\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --left --end\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown right": {
+  "Dropdown Right": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown --right">
@@ -143,7 +143,7 @@ export const DropdownSnippets = {
     htmlCode: "<div class=\"dropdown --right\">\n  <button tabIndex=\"0\" class=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" class=\"dropdown-content z-[1] card\">\n    <ul class=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"dropdown --right\">\n  <button tabIndex=\"0\" className=\"btn\">Dropdown</button>\n  <div tabIndex=\"0\" className=\"dropdown-content z-[1] card\">\n    <ul className=\"menu w-56\">\n      <li><a>Link 1</a></li>\n      <li><a>Link 2</a></li>\n      <li><a>Link 3</a></li>\n    </ul>\n  </div>\n</div>",
   },
-  "Dropdown right aligned to end": {
+  "Dropdown Right Aligned to End": {
     preview: (
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown --right --end">

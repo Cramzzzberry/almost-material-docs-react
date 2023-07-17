@@ -6,21 +6,21 @@ export const InputFieldSnippets = {
     htmlCode: "<input class=\"input\" type=\"text\" />",
     jsxCode: "<input className=\"input\" type=\"text\" />",
   },
-  "Text Input Bordered": {
+  "Bordered Text Input": {
     preview: (
       <input className="input --bordered" type="text" placeholder="I have borders!" />
     ),
     htmlCode: "<input class=\"input --bordered\" type=\"text\" />",
     jsxCode: "<input className=\"input --bordered\" type=\"text\" />",
   },
-  "Text Input Ghost": {
+  "Ghost Text Input": {
     preview: (
       <input className="input --ghost" type="text" placeholder="Boo!" />
     ),
     htmlCode: "<input class=\"input --ghost\" type=\"text\" />",
     jsxCode: "<input className=\"input --ghost\" type=\"text\" />",
   },
-  "Text Input Underlined": {
+  "Underlined Text Input": {
     preview: (
       <input className="input --underlined" type="text" placeholder="A line underneath!" />
     ),

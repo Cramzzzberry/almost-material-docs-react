@@ -1,12 +1,12 @@
 export const ButtonSnippets = {
-  "Solid Button": {
+  "Button": {
     preview: (
       <button className="btn">button</button>
     ),
     htmlCode: "<button class=\"btn\">button</button>",
     jsxCode: "<button className=\"btn\">button</button>",
   },
-  "Icon Button": {
+  "Button w/ Icon": {
     preview: (
       <button className="btn">
         <span className="material-icons-round">
@@ -25,14 +25,14 @@ export const ButtonSnippets = {
     htmlCode: "<button class=\"btn --outlined\">outlined</button>",
     jsxCode: "<button className=\"btn --outlined\">outlined</button>",
   },
-  "ghost Button": {
+  "Ghost Button": {
     preview: (
       <button className="btn --ghost">ghost</button>
     ),
     htmlCode: "<button class=\"btn --ghost\">ghost</button>",
     jsxCode: "<button className=\"btn --ghost\">ghost</button>",
   },
-  "Circle Button": {
+  "Circle Buttons": {
     preview: (
       <>
       <button className="btn --circle">
@@ -55,7 +55,7 @@ export const ButtonSnippets = {
     htmlCode: "<button class=\"btn --circle\"><!-- icon here --></button>\n<button class=\"btn --circle --outlined\"><!-- icon here --></button>\n<button class=\"btn --circle --ghost\"><!-- icon here --></button>",
     jsxCode: "<button className=\"btn --circle\">{/* icon-here */}</button>\n<button className=\"btn --circle --outlined\">{/* icon-here */}</button>\n<button className=\"btn --circle --ghost\">{/* icon-here */}</button>",
   },
-  "Colored Button": {
+  "Button w/ Colors": {
     preview: (
       <>
       <button className="btn btn-primary">primary</button>
@@ -70,7 +70,7 @@ export const ButtonSnippets = {
     htmlCode: "<button class=\"btn btn-primary\">primary</button>\n<button class=\"btn btn-secondary\">secondary</button>\n<button class=\"btn btn-tertiary\">tertiary</button>\n<button class=\"btn btn-info\">info</button>\n<button class=\"btn btn-warning\">warning</button>\n<button class=\"btn btn-success\">success</button>\n<button class=\"btn btn-error\">error</button>",
     jsxCode: "<button className=\"btn btn-primary\">primary</button>\n<button className=\"btn btn-secondary\">secondary</button>\n<button className=\"btn btn-tertiary\">tertiary</button>\n<button className=\"btn btn-info\">info</button>\n<button className=\"btn btn-warning\">warning</button>\n<button className=\"btn btn-success\">success</button>\n<button className=\"btn btn-error\">error</button>",
   },
-  "Button Size": {
+  "Button Sizes": {
     preview: (
       <>
       <button className="btn --sm">small</button>
@@ -82,7 +82,7 @@ export const ButtonSnippets = {
     htmlCode: "<button class=\"btn --sm\">small</button>\n<button class=\"btn\">default</button>\n<button class=\"btn --lg\">large</button>\n<button class=\"btn --xl\">largeeeeeeeee</button>",
     jsxCode: "<button className=\"btn --sm\">small</button>\n<button className=\"btn\">default</button>\n<button className=\"btn --lg\">large</button>\n<button className=\"btn --xl\">largeeeeeeeee</button>",
   },
-  "Active Button": {
+  "Active Buttons": {
     preview: (
       <>
       <button className="btn --active">default</button>

@@ -106,7 +106,7 @@ export const RadiobuttonSnippets = {
     htmlCode: "<!-- sm -->\n<input class=\"radio --sm\" type=\"radio\" />\n<input class=\"radio --sm\" type=\"radio\" checked />\n\n<!-- Default -->\n<input class=\"radio\" type=\"radio\" />\n<input class=\"radio\" type=\"radio\" checked />\n\n<!-- lg -->\n<input class=\"radio --lg\" type=\"radio\" />\n<input class=\"radio --lg\" type=\"radio\" checked />\n\n<!-- xl -->\n<input class=\"radio --xl\" type=\"radio\" />\n<input class=\"radio --xl\" type=\"radio\" checked />",
     jsxCode: "{/* sm */}\n<input className=\"radio --sm\" type=\"radio\" />\n<input className=\"radio --sm\" type=\"radio\" checked />\n\n{/* Default */}\n<input className=\"radio\" type=\"radio\" />\n<input className=\"radio\" type=\"radio\" checked />\n\n{/* lg */}\n<input className=\"radio --lg\" type=\"radio\" />\n<input className=\"radio --lg\" type=\"radio\" checked />\n\n{/* xl */}\n<input className=\"radio --xl\" type=\"radio\" />\n<input className=\"radio --xl\" type=\"radio\" checked />",
   },
-  "Disabled Radiobutton": {
+  "Disabled Radio Button": {
     preview: (
       <>
       <input type="radio" className="radio" name="disabled_radio" disabled />

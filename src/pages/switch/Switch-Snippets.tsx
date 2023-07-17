@@ -6,7 +6,7 @@ export const SwitchSnippets = {
     htmlCode: "<input class=\"switch\" type=\"checkbox\" checked />",
     jsxCode: "<input className=\"switch\" type=\"checkbox\" checked />",
   },
-  "Switch w/ colors": {
+  "Switch w/ Colors": {
     preview: (
       <>
       <input className="switch switch-primary" type="checkbox" defaultChecked />
@@ -46,7 +46,7 @@ export const SwitchSnippets = {
   "Indeterminate Switch": {
     preview: (
       <>
-      <input className="switch" type="checkbox" id="indeterminate-switch"/>
+      <div className="switch after:left-[calc(50%-0.875rem/2)]"></div>
       </>
     ),
     htmlCode: "<script>\n  document.getElementById(\"my-switch\").indeterminate = true\n</script>\n<input class=\"switch\" type=\"checkbox\" id=\"\"my-switch\"/>",

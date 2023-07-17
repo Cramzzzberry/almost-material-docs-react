@@ -13,17 +13,19 @@ const MatchComponents = (shades) => {
         backgroundColor: color,
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         borderColor: color,
-        "&.badge-outlined": { //badge-outlined
+        "&.--outlined": { //badge-outlined
           backgroundColor: "transparent",
           color: color,
           borderColor: color,
         },
   
-        "&.badge-dot": { //badge-dot
+        "&.--dot": { //badge-dot
+          maxHeight: "0.875rem",
+          minHeight: "0.875rem",
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
           padding: "0",
           backgroundColor: color,
-          width: "0.5rem",
-          height: "0.5rem",
         },
       }),
   

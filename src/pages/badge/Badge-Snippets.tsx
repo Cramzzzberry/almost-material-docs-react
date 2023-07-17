@@ -1,5 +1,5 @@
 export const BadgeSnippets = {
-  "Solid Badge": {
+  "Badge": {
     preview: (
       <span className="badge">solid</span>
     ),
@@ -20,7 +20,7 @@ export const BadgeSnippets = {
     htmlCode: "<span class=\"badge --dot\"></span>",
     jsxCode: "<span className=\"badge --dot\"></span>",
   },
-  "Colored Badge": {
+  "Badge w/ Colors": {
     preview: (
       <>
       <span className="badge badge-primary">primary</span>
