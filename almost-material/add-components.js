@@ -14,17 +14,19 @@ const AddComponents = (color, shades) => {
       //i need to rework badge class
       ".badge": {
         display: "flex",
-        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        height: "fit-content",
+        minHeight: "1.25rem",
+        maxHeight: "1.25rem",
         width: "fit-content",
         paddingLeft: "0.75rem",
         paddingRight: "0.75rem",
         borderRadius: "9999px",
         borderWidth: "1px",
         borderColor: color,
-        fontSize: "16px",
+        fontSize: "0.875rem",
+        lineHeight: "1.25rem",
+        textTransform: "capitalize",
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         backgroundColor: color,
         fontWeight: "bold",
@@ -34,11 +36,42 @@ const AddComponents = (color, shades) => {
           color: color,
           backgroundColor: "transparent",
         },
+
+        "&.--dot": { //badge-outlined
+          maxHeight: "0.875rem",
+          minHeight: "0.875rem",
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
+          padding: "0",
+        },
   
         //sizes for badge
-        "&.--sm": { paddingLeft: "0.5rem", paddingRight: "0.5rem", fontSize: "0.75rem" },
+        "&.--sm": {
+          minHeight: "1rem",
+          maxHeight: "1rem",
+          paddingLeft: "0.375rem",
+          paddingRight: "0.375rem",
+          fontSize: "0.625rem",
+          lineHeight: "1rem",
+        },
   
-        "&.--lg": { paddingLeft: "1rem", paddingRight: "1rem", fontSize: "1.375rem" },
+        "&.--lg": {
+          minHeight: "1.5rem",
+          maxHeight: "1.5rem",
+          paddingLeft: "1.125rem",
+          paddingRight: "1.125rem",
+          fontSize: "1.125rem",
+          lineHeight: "1.5rem",
+        },
+  
+        "&.--xl": {
+          minHeight: "1.75rem",
+          maxHeight: "1.75rem",
+          paddingLeft: "1.375rem",
+          paddingRight: "1.375rem",
+          fontSize: "1.375rem",
+          lineHeight: "1.75rem",
+        },
       },
   
   

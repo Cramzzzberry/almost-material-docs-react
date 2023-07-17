@@ -1,1 +1,1 @@
-<input class=\"switch\" type=\"checkbox\" disabled />\n<input class=\"switch\" type=\"checkbox\" disabled checked />
+<span class=\"badge --sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge --lg\">Large</span>\n<span class=\"badge --xl\">LAAAARGE!</span>

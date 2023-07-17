@@ -1,39 +1,39 @@
 export const BadgeSnippets = {
   "Solid Badge": {
     preview: (
-      <span className="badge">Solid</span>
+      <span className="badge">solid</span>
     ),
     htmlCode: "<span class=\"badge\">Solid</span>",
     jsxCode: "<span className=\"badge\">Solid</span>",
   },
   "Outlined Badge": {
     preview: (
-      <span className="badge --outlined">Outlined</span>
+      <span className="badge --outlined">outlined</span>
     ),
-    htmlCode: "<span class=\"badge --outlined\">Outlined</span>",
-    jsxCode: "<span className=\"badge --outlined\">Outlined</span>",
+    htmlCode: "<span class=\"badge --outlined\">outlined</span>",
+    jsxCode: "<span className=\"badge --outlined\">outlined</span>",
   },
-  // "Dot Badge": {
-  //   preview: (
-  //     <span className="badge badge-dot"></span>
-  //   ),
-  //   htmlCode: "<span class=\"badge badge-dot\"></span>",
-  //   jsxCode: "<span className=\"badge badge-dot\"></span>",
-  // },
+  "Dot Badge": {
+    preview: (
+      <span className="badge --dot"></span>
+    ),
+    htmlCode: "<span class=\"badge --dot\"></span>",
+    jsxCode: "<span className=\"badge --dot\"></span>",
+  },
   "Colored Badge": {
     preview: (
       <>
-      <span className="badge badge-primary">Primary</span>
-      <span className="badge badge-secondary">Secondary</span>
+      <span className="badge badge-primary">primary</span>
+      <span className="badge badge-secondary">secondary</span>
       <span className="badge badge-tertiary">tertiary</span>
-      <span className="badge badge-info">Info</span>
-      <span className="badge badge-warning">Warning</span>
-      <span className="badge badge-success">Success</span>
-      <span className="badge badge-error">Error</span>
+      <span className="badge badge-info">info</span>
+      <span className="badge badge-warning">warning</span>
+      <span className="badge badge-success">success</span>
+      <span className="badge badge-error">error</span>
       </>
     ),
-    htmlCode: "<span class=\"badge badge-primary\">Primary</span>\n<span class=\"badge badge-secondary\">Secondary</span>\n<span class=\"badge badge-tertiary\">tertiary</span>\n<span class=\"badge badge-info\">Info</span>\n<span class=\"badge badge-warning\">Warning</span>\n<span class=\"badge badge-success\">Success</span>\n<span class=\"badge badge-error\">Error</span>",
-    jsxCode: "<span className=\"badge badge-primary\">Primary</span>\n<span className=\"badge badge-secondary\">Secondary</span>\n<span className=\"badge badge-tertiary\">tertiary</span>\n<span className=\"badge badge-info\">Info</span>\n<span className=\"badge badge-warning\">Warning</span>\n<span className=\"badge badge-success\">Success</span>\n<span className=\"badge badge-error\">Error</span>",
+    htmlCode: "<span class=\"badge badge-primary\">primary</span>\n<span class=\"badge badge-secondary\">secondary</span>\n<span class=\"badge badge-tertiary\">tertiary</span>\n<span class=\"badge badge-info\">info</span>\n<span class=\"badge badge-warning\">warning</span>\n<span class=\"badge badge-success\">success</span>\n<span class=\"badge badge-error\">error</span>",
+    jsxCode: "<span className=\"badge badge-primary\">primary</span>\n<span className=\"badge badge-secondary\">secondary</span>\n<span className=\"badge badge-tertiary\">tertiary</span>\n<span className=\"badge badge-info\">info</span>\n<span className=\"badge badge-warning\">warning</span>\n<span className=\"badge badge-success\">success</span>\n<span className=\"badge badge-error\">error</span>",
   },
   "Badge Sizes": {
     preview: (
@@ -41,9 +41,10 @@ export const BadgeSnippets = {
       <span className="badge --sm">Small</span>
       <span className="badge">Default</span>
       <span className="badge --lg">Large</span>
+      <span className="badge --xl">LAAAARGE!</span>
       </>
     ),
-    htmlCode: "<span class=\"badge badge-sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge badge-lg\">Large</span>",
-    jsxCode: "<span className=\"badge badge-sm\">Small</span>\n<span className=\"badge\">Default</span>\n<span className=\"badge badge-lg\">Large</span>",
+    htmlCode: "<span class=\"badge --sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge --lg\">Large</span>\n<span class=\"badge --xl\">LAAAARGE!</span>",
+    jsxCode: "<span className=\"badge --sm\">Small</span>\n<span className=\"badge\">Default</span>\n<span className=\"badge --lg\">Large</span>\n<span className=\"badge --xl\">LAAAARGE!</span>",
   },
 }
