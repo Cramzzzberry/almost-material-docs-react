@@ -163,13 +163,26 @@ const MatchComponents = (shades) => {
 
       //menu class
       "menu": (color) => ({
+        color: ShadeHexColor(color, shades[10]),
+
         "& li > ul,ol": { //sub ul and/or ol under li element
           "& > li > a": { //list items under sub-menu
             "&:hover": { background: "rgba(0,0,0,0.05)" },
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&.--active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          },
+        },
+        
+        "&.--app-menu": { //app menu for side bar and bottom nav
+          alignItems: "center",
+
+          "& > li": {
+            "& > a": { //list items under menu
+              "&.menu-active": { color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+              "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            },
           },
         },
 
@@ -178,7 +191,7 @@ const MatchComponents = (shades) => {
 
           "&:active": { background: "rgba(0,0,0,0.1)" },
 
-          "&.--active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
 

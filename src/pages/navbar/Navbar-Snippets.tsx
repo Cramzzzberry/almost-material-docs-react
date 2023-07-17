@@ -1,3 +1,7 @@
+// note to self:
+// top navbars needs to be placed inside the navdrawer-page-content class
+// side and bottom navbars needs to be placed as a first child of navdrawer class
+
 export const NavbarSnippets = {
   "Navigation Bar": {
     preview: (

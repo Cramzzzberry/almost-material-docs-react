@@ -617,6 +617,7 @@ const AddComponents = (color, shades) => {
 
 
       //menu class
+      //much more complicated than button
       ".menu": {
         textTransform: "capitalize",
         display: "flex",
@@ -654,6 +655,55 @@ const AddComponents = (color, shades) => {
                 },
               },
             }
+          },
+        },
+
+        "&.--app-menu": { //app menu for side and bottom nav bar
+          alignItems: "center",
+
+          "& > li": {
+            "& > a, label": { //list items under menu
+              minHeight: "initial",
+              maxHeight: "initial",
+              minWidth: "4.5rem",
+              maxWidth: "4.5rem",
+              paddingTop: "1.25rem",
+              paddingBottom: "1.25rem",
+              paddingLeft: "0",
+              paddingRight: "0",
+              display: "grid",
+              gridAutoFlow: "row",
+              gridAutoColumns: "auto auto auto",
+              gap: "0.5rem",
+              justifyItems: "center",
+              borderRadius: "0",
+              fontSize: "0.75rem",
+              textAlign: "center",
+              whiteSpace: "wrap",
+              cursor: "pointer",
+              "-webkit-user-select": "none",
+              "-ms-user-select": "none",
+              "user-select": "none",
+    
+              "&:hover": { background: "none" }, // overriding the hover style
+
+              "& > :first-child": {
+                width: "75%",
+                borderRadius: "2rem",
+                paddingTop: "0.125rem",
+                paddingBottom: "0.125rem",
+              },
+    
+              "&:hover > :first-child": { background: "rgba(0,0,0,0.05)" },
+    
+              "&:active": { background: "transparent" }, // overriding the active style
+    
+              "&:active > :first-child": { background: "rgba(0,0,0,0.1)" },
+    
+              "&.menu-active": { backgroundColor: "transparent", color: color }, // overriding the --active style
+    
+              "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            },
           },
         },
 
@@ -699,7 +749,6 @@ const AddComponents = (color, shades) => {
             gap: "1rem",
             alignItems: "center",
             borderRadius: "9999px",
-            // width: "100%", //commented because it is unnecessary
             whiteSpace: "nowrap",
             cursor: "pointer",
             "-webkit-user-select": "none",
@@ -710,7 +759,7 @@ const AddComponents = (color, shades) => {
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&.-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
 
           "& > details": { //collapsible list under menu
@@ -928,6 +977,17 @@ const AddComponents = (color, shades) => {
         maxheight: "4.75rem",
         fontWeight: "bold",
         zIndex: "9997",
+
+        //sidebar
+        "&.--side": {
+          display: "flex",
+          flexDirection: "column",
+          width: "auto",
+          minHeight: "100vh",
+          maxHeight: "100vh",
+          backgroundColor: "#ffffff",
+          order: "1",
+        }
       },
 
       //navbar item positions
@@ -994,7 +1054,6 @@ const AddComponents = (color, shades) => {
             "& > *": {
               height: "100%",
               overflowY: "auto",
-              backgroundColor: "#FFFFFF",
               // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
             },
           },
