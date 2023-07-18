@@ -494,6 +494,7 @@ const AddComponents = (color, shades) => {
 
 
       //drawer class
+      //this default as a fullscreen drawer because tailwind is using minimum screen px
       ".drawer": {
         display: "flex",
         flexDirection: "row-reverse",
@@ -504,44 +505,39 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
-        //when nav rail is exisiting on bottom
-        "& > .rail + ._drawer-toggle + ._drawer-page-content": {
-          height: "calc(100vh - 5.125rem)",
-        },
-
-        //when nav rail is on the left
-        "& > .rail.--left-nav + ._drawer-toggle + ._drawer-page-content": {
-          height: "initial",
-        },
-
-        "& > ._drawer-sidebar": {
+        "& > ._drawer-sidebar": { //sidebar wrapper
           position: "absolute",
           top: "0",
           left: "0",
-          // borderRightWidth: "1px", //commented, not sure if i will use it for opened drawer or i will let the user do this by using border-r
           height: "100vh",
           opacity: "0",
           visibility: "hidden",
-          zIndex: "9996",
+          zIndex: "98",
           transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
 
           "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
             position: "absolute",
             height: "100vh",
             left: "-23rem",
-            width: "23rem",
-            zIndex: "9998",
+            // width: "calc(100vw - 5.875rem)",
+            width: "100vw",
+            zIndex: "1",
             transition: `left 250ms ${ easeInOut }`,
 
             "& > *": {
               height: "100%",
               overflowY: "auto",
-              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
+              //commented also, not sure if i will let the user do it
+              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))",
             },
+          },
+          
+          "&.--compact > ._drawer-sidebar-content": { //compact drawer!
+            width: "23rem",
           },
 
           "& > ._drawer-overlay": { //the transparent background
-            "position":"absolute",
+            position: "absolute",
             top: "0",
             left: "0",
             width: "100vw",
@@ -551,19 +547,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "& > .rail.--left-nav ~ ._drawer-sidebar": {
-          left: "5.5rem",
-
-          "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
-            left: "-23rem",
-          },
-
-          "& > ._drawer-overlay": { //the transparent background
-            width: "calc(100vw - 5.5rem)",
-          },
-        },
-
-        "& > input[type='checkbox']._drawer-toggle": { //the drawer....triggerer xD
+        "& > input[type='checkbox']._drawer-toggle": { //the checkbox toggle for drawer
           position: "absolute",
           top: "-2.5rem",
           "&:checked ~ ._drawer-sidebar": {
@@ -575,21 +559,14 @@ const AddComponents = (color, shades) => {
           }
         },
 
-        "& > .rail ~ input[type='checkbox']._drawer-toggle": { //the drawer triggerer under rail
-          "&:checked ~ ._drawer-sidebar": {
-            "& > ._drawer-sidebar-content": {
-              left: "0%",
-            },
-          }
-        },
-
+        //opened drawer
         "&.--open": { // forever opened drawer :>
           "& > .drawer-content": {
             overflowY: "auto",
             width: "100%",
           },
   
-          "& > ._drawer-sidebar": {
+          "& > ._drawer-sidebar": { //drawer sidebar opened
             position: "static",
             borderRightWidth: "1px",
             height: "100vh",
@@ -597,7 +574,7 @@ const AddComponents = (color, shades) => {
             visibility: "visible",
             zIndex: "0",
   
-            "& > ._drawer-sidebar-content": { 
+            "& > ._drawer-sidebar-content": { //drawer sdebar content fitted to its content
               position: "static",
               height: "100vh",
               width: "21rem",
@@ -607,6 +584,46 @@ const AddComponents = (color, shades) => {
             "& > ._drawer-overlay": {
               visibility: "hidden",
             },
+          },
+        },
+
+        //all about .rail
+        "& > .rail": {
+          "& + ._drawer-toggle + ._drawer-page-content": { //when nav rail is exisiting on bottom of the page
+            height: "calc(100vh - 5.125rem)",
+          },
+          
+          //left rail
+          "&.--left-nav": { //when nav rail is exisiting on left of the page
+            "& + ._drawer-toggle + ._drawer-page-content": { //reset the height of the drawer-page-content to its initial value
+              height: "initial",
+            },
+
+            "& ~ ._drawer-sidebar": {
+              left: "5.875rem", //when nav rail is on the left, move _drawer-sidebar slightly to the right
+    
+              "& > ._drawer-sidebar-content": { //wrapper for the sidebar content
+                left: "-23rem",
+                width: "calc(100vw - 5.875rem)"
+              },
+
+              "&.--compact > ._drawer-sidebar-content": { //fullscreen drawer!
+                width: "23rem",
+              },
+    
+              "& > ._drawer-overlay": { //the transparent background
+                width: "calc(100vw - 5.875rem)",
+              },
+            }
+          },
+
+          //the checkbox toggle directly under rail
+          "& ~ input[type='checkbox']._drawer-toggle": {
+            "&:checked ~ ._drawer-sidebar": {
+              "& > ._drawer-sidebar-content": {
+                left: "0%",
+              },
+            }
           },
         },
       },
@@ -1054,7 +1071,7 @@ const AddComponents = (color, shades) => {
         transition: `opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
         opacity: "0",
         visibility: "hidden",
-        zIndex: "9999",
+        zIndex: "100",
 
         "& > ._modal-content": { //wrapper for the content
           "display": "flex",
@@ -1097,7 +1114,7 @@ const AddComponents = (color, shades) => {
         minheight: "4.75rem",
         maxheight: "4.75rem",
         fontWeight: "bold",
-        zIndex: "9997",
+        zIndex: "97",
       },
 
       //navbar item positions
@@ -1171,7 +1188,7 @@ const AddComponents = (color, shades) => {
           flexDirection: "column",
           minHeight: "100vh",
           maxHeight: "100vh",
-          zIndex: "9997",
+          zIndex: "99",
 
           "._rail-top": { //rail-top
             flexDirection: "column",
