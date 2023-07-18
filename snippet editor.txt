@@ -1,1 +1,0 @@
-<input className=\"check\" type=\"checkbox\" disabled />\n<input className=\"check\" type=\"checkbox\" disabled checked />

@@ -26,7 +26,7 @@ export default function App() {
           <div className="_rail-main">
             <ul className="menu menu-primary --rail">
               <li><NavLink to="/home" className={({ isActive }) => isActive ? "_menu-active" : ""}><span className="material-icons-round">home</span>home</NavLink></li>
-              <li><label htmlFor="myDrawer"><span className="material-icons-round">add_circle_outline</span>Components</label></li>
+              <li><label htmlFor="drawerComponent"><span className="material-icons-round">add_circle_outline</span>Components</label></li>
             </ul>
           </div>
           <div className="_rail-bottom hidden xl:flex">
@@ -36,7 +36,7 @@ export default function App() {
           </div>
         </div>
 
-        <input className="_drawer-toggle" type="checkbox" id="myDrawer"/>
+        <input className="_drawer-toggle" type="checkbox" id="drawerComponent"/>
         <div className="_drawer-page-content">
           <div className="p-4"> {/* content itself */}
             <Routes>
@@ -84,21 +84,9 @@ export default function App() {
                     <li><NavLink to="/input-field" className={({ isActive }) => isActive ? "_menu-active" : ""}>Input Field</NavLink></li>
                     <li><NavLink to="/menu" className={({ isActive }) => isActive ? "_menu-active" : ""}>Menu</NavLink></li>
                     <li><NavLink to="/modal" className={({ isActive }) => isActive ? "_menu-active" : ""}>Modal</NavLink></li>
-                    <li>
-                      <NavLink to="/navbar" className={({ isActive }) => isActive ? "_menu-active" : ""}>
-                        Navigation Bar
-                        <span></span>
-                        <span className="badge badge-error">Inc</span>
-                      </NavLink>
-                    </li>
+                    <li><NavLink to="/navbar" className={({ isActive }) => isActive ? "_menu-active" : ""}>Navigation Bar</NavLink></li>
                     {/* <li><NavLink to="/progress-bar" className={({ isActive }) => isActive ? "_menu-active" : ""}>Progress Bars</NavLink></li> */} {/* archived */}
-                    <li>
-                      <NavLink to="/radio-button" className={({ isActive }) => isActive ? "_menu-active" : ""}>
-                        Radio Button
-                        <span></span>
-                        <span className="badge badge-warning">Review</span>
-                      </NavLink>
-                    </li>
+                    <li><NavLink to="/radio-button" className={({ isActive }) => isActive ? "_menu-active" : ""}>Radio Button</NavLink></li>
                     <li><NavLink to="/rail" className={({ isActive }) => isActive ? "_menu-active" : ""}>Rail</NavLink></li>
                     <li><NavLink to="/switch" className={({ isActive }) => isActive ? "_menu-active" : ""}>Switch</NavLink></li>
                   </ul>
@@ -107,7 +95,7 @@ export default function App() {
             </div>
           </div>
 
-          <label className="_drawer-overlay" htmlFor="myDrawer"></label>
+          <label className="_drawer-overlay" htmlFor="drawerComponent"></label>
         </div>
       </div>
     </BrowserRouter>

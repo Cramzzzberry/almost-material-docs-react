@@ -179,7 +179,7 @@ const MatchComponents = (shades) => {
           alignItems: "center",
 
           "& > li": {
-            "& > a": { //list items under menu
+            "& > a, label": { //list items under menu
               "&._menu-active": { color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
               "&._menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
             },

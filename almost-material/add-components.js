@@ -504,9 +504,14 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
-        //when nav rail is put to the bottom
-        "& > .rail.--bottom + ._drawer-toggle + ._drawer-page-content": {
-          height: "calc(100vh - 4.75rem)",
+        //when nav rail is exisiting on bottom
+        "& > .rail + ._drawer-toggle + ._drawer-page-content": {
+          height: "calc(100vh - 5.125rem)",
+        },
+
+        //when nav rail is on the left
+        "& > .rail.--left-nav + ._drawer-toggle + ._drawer-page-content": {
+          height: "initial",
         },
 
         "& > ._drawer-sidebar": {
@@ -775,6 +780,7 @@ const AddComponents = (color, shades) => {
         
         "&.--rail": { //menu for rail
           alignItems: "center",
+          gap: "0.5rem",
 
           "& > li": {
             "& > a, label": { //list items under menu
@@ -782,8 +788,8 @@ const AddComponents = (color, shades) => {
               maxHeight: "initial",
               minWidth: "4.5rem",
               maxWidth: "4.5rem",
-              paddingTop: "0.75rem",
-              paddingBottom: "0.75rem",
+              paddingTop: "0.25rem",
+              paddingBottom: "0.25rem",
               paddingLeft: "0",
               paddingRight: "0",
               display: "grid",
@@ -1138,26 +1144,27 @@ const AddComponents = (color, shades) => {
         padding: "0.25rem",
         backgroundColor: "#ffffff",
         order: "1",
+        // zIndex: "1",
         
-        "& > ._rail-top > ul, ol": { //rail-top
+        "& > ._rail-top > ul, ol > .menu.--rail": { //rail-top
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
         
-        "& > ._rail-main > ul, ol": { //rail-main
+        "& > ._rail-main > ul, ol > .menu.--rail": { //rail-main
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
         
-        "& > ._rail-bottom > ul, ol": { //rail-top
+        "& > ._rail-bottom > ul, ol > .menu.--rail": { //rail-top
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
 
-        //bottom rail
+        //left rail
         "&.--left-nav": {
           position: "static",
           width: "auto",
@@ -1170,7 +1177,7 @@ const AddComponents = (color, shades) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
-            "& > ul, ol": {
+            "& > ul, ol > .menu.--rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
@@ -1181,7 +1188,7 @@ const AddComponents = (color, shades) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
-            "& > ul, ol": {
+            "& > ul, ol > .menu.--rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
@@ -1192,7 +1199,7 @@ const AddComponents = (color, shades) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-end",
-            "& > ul, ol": {
+            "& > ul, ol > .menu.--rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
