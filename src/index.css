@@ -4,6 +4,9 @@
 
 @layer components {
   .drawer-sample {
-    @apply z-[9997]
+    @apply h-fit
+  }
+  .drawer-sample > input[type='checkbox']._drawer-toggle:checked ~ ._drawer-sidebar {
+    @apply z-[9999]
   }
 }

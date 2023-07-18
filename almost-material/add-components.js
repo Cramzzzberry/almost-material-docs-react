@@ -504,6 +504,11 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
+        //when nav rail is put to the bottom
+        "& > .rail.--bottom + ._drawer-toggle + ._drawer-page-content": {
+          height: "calc(100vh - 4.75rem)",
+        },
+
         "& > ._drawer-sidebar": {
           position: "absolute",
           top: "0",
@@ -541,7 +546,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "& > .rail ~ ._drawer-sidebar": {
+        "& > .rail.--left-nav ~ ._drawer-sidebar": {
           left: "5.5rem",
 
           "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
@@ -783,7 +788,7 @@ const AddComponents = (color, shades) => {
               paddingRight: "0",
               display: "grid",
               gridAutoFlow: "row",
-              gridAutoColumns: "auto auto auto",
+              gridAutoColumns: "auto auto",
               gap: "0",
               justifyItems: "center",
               borderRadius: "0",
@@ -1122,42 +1127,109 @@ const AddComponents = (color, shades) => {
 
       //rail class
       ".rail": {
+        position: "absolute",
         display: "flex",
-        flexDirection: "column",
-        width: "auto",
-        minHeight: "100vh",
-        maxHeight: "100vh",
+        flexDirection: "row",
+        bottom: "0",
+        left: "0",
+        width: "100vw",
+        minHeight: "initial",
+        maxHeight: "initial",
         padding: "0.25rem",
         backgroundColor: "#ffffff",
         order: "1",
-        zIndex: "9997",
+        
+        "& > ._rail-top > ul, ol": { //rail-top
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "space-around",
+        },
+        
+        "& > ._rail-main > ul, ol": { //rail-main
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "space-around",
+        },
+        
+        "& > ._rail-bottom > ul, ol": { //rail-top
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "space-around",
+        },
 
-        "._rail-top": {
-          display: "flex",
-          flexDirection: "row",
-          flexGrow: "0",
-          flexBasis: "0",
-          alignItems: "flex-start",
-          order: "0",
+        //bottom rail
+        "&.--left-nav": {
+          position: "static",
+          width: "auto",
+          flexDirection: "column",
+          minHeight: "100vh",
+          maxHeight: "100vh",
+          zIndex: "9997",
+
+          "._rail-top": { //rail-top
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            "& > ul, ol": {
+              width: "initial",
+              flexDirection: "column",
+              justifyContent: "normal",
+            },
+          },
+          
+          "._rail-main": { //rail-main
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            "& > ul, ol": {
+              width: "initial",
+              flexDirection: "column",
+              justifyContent: "normal",
+            },
+          },
+          
+          "._rail-bottom": { //rail-bottom
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            "& > ul, ol": {
+              width: "initial",
+              flexDirection: "column",
+              justifyContent: "normal",
+            },
+          },
         },
-        
-        "._rail-main": {
-          display: "flex",
-          flexDirection: "row",
-          flexGrow: "1",
-          flexBasis: "0",
-          alignItems: "flex-start",
-          order: "1",
-        },
-        
-        "._rail-bottom": {
-          display: "flex",
-          flexDirection: "row",
-          flexGrow: "1",
-          flexBasis: "0",
-          alignItems: "flex-end",
-          order: "2",
-        },
+      },
+
+      //I put this outside also, same reason for navbar-top, etc
+      "._rail-top": { //rail-top
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "0",
+        flexBasis: "0",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        order: "0",
+      },
+      
+      "._rail-main": { //rail-top
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "1",
+        flexBasis: "0",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        order: "1",
+      },
+      
+      "._rail-bottom": { //rail-bottom
+        display: "flex",
+        flexDirection: "row",
+        flexGrow: "1",
+        flexBasis: "0",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        order: "2",
       },
 
 
