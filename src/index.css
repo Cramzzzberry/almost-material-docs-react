@@ -3,4 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  .drawer-sample {
+    @apply z-[9997]
+  }
 }

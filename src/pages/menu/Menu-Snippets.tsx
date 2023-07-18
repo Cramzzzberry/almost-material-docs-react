@@ -55,7 +55,7 @@ export const MenuSnippets = {
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu w-56">
-            <li className="menu-title">Title</li>
+            <li className="_menu-title">Title</li>
             <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
@@ -63,8 +63,8 @@ export const MenuSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li class=\"menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li className=\"menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li class=\"_menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li className=\"_menu-title\">Title</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
   "Menu w/ Title as a Parent": {
     preview: (
@@ -72,7 +72,7 @@ export const MenuSnippets = {
         <div className="card">
           <ul className="menu w-56">
             <li>
-              <span className="menu-title">Parent</span>
+              <span className="_menu-title">Parent</span>
               <ul>
                 <li><a>Link 1</a></li>
                 <li><a>Link 2</a></li>
@@ -83,8 +83,8 @@ export const MenuSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li>\n      <span class=\"menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li>\n      <span className=\"menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu w-56\">\n    <li>\n      <span class=\"_menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu w-56\">\n    <li>\n      <span className=\"_menu-title\">Parent</span>\n      <ul>\n        <li><a>Link 1</a></li>\n        <li><a>Link 2</a></li>\n        <li><a>Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n</div>",
   },
   "Menu and Submenu": {
     preview: (
@@ -258,64 +258,64 @@ export const MenuSnippets = {
       <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-primary">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-secondary">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-tertiary">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-info">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-success">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-warning">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
         <div className="card">
           <ul className="menu menu-error">
-            <li><a className="menu-active">Link 1</a></li>
+            <li><a className="_menu-active">Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-primary\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-secondary\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-tertiary\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-info\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-success\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-warning\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-error\">\n    <li><a class=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-primary\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-secondary\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-tertiary\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-info\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-success\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-warning\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-error\">\n    <li><a className=\"menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu menu-primary\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-secondary\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-tertiary\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-info\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-success\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-warning\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu menu-error\">\n    <li><a class=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu menu-primary\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-secondary\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-tertiary\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-info\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-success\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-warning\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu menu-error\">\n    <li><a className=\"_menu-active\">Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li><a>Link 3</a></li>\n  </ul>\n</div>",
   },
   "Menu Sizes": {
     preview: (
       <div className="card card-primary-80 min-h-[480px] p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
           <ul className="menu --sm">
-            <li className="menu-title">Smol</li>
+            <li className="_menu-title">Smol</li>
             <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li>
@@ -331,7 +331,7 @@ export const MenuSnippets = {
         </div>
         <div className="card">
           <ul className="menu">
-            <li className="menu-title">Defolt</li>
+            <li className="_menu-title">Defolt</li>
             <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li>
@@ -347,7 +347,7 @@ export const MenuSnippets = {
         </div>
         <div className="card">
           <ul className="menu --lg">
-            <li className="menu-title">Large</li>
+            <li className="_menu-title">Large</li>
             <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li>
@@ -363,7 +363,7 @@ export const MenuSnippets = {
         </div>
         <div className="card">
           <ul className="menu --xl">
-            <li className="menu-title">RAWR!</li>
+            <li className="_menu-title">RAWR!</li>
             <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li>
@@ -379,7 +379,7 @@ export const MenuSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card\">\n  <ul class=\"menu --sm\">\n    <li class=\"menu-title\">Smol</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu\">\n    <li class=\"menu-title\">Defolt</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu --lg\">\n    <li class=\"menu-title\">Large</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu --xl\">\n    <li class=\"menu-title\">RAWR!</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>",
-    jsxCode: "<div className=\"card\">\n  <ul className=\"menu --sm\">\n    <li className=\"menu-title\">Smol</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu\">\n    <li className=\"menu-title\">Defolt</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu --lg\">\n    <li className=\"menu-title\">Large</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu --xl\">\n    <li className=\"menu-title\">RAWR!</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>",
+    htmlCode: "<div class=\"card\">\n  <ul class=\"menu --sm\">\n    <li class=\"_menu-title\">Smol</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu\">\n    <li class=\"_menu-title\">Defolt</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu --lg\">\n    <li class=\"_menu-title\">Large</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div class=\"card\">\n  <ul class=\"menu --xl\">\n    <li class=\"_menu-title\">RAWR!</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>",
+    jsxCode: "<div className=\"card\">\n  <ul className=\"menu --sm\">\n    <li className=\"_menu-title\">Smol</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu\">\n    <li className=\"_menu-title\">Defolt</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu --lg\">\n    <li className=\"_menu-title\">Large</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>\n<div className=\"card\">\n  <ul className=\"menu --xl\">\n    <li className=\"_menu-title\">RAWR!</li>\n    <li><a>Link 1</a></li>\n    <li><a>Link 2</a></li>\n    <li>\n      <details open>\n        <summary>opened</summary>\n        <ul>\n          <li><a>Child Link 1</a></li>\n          <li><a>Child Link 2</a></li>\n        </ul>\n      </details>\n    </li>\n  </ul>\n</div>",
   },
 }

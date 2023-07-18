@@ -266,12 +266,12 @@ const AddComponents = (color, shades) => {
         borderRadius: "1.5rem",
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
-        "& > .card-body": { //for card body
+        "& > ._card-body": { //for card body
           padding: "1.25rem",
 
-          "& > .card-title": { fontWeight: "bold" },
+          "& > ._card-title": { fontWeight: "bold" },
   
-          "& > .card-actions": {
+          "& > ._card-actions": {
             paddingTop: "0.75rem",
             display: "flex",
             flexDirection: "row",
@@ -493,11 +493,121 @@ const AddComponents = (color, shades) => {
 
 
 
+      //drawer class
+      ".drawer": {
+        display: "flex",
+        flexDirection: "row-reverse",
+        height: "100vh",
+
+        "& > ._drawer-page-content": { //wrapper for the page content
+          overflowY: "auto",
+          width: "100%",
+        },
+
+        "& > ._drawer-sidebar": {
+          position: "absolute",
+          top: "0",
+          left: "0",
+          // borderRightWidth: "1px", //commented, not sure if i will use it for opened drawer or i will let the user do this by using border-r
+          height: "100vh",
+          opacity: "0",
+          visibility: "hidden",
+          zIndex: "9996",
+          transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
+
+          "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
+            position: "absolute",
+            height: "100vh",
+            left: "-23rem",
+            width: "23rem",
+            zIndex: "9998",
+            transition: `left 250ms ${ easeInOut }`,
+
+            "& > *": {
+              height: "100%",
+              overflowY: "auto",
+              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
+            },
+          },
+
+          "& > ._drawer-overlay": { //the transparent background
+            "position":"absolute",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.5)",
+            cursor: "pointer",
+          },
+        },
+
+        "& > .rail ~ ._drawer-sidebar": {
+          left: "5.5rem",
+
+          "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
+            left: "-23rem",
+          },
+
+          "& > ._drawer-overlay": { //the transparent background
+            width: "calc(100vw - 5.5rem)",
+          },
+        },
+
+        "& > input[type='checkbox']._drawer-toggle": { //the drawer....triggerer xD
+          position: "absolute",
+          top: "-2.5rem",
+          "&:checked ~ ._drawer-sidebar": {
+            opacity: "1",
+            visibility: "visible",
+            "& > ._drawer-sidebar-content": {
+              left: "0%",
+            },
+          }
+        },
+
+        "& > .rail ~ input[type='checkbox']._drawer-toggle": { //the drawer triggerer under rail
+          "&:checked ~ ._drawer-sidebar": {
+            "& > ._drawer-sidebar-content": {
+              left: "0%",
+            },
+          }
+        },
+
+        "&.--open": { // forever opened drawer :>
+          "& > .drawer-content": {
+            overflowY: "auto",
+            width: "100%",
+          },
+  
+          "& > ._drawer-sidebar": {
+            position: "static",
+            borderRightWidth: "1px",
+            height: "100vh",
+            opacity: "1",
+            visibility: "visible",
+            zIndex: "0",
+  
+            "& > ._drawer-sidebar-content": { 
+              position: "static",
+              height: "100vh",
+              width: "21rem",
+              zIndex: "0",
+            },
+  
+            "& > ._drawer-overlay": {
+              visibility: "hidden",
+            },
+          },
+        },
+      },
+
+
+
       //dropdown class
       ".dropdown": {
         position: "relative",
         width: "fit-content",
-        "& > .dropdown-content": { //default position
+        "& > ._dropdown-content": { //default position
           transformOrigin: "10% 10%",
           top: "calc(100% + 8px)",
           bottom: "auto",
@@ -513,15 +623,15 @@ const AddComponents = (color, shades) => {
           filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
         },
 
-        "& > label:focus ~ .dropdown-content": { transform: "scale(1, 1)", opacity: "1", visibility: "visible" },
+        "& > label:focus ~ ._dropdown-content": { transform: "scale(1, 1)", opacity: "1", visibility: "visible" },
 
-        "&:focus-within > .dropdown-content": { //this is important so that the dropdown doesnt close when you click the contents
+        "&:focus-within > ._dropdown-content": { //this is important so that the dropdown doesnt close when you click the contents
           transform: "scale(1, 1)",
           opacity: "1",
           visibility: "visible",
         },
 
-        "& > .dropdown-content > li > a": {
+        "& > ._dropdown-content > li > a": {
           display: "flex",
           padding: "1.5rem",
           paddingTop: "1.25rem",
@@ -530,26 +640,26 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
-        "& > .dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
+        "& > ._dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
 
         "&.--top": { //top dropdown
-          "& > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
-          "&.--end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
+          "& > ._dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
+          "&.--end > ._dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
         },
 
         "&.--bottom": { //bottom dropdown
-          "& > .dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
-          "&.--end > .dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
+          "& > ._dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
+          "&.--end > ._dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
         },
 
         "&.--left": { //left dropdown
-          "& > .dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
-          "&.--end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
+          "& > ._dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
+          "&.--end > ._dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
         },
 
         "&.--right": { //right dropdown
-          "& > .dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
-          "&.--end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
+          "& > ._dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
+          "&.--end > ._dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
         },
       },
 
@@ -657,8 +767,8 @@ const AddComponents = (color, shades) => {
             }
           },
         },
-
-        "&.--app-menu": { //app menu for side and bottom nav bar
+        
+        "&.--rail": { //menu for rail
           alignItems: "center",
 
           "& > li": {
@@ -667,14 +777,14 @@ const AddComponents = (color, shades) => {
               maxHeight: "initial",
               minWidth: "4.5rem",
               maxWidth: "4.5rem",
-              paddingTop: "1.25rem",
-              paddingBottom: "1.25rem",
+              paddingTop: "0.75rem",
+              paddingBottom: "0.75rem",
               paddingLeft: "0",
               paddingRight: "0",
               display: "grid",
               gridAutoFlow: "row",
               gridAutoColumns: "auto auto auto",
-              gap: "0.5rem",
+              gap: "0",
               justifyItems: "center",
               borderRadius: "0",
               fontSize: "0.75rem",
@@ -688,10 +798,10 @@ const AddComponents = (color, shades) => {
               "&:hover": { background: "none" }, // overriding the hover style
 
               "& > :first-child": {
-                width: "75%",
+                width: "80%",
                 borderRadius: "2rem",
-                paddingTop: "0.125rem",
-                paddingBottom: "0.125rem",
+                paddingTop: "0.25rem",
+                paddingBottom: "0.25rem",
               },
     
               "&:hover > :first-child": { background: "rgba(0,0,0,0.05)" },
@@ -700,14 +810,14 @@ const AddComponents = (color, shades) => {
     
               "&:active > :first-child": { background: "rgba(0,0,0,0.1)" },
     
-              "&.menu-active": { backgroundColor: "transparent", color: color }, // overriding the --active style
+              "&._menu-active": { backgroundColor: "transparent", color: color }, // overriding the --active style
     
-              "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+              "&._menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
             },
           },
         },
 
-        "& .menu-title": { //menu title in almost all wrapper elements
+        "& ._menu-title": { //menu title in almost all wrapper elements
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -759,7 +869,7 @@ const AddComponents = (color, shades) => {
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&._menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
 
           "& > details": { //collapsible list under menu
@@ -813,7 +923,7 @@ const AddComponents = (color, shades) => {
 
         //menu sizes
         "&.--sm": {
-          "& .menu-title": { //menu title in almost all wrapper elements
+          "& ._menu-title": { //menu title in almost all wrapper elements
             minHeight: "1.75rem",
             maxHeight: "1.75rem",
             paddingLeft: "1rem",
@@ -850,7 +960,7 @@ const AddComponents = (color, shades) => {
         },
         
         "&.--lg": {
-          "& .menu-title": { //menu title in almost all wrapper elements
+          "& ._menu-title": { //menu title in almost all wrapper elements
             minHeight: "3.25rem",
             maxHeight: "3.25rem",
             paddingLeft: "1.5rem",
@@ -885,12 +995,12 @@ const AddComponents = (color, shades) => {
         },
         
         "&.--xl": {
-          "& .menu-title": { //menu title in almost all wrapper elements
+          "& ._menu-title": { //menu title in almost all wrapper elements
             minHeight: "4rem",
             maxHeight: "4rem",
             paddingLeft: "2rem",
             paddingRight: "2rem",
-            fontSize: "1.125rem",
+            fontSize: "1.375rem",
           },
           "& li": {
             "& > a": { //list items under menu
@@ -935,7 +1045,7 @@ const AddComponents = (color, shades) => {
         visibility: "hidden",
         zIndex: "9999",
 
-        "& > .modal-content": { //wrapper for the content
+        "& > ._modal-content": { //wrapper for the content
           "display": "flex",
           "justifyContent": "center",
           "alignItems": "center",
@@ -944,7 +1054,7 @@ const AddComponents = (color, shades) => {
           transition: `transform 125ms ${ easeInOut }`,
           transform: "scale(0.9, 0.9)",
 
-          "& > .modal-backdrop": { //the transparent background
+          "& > ._modal-backdrop": { //the transparent background
             position:"absolute",
             top:"0",
             left:"0",
@@ -955,11 +1065,11 @@ const AddComponents = (color, shades) => {
         }
       },
 
-      "input[type='checkbox'].modal-toggle": { //the one that will trigger modal opening
+      "input[type='checkbox']._modal-toggle": { //the one that will trigger modal opening
         position: "absolute",
         top: "-100px",
         "&:checked+.modal": { opacity: "1", visibility: "visible" },
-        "&:checked+.modal > .modal-content": { transform: "scale(1, 1)" },
+        "&:checked+.modal > ._modal-content": { transform: "scale(1, 1)" },
       },
 
 
@@ -977,22 +1087,11 @@ const AddComponents = (color, shades) => {
         maxheight: "4.75rem",
         fontWeight: "bold",
         zIndex: "9997",
-
-        //sidebar
-        "&.--side": {
-          display: "flex",
-          flexDirection: "column",
-          width: "auto",
-          minHeight: "100vh",
-          maxHeight: "100vh",
-          backgroundColor: "#ffffff",
-          order: "1",
-        }
       },
 
       //navbar item positions
       //I put these all outside so that hidden utility class is not overridden
-      ".navbar-start": {
+      "._navbar-start": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1001,7 +1100,7 @@ const AddComponents = (color, shades) => {
         order: "0",
       },
       
-      ".navbar-center": {
+      "._navbar-center": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1010,7 +1109,7 @@ const AddComponents = (color, shades) => {
         order: "1",
       },
       
-      ".navbar-end": {
+      "._navbar-end": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1021,91 +1120,43 @@ const AddComponents = (color, shades) => {
 
 
 
-      //navdrawer class
-      ".navdrawer": {
+      //rail class
+      ".rail": {
         display: "flex",
-        flexDirection: "row-reverse",
-        height: "100vh",
+        flexDirection: "column",
+        width: "auto",
+        minHeight: "100vh",
+        maxHeight: "100vh",
+        padding: "0.25rem",
+        backgroundColor: "#ffffff",
+        order: "1",
+        zIndex: "9997",
 
-        "& > .navdrawer-page-content": { //wrapper for the page content
-          overflowY: "auto",
-          width: "100%",
+        "._rail-top": {
+          display: "flex",
+          flexDirection: "row",
+          flexGrow: "0",
+          flexBasis: "0",
+          alignItems: "flex-start",
+          order: "0",
         },
-
-        "& > .navdrawer-sidebar": {
-          position: "absolute",
-          top: "0",
-          left: "0",
-          // borderRightWidth: "1px", //commented, not sure if i will use it for opened drawer or i will let the user do this by using border-r
-          height: "100vh",
-          opacity: "0",
-          visibility: "hidden",
-          zIndex: "9997",
-          transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
-
-          "& > .navdrawer-sidebar-content": {  //wrapper for the sidebar content
-            position: "absolute",
-            height: "100vh",
-            left: "-23rem",
-            width: "23rem",
-            zIndex: "9998",
-            transition: `left 250ms ${ easeInOut }`,
-
-            "& > *": {
-              height: "100%",
-              overflowY: "auto",
-              // dropShadow: "drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06))", //commented also, not sure if i will let the user do it
-            },
-          },
-
-          "& > .navdrawer-overlay": { //the transparent background
-            "position":"absolute",
-            top: "0",
-            left: "0",
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(0,0,0,0.5)",
-            cursor: "pointer",
-          },
+        
+        "._rail-main": {
+          display: "flex",
+          flexDirection: "row",
+          flexGrow: "1",
+          flexBasis: "0",
+          alignItems: "flex-start",
+          order: "1",
         },
-
-        "& > input[type='checkbox'].navdrawer-toggle": { //the drawer....triggerer xD
-          position: "absolute",
-          top: "-2.5rem",
-          "&:checked ~ .navdrawer-sidebar": {
-            opacity: "1",
-            visibility: "visible",
-            "& > .navdrawer-sidebar-content": {
-              left: "0%",
-            },
-          }
-        },
-
-        "&.--open": { // forever opened drawer :>
-          "& > .navdrawer-content": {
-            overflowY: "auto",
-            width: "100%",
-          },
-  
-          "& > .navdrawer-sidebar": {
-            position: "static",
-            borderRightWidth: "1px",
-            height: "100vh",
-            opacity: "1",
-            visibility: "visible",
-            zIndex: "0",
-  
-            "& > .navdrawer-sidebar-content": { 
-              position: "static",
-              height: "100vh",
-              width: "21rem",
-              zIndex: "0",
-            },
-  
-            "& > .navdrawer-overlay": {
-              visibility: "hidden",
-            },
-          },
+        
+        "._rail-bottom": {
+          display: "flex",
+          flexDirection: "row",
+          flexGrow: "1",
+          flexBasis: "0",
+          alignItems: "flex-end",
+          order: "2",
         },
       },
 
