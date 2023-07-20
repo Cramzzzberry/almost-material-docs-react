@@ -39,7 +39,7 @@ export const BadgeSnippets = {
     preview: (
       <>
       <span className="badge badge-sm">Small</span>
-      <span className="badge">Default</span>
+      <span className="badge badge-md">Default</span>
       <span className="badge badge-lg">Large</span>
       <span className="badge badge-xl">LAAAARGE!</span>
       </>

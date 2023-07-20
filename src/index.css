@@ -9,7 +9,7 @@
   .drawer-sample > input[type='checkbox'].drawer-toggle:checked ~ .drawer-sidebar {
     @apply z-[9999]
   }
-  .rail.rail-sample.--left-nav {
+  .rail.rail-sample.rail-left {
     @apply min-h-[560px] max-h-[560px] z-0
   }
 }

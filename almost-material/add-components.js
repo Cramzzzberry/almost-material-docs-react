@@ -25,9 +25,9 @@ const AddComponents = (color, shades) => {
         borderRadius: "9999px",
         borderWidth: "1px",
 
-        fontSize: "0.875rem !important",
+        fontSize: "0.875rem",
         fontWeight: "bold",
-        lineHeight: "1.25rem !important",
+        lineHeight: "1.25rem",
         textTransform: "capitalize",
 
         backgroundColor: color,
@@ -58,28 +58,28 @@ const AddComponents = (color, shades) => {
           paddingLeft: "0.375rem",
           paddingRight: "0.375rem",
 
-          fontSize: "0.625rem !important",
-          lineHeight: "1rem !important",
+          fontSize: "0.625rem",
+          lineHeight: "1rem",
         },
 
         "&.badge-md": { //default badge size
-          minHeight: "1rem",
-          maxHeight: "1rem",
-          paddingLeft: "0.375rem",
-          paddingRight: "0.375rem",
-
-          fontSize: "0.875rem !important",
-          lineHeight: "1.25rem !important",
-        },
-  
-        "&.badge-lg": {
           minHeight: "1.25rem",
           maxHeight: "1.25rem",
           paddingLeft: "0.75rem",
           paddingRight: "0.75rem",
 
-          fontSize: "1.125rem !important",
-          lineHeight: "1.5rem !important",
+          fontSize: "0.875rem",
+          lineHeight: "1.25rem",
+        },
+  
+        "&.badge-lg": {
+          minHeight: "1.5rem",
+          maxHeight: "1.5rem",
+          paddingLeft: "1.125rem",
+          paddingRight: "1.125rem",
+
+          fontSize: "1.125rem",
+          lineHeight: "1.5rem",
         },
   
         "&.badge-xl": {
@@ -88,8 +88,8 @@ const AddComponents = (color, shades) => {
           paddingLeft: "1.375rem",
           paddingRight: "1.375rem",
 
-          fontSize: "1.375rem !important",
-          lineHeight: "1.75rem !important",
+          fontSize: "1.375rem",
+          lineHeight: "1.75rem",
         },
       },
   
