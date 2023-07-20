@@ -16,61 +16,80 @@ const AddComponents = (color, shades) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+
+        width: "fit-content",
         minHeight: "1.25rem",
         maxHeight: "1.25rem",
-        width: "fit-content",
         paddingLeft: "0.75rem",
         paddingRight: "0.75rem",
         borderRadius: "9999px",
         borderWidth: "1px",
-        borderColor: color,
-        fontSize: "0.875rem",
-        lineHeight: "1.25rem",
-        textTransform: "capitalize",
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        backgroundColor: color,
+
+        fontSize: "0.875rem !important",
         fontWeight: "bold",
-        "&.--outlined": { //badge-outlined
-          borderColor: color,
+        lineHeight: "1.25rem !important",
+        textTransform: "capitalize",
+
+        backgroundColor: color,
+        borderColor: color,
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+
+        "&.badge-outline": { //badge-outlined
           fontWeight: "normal",
-          color: color,
+
           backgroundColor: "transparent",
+          borderColor: color,
+          color: color,
         },
 
-        "&.--dot": { //badge-outlined
-          maxHeight: "0.875rem",
-          minHeight: "0.875rem",
+        "&.badge-dot": { //badge-dot
           minWidth: "0.875rem",
           maxWidth: "0.875rem",
+          maxHeight: "0.875rem",
+          minHeight: "0.875rem",
+
           padding: "0",
         },
   
         //sizes for badge
-        "&.--sm": {
+        "&.badge-sm": {
           minHeight: "1rem",
           maxHeight: "1rem",
           paddingLeft: "0.375rem",
           paddingRight: "0.375rem",
-          fontSize: "0.625rem",
-          lineHeight: "1rem",
+
+          fontSize: "0.625rem !important",
+          lineHeight: "1rem !important",
+        },
+
+        "&.badge-md": { //default badge size
+          minHeight: "1rem",
+          maxHeight: "1rem",
+          paddingLeft: "0.375rem",
+          paddingRight: "0.375rem",
+
+          fontSize: "0.875rem !important",
+          lineHeight: "1.25rem !important",
         },
   
-        "&.--lg": {
-          minHeight: "1.5rem",
-          maxHeight: "1.5rem",
-          paddingLeft: "1.125rem",
-          paddingRight: "1.125rem",
-          fontSize: "1.125rem",
-          lineHeight: "1.5rem",
+        "&.badge-lg": {
+          minHeight: "1.25rem",
+          maxHeight: "1.25rem",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+
+          fontSize: "1.125rem !important",
+          lineHeight: "1.5rem !important",
         },
   
-        "&.--xl": {
+        "&.badge-xl": {
           minHeight: "1.75rem",
           maxHeight: "1.75rem",
           paddingLeft: "1.375rem",
           paddingRight: "1.375rem",
-          fontSize: "1.375rem",
-          lineHeight: "1.75rem",
+
+          fontSize: "1.375rem !important",
+          lineHeight: "1.75rem !important",
         },
       },
   
@@ -81,31 +100,36 @@ const AddComponents = (color, shades) => {
       //I made the button height based on set max and min heights (instead of its own, like padding-based size), using this
       //method made all buttons uniformed, this is the same method used for input sizes
       ".btn": {
-        textTransform: "capitalize",
-        backgroundColor: color,
-        borderColor: color,
-        display: "flex", 
+        display: "flex",
+        flexDirection: "row",
+        gap: "0.5rem",
+        alignItems: "center", 
+        justifyContent: "center",
+        cursor: "pointer",
+
+        width: "fit-content",
         minHeight: "3.25rem",
         maxHeight: "3.25rem",
+        borderWidth: "1px",
+        borderRadius: "9999px",
         paddingLeft: "1.25rem",
         paddingRight: "1.25rem",
-        width: "fit-content",
-        whiteSpace: "nowrap",
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        flexDirection: "row", 
-        justifyContent: "center", 
-        alignItems: "center", 
-        borderRadius: "9999px",
-        gap: "0.5rem",
+
+        fontSize: "1rem !important",
         fontWeight: "bold",
-        borderWidth: "1px",
+        textTransform: "capitalize",
+        whiteSpace: "nowrap",
+
+        backgroundColor: color,
+        borderColor: color,
+        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         "-webkit-user-select": "none",
         "-ms-user-select": "none",
         "user-select": "none",
+
         "&:hover:not([disabled])": {
-          cursor: "pointer",
-          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
           backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
         },
 
         "&:active:not([disabled])": {
@@ -113,10 +137,11 @@ const AddComponents = (color, shades) => {
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
         },
   
-        "&.--outlined": { //btn-outlined
+        "&.btn-outline": { //btn-outlined
           backgroundColor: "transparent",
           borderColor: "#C7C7C7",
           color: color,
+
           "&:hover": {
             backgroundColor: color,
             borderColor: color,
@@ -130,7 +155,7 @@ const AddComponents = (color, shades) => {
           },
         },
   
-        "&.--ghost": { //btn-ghost
+        "&.btn-ghost": { //btn-ghost
           backgroundColor: "transparent",
           borderColor: "transparent",
           color: color,
@@ -143,24 +168,14 @@ const AddComponents = (color, shades) => {
             background: "rgba(0,0,0,0.1)",
           },
   
-          "&.--active": { //btn-active
-            backgroundColor: "rgba(0,0,0,0.05)",
-            borderColor: "transparent",
-            color: color,
-            "&:hover:not([disabled])": {
-              borderColor: "transparent",
-              backgroundColor: "rgba(0,0,0,0.05)",
-            },
-
-            "&:active:not([disabled])": { //when clicked, retain their colors
-              borderColor: "transparent",
-              backgroundColor: "rgba(0,0,0,0.05)",
-              color: color,
-            },
+          "&.btn-active": { //btn-active
+            backgroundColor: "rgba(0,0,0,0.05) !important",
+            borderColor: "transparent !important",
+            color: `${ color } !important`,
           },
         },
   
-        "&.--circle": { //btn-circle
+        "&.btn-circle": { //btn-circle
           minHeight: "3.25rem",
           maxHeight: "3.25rem",
           minWidth: "3.25rem",
@@ -175,42 +190,47 @@ const AddComponents = (color, shades) => {
           },
   
           //sizes for btn-circle
-          "&.--sm": {
+          "&.btn-sm": {
             minHeight: "2.5rem",
             maxHeight: "2.5rem",
             minWidth: "2.5rem",
             maxWidth: "2.5rem",
-            fontSize: "1.375rem",
-            "& > *": { fontSize: "1.375rem" }
+            fontSize: "1.375rem !important",
+            "& > *": { fontSize: "1.375rem !important" }
           },
 
-          "&.--lg": {
+          "&.btn-md": { //default btn size
+            minHeight: "3.25rem",
+            maxHeight: "3.25rem",
+            minWidth: "3.25rem",
+            maxWidth: "3.25rem",
+            fontSize: "1.5rem !important",
+            "& > *": { fontSize: "1.5rem !important" }
+          },
+
+          "&.btn-lg": {
             minHeight: "3.75rem",
             maxHeight: "3.75rem",
             minWidth: "3.75rem",
             maxWidth: "3.75rem",
-            fontSize: "1.625rem",
-            "& > *": { fontSize: "1.625rem" }
+            fontSize: "1.625rem !important",
+            "& > *": { fontSize: "1.625rem !important" }
           },
 
-          "&.--xl": {
+          "&.btn-xl": {
             minHeight: "4.5rem",
             maxHeight: "4.5rem",
             minWidth: "4.5rem",
             maxWidth: "4.5rem",
-            fontSize: "2rem",
-            "& > *": { fontSize: "2rem" }
+            fontSize: "2rem !important",
+            "& > *": { fontSize: "2rem !important" }
           },
         },
   
-        "&.--active": { //btn with active state
-          backgroundColor: color,
-          borderColor: color,
-          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-          "&:hover:not([disabled])": {
-            borderColor: color,
-            backgroundColor: color,
-          }
+        "&.btn-active": { //btn with active state
+          backgroundColor: `${ color } !important`,
+          borderColor: `${ color } !important`,
+          color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
         },
   
         "&:disabled": { //disabled btn
@@ -222,37 +242,51 @@ const AddComponents = (color, shades) => {
         },
   
         //sizes for different buttons except btn-circle
-        "&.--sm": {
+        "&.btn-sm": {
           minHeight: "2.5rem",
           maxHeight: "2.5rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           gap: "0.25rem",
-          fontSize: "0.875rem",
+          fontSize: "0.875rem !important",
           "& > *": {
-            fontSize: "1.375rem",
+            fontSize: "1.375rem !important",
+          }
+        },
+
+        "&.btn-md": {
+          minHeight: "3.25rem",
+          maxHeight: "3.25rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          gap: "0.5rem",
+          fontSize: "1rem !important",
+          "& > *": {
+            fontSize: "1.5rem !important",
           }
         },
   
-        "&.--lg": {
+        "&.btn-lg": {
           minHeight: "3.75rem",
           maxHeight: "3.75rem",
           paddingLeft: "1.5rem",
           paddingRight: "1.5rem",
-          fontSize: "1.375rem",
+          gap: "0.5rem",
+          fontSize: "1.375rem !important",
           "& > *": {
-            fontSize: "1.625rem",
+            fontSize: "1.625rem !important",
           }
         },
   
-        "&.--xl": {
+        "&.btn-xl": {
           minHeight: "4.5rem",
           maxHeight: "4.5rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
-          fontSize: "1.5rem",
+          gap: "0.5rem",
+          fontSize: "1.5rem !important",
           "& > *": {
-            fontSize: "2rem",
+            fontSize: "2rem !important",
           }
         },
       },
@@ -264,57 +298,63 @@ const AddComponents = (color, shades) => {
         width: "auto",
         height: "fit-content",
         borderRadius: "1.5rem",
-        color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
         backgroundColor: "#FFFFFF",
-        "& > ._card-body": { //for card body
+        color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
+
+        "& > .card-body": { //for card body
           padding: "1.25rem",
 
-          "& > ._card-title": { fontWeight: "bold" },
+          "& > .card-title": { fontWeight: "bold" },
   
-          "& > ._card-actions": {
-            paddingTop: "0.75rem",
+          "& > .card-actions": {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             gap: "0.5rem",
+
+            paddingTop: "0.75rem",
           },
 
           "& > figure": { //image inside card body, it will look like the image has frame
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+
             width: "100%",
             height: "auto",
-            display: "flex",
             borderRadius: "1rem",
-            overflow: "hidden",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
             "& > img": {
+              width: "100%",
+              objectFit: "cover",
+
               "-o-user-select": "none",
               "-moz-user-select": "none",
               "-webkit-user-select": "none",
               "user-select": "none",
-              objectFit: "cover",
-              width: "100%",
             }
           },
         },
   
         "& > figure": { //no frame image
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+
           width: "100%",
           height: "auto",
-          display: "flex",
           borderRadius: "1.5rem",
-          overflow: "hidden",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
           "& > img": {
+            width: "100%",
+            objectFit: "cover",
+
             "-o-user-select": "none",
             "-moz-user-select": "none",
             "-webkit-user-select": "none",
             "user-select": "none",
-            objectFit: "cover",
-            width: "100%",
           }
         },
       },
@@ -323,25 +363,28 @@ const AddComponents = (color, shades) => {
 
       //checkbox class
       ".check": {
-        position: "relative",
         display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "transparent",
+        cursor: "pointer",
+        position: "relative",
         appearance: "none",
         "-webkit-appearance": "none",
+
         minWidth: "1.25rem",
         maxWidth: "1.25rem",
         minHeight: "1.25rem",
         maxHeight: "1.25rem",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "transparent",
         borderWidth: "2px",
-        borderColor: "#C7C7C7",
         borderRadius: "4px",
-        cursor: "pointer",
+        borderColor: "#C7C7C7",
+
         transition: `border-width 100ms ${ easeInOut }, border-color 100ms ${ easeInOut }`,
+
         "&:checked": {
-          borderColor: color,
           borderWidth: "10px",
+          borderColor: color,
 
           "&::after": { opacity: "1" },
         },
@@ -349,93 +392,12 @@ const AddComponents = (color, shades) => {
         "&::after": { //my own checkbox :>
           position: "relative",
           top: "-1px",
+
           height: "1.25rem",
           width: "1.25rem",
+
           opacity: "0",
           content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
-        },
-
-        //checkbox sizes
-        "&.--sm": {
-          minWidth: "0.875rem",
-          maxWidth: "0.875rem",
-          minHeight: "0.875rem",
-          maxHeight: "0.875rem",
-
-          "&:checked": {
-            borderWidth: "7px",
-          },
-        
-          "&::after": { //my own checkbox :>
-            top: "-6px",
-            height: "0.875rem",
-            width: "0.875rem",
-            content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
-          },
-
-          "&:indeterminate": {//indeterminate checkbox
-            borderWidth: "3px",
-            borderTopWidth: "6px",
-            borderBottomWidth: "6px",
-  
-            "&::after": {
-              content: "''",
-            }
-          },
-        },
-
-        "&.--lg": {
-          minWidth: "1.625rem",
-          maxWidth: "1.625rem",
-          minHeight: "1.625rem",
-          maxHeight: "1.625rem",
-
-          "&:checked": {
-            borderWidth: "13px",
-          },
-        
-          "&::after": { //my own checkbox :>
-            top: "4px",
-            height: "1.625rem",
-            width: "1.625rem",
-            content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
-          },
-
-          "&:indeterminate": {//indeterminate checkbox
-            borderTopWidth: "11px",
-            borderBottomWidth: "11px",
-  
-            "&::after": {
-              content: "''",
-            }
-          },
-        },
-
-        "&.--xl": {
-          minWidth: "2rem",
-          maxWidth: "2rem",
-          minHeight: "2rem",
-          maxHeight: "2rem",
-
-          "&:checked": {
-            borderWidth: "16px",
-          },
-        
-          "&::after": { //my own checkbox :>
-            top: "6px",
-            height: "2rem",
-            width: "2rem",
-            content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
-          },
-
-          "&:indeterminate": {//indeterminate checkbox
-            borderTopWidth: "14px",
-            borderBottomWidth: "14px",
-  
-            "&::after": {
-              content: "''",
-            }
-          },
         },
 
         "&:disabled": {//disabled checkbox
@@ -460,6 +422,125 @@ const AddComponents = (color, shades) => {
             content: "''",
           }
         },
+
+        //checkbox sizes
+        "&.check-sm": {
+          minWidth: "0.875rem",
+          maxWidth: "0.875rem",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
+
+          "&:checked": {
+            borderWidth: "7px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "-6px",
+
+            width: "0.875rem",
+            height: "0.875rem",
+
+            content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderWidth: "3px",
+            borderTopWidth: "6px",
+            borderBottomWidth: "6px",
+  
+            "&::after": {
+              content: "''",
+            }
+          },
+        },
+
+        "&.check-md": { //default size for checkbox
+          minWidth: "1.25rem",
+          maxWidth: "1.25rem",
+          minHeight: "1.25rem",
+          maxHeight: "1.25rem",
+
+          "&:checked": {
+            borderWidth: "10px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "-1px",
+
+            height: "1.25rem",
+            width: "1.25rem",
+
+            content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderWidth: "4px",
+            borderTopWidth: "9px",
+            borderBottomWidth: "9px",
+
+            "&::after": {
+              content: "''",
+            }
+          },
+        },
+
+        "&.check-lg": {
+          minWidth: "1.625rem",
+          maxWidth: "1.625rem",
+          minHeight: "1.625rem",
+          maxHeight: "1.625rem",
+
+          "&:checked": {
+            borderWidth: "13px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "4px",
+
+            width: "1.625rem",
+            height: "1.625rem",
+
+            content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderTopWidth: "11px",
+            borderBottomWidth: "11px",
+  
+            "&::after": {
+              content: "''",
+            }
+          },
+        },
+
+        "&.check-xl": {
+          minWidth: "2rem",
+          maxWidth: "2rem",
+          minHeight: "2rem",
+          maxHeight: "2rem",
+
+          "&:checked": {
+            borderWidth: "16px",
+          },
+        
+          "&::after": { //my own checkbox :>
+            top: "6px",
+
+            width: "2rem",
+            height: "2rem",
+
+            content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          },
+
+          "&:indeterminate": {//indeterminate checkbox
+            borderTopWidth: "14px",
+            borderBottomWidth: "14px",
+  
+            "&::after": {
+              content: "''",
+            }
+          },
+        },
       },
   
   
@@ -468,15 +549,18 @@ const AddComponents = (color, shades) => {
       ".divider": {
         display: "flex",
         alignItems: "center",
+
         width: "100%",
         height: "100%",
         paddingTop: "1rem",
         paddingBottom: "1rem",
         paddingLeft: "0",
         paddingRight: "0",
-        "&.--horizontal": {
-          width: "0%",
+
+        "&.divider-horizontal": {
           flexDirection: "column",
+
+          width: "0%",
           paddingTop: "0",
           paddingBottom: "0",
           paddingLeft: "1rem",
@@ -494,18 +578,17 @@ const AddComponents = (color, shades) => {
 
 
       //drawer class
-      //this default as a fullscreen drawer because tailwind is using minimum screen px
       ".drawer": {
         display: "flex",
         flexDirection: "row-reverse",
         height: "100vh",
 
-        "& > ._drawer-page-content": { //wrapper for the page content
-          overflowY: "auto",
+        "& > .drawer-page-content": { //wrapper for the page content
           width: "100%",
+          overflowY: "auto",
         },
 
-        "& > ._drawer-sidebar": { //sidebar wrapper
+        "& > .drawer-sidebar": { //sidebar wrapper
           position: "absolute",
           top: "0",
           left: "0",
@@ -513,14 +596,14 @@ const AddComponents = (color, shades) => {
           opacity: "0",
           visibility: "hidden",
           zIndex: "98",
+
           transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
 
-          "& > ._drawer-sidebar-content": {  //wrapper for the sidebar content
+          "& > .drawer-sidebar-content": {  //wrapper for the sidebar content
             position: "absolute",
-            height: "100vh",
             left: "-23rem",
-            // width: "calc(100vw - 5.875rem)",
-            width: "100vw",
+            width: "23rem",
+            height: "100vh",
             zIndex: "1",
             transition: `left 250ms ${ easeInOut }`,
 
@@ -532,11 +615,15 @@ const AddComponents = (color, shades) => {
             },
           },
           
-          "&.--compact > ._drawer-sidebar-content": { //compact drawer!
+          "&.drawer-compact > .drawer-sidebar-content": { //compact drawer!
             width: "23rem",
           },
+          
+          "&.drawer-fullscreen > .drawer-sidebar-content": { //fullscreen drawer!
+            width: "100vw",
+          },
 
-          "& > ._drawer-overlay": { //the transparent background
+          "& > .drawer-overlay": { //the transparent background
             position: "absolute",
             top: "0",
             left: "0",
@@ -547,41 +634,43 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "& > input[type='checkbox']._drawer-toggle": { //the checkbox toggle for drawer
+        "& > input[type='checkbox'].drawer-toggle": { //the checkbox toggle for drawer
           position: "absolute",
           top: "-2.5rem",
-          "&:checked ~ ._drawer-sidebar": {
+
+          "&:checked ~ .drawer-sidebar": {
             opacity: "1",
             visibility: "visible",
-            "& > ._drawer-sidebar-content": {
+
+            "& > .drawer-sidebar-content": {
               left: "0%",
             },
           }
         },
 
         //opened drawer
-        "&.--open": { // forever opened drawer :>
+        "&.drawer-open": { // forever opened drawer :>
           "& > .drawer-content": {
-            overflowY: "auto",
             width: "100%",
+            overflowY: "auto",
           },
   
-          "& > ._drawer-sidebar": { //drawer sidebar opened
+          "& > .drawer-sidebar": { //drawer sidebar opened
             position: "static",
-            borderRightWidth: "1px",
             height: "100vh",
+            borderRightWidth: "1px",
             opacity: "1",
             visibility: "visible",
             zIndex: "0",
   
-            "& > ._drawer-sidebar-content": { //drawer sdebar content fitted to its content
+            "& > .drawer-sidebar-content": { //drawer sdebar content fitted to its content
               position: "static",
-              height: "100vh",
               width: "21rem",
+              height: "100vh",
               zIndex: "0",
             },
   
-            "& > ._drawer-overlay": {
+            "& > .drawer-overlay": {
               visibility: "hidden",
             },
           },
@@ -589,41 +678,41 @@ const AddComponents = (color, shades) => {
 
         //all about .rail
         "& > .rail": {
-          "& + ._drawer-toggle + ._drawer-page-content": { //when nav rail is exisiting on bottom of the page
+          "& + .drawer-toggle + .drawer-page-content": { //when nav rail is exisiting on bottom of the page
             height: "calc(100vh - 5.125rem)",
           },
           
           //left rail
-          "&.--left-nav": { //when nav rail is exisiting on left of the page
-            "& + ._drawer-toggle + ._drawer-page-content": { //reset the height of the drawer-page-content to its initial value
+          "&.rail-left": { //when nav rail is exisiting on left of the page
+            "& + .drawer-toggle + .drawer-page-content": { //reset the height of the drawer-page-content to its initial value
               height: "initial",
             },
 
-            "& ~ ._drawer-sidebar": {
-              left: "5.875rem", //when nav rail is on the left, move _drawer-sidebar slightly to the right
+            "& ~ .drawer-sidebar": {
+              left: "5.875rem", //when nav rail is on the left, move drawer-sidebar slightly to the right
     
-              "& > ._drawer-sidebar-content": { //wrapper for the sidebar content
+              "& > .drawer-sidebar-content": { //wrapper for the sidebar content
                 left: "-23rem",
-                width: "calc(100vw - 5.875rem)"
+                width: "23rem"
               },
 
-              "&.--compact > ._drawer-sidebar-content": { //fullscreen drawer!
+              "&.drawer-compact > .drawer-sidebar-content": { //compact drawer!
                 width: "23rem",
               },
+
+              "&.drawer-fullscreen > .drawer-sidebar-content": { //fullscreen drawer!
+                width: "calc(100vw - 5.875rem)",
+              },
     
-              "& > ._drawer-overlay": { //the transparent background
+              "& > .drawer-overlay": { //the transparent background
                 width: "calc(100vw - 5.875rem)",
               },
             }
           },
 
           //the checkbox toggle directly under rail
-          "& ~ input[type='checkbox']._drawer-toggle": {
-            "&:checked ~ ._drawer-sidebar": {
-              "& > ._drawer-sidebar-content": {
-                left: "0%",
-              },
-            }
+          "& ~ input[type='checkbox'].drawer-toggle:checked ~ .drawer-sidebar > .drawer-sidebar-content": {
+            left: "0%",
           },
         },
       },
@@ -634,7 +723,8 @@ const AddComponents = (color, shades) => {
       ".dropdown": {
         position: "relative",
         width: "fit-content",
-        "& > ._dropdown-content": { //default position
+
+        "& > .dropdown-content": { //default position
           transformOrigin: "10% 10%",
           top: "calc(100% + 8px)",
           bottom: "auto",
@@ -650,15 +740,15 @@ const AddComponents = (color, shades) => {
           filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
         },
 
-        "& > label:focus ~ ._dropdown-content": { transform: "scale(1, 1)", opacity: "1", visibility: "visible" },
+        "& > label:focus ~ .dropdown-content": { transform: "scale(1, 1)", opacity: "1", visibility: "visible" },
 
-        "&:focus-within > ._dropdown-content": { //this is important so that the dropdown doesnt close when you click the contents
+        "&:focus-within > .dropdown-content": { //this is important so that the dropdown doesnt close when you click the contents
           transform: "scale(1, 1)",
           opacity: "1",
           visibility: "visible",
         },
 
-        "& > ._dropdown-content > li > a": {
+        "& > .dropdown-content > li > a": {
           display: "flex",
           padding: "1.5rem",
           paddingTop: "1.25rem",
@@ -667,26 +757,26 @@ const AddComponents = (color, shades) => {
           width: "100%",
         },
 
-        "& > ._dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
+        "& > .dropdown-content > li > a:hover": { cursor: "pointer", backgroundColor: "rgba(0,0,0,0.06)", top: "calc(100% + 8px)" },
 
-        "&.--top": { //top dropdown
-          "& > ._dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
-          "&.--end > ._dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
+        "&.dropdown-top": { //top dropdown
+          "& > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", right: "0%" },
         },
 
-        "&.--bottom": { //bottom dropdown
-          "& > ._dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
-          "&.--end > ._dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
+        "&.dropdown-bottom": { //bottom dropdown
+          "& > .dropdown-content": { top: "calc(100% + 8px)", bottom: "auto", },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 10%", top: "calc(100% + 8px)", right: "0%" },
         },
 
-        "&.--left": { //left dropdown
-          "& > ._dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
-          "&.--end > ._dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
+        "&.dropdown-left": { //left dropdown
+          "& > .dropdown-content": { transformOrigin: "90% 10%", top: "0%", right: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "90% 90%", top: "auto", bottom: "0%", right: "calc(100% + 8px)" },
         },
 
-        "&.--right": { //right dropdown
-          "& > ._dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
-          "&.--end > ._dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
+        "&.dropdown-right": { //right dropdown
+          "& > .dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
+          "&.dropdown-end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
         },
       },
 
@@ -698,22 +788,24 @@ const AddComponents = (color, shades) => {
         maxHeight: "3.25rem",
         paddingLeft: "1.25rem",
         paddingRight: "1.25rem",
-        backgroundColor: "#ffffff",
         borderRadius: "9999px",
         borderWidth: "2px",
+        fontSize: "1rem !important",
+        backgroundColor: "#ffffff",
         borderColor: "#ffffff",
+
         "&:focus": {
           outline: `2px solid ${ color }`,
           outlineOffset: "2px",
 
-          "&.--underlined": { outline: "none" },
+          "&.input-underlined": { outline: "none" },
         },
 
-        "&.--bordered": { borderColor: color },
+        "&.input-outline": { borderColor: color },
 
-        "&.--ghost": { borderColor: "transparent", backgroundColor: "transparent" },
+        "&.input-ghost": { borderColor: "transparent", backgroundColor: "transparent" },
 
-        "&.--underlined": {
+        "&.input-underlined": {
           borderWidth: "0px",
           borderBottomWidth: "2px",
           borderColor: color,
@@ -726,26 +818,36 @@ const AddComponents = (color, shades) => {
         },
 
         //input different sizes
-        "&.--sm": {
+        "&.input-sm": {
           minHeight: "2.5rem",
           maxHeight: "2.5rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
-          fontSize: "0.875rem",
+          fontSize: "0.875rem !important",
         },
-        "&.--lg": {
+
+        "&.input-md": {
+          minHeight: "3.25rem",
+          maxHeight: "3.25rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          fontSize: "1rem !important",
+        },
+
+        "&.input-lg": {
           minHeight: "3.75rem",
           maxHeight: "3.75rem",
           paddingLeft: "1.5rem",
           paddingRight: "1.5rem",
-          fontSize: "1.375rem",
+          fontSize: "1.375rem !important",
         },
-        "&.--xl": {
+
+        "&.input-xl": {
           minHeight: "4.5rem",
           maxHeight: "4.5rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
-          fontSize: "1.5rem",
+          fontSize: "1.5rem !important",
         },
         
         "&:disabled": { opacity: "70%", cursor: "not-allowed" },
@@ -756,15 +858,16 @@ const AddComponents = (color, shades) => {
       //menu class
       //much more complicated than button
       ".menu": {
-        textTransform: "capitalize",
         display: "flex",
         flexDirection: "column",
         padding: "0.5rem",
         fontWeight: "bold",
+        textTransform: "capitalize",
+
         "& > *": { fontSize: "1rem" },
         color: color,
 
-        "&.--horizontal": { //horizontal menu
+        "&.menu-horizontal": { //horizontal menu
           flexDirection: "row",
 
           "& > li": {
@@ -795,7 +898,7 @@ const AddComponents = (color, shades) => {
           },
         },
         
-        "&.--rail": { //menu for rail
+        "&.menu-rail": { //menu for rail
           alignItems: "center",
           gap: "0.5rem",
 
@@ -838,14 +941,14 @@ const AddComponents = (color, shades) => {
     
               "&:active > :first-child": { background: "rgba(0,0,0,0.1)" },
     
-              "&._menu-active": { backgroundColor: "transparent", color: color }, // overriding the --active style
+              "&.menu-active": { backgroundColor: "transparent", color: color }, // overriding the --active style
     
-              "&._menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+              "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
             },
           },
         },
 
-        "& ._menu-title": { //menu title in almost all wrapper elements
+        "& .menu-title": { //menu title in almost all wrapper elements
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
@@ -876,7 +979,7 @@ const AddComponents = (color, shades) => {
             },
           },
 
-          "& > a": { //list items under menu
+          "& > a, label": { //list items under menu
             minHeight: "3.25rem",
             maxHeight: "3.25rem",
             paddingLeft: "1.25rem",
@@ -897,7 +1000,7 @@ const AddComponents = (color, shades) => {
   
             "&:active": { background: "rgba(0,0,0,0.1)" },
   
-            "&._menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+            "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
           },
 
           "& > details": { //collapsible list under menu
@@ -950,8 +1053,8 @@ const AddComponents = (color, shades) => {
         },
 
         //menu sizes
-        "&.--sm": {
-          "& ._menu-title": { //menu title in almost all wrapper elements
+        "&.menu-sm": {
+          "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "1.75rem",
             maxHeight: "1.75rem",
             paddingLeft: "1rem",
@@ -959,7 +1062,7 @@ const AddComponents = (color, shades) => {
             fontSize: "0.75rem",
           },
           "& li": {
-            "& > a": { //list items under menu
+            "& > a, label": { //list items under menu
               minHeight: "2.5rem",
               maxHeight: "2.5rem",
               paddingLeft: "1rem",
@@ -973,22 +1076,60 @@ const AddComponents = (color, shades) => {
   
             "& > details": { //collapsible list under menu
               "& > summary": { //the summary tag
+                gap: "0.25rem",
                 minHeight: "2.5rem",
                 maxHeight: "2.5rem",
                 paddingLeft: "1rem",
                 paddingRight: "1rem",
-                gap: "0.25rem",
                 fontSize: "0.875rem",
                 "& > *": {
                   fontSize: "1.375rem",
+                },
+              },
+            }
+          },
+        },
+
+        //menu sizes
+        "&.menu-md": {
+          "& .menu-title": { //menu title in almost all wrapper elements
+            minHeight: "2.5rem",
+            maxHeight: "2.5rem",
+            paddingLeft: "1.25rem",
+            paddingRight: "1.25rem",
+            fontSize: "0.875rem",
+          },
+          "& li": {
+            "& > a, label": { //list items under menu
+              gap: "1rem",
+              minHeight: "3.25rem",
+              maxHeight: "3.25rem",
+              paddingLeft: "1.25rem",
+              paddingRight: "1.25rem",
+              fontSize: "1rem",
+              "& > *": {
+                fontSize: "1.5rem",
+              },
+            },
+  
+            "& > details": { //collapsible list under menu
+              "& > summary": { //the summary tag
+                gap: "1rem",
+                minHeight: "3.25rem",
+                maxHeight: "3.25rem",
+                paddingLeft: "1.25rem",
+                paddingRight: "1.25rem",
+                fontSize: "1rem",
+                "& > *": {
+                  fontSize: "1.5rem",
                 }
               },
             }
           },
         },
         
-        "&.--lg": {
-          "& ._menu-title": { //menu title in almost all wrapper elements
+        "&.menu-lg": {
+          "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "3.25rem",
             maxHeight: "3.25rem",
             paddingLeft: "1.5rem",
@@ -996,7 +1137,7 @@ const AddComponents = (color, shades) => {
             fontSize: "1.25rem",
           },
           "& li": {
-            "& > a": { //list items under menu
+            "& > a, label": { //list items under menu
               minHeight: "3.75rem",
               maxHeight: "3.75rem",
               paddingLeft: "1.5rem",
@@ -1022,8 +1163,8 @@ const AddComponents = (color, shades) => {
           },
         },
         
-        "&.--xl": {
-          "& ._menu-title": { //menu title in almost all wrapper elements
+        "&.menu-xl": {
+          "& .menu-title": { //menu title in almost all wrapper elements
             minHeight: "4rem",
             maxHeight: "4rem",
             paddingLeft: "2rem",
@@ -1031,7 +1172,7 @@ const AddComponents = (color, shades) => {
             fontSize: "1.375rem",
           },
           "& li": {
-            "& > a": { //list items under menu
+            "& > a, label": { //list items under menu
               minHeight: "4.5rem",
               maxHeight: "4.5rem",
               paddingLeft: "2rem",
@@ -1073,7 +1214,7 @@ const AddComponents = (color, shades) => {
         visibility: "hidden",
         zIndex: "100",
 
-        "& > ._modal-content": { //wrapper for the content
+        "& > .modal-content": { //wrapper for the content
           "display": "flex",
           "justifyContent": "center",
           "alignItems": "center",
@@ -1082,7 +1223,7 @@ const AddComponents = (color, shades) => {
           transition: `transform 125ms ${ easeInOut }`,
           transform: "scale(0.9, 0.9)",
 
-          "& > ._modal-backdrop": { //the transparent background
+          "& > .modal-backdrop": { //the transparent background
             position:"absolute",
             top:"0",
             left:"0",
@@ -1093,11 +1234,11 @@ const AddComponents = (color, shades) => {
         }
       },
 
-      "input[type='checkbox']._modal-toggle": { //the one that will trigger modal opening
+      "input[type='checkbox'].modal-toggle": { //the one that will trigger modal opening
         position: "absolute",
         top: "-100px",
         "&:checked+.modal": { opacity: "1", visibility: "visible" },
-        "&:checked+.modal > ._modal-content": { transform: "scale(1, 1)" },
+        "&:checked+.modal > .modal-content": { transform: "scale(1, 1)" },
       },
 
 
@@ -1119,7 +1260,7 @@ const AddComponents = (color, shades) => {
 
       //navbar item positions
       //I put these all outside so that hidden utility class is not overridden
-      "._navbar-start": {
+      ".navbar-start": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1128,7 +1269,7 @@ const AddComponents = (color, shades) => {
         order: "0",
       },
       
-      "._navbar-center": {
+      ".navbar-center": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1137,7 +1278,7 @@ const AddComponents = (color, shades) => {
         order: "1",
       },
       
-      "._navbar-end": {
+      ".navbar-end": {
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1150,39 +1291,75 @@ const AddComponents = (color, shades) => {
 
       //rail class
       ".rail": {
-        position: "absolute",
         display: "flex",
         flexDirection: "row",
+
+        position: "absolute",
         bottom: "0",
         left: "0",
+        
         width: "100vw",
         minHeight: "initial",
         maxHeight: "initial",
         padding: "0.25rem",
+        
         backgroundColor: "#ffffff",
         order: "1",
         // zIndex: "1",
         
-        "& > ._rail-top > ul, ol > .menu.--rail": { //rail-top
+        "& > .rail-top > ul, ol > .menu.menu-rail": { //rail-top
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
         
-        "& > ._rail-main > ul, ol > .menu.--rail": { //rail-main
+        "& > .rail-main > ul, ol > .menu.menu-rail": { //rail-main
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
         
-        "& > ._rail-bottom > ul, ol > .menu.--rail": { //rail-top
+        "& > .rail-bottom > ul, ol > .menu.menu-rail": { //rail-top
           width: "100%",
           flexDirection: "row",
           justifyContent: "space-around",
         },
 
+        //bottom rail
+        "&.rail-bottom": {
+          flexDirection: "row",
+  
+          position: "absolute",
+          bottom: "0",
+          left: "0",
+          
+          width: "100vw",
+          minHeight: "initial",
+          maxHeight: "initial",
+          padding: "0.25rem",
+          zIndex: "0",
+
+          "& > .rail-top > ul, ol > .menu.menu-rail": { //rail-top
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          },
+          
+          "& > .rail-main > ul, ol > .menu.menu-rail": { //rail-main
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          },
+          
+          "& > .rail-bottom > ul, ol > .menu.menu-rail": { //rail-top
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          },
+        },
+
         //left rail
-        "&.--left-nav": {
+        "&.rail-left": {
           position: "static",
           width: "auto",
           flexDirection: "column",
@@ -1190,33 +1367,33 @@ const AddComponents = (color, shades) => {
           maxHeight: "100vh",
           zIndex: "99",
 
-          "._rail-top": { //rail-top
+          ".rail-top": { //rail-top
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
-            "& > ul, ol > .menu.--rail": {
+            "& > ul, ol > .menu.menu-rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
             },
           },
           
-          "._rail-main": { //rail-main
+          ".rail-main": { //rail-main
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
-            "& > ul, ol > .menu.--rail": {
+            "& > ul, ol > .menu.menu-rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
             },
           },
           
-          "._rail-bottom": { //rail-bottom
+          ".rail-bottom": { //rail-bottom
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-end",
-            "& > ul, ol > .menu.--rail": {
+            "& > ul, ol > .menu.menu-rail": {
               width: "initial",
               flexDirection: "column",
               justifyContent: "normal",
@@ -1226,7 +1403,7 @@ const AddComponents = (color, shades) => {
       },
 
       //I put this outside also, same reason for navbar-top, etc
-      "._rail-top": { //rail-top
+      ".rail-top": { //rail-top
         display: "flex",
         flexDirection: "row",
         flexGrow: "0",
@@ -1236,7 +1413,7 @@ const AddComponents = (color, shades) => {
         order: "0",
       },
       
-      "._rail-main": { //rail-top
+      ".rail-main": { //rail-top
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1246,7 +1423,7 @@ const AddComponents = (color, shades) => {
         order: "1",
       },
       
-      "._rail-bottom": { //rail-bottom
+      ".rail-bottom": { //rail-bottom
         display: "flex",
         flexDirection: "row",
         flexGrow: "1",
@@ -1280,7 +1457,7 @@ const AddComponents = (color, shades) => {
         },
 
         //radio sizes
-        "&.--sm": {
+        "&.radio-sm": {
           minWidth: "0.875rem",
           maxWidth: "0.875rem",
           minHeight: "0.875rem",
@@ -1291,7 +1468,18 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.--lg": {
+        "&.radio-md": {
+        minWidth: "1.25rem",
+        maxWidth: "1.25rem",
+        minHeight: "1.25rem",
+        maxHeight: "1.25rem",
+
+          "&:checked": {
+            borderWidth: "6px",
+          },
+        },
+
+        "&.radio-lg": {
           minWidth: "1.625rem",
           maxWidth: "1.625rem",
           minHeight: "1.625rem",
@@ -1302,7 +1490,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.--xl": {
+        "&.radio-xl": {
           minWidth: "2rem",
           maxWidth: "2rem",
           minHeight: "2rem",
@@ -1328,6 +1516,87 @@ const AddComponents = (color, shades) => {
 
 
 
+      //swap class
+      ".swap": {
+        position: "relative",
+        display: "inline-grid",
+        justifyItems: "center",
+        alignContent: "center",
+        "-webkit-user-select": "none",
+        "-ms-user-select": "none",
+        "user-select": "none",
+        cursor: "pointer",
+
+        //all elements will position in 1,1
+        "& > *": {
+          gridColumnStart: "1",
+          gridRowStart: "1",
+          // transition: `opacity 75ms ${ easeInOut }`,
+        },
+
+        //swap with fade transition
+        "&.swap-fade": {
+          "& > *": {
+            transition: `opacity 125ms ${ easeInOut }`,
+          },
+        },
+
+        //swap with rotate and fade transition
+        "&.swap-rotate": {
+          "& > *": {
+            transition: `opacity 125ms ${ easeInOut }, transform 125ms ${ easeInOut }`,
+          },
+
+          "& > input[type='checkbox']": {
+            appearance: "none",
+            "-webkit-appearance": "none",
+          
+            "& ~ .swap-on": {
+              opacity: "0",
+              transform: "rotate(-45deg)"
+            },
+            "& ~ .swap-off": {
+              opacity: "1",
+              transform: "rotate(0deg)"
+            },
+  
+            "&:checked": {
+              "& ~ .swap-on": {
+                opacity: "1",
+                transform: "rotate(0deg)"
+              },
+              "& ~ .swap-off": {
+                opacity: "0",
+                transform: "rotate(45deg)"
+              },
+            }
+          },
+        },
+
+        "& > input[type='checkbox']": {
+          appearance: "none",
+          "-webkit-appearance": "none",
+        
+          "& ~ .swap-on": {
+            opacity: "0",
+          },
+          "& ~ .swap-off": {
+            opacity: "1",
+          },
+
+          "&:checked": {
+            "& ~ .swap-on": {
+              opacity: "1",
+            },
+            "& ~ .swap-off": {
+              opacity: "0",
+            },
+          }
+        },
+      },
+
+
+
       //switch class
       ".switch": {
         display: "flex",
@@ -1344,20 +1613,20 @@ const AddComponents = (color, shades) => {
         backgroundColor: ShadeHexColor(color, shades[99]),
         borderRadius: "9999px",
         cursor: "pointer",
-        transition: `background-color 125ms ${ easeInOut }`,
+        transition: `background-color 150ms ${ easeInOut }`,
 
         "&::after": {
           content: "''",
           position: "absolute",
           top: "3px",
           left: "3px",
-          minHeight: "0.875rem",
-          maxHeight: "0.875rem",
           minWidth: "0.875rem",
           maxWidth: "0.875rem",
+          minHeight: "0.875rem",
+          maxHeight: "0.875rem",
           borderRadius: "100%",
           backgroundColor: ShadeHexColor(color, shades[10]),
-          transition: `left 125ms ${ easeInOut }, background-color 125ms ${ easeInOut }`,
+          transition: `left 150ms ${ easeInOut }, background-color 150ms ${ easeInOut }`,
         },
 
         "&:checked": {
@@ -1370,7 +1639,7 @@ const AddComponents = (color, shades) => {
         },
 
         //checkbox sizes
-        "&.--sm": {
+        "&.switch-sm": {
           minWidth: "1.625rem",
           maxWidth: "1.625rem",
           minHeight: "0.875rem",
@@ -1396,7 +1665,33 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.--lg": {
+        "&.switch-md": {
+          minWidth: "2.25rem",
+          maxWidth: "2.25rem",
+          minHeight: "1.25rem",
+          maxHeight: "1.25rem",
+
+          "&::after": {
+            minWidth: "0.875rem",
+            maxWidth: "0.875rem",
+            minHeight: "0.875rem",
+            maxHeight: "0.875rem",
+          },
+
+          "&:checked": {
+            "&::after": {
+              left: "calc(100% - 0.875rem - 3px)",
+            }
+          },
+
+          "&:indeterminate": {//indeterminate switch
+            "&::after": {
+              left: "calc(50% - 1.625rem/2)",
+            }
+          },
+        },
+
+        "&.switch-lg": {
           minWidth: "2.7375rem",
           maxWidth: "2.7375rem",
           minHeight: "1.625rem",
@@ -1422,7 +1717,7 @@ const AddComponents = (color, shades) => {
           },
         },
 
-        "&.--xl": {
+        "&.switch-xl": {
           minWidth: "3.45rem",
           maxWidth: "3.45rem",
           minHeight: "2rem",

@@ -6,7 +6,7 @@
   .drawer-sample {
     @apply h-fit
   }
-  .drawer-sample > input[type='checkbox']._drawer-toggle:checked ~ ._drawer-sidebar {
+  .drawer-sample > input[type='checkbox'].drawer-toggle:checked ~ .drawer-sidebar {
     @apply z-[9999]
   }
   .rail.rail-sample.--left-nav {

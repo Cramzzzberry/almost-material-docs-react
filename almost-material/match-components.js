@@ -13,13 +13,13 @@ const MatchComponents = (shades) => {
         backgroundColor: color,
         color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         borderColor: color,
-        "&.--outlined": { //badge-outlined
+        "&.badge-outlined": { //badge-outlined
           backgroundColor: "transparent",
           color: color,
           borderColor: color,
         },
   
-        "&.--dot": { //badge-dot
+        "&.badge-dot": { //badge-dot
           maxHeight: "0.875rem",
           minHeight: "0.875rem",
           minWidth: "0.875rem",
@@ -46,7 +46,7 @@ const MatchComponents = (shades) => {
           borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
         },
   
-        "&.--outlined": { //btn-outlined
+        "&.btn-outlined": { //btn-outlined
           color: color,
           "&:hover": {
             backgroundColor: color,
@@ -60,28 +60,18 @@ const MatchComponents = (shades) => {
           },
         },
   
-        "&.--ghost": { //btn-ghost
+        "&.btn-ghost": { //btn-ghost
           color: color,
   
-          "&.--active": { //btn-ghost btn-active
-            color: color,
-
-            "&:active:not([disabled])": { //when clicked, retain their colors
-              borderColor: "transparent",
-              backgroundColor: "rgba(0,0,0,0.05)",
-              color: color,
-            },
+          "&.btn-active": { //btn-ghost btn-active
+            color: `${ color } !important`,
           },
         },
   
-        "&.--active": { //btn with active state
-          backgroundColor: color,
-          borderColor: color,
-          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-          "&:hover:not([disabled])": {
-            borderColor: color,
-            backgroundColor: color,
-          },
+        "&.btn-active": { //btn with active state
+          backgroundColor: `${ color } !important`,
+          borderColor: `${ color } !important`,
+          color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
         },
   
         "&:disabled": { //disabled btn
@@ -110,19 +100,19 @@ const MatchComponents = (shades) => {
         },
 
         //checkbox sizes
-        "&.--sm": {
+        "&.check-sm": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
         },
 
-        "&.--lg": {
+        "&.check-lg": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
         },
 
-        "&.--xl": {
+        "&.check-xl": {
           "&::after": {
             content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
@@ -149,11 +139,11 @@ const MatchComponents = (shades) => {
           outlineOffset: "2px",
         },
 
-        "&.--bordered": {
+        "&.input-outline": {
           borderColor: color,
         },
 
-        "&.--underlined": {
+        "&.input-underlined": {
           backgroundColor: "transparent",
           borderColor: color,
         },
@@ -165,33 +155,19 @@ const MatchComponents = (shades) => {
       "menu": (color) => ({
         color: ShadeHexColor(color, shades[10]),
 
-        "& li > ul,ol": { //sub ul and/or ol under li element
-          "& > li > a": { //list items under sub-menu
-            "&:hover": { background: "rgba(0,0,0,0.05)" },
-  
-            "&:active": { background: "rgba(0,0,0,0.1)" },
-  
-            "&._menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
-          },
+        //horizontal menu
+        "&.menu-horizontal > li > details > ul, ol": { //sub ul and/or ol under li element
+          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         },
         
-        "&.--rail": { //app menu for side bar and bottom nav
-          alignItems: "center",
-
-          "& > li": {
-            "& > a, label": { //list items under menu
-              "&._menu-active": { color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
-              "&._menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
-            },
-          },
+        //all about rail
+        "&.menu-rail > li > a, label": { //list items under menu
+          "&.menu-active": { backgroundColor: "transparent" }, // overriding the --active style
+          "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
 
-        "& > li > a": { //list items under menu
-          "&:hover": { background: "rgba(0,0,0,0.05)" },
-
-          "&:active": { background: "rgba(0,0,0,0.1)" },
-
-          "&._menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+        "& li > a": { //list items under menu
+          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
 

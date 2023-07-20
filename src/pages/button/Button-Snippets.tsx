@@ -20,40 +20,40 @@ export const ButtonSnippets = {
   },
   "Outlined Button": {
     preview: (
-      <button className="btn --outlined">outlined</button>
+      <button className="btn btn-outline">outlined</button>
     ),
-    htmlCode: "<button class=\"btn --outlined\">outlined</button>",
-    jsxCode: "<button className=\"btn --outlined\">outlined</button>",
+    htmlCode: "<button class=\"btn btn-outline\">outlined</button>",
+    jsxCode: "<button className=\"btn btn-outline\">outlined</button>",
   },
   "Ghost Button": {
     preview: (
-      <button className="btn --ghost">ghost</button>
+      <button className="btn btn-ghost">ghost</button>
     ),
-    htmlCode: "<button class=\"btn --ghost\">ghost</button>",
-    jsxCode: "<button className=\"btn --ghost\">ghost</button>",
+    htmlCode: "<button class=\"btn btn-ghost\">ghost</button>",
+    jsxCode: "<button className=\"btn btn-ghost\">ghost</button>",
   },
   "Circle Buttons": {
     preview: (
       <>
-      <button className="btn --circle">
+      <button className="btn btn-circle">
         <span className="material-icons-round">
           search
         </span>
       </button>
-      <button className="btn --circle --outlined">
+      <button className="btn btn-circle btn-outline">
         <span className="material-icons-round">
           search
         </span>
       </button>
-      <button className="btn --circle --ghost">
+      <button className="btn btn-circle btn-ghost">
         <span className="material-icons-round">
           search
         </span>
       </button>
       </>
     ),
-    htmlCode: "<button class=\"btn --circle\"><!-- icon here --></button>\n<button class=\"btn --circle --outlined\"><!-- icon here --></button>\n<button class=\"btn --circle --ghost\"><!-- icon here --></button>",
-    jsxCode: "<button className=\"btn --circle\">{/* icon-here */}</button>\n<button className=\"btn --circle --outlined\">{/* icon-here */}</button>\n<button className=\"btn --circle --ghost\">{/* icon-here */}</button>",
+    htmlCode: "<button class=\"btn btn-circle\"><!-- icon here --></button>\n<button class=\"btn btn-circle btn-outline\"><!-- icon here --></button>\n<button class=\"btn btn-circle btn-ghost\"><!-- icon here --></button>",
+    jsxCode: "<button className=\"btn btn-circle\">{/* icon-here */}</button>\n<button className=\"btn btn-circle btn-outline\">{/* icon-here */}</button>\n<button className=\"btn btn-circle btn-ghost\">{/* icon-here */}</button>",
   },
   "Button w/ Colors": {
     preview: (
@@ -73,31 +73,31 @@ export const ButtonSnippets = {
   "Button Sizes": {
     preview: (
       <>
-      <button className="btn --sm">small</button>
-      <button className="btn">default</button>
-      <button className="btn --lg">large</button>
-      <button className="btn --xl">largeeeeeeeee</button>
+      <button className="btn btn-sm">small</button>
+      <button className="btn btn-md">default</button>
+      <button className="btn btn-lg">large</button>
+      <button className="btn btn-xl">largeeeeeeeee</button>
       </>
     ),
-    htmlCode: "<button class=\"btn --sm\">small</button>\n<button class=\"btn\">default</button>\n<button class=\"btn --lg\">large</button>\n<button class=\"btn --xl\">largeeeeeeeee</button>",
-    jsxCode: "<button className=\"btn --sm\">small</button>\n<button className=\"btn\">default</button>\n<button className=\"btn --lg\">large</button>\n<button className=\"btn --xl\">largeeeeeeeee</button>",
+    htmlCode: "<button class=\"btn btn-sm\">small</button>\n<button class=\"btn btn-md\">default</button>\n<button class=\"btn btn-lg\">large</button>\n<button class=\"btn btn-xl\">largeeeeeeeee</button>",
+    jsxCode: "<button className=\"btn btn-sm\">small</button>\n<button className=\"btn btn-md\">default</button>\n<button className=\"btn btn-lg\">large</button>\n<button className=\"btn btn-xl\">largeeeeeeeee</button>",
   },
   "Active Buttons": {
     preview: (
       <>
-      <button className="btn --active">default</button>
-      <button className="btn btn-primary --active">primary</button>
-      <button className="btn btn-secondary --active">secondary</button>
-      <button className="btn btn-tertiary --active">tertiary</button>
-      <button className="btn btn-info --active">info</button>
-      <button className="btn btn-warning --active">warning</button>
-      <button className="btn btn-success --active">success</button>
-      <button className="btn btn-error --active">error</button>
-      <button className="btn btn-ghost --active">ghost</button>
+      <button className="btn btn-active">default</button>
+      <button className="btn btn-primary btn-active">primary</button>
+      <button className="btn btn-secondary btn-active">secondary</button>
+      <button className="btn btn-tertiary btn-active">tertiary</button>
+      <button className="btn btn-info btn-active">info</button>
+      <button className="btn btn-warning btn-active">warning</button>
+      <button className="btn btn-success btn-active">success</button>
+      <button className="btn btn-error btn-active">error</button>
+      <button className="btn btn-ghost btn-active">ghost</button>
       </>
     ),
-    htmlCode: "<button class=\"btn --active\">default</button>\n<button class=\"btn btn-primary --active\">primary</button>\n<button class=\"btn btn-secondary --active\">secondary</button>\n<button class=\"btn btn-tertiary --active\">tertiary</button>\n<button class=\"btn btn-info --active\">info</button>\n<button class=\"btn btn-warning --active\">warning</button>\n<button class=\"btn btn-success --active\">success</button>\n<button class=\"btn btn-error --active\">error</button>\n<button class=\"btn btn-ghost --active\">ghost</button>",
-    jsxCode: "<button className=\"btn --active\">default</button>\n<button className=\"btn btn-primary --active\">primary</button>\n<button className=\"btn btn-secondary --active\">secondary</button>\n<button className=\"btn btn-tertiary --active\">tertiary</button>\n<button className=\"btn btn-info --active\">info</button>\n<button className=\"btn btn-warning --active\">warning</button>\n<button className=\"btn btn-success --active\">success</button>\n<button className=\"btn btn-error --active\">error</button>\n<button className=\"btn btn-ghost --active\">ghost</button>",
+    htmlCode: "<button class=\"btn btn-active\">default</button>\n<button class=\"btn btn-primary btn-active\">primary</button>\n<button class=\"btn btn-secondary btn-active\">secondary</button>\n<button class=\"btn btn-tertiary btn-active\">tertiary</button>\n<button class=\"btn btn-info btn-active\">info</button>\n<button class=\"btn btn-warning btn-active\">warning</button>\n<button class=\"btn btn-success btn-active\">success</button>\n<button class=\"btn btn-error btn-active\">error</button>\n<button class=\"btn btn-ghost btn-active\">ghost</button>",
+    jsxCode: "<button className=\"btn btn-active\">default</button>\n<button className=\"btn btn-primary btn-active\">primary</button>\n<button className=\"btn btn-secondary btn-active\">secondary</button>\n<button className=\"btn btn-tertiary btn-active\">tertiary</button>\n<button className=\"btn btn-info btn-active\">info</button>\n<button className=\"btn btn-warning btn-active\">warning</button>\n<button className=\"btn btn-success btn-active\">success</button>\n<button className=\"btn btn-error btn-active\">error</button>\n<button className=\"btn btn-ghost btn-active\">ghost</button>",
   },
   "Disabled Button": {
     preview: (

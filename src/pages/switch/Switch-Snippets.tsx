@@ -24,14 +24,14 @@ export const SwitchSnippets = {
   "Switch Sizes": {
     preview: (
       <>
-      <input className="switch --sm" type="checkbox" defaultChecked />
-      <input className="switch" type="checkbox" defaultChecked />
-      <input className="switch --lg" type="checkbox" defaultChecked />
-      <input className="switch --xl" type="checkbox" defaultChecked />
+      <input className="switch switch-sm" type="checkbox" defaultChecked />
+      <input className="switch switch-md" type="checkbox" defaultChecked />
+      <input className="switch switch-lg" type="checkbox" defaultChecked />
+      <input className="switch switch-xl" type="checkbox" defaultChecked />
       </>
     ),
-    htmlCode: "<input class=\"switch --sm\" type=\"checkbox\" checked />\n<input class=\"switch\" type=\"checkbox\" checked />\n<input class=\"switch --lg\" type=\"checkbox\" checked />\n<input class=\"switch --xl\" type=\"checkbox\" checked />",
-    jsxCode: "<input className=\"switch --sm\" type=\"checkbox\" checked />\n<input className=\"switch\" type=\"checkbox\" checked />\n<input className=\"switch --lg\" type=\"checkbox\" checked />\n<input className=\"switch --xl\" type=\"checkbox\" checked />",
+    htmlCode: "<input class=\"switch switch-sm\" type=\"checkbox\" checked />\n<input class=\"switch switch-md\" type=\"checkbox\" checked />\n<input class=\"switch switch-lg\" type=\"checkbox\" checked />\n<input class=\"switch switch-xl\" type=\"checkbox\" checked />",
+    jsxCode: "<input className=\"switch switch-sm\" type=\"checkbox\" checked />\n<input className=\"switch switch-md\" type=\"checkbox\" checked />\n<input className=\"switch switch-lg\" type=\"checkbox\" checked />\n<input className=\"switch switch-xl\" type=\"checkbox\" checked />",
   },
   "Disabled Switch": {
     preview: (

@@ -8,17 +8,17 @@ export const BadgeSnippets = {
   },
   "Outlined Badge": {
     preview: (
-      <span className="badge --outlined">outlined</span>
+      <span className="badge badge-outline">outlined</span>
     ),
-    htmlCode: "<span class=\"badge --outlined\">outlined</span>",
-    jsxCode: "<span className=\"badge --outlined\">outlined</span>",
+    htmlCode: "<span class=\"badge badge-outline\">outlined</span>",
+    jsxCode: "<span className=\"badge badge-outline\">outlined</span>",
   },
   "Dot Badge": {
     preview: (
-      <span className="badge --dot"></span>
+      <span className="badge badge-dot"></span>
     ),
-    htmlCode: "<span class=\"badge --dot\"></span>",
-    jsxCode: "<span className=\"badge --dot\"></span>",
+    htmlCode: "<span class=\"badge badge-dot\"></span>",
+    jsxCode: "<span className=\"badge badge-dot\"></span>",
   },
   "Badge w/ Colors": {
     preview: (
@@ -38,13 +38,13 @@ export const BadgeSnippets = {
   "Badge Sizes": {
     preview: (
       <>
-      <span className="badge --sm">Small</span>
+      <span className="badge badge-sm">Small</span>
       <span className="badge">Default</span>
-      <span className="badge --lg">Large</span>
-      <span className="badge --xl">LAAAARGE!</span>
+      <span className="badge badge-lg">Large</span>
+      <span className="badge badge-xl">LAAAARGE!</span>
       </>
     ),
-    htmlCode: "<span class=\"badge --sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge --lg\">Large</span>\n<span class=\"badge --xl\">LAAAARGE!</span>",
-    jsxCode: "<span className=\"badge --sm\">Small</span>\n<span className=\"badge\">Default</span>\n<span className=\"badge --lg\">Large</span>\n<span className=\"badge --xl\">LAAAARGE!</span>",
+    htmlCode: "<span class=\"badge badge-sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge badge-lg\">Large</span>\n<span class=\"badge badge-xl\">LAAAARGE!</span>",
+    jsxCode: "<span className=\"badge badge-sm\">Small</span>\n<span className=\"badge\">Default</span>\n<span className=\"badge badge-lg\">Large</span>\n<span className=\"badge badge-xl\">LAAAARGE!</span>",
   },
 }

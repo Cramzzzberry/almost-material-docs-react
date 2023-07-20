@@ -16,15 +16,15 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       </SyntaxHighlighter>
     ),
   }
-  const [previewActive, setPreviewActive] = useState("btn-primary --active")
-  const [htmlActive, setHtmlActive] = useState("--ghost")
-  const [jsxActive, setJsxActive] = useState("--ghost")
+  const [previewActive, setPreviewActive] = useState("btn-primary btn-active")
+  const [htmlActive, setHtmlActive] = useState("btn-ghost")
+  const [jsxActive, setJsxActive] = useState("btn-ghost")
   const [secondBlock, setSecondBlock] = useState(tabContent["preview"])
 
   const tabHandler = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "btn-primary --active" : "--ghost")
-    setHtmlActive(activeTab === "html" ? "btn-primary --active" : "--ghost")
-    setJsxActive(activeTab === "jsx" ? "btn-primary --active" : "--ghost")
+    setPreviewActive(activeTab === "preview" ? "btn-primary btn-active" : "btn-ghost")
+    setHtmlActive(activeTab === "html" ? "btn-primary btn-active" : "btn-ghost")
+    setJsxActive(activeTab === "jsx" ? "btn-primary btn-active" : "btn-ghost")
     setSecondBlock(tabContent[activeTab])
   }
 
@@ -37,13 +37,13 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
           <h4 className="font-semibold">{ componentName }</h4>
         </div>
         <div className="flex flex-row gap-2 items-center">
-          <button className={"btn --sm " + previewActive}
+          <button className={"btn btn-sm " + previewActive}
             onClick={ () => tabHandler("preview") }
             >Preview</button>
-          <button className={"btn --sm " + htmlActive}
+          <button className={"btn btn-sm " + htmlActive}
             onClick={ () => tabHandler("html") }
             >HTML</button>
-          <button className={"btn --sm " + jsxActive}
+          <button className={"btn btn-sm " + jsxActive}
             onClick={ () => tabHandler("jsx") }
             >JSX</button>
         </div>

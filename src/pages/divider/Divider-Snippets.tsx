@@ -20,14 +20,14 @@ export const DividerSnippets = {
         <div className="card flex justify-center items-center h-20 w-full">
           Content
         </div>
-        <span className="divider --horizontal"></span>
+        <span className="divider divider-horizontal"></span>
         <div className="card flex justify-center items-center h-20 w-full">
           Content
         </div>
       </div>
     ),
-    htmlCode: "<span class=\"divider --horizontal\"></span>",
-    jsxCode: "<span className=\"divider --horizontal\"></span>",
+    htmlCode: "<span class=\"divider divider-horizontal\"></span>",
+    jsxCode: "<span className=\"divider divider-horizontal\"></span>",
   },
   "Divider w/ Colors": {
     preview: (

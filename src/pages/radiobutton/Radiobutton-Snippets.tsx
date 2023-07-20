@@ -75,36 +75,36 @@ export const RadiobuttonSnippets = {
         <div className="grid grid-cols-2 items-center w-48">
           Small
           <div className="flex flex-row gap-2 justify-center">
-            <input type="radio" className="radio --sm" name="small" />
-            <input type="radio" defaultChecked="checked" className="radio --sm" name="small" />
+            <input type="radio" className="radio radio-sm" name="small" />
+            <input type="radio" defaultChecked="checked" className="radio radio-sm" name="small" />
           </div>
         </div>
         <div className="grid grid-cols-2 items-center w-48">
           Default
           <div className="flex flex-row gap-2 justify-center">
-            <input type="radio" className="radio" name="medium" />
+            <input type="radio" className="radio radio-md" name="medium" />
             <input type="radio" defaultChecked="checked" className="radio" name="medium" />
           </div>
         </div>
         <div className="grid grid-cols-2 items-center w-48">
           Large
           <div className="flex flex-row gap-2 justify-center">
-            <input type="radio" className="radio --lg" name="large" />
-            <input type="radio" defaultChecked="checked" className="radio --lg" name="large" />
+            <input type="radio" className="radio radio-lg" name="large" />
+            <input type="radio" defaultChecked="checked" className="radio radio-lg" name="large" />
           </div>
         </div>
         <div className="grid grid-cols-2 items-center w-48">
           RAWRRRR
           <div className="flex flex-row gap-2 justify-center">
-            <input type="radio" className="radio --xl" name="xlarge" />
-            <input type="radio" defaultChecked="checked" className="radio --xl" name="xlarge" />
+            <input type="radio" className="radio radio-xl" name="xlarge" />
+            <input type="radio" defaultChecked="checked" className="radio radio-xl" name="xlarge" />
           </div>
         </div>
       </div>
       </>
     ),
-    htmlCode: "<!-- sm -->\n<input class=\"radio --sm\" type=\"radio\" />\n<input class=\"radio --sm\" type=\"radio\" checked />\n\n<!-- Default -->\n<input class=\"radio\" type=\"radio\" />\n<input class=\"radio\" type=\"radio\" checked />\n\n<!-- lg -->\n<input class=\"radio --lg\" type=\"radio\" />\n<input class=\"radio --lg\" type=\"radio\" checked />\n\n<!-- xl -->\n<input class=\"radio --xl\" type=\"radio\" />\n<input class=\"radio --xl\" type=\"radio\" checked />",
-    jsxCode: "{/* sm */}\n<input className=\"radio --sm\" type=\"radio\" />\n<input className=\"radio --sm\" type=\"radio\" checked />\n\n{/* Default */}\n<input className=\"radio\" type=\"radio\" />\n<input className=\"radio\" type=\"radio\" checked />\n\n{/* lg */}\n<input className=\"radio --lg\" type=\"radio\" />\n<input className=\"radio --lg\" type=\"radio\" checked />\n\n{/* xl */}\n<input className=\"radio --xl\" type=\"radio\" />\n<input className=\"radio --xl\" type=\"radio\" checked />",
+    htmlCode: "<!-- sm -->\n<input class=\"radio radio-sm\" type=\"radio\" />\n<input class=\"radio radio-sm\" type=\"radio\" checked />\n\n<!-- Default -->\n<input class=\"radio radio-md\" type=\"radio\" />\n<input class=\"radio\" type=\"radio\" checked />\n\n<!-- lg -->\n<input class=\"radio radio-lg\" type=\"radio\" />\n<input class=\"radio radio-lg\" type=\"radio\" checked />\n\n<!-- xl -->\n<input class=\"radio radio-xl\" type=\"radio\" />\n<input class=\"radio radio-xl\" type=\"radio\" checked />",
+    jsxCode: "{/* sm */}\n<input className=\"radio radio-sm\" type=\"radio\" />\n<input className=\"radio radio-sm\" type=\"radio\" checked />\n\n{/* Default */}\n<input className=\"radio radio-md\" type=\"radio\" />\n<input className=\"radio\" type=\"radio\" checked />\n\n{/* lg */}\n<input className=\"radio radio-lg\" type=\"radio\" />\n<input className=\"radio radio-lg\" type=\"radio\" checked />\n\n{/* xl */}\n<input className=\"radio radio-xl\" type=\"radio\" />\n<input className=\"radio radio-xl\" type=\"radio\" checked />",
   },
   "Disabled Radio Button": {
     preview: (
