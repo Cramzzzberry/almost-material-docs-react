@@ -52,7 +52,7 @@ const almostMaterialPlugin = plugin(
 	function({addComponents, matchComponents, theme, addBase}) {
 
 		const userPalette = theme("almostMaterial") //get the palette from tailwind config
-		const defaultColor = "#000000"
+		const defaultColor = "#CCCCCC"
 
 		addComponents(AddComponents(defaultColor, shades))
 

@@ -123,7 +123,7 @@ const MatchComponents = (shades) => {
 
       //divider class
       "divider": (color) => ({
-        "&:before, &:after": {
+        "&::before, &::after": {
           backgroundColor: color,	
         }
       }),
@@ -156,17 +156,17 @@ const MatchComponents = (shades) => {
         color: ShadeHexColor(color, shades[10]),
 
         //horizontal menu
-        "&.menu-horizontal > li > details > ul, ol": { //sub ul and/or ol under li element
+        "&.menu.menu-horizontal > li > details > ul, &.menu.menu-horizontal > li > details > ol": { //sub ul and/or ol under li element
           color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         },
         
         //all about rail
-        "&.menu-rail > li > a, label": { //list items under menu
+        "&.menu.menu-rail > li > a, &.menu.menu-rail > li > label": { //list items under menu
           "&.menu-active": { backgroundColor: "transparent" }, // overriding the --active style
           "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
 
-        "& li > a": { //list items under menu
+        "&.menu li > a, &.menu li > label": { //list items under menu
           "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
         },
       }),
