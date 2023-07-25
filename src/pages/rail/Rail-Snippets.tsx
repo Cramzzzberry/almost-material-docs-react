@@ -20,7 +20,7 @@ export const RailSnippets = {
   "Left Navigation Rail": {
     preview: (
       <div className="card card-primary-80 p-5 flex flex-row gap-2 items-center flex-wrap">
-        <div className="rail rail-left rail-sample">
+        <div className="rail rail-sample">
           <div className="rail-main">
             <ul className="menu menu-rail">
               <li><a className="menu-active"><span className="material-icons-round">hexagon</span>label</a></li>
@@ -38,7 +38,7 @@ export const RailSnippets = {
   "Left Navigation Rail w/ Top, Main and Bottom Sections": {
     preview: (
       <div className="card card-primary-80 p-5 flex flex-row gap-2 items-center flex-wrap">
-        <div className="rail rail-left rail-sample">
+        <div className="rail rail-sample">
           <div className="rail-top">
             <ul className="menu">
               <li><a><span className="material-icons-round">menu</span></a></li>

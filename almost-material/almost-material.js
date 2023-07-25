@@ -33,7 +33,7 @@ const AlmostMaterialPalette = (palette) => {
 		colorsAndShades[`${color}-10`] = ShadeHexColor(palette[color], shades[10])
 		colorsAndShades[`${color}-20`] = ShadeHexColor(palette[color], shades[20])
 		colorsAndShades[`${color}-30`] = ShadeHexColor(palette[color], shades[30])
-		colorsAndShades[`${color}`] = ShadeHexColor(palette[color], shades[40])
+		colorsAndShades[`${color}-40`] = ShadeHexColor(palette[color], shades[40])
 		colorsAndShades[`${color}-50`] = ShadeHexColor(palette[color], shades[50])
 		colorsAndShades[`${color}-60`] = ShadeHexColor(palette[color], shades[60])
 		colorsAndShades[`${color}-70`] = ShadeHexColor(palette[color], shades[70])
@@ -42,6 +42,7 @@ const AlmostMaterialPalette = (palette) => {
 		colorsAndShades[`${color}-95`] = ShadeHexColor(palette[color], shades[95])
 		colorsAndShades[`${color}-99`] = ShadeHexColor(palette[color], shades[99])
 		colorsAndShades[`${color}-100`] = ShadeHexColor(palette[color], shades[100])
+		colorsAndShades[`${color}`] = ShadeHexColor(palette[color], shades[40])
 	}
 
 	return colorsAndShades
@@ -66,14 +67,14 @@ const almostMaterialPlugin = plugin(
 			},
 
 			"@font-face": {
-				fontFamily: "'openSans'",
+				fontFamily: "'Inter'",
 				fontWeight: "normal",
 				src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype')",
 			},
 
 			"body": {
 				backgroundColor: ShadeHexColor(userPalette.primary, shades[99]),
-				fontFamily: "'openSans'",
+				fontFamily: "'Inter'",
 			},
 			
 			"h1": {

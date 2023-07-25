@@ -6,17 +6,17 @@ import BadgePage from "./pages/badge/Badge-Page"
 import CardPage from "./pages/card/Card-Page"
 import CheckboxPage from "./pages/checkbox/Checkbox-Page"
 import DividerPage from "./pages/divider/Divider-Page"
+import DrawerPage from "./pages/drawer/drawer-Page"
 import DropdownPage from "./pages/dropdown/Dropdown-Page"
 import InputFieldPage from "./pages/input-field/Input-Field-Page"
 import MenuPage from "./pages/menu/Menu-Page"
 import ModalPage from "./pages/modal/Modal-Page"
 import NavbarPage from "./pages/navbar/Navbar-Page"
-import DrawerPage from "./pages/drawer/drawer-Page"
+import ProgressbarPage from "./pages/progressbar/Progressbar-Page"
 import RadiobuttonPage from "./pages/radiobutton/Radiobutton-Page"
 import RailPage from "./pages/rail/Rail-Page"
 import SwapPage from "./pages/swap/Swap-Page"
 import SwitchPage from "./pages/switch/Switch-Page"
-// import ProgressbarPage from "./pages/progressbar/Progressbar-Page" //archived
 
 export default function App() {
   return(
@@ -24,21 +24,27 @@ export default function App() {
       {/* the whole drawer */}
       <div className="drawer">
         {/* nav rail */}
-        <div className="rail xl:rail-left">
-          <div className="rail-main">
-            <ul className="menu menu-primary menu-rail">
-              <li><NavLink to="/home" className={({ isActive }) => isActive ? "menu-active" : ""}><span className="material-icons-round">home</span>home</NavLink></li>
-              <li><label htmlFor="drawerComponent"><span className="material-icons-round">add_circle_outline</span>Components</label></li>
+        <input className="rail-toggle" type="checkbox" id="railComponent"/>
+        <div className="rail">
+          <div className="rail-top">
+            <ul className="menu menu-primary">
+              <li><label className="swap-on" htmlFor="railComponent"><span className="material-icons swap-off">menu</span></label></li>
             </ul>
           </div>
-          <div className="rail-bottom hidden xl:flex">
+          <div className="rail-middle">
+            <ul className="menu menu-primary">
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/home"><span className="material-icons">home</span>Home</NavLink></li>
+              <li><label htmlFor="drawerComponent"><span className="material-icons">add_circle_outline</span>Components</label></li>
+            </ul>
+          </div>
+          <div className="rail-bottom">
             <ul className="menu menu-primary">
               <li>
-                <label className="swap swap-rotate">
+                <label className="swap swap-rotate grid">
                   <input type="checkbox" />
 
-                  <span class="swap-off material-icons-round">light_mode</span>
-                  <span class="swap-on material-icons-round">dark_mode</span>
+                  <span className="material-icons swap-off">light_mode</span>
+                  <span className="material-icons swap-on">dark_mode</span>
                 </label>
               </li>
             </ul>
@@ -56,17 +62,17 @@ export default function App() {
               <Route path="/card" element={ <CardPage /> } />
               <Route path="/checkbox" element={ <CheckboxPage /> } />
               <Route path="/divider" element={ <DividerPage /> } />
+              <Route path="/drawer" element={ <DrawerPage /> } />
               <Route path="/dropdown" element={ <DropdownPage /> } />
               <Route path="/input-field" element={ <InputFieldPage /> } />
               <Route path="/menu" element={ <MenuPage /> } />
               <Route path="/modal" element={ <ModalPage /> } />
               <Route path="/navbar" element={ <NavbarPage /> } />
-              <Route path="/drawer" element={ <DrawerPage /> } />
+              <Route path="/progress-bar" element={ <ProgressbarPage /> } />
               <Route path="/radio-button" element={ <RadiobuttonPage /> } />
               <Route path="/rail" element={ <RailPage /> } />
               <Route path="/swap" element={ <SwapPage /> } />
               <Route path="/switch" element={ <SwitchPage /> } />
-              {/* <Route path="/progress-bar" element={ <ProgressbarPage /> } /> */} {/* archived */}
             </Routes>
           </div>
         </div>
@@ -96,7 +102,7 @@ export default function App() {
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/menu">Menu</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/modal">Modal</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/navbar">Navigation Bar</NavLink></li>
-                    {/* <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/progress-bar">Progress Bars</NavLink></li> */} {/* archived */}
+                    <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/progress-bar">Progress Bar</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/radio-button">Radio Button</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/rail">Rail</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/swap">Swap</NavLink></li>

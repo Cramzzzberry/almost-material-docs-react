@@ -2,6 +2,7 @@
 //some day, i will also clean up some mess here and organize all styles so that it will be easier to read
 //also stucked between using js variable for some styles or using a hard-coded value, dunno if it will impact performance but
 //will definetely impact code readability
+//i think i need to put !important on all styles here
 
 import { ShadeHexColor, LightOrDark } from "./misc"
 
@@ -153,21 +154,26 @@ const MatchComponents = (shades) => {
 
       //menu class
       "menu": (color) => ({
-        color: ShadeHexColor(color, shades[10]),
+        color: `${ ShadeHexColor(color, shades[10]) } !important`,
 
         //horizontal menu
         "&.menu.menu-horizontal > li > details > ul, &.menu.menu-horizontal > li > details > ol": { //sub ul and/or ol under li element
-          color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        },
-        
-        //all about rail
-        "&.menu.menu-rail > li > a, &.menu.menu-rail > li > label": { //list items under menu
-          "&.menu-active": { backgroundColor: "transparent" }, // overriding the --active style
-          "&.menu-active > :first-child": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
         },
 
         "&.menu li > a, &.menu li > label": { //list items under menu
-          "&.menu-active": { backgroundColor: color, color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) },
+          "&.menu-active": { backgroundColor: `${ color } !important`, color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important` },
+        },
+      }),
+
+
+
+      //progress class
+      "progress": (color) => ({
+        backgroundColor: ShadeHexColor(color, shades[95]),
+
+        "&::after": {
+          backgroundColor: color,
         },
       }),
 
@@ -184,19 +190,17 @@ const MatchComponents = (shades) => {
 
       //switch class
       "switch": (color) => ({
-        borderColor: ShadeHexColor(color, shades[99]),
-        backgroundColor: ShadeHexColor(color, shades[99]),
+        backgroundColor: ShadeHexColor(color, shades[10]),
 
         "&::after": {
-          backgroundColor: ShadeHexColor(color, shades[10]),
+          backgroundColor: ShadeHexColor(color, shades[95]),
         },
 
         "&:checked": {
-          backgroundColor: color,
-
           "&::after": {
-            backgroundColor: ShadeHexColor(color, shades[99]),
-          }
+            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[95]),
+          },
+          backgroundColor: color,
         },
       })
     }

@@ -41,7 +41,7 @@ export const BadgeSnippets = {
       <span className="badge badge-sm">Small</span>
       <span className="badge badge-md">Default</span>
       <span className="badge badge-lg">Large</span>
-      <span className="badge badge-xl">LAAAARGE!</span>
+      <span className="badge badge-xl">RAWR!</span>
       </>
     ),
     htmlCode: "<span class=\"badge badge-sm\">Small</span>\n<span class=\"badge\">Default</span>\n<span class=\"badge badge-lg\">Large</span>\n<span class=\"badge badge-xl\">LAAAARGE!</span>",
