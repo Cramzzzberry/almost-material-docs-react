@@ -5,7 +5,7 @@
 export const NavbarSnippets = {
   "Navigation Bar": {
     preview: (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 items-center flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
         <div className="navbar static bg-white z-[0]"> {/*didnt use the class so that the navbar stays on the card*/}
           <div className="navbar-start">
             <ul className="menu menu-horizontal">
@@ -28,7 +28,7 @@ export const NavbarSnippets = {
   },
   "Navigation Bar w/ Icon": {
     preview: (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 items-center flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
         <div className="navbar static bg-white z-[0]">
           <div className="navbar-start">
             <ul className="menu menu-horizontal">
@@ -53,7 +53,7 @@ export const NavbarSnippets = {
   },
   "Navigation Bar w/ Collapsible Menus": {
     preview: (
-      <div className="card card-primary-80 h-[280px] p-5 flex gap-2 justify-center items-start flex-wrap">
+      <div className="card card-primary-80 h-[280px] my-2 p-5 flex gap-2 justify-center items-start flex-wrap">
         <div className="navbar static bg-white z-[0]">
           <div className="navbar-start">
             <ul className="menu menu-horizontal">
@@ -83,7 +83,7 @@ export const NavbarSnippets = {
   },
   "Navigation Bar w/ Dropdown": {
     preview: (
-      <div className="card card-primary-80 h-[280px] p-5 flex gap-2 justify-center items-start flex-wrap">
+      <div className="card card-primary-80 h-[280px] my-2 p-5 flex gap-2 justify-center items-start flex-wrap">
         <div className="navbar static bg-white z-[0]">
           <div className="navbar-start">
             <ul className="menu menu-horizontal">
@@ -117,7 +117,7 @@ export const NavbarSnippets = {
   },
   "Navbar Start, Center and End": {
     preview: (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex gap-2 justify-center items-start flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex gap-2 justify-center items-start flex-wrap">
         <div className="navbar static bg-white z-[0]">
           <div className="navbar-start">
             <ul className="menu menu-horizontal">

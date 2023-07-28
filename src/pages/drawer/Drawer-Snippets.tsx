@@ -1,7 +1,7 @@
 export const DrawerSnippets = {
   "Navigation Drawer": {
     preview: (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
         <div className="drawer drawer-sample">
           <input className="drawer-toggle" type="checkbox" id="sampleDrawer1"/>
           <div className="drawer-page-content">
@@ -31,7 +31,7 @@ export const DrawerSnippets = {
   },
   "Opened Navigation Drawer": {
     preview: (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 items-center flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
         {/* sidebar content here */}
         <div className="bg-white w-[23rem]">
           <ul className="menu menu-primary">

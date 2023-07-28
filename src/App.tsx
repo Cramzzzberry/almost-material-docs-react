@@ -27,27 +27,35 @@ export default function App() {
         <input className="rail-toggle" type="checkbox" id="railComponent"/>
         <div className="rail">
           <div className="rail-top">
-            <ul className="menu menu-primary">
-              <li><label className="swap-on" htmlFor="railComponent"><span className="material-icons swap-off">menu</span></label></li>
-            </ul>
+            <label className="btn btn-ghost" htmlFor="railComponent">
+              <span className="material-icons-round">menu</span>
+              Menu
+            </label>
           </div>
           <div className="rail-middle">
             <ul className="menu menu-primary">
-              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/home"><span className="material-icons">home</span>Home</NavLink></li>
-              <li><label htmlFor="drawerComponent"><span className="material-icons">add_circle_outline</span>Components</label></li>
-            </ul>
-          </div>
-          <div className="rail-bottom">
-            <ul className="menu menu-primary">
               <li>
-                <label className="swap swap-rotate grid">
-                  <input type="checkbox" />
-
-                  <span className="material-icons swap-off">light_mode</span>
-                  <span className="material-icons swap-on">dark_mode</span>
+                <NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/home">
+                  <span className="material-icons-round">home</span>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <label htmlFor="drawerComponent">
+                  <span className="material-icons-round">add_circle_outline</span>
+                  Components
                 </label>
               </li>
             </ul>
+          </div>
+          <div className="rail-bottom">
+            <label className="btn btn-ghost swap swap-rotate">
+              <input type="checkbox" />
+
+              <span className="material-icons-round swap-off">light_mode</span>
+              <span className="material-icons-round swap-on">dark_mode</span>
+              Dark Mode
+            </label>
           </div>
         </div>
 

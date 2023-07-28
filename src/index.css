@@ -10,6 +10,6 @@
     @apply z-[9999]
   }
   .rail.rail-sample.rail-left {
-    @apply min-h-[560px] max-h-[560px] z-0
+    @apply min-h-[560px] max-h-[560px]
   }
 }

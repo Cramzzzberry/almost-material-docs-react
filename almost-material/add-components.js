@@ -115,10 +115,10 @@ const AddComponents = (color, shades) => {
           fontSize: "var(--btn-icon-size)",
         },
 
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center", 
-        justifyContent: "center",
+        display: "grid",
+        gridAutoFlow: "column",
+        gridAutoColumns: "max-content auto max-content",
+        alignItems: "center",
         cursor: "pointer",
 
         width: "fit-content",
@@ -127,6 +127,7 @@ const AddComponents = (color, shades) => {
 
         fontWeight: "bold",
         textTransform: "capitalize",
+        textAlign: "start",
         whiteSpace: "nowrap",
 
         backgroundColor: "#000000",
@@ -187,6 +188,7 @@ const AddComponents = (color, shades) => {
         "&.btn-circle": { //btn-circle
           "--btn-circle-size": "3.25rem",
           "--btn-font-size": "1.5rem !important",
+          "--btn-padding-x": "0",
 
           minHeight: "var(--btn-circle-size)",
           maxHeight: "var(--btn-circle-size)",
@@ -197,7 +199,8 @@ const AddComponents = (color, shades) => {
           "& > *": { fontSize: "var(--btn-font-size)" },
 
           borderRadius: "100%",
-  
+          justifyContent: "center",
+
           //sizes for btn-circle
           "&.btn-sm": {
             "--btn-circle-size": "2.5rem",
@@ -274,7 +277,7 @@ const AddComponents = (color, shades) => {
       ".card": {
         width: "auto",
         height: "fit-content",
-        borderRadius: "1.5rem",
+        borderRadius: "1rem",
         backgroundColor: "#FFFFFF",
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
 
@@ -978,10 +981,10 @@ const AddComponents = (color, shades) => {
         width:"100vw",
         height:"100vh",
         background:"rgba(0,0,0,0.2)",
-        transition: `opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
         opacity: "0",
         visibility: "hidden",
         zIndex: "100",
+        transition: `opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
 
         "& > .modal-content": { //wrapper for the content
           "display": "flex",
@@ -1110,37 +1113,165 @@ const AddComponents = (color, shades) => {
         alignItems: "flex-start",
         minWidth: "5rem",
         maxWidth: "5rem",
+        height: "100vh",
 
-        transition: `padding 250ms ${ easeInOut }, min-width 250ms ${ easeInOut }, max-width 250ms ${ easeInOut }`,
+        backgroundColor: "#FFFFFF",
 
-        "& > div.rail-top > .menu, & > div.rail-middle > .menu, & > div.rail-bottom > .menu": {
-          "--menu-padding-x": "1.5rem", //initial value for animation purposes
-          "--menu-list-item-gap": "2rem", //initial value for animation purposes
+        transition: `padding 300ms ${ easeInOut }, min-width 300ms ${ easeInOut }, max-width 300ms ${ easeInOut }`,
 
-          padding: "0.5rem 0",
-          overflowX: "hidden",
-          width: "100%",
-  
-          "& li": {
+        "& > div.rail-top, & > div.rail-middle, & > div.rail-bottom": {
+          "& > .btn": {
+            "--btn-padding-x": "1.5rem", //initial value for animation purposes
+            "--btn-gap": "1.75rem", //initial value for animation purposes
+
             width: "100%",
+            overflowX: "hidden",
+
+            transition: `gap 300ms ${ easeInOut }`,
+          },
+
+          "& > .menu": {
+            "--menu-list-item-width": "2.5rem", //initial value for animation purposes
+            "--menu-list-item-height": "2.5rem", //initial value for animation purposes
+            "--menu-padding-x": "0.5rem", //initial value for animation purposes
+            "--menu-list-margin-y": "0.375rem", //initial value for animation purposes
+            "--menu-list-item-gap": "1.75rem", //initial value for animation purposes
   
-            "& > a, & > label": { //list items under menu
-              transition: `gap 250ms ${ easeInOut }`,
-            },
-  
-            "& > details": { //collapsible list under menu
-              "& > summary": { //the summary tag
-                transition: `gap 250ms ${ easeInOut }`,
+            padding: "0.5rem 0",
+            width: "100%",
+            overflowX: "hidden",
+    
+            "& li": {
+              width: "var(--menu-list-item-width)",
+              marginTop: "var(--menu-list-margin-y)",
+              marginBottom: "var(--menu-list-margin-y)",
+              marginLeft: "calc(1.5rem - 0.5rem)",
+              overflowX: "hidden",
+
+              transition: `width 300ms ${ easeInOut }, margin-top 150ms ${ easeInOut }, margin-bottom 150ms ${ easeInOut }, margin-left 300ms ${ easeInOut }`,
+
+              "& > ul, & > ol": { //sub ul and/or ol under li element
+                marginLeft: "3.5rem",
+                paddingLeft: "1rem",
+                opacity: "0",
+                overflowX: "hidden",
+
+                transition: `margin-left 300ms ${ easeInOut }, opacity 300ms ${ easeInOut }`,
               },
-            }
+    
+              "& > a, & > label": { //list items under menu
+                minHeight: "var(--menu-list-item-height)",
+                maxHeight: "var(--menu-list-item-height)",
+                padding: "0 var(--menu-padding-x)",
+                
+                transition: `gap 300ms ${ easeInOut }, padding 300ms ${ easeInOut }, min-height 150ms ${ easeInOut }, max-height 150ms ${ easeInOut }`,
+              },
+
+              "& > details": { //collapsible list under menu
+                "& > ul, & > ol": { //sub ul and/or ol under li element
+                  marginLeft: "3.5rem",
+                  paddingLeft: "1rem",
+                  opacity: "0",
+                  overflowX: "hidden",
+  
+                  transition: `margin-left 300ms ${ easeInOut }, opacity 300ms ${ easeInOut }`,
+                },
+
+                "& > summary": { //the summary tag
+                  minHeight: "var(--menu-list-item-height)",
+                  maxHeight: "var(--menu-list-item-height)",
+                  padding: "0 var(--menu-padding-x)",
+                  
+                  transition: `gap 300ms ${ easeInOut }, padding 300ms ${ easeInOut }, min-height 150ms ${ easeInOut }, max-height 150ms ${ easeInOut }`,
+                },
+              }
+            },
           },
         },
+
+        "&.rail-open": {
+          minWidth: "23rem",
+          maxWidth: "23rem",
+          padding: "0.25rem 0.5rem",
+          
+          "& > div.rail-top, & > div.rail-middle, & > div.rail-bottom": {
+            "& > .btn": {
+              "--btn-gap": "1.25rem",
+            },
+
+            "& > .menu": {
+              "--menu-list-item-width": "100%",
+              "--menu-list-item-height": "3.25rem",
+              "--menu-padding-x": "1.5rem",
+              "--menu-list-item-gap": "1.25rem",
+              "--menu-list-gap": "0",
+              
+              "& li" : {
+                marginLeft: "0",
+
+                "& > ul, & ol": {
+                  marginLeft: "2.25rem",
+                  opacity: "1",
+                }
+              },
+
+              "& li > details": { //collapsible list under menu
+                "& > ul, & > ol": { //sub ul and/or ol under li element
+                  marginLeft: "2.25rem",
+                  opacity: "1",
+                },
+              }
+            },
+          },
+        },
+      },
+
+      "input[type='checkbox'].rail-toggle": {
+        position: "absolute",
+        top: "-100px",
+        "&:checked + .rail": {
+          minWidth: "23rem",
+          maxWidth: "23rem",
+          padding: "0.25rem 0.5rem",
+
+          "& > div.rail-top, & > div.rail-middle, & > div.rail-bottom": {
+            "& > .btn": {
+              "--btn-gap": "1.25rem",
+            },
+
+            "& > .menu": {
+              "--menu-list-item-width": "100%",
+              "--menu-list-item-height": "3.25rem",
+              "--menu-padding-x": "1.5rem",
+              "--menu-list-item-gap": "1.25rem",
+              "--menu-list-margin-y": "0",
+              
+              "& li" : {
+                marginLeft: "0",
+
+                "& > ul, & ol": {
+                  marginLeft: "2.25rem",
+                  opacity: "1",
+                }
+              },
+
+              "& li > details": { //collapsible list under menu
+                "& > ul, & > ol": { //sub ul and/or ol under li element
+                  marginLeft: "2.25rem",
+                  opacity: "1",
+                },
+              }
+            },
+          }
+        }
       },
 
       ".rail-top": {
         width: "100%",
         display: "flex",
+        flexDirection: "column",
         alignItems: "flex-start",
+        justifyContent: "center",
       },
 
       ".rail-middle": {
@@ -1154,20 +1285,6 @@ const AddComponents = (color, shades) => {
         display: "flex",
         alignItems: "flex-end",
         flexBasis: "100%",
-      },
-
-      "input[type='checkbox'].rail-toggle": {
-        position: "absolute",
-        top: "-100px",
-        "&:checked + .rail": {
-          minWidth: "23rem",
-          maxWidth: "23rem",
-          padding: "0.25rem 0.5rem",
-
-          "& > div.rail-top > .menu, & > div.rail-middle > .menu, & > div.rail-bottom > .menu": {
-            "--menu-list-item-gap": "1.25rem", //
-          }
-        }
       },
 
 

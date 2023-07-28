@@ -1,7 +1,7 @@
 export const DropdownSnippets = {
   "Dropdown": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="dropdown">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -19,7 +19,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Top": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-end">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-end">
         <div className="dropdown dropdown-top">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -37,7 +37,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Top Aligned to End": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-end">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-end">
         <div className="dropdown dropdown-top dropdown-end">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -55,7 +55,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Bottom": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="dropdown dropdown-bottom">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -73,7 +73,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Bottom Aligned to End": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="dropdown dropdown-bottom dropdown-end">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -91,7 +91,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Left": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown dropdown-left">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -109,7 +109,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Left Aligned to End": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown dropdown-left dropdown-end">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -127,7 +127,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Right": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown dropdown-right">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">
@@ -145,7 +145,7 @@ export const DropdownSnippets = {
   },
   "Dropdown Right Aligned to End": {
     preview: (
-      <div className="card card-primary-80 min-h-[272px] p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="card card-primary-80 min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="dropdown dropdown-right dropdown-end">
           <button tabIndex="0" className="btn">Dropdown</button>
           <div tabIndex="0" className="dropdown-content z-[1] card">

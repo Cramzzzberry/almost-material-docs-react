@@ -5,17 +5,17 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const Block = ({preview, htmlCode, jsxCode, componentName}) => {
   const tabContent = {
     "preview": (
-      <div className="card card-primary-80 min-h-[100px] p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
+      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
         { preview }
       </div>
     ),
     "html": (
-      <SyntaxHighlighter className="card card-primary-80" language="cshtml" style={ darcula }>
+      <SyntaxHighlighter className="card" language="cshtml" style={ darcula }>
         { htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
-      <SyntaxHighlighter className="card card-primary-80" language="jsx" style={ darcula }>
+      <SyntaxHighlighter className="card" language="jsx" style={ darcula }>
         { jsxCode }
       </SyntaxHighlighter>
     ),
@@ -34,7 +34,7 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
 
   return (
     <>
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
       {/* first block */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
         <div className="flex flex-row gap-2 items-center">
