@@ -4,6 +4,7 @@ const plugin = require("tailwindcss/plugin")
 
 import { ShadeHexColor } from "./misc"
 
+import { AddBase, themeStyles } from "./add-base"
 import AddComponents from "./add-components"
 import MatchComponents from "./match-components"
 
@@ -53,74 +54,11 @@ const almostMaterialPlugin = plugin(
 	function({addComponents, matchComponents, theme, addBase}) {
 
 		const userPalette = theme("almostMaterial") //get the palette from tailwind config
-		const defaultColor = "#CCCCCC"
-
-		addComponents(AddComponents(defaultColor, shades))
+		addComponents(AddComponents(shades))
 
 		matchComponents(MatchComponents(shades), { values: AlmostMaterialPalette(userPalette) })
 
-		addBase({
-			// or whichever color you"d like
-			"html": {
-				color: ShadeHexColor(userPalette.primary, shades[10]),
-				fontSize: "1rem",
-			},
-
-			"@font-face": {
-				fontFamily: "'Inter'",
-				fontWeight: "normal",
-				src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype')",
-			},
-
-			"body": {
-				backgroundColor: ShadeHexColor(userPalette.primary, shades[99]),
-				fontFamily: "'Inter'",
-			},
-			
-			"h1": {
-				fontSize: "6rem",
-				lineHeight: "1",
-			},
-			
-			"h2": {
-				fontSize: "3.75rem",
-				lineHeight: "1",
-			},
-			
-			"h3": {
-				fontSize: "2.25rem",
-				lineHeight: "2.5rem",
-			},
-			
-			"h4": {
-				fontSize: "1.5rem",
-				lineHeight: "2rem",
-			},
-			
-			"h5": {
-				fontSize: "1.25rem",
-				lineHeight: "1.75rem",
-			},
-
-			"h6": {
-				fontSize: "1.125rem",
-				lineHeight: "1.75rem",
-			},
-			
-			"::-webkit-scrollbar": {
-				width: "8px",
-				height: "8px",
-			},
-			
-			"::-webkit-scrollbar-track": {
-				borderRadius: "4px",
-			},
-			
-			"::-webkit-scrollbar-thumb": {
-				background: "gray",
-				borderRadius: '4px',
-			},
-		});
+		addBase({...AddBase(shades), ...themeStyles(AlmostMaterialPalette(userPalette), shades)});
 	}
 )
 

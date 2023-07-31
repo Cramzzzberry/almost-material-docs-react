@@ -1,4 +1,4 @@
-import Block from "../../components/Component-Blocks"
+import Block from "../../components/Special-Blocks"
 import Page from "../../components/Component-Page"
 import { CardSnippets } from "./Card-Snippets"
 

@@ -136,8 +136,7 @@ const MatchComponents = (shades) => {
         backgroundColor: "#ffffff",
         borderColor: "#ffffff",
         "&:focus": {
-          outline: `2px solid ${ color }`,
-          outlineOffset: "2px",
+          outline: `1px solid ${ color }`,
         },
 
         "&.input-outline": {

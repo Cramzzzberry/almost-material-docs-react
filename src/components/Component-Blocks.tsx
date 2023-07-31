@@ -5,7 +5,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const Block = ({preview, htmlCode, jsxCode, componentName}) => {
   const tabContent = {
     "preview": (
-      <div className="card card-primary-80 min-h-[100px] my-2 p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
+      <div className="card min-h-[100px] my-2 p-5 flex flex-row gap-2 justify-center items-center flex-wrap">
         { preview }
       </div>
     ),
@@ -20,15 +20,15 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       </SyntaxHighlighter>
     ),
   }
-  const [previewActive, setPreviewActive] = useState("btn-primary btn-active")
+  const [previewActive, setPreviewActive] = useState("btn-success btn-active")
   const [htmlActive, setHtmlActive] = useState("btn-ghost")
   const [jsxActive, setJsxActive] = useState("btn-ghost")
   const [secondBlock, setSecondBlock] = useState(tabContent["preview"])
 
   const tabHandler = (activeTab) => {
-    setPreviewActive(activeTab === "preview" ? "btn-primary btn-active" : "btn-ghost")
-    setHtmlActive(activeTab === "html" ? "btn-primary btn-active" : "btn-ghost")
-    setJsxActive(activeTab === "jsx" ? "btn-primary btn-active" : "btn-ghost")
+    setPreviewActive(activeTab === "preview" ? "btn-success btn-active" : "btn-ghost")
+    setHtmlActive(activeTab === "html" ? "btn-success btn-active" : "btn-ghost")
+    setJsxActive(activeTab === "jsx" ? "btn-success btn-active" : "btn-ghost")
     setSecondBlock(tabContent[activeTab])
   }
 

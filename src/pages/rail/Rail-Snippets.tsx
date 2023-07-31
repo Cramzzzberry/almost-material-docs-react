@@ -1,14 +1,14 @@
 export const RailSnippets = {
   "Navigation Rail": {
     preview: (
-      <div className="card card-primary-80 my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
+      <div className="card my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
         <div className="rail h-[400px]">
           <div className="rail-middle">
             <ul className="menu">
-              <li><a className="menu-active"><span className="material-icons-round">hexagon</span>label</a></li>
-              <li><a><span className="material-icons-round">hexagon</span>label</a></li>
-              <li><a><span className="material-icons-round">hexagon</span>label</a></li>
-              <li><a><span className="material-icons-round">hexagon</span>label</a></li>
+              <li><a className="menu-active"><span className="material-icons-round">hexagon</span></a></li>
+              <li><a><span className="material-icons-round">hexagon</span></a></li>
+              <li><a><span className="material-icons-round">hexagon</span></a></li>
+              <li><a><span className="material-icons-round">hexagon</span></a></li>
             </ul>
           </div>
         </div>
@@ -19,7 +19,7 @@ export const RailSnippets = {
   },
   "Navigation Rail w/ Open Toggle": {
     preview: (
-      <div className="card card-primary-80 my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
+      <div className="card my-2 p-5 flex flex-row gap-2 items-center flex-wrap">
         <input className="rail-toggle" type="checkbox" id="sampleRail" />
         <div className="rail h-[400px]">
           <div className="rail-top">
@@ -27,7 +27,7 @@ export const RailSnippets = {
           </div>
           <div className="rail-middle">
             <ul className="menu">
-              <li><a><span className="material-icons-round">hexagon</span>label</a></li>
+              <li><a className="menu-active"><span className="material-icons-round">hexagon</span>Active</a></li>
               <li><a><span className="material-icons-round">hexagon</span>label</a></li>
               <li><a><span className="material-icons-round">hexagon</span>label</a></li>
             </ul>

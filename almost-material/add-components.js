@@ -5,10 +5,8 @@
 
 import { ShadeHexColor, LightOrDark } from "./misc"
 
-const AddComponents = (color, shades) => {
+const AddComponents = (shades) => {
   const easeInOut = "cubic-bezier(0.4, 0, 0.2, 1)"
-  const labelsColor = ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90])
-
   return (
     {
       //::root
@@ -17,17 +15,16 @@ const AddComponents = (color, shades) => {
 
 
       //badge class
-      //i need to rework badge class
       ".badge": {
         //badge related variables
         "--badge-height": "1.25rem",
-        "--badge-padding-x": "0.75rem",
+        "--badge-padding-x": "0.625rem",
         "--badge-font-size": "0.875rem",
 
         minHeight: "var(--badge-height)",
         maxHeight: "var(--badge-height)",
-        paddingLeft: "var(--badge-padding-x)",
-        paddingRight: "var(--badge-padding-x)",
+        paddingLeft: "calc(var(--badge-padding-x) - 1px)",
+        paddingRight: "calc(var(--badge-padding-x) - 1px)",
         
         fontSize: "var(--badge-font-size) !important",
         lineHeight: "var(--badge-height)",
@@ -69,25 +66,25 @@ const AddComponents = (color, shades) => {
         //sizes for badge
         "&.badge-sm": {
           "--badge-height": "1rem",
-          "--badge-padding-x": "0.375rem",
+          "--badge-padding-x": "0.5rem",
           "--badge-font-size": "0.625rem",
         },
 
         "&.badge-md": { //default badge size
           "--badge-height": "1.25rem",
-          "--badge-padding-x": "0.75rem",
+          "--badge-padding-x": "0.625rem",
           "--badge-font-size": "0.875rem",
         },
   
         "&.badge-lg": {
           "--badge-height": "1.5rem",
-          "--badge-padding-x": "1.125rem",
+          "--badge-padding-x": "0.75rem",
           "--badge-font-size": "1.125rem",
         },
   
         "&.badge-xl": {
           "--badge-height": "1.75rem",
-          "--badge-padding-x": "1.375rem",
+          "--badge-padding-x": "0.875rem",
           "--badge-font-size": "1.375rem",
         },
       },
@@ -160,8 +157,8 @@ const AddComponents = (color, shades) => {
           },
 
           "&:active": {
-            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
-            borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+            backgroundColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
+            borderColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
           },
         },
   
@@ -282,7 +279,7 @@ const AddComponents = (color, shades) => {
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
 
         "& > .card-body": { //for card body
-          padding: "1.25rem",
+          padding: "1rem",
 
           "& > .card-title": { fontWeight: "bold" },
   
@@ -545,7 +542,7 @@ const AddComponents = (color, shades) => {
           visibility: "hidden",
           zIndex: "98",
 
-          transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }`,
+          transition: `opacity 250ms ${ easeInOut }, visibility 250ms ${ easeInOut }, left 300ms ${ easeInOut }`,
 
           "& > .drawer-sidebar-content": {  //wrapper for the sidebar content
             position: "absolute",
@@ -558,6 +555,7 @@ const AddComponents = (color, shades) => {
             "& > *": {
               height: "100%",
               overflowY: "auto",
+              backgroundColor: "#FFFFFF",
             },
           },
           
@@ -577,6 +575,8 @@ const AddComponents = (color, shades) => {
             height: "100vh",
             background: "rgba(0,0,0,0.5)",
             cursor: "pointer",
+
+            transition: `width 300ms ${ easeInOut }`,
           },
         },
 
@@ -640,7 +640,7 @@ const AddComponents = (color, shades) => {
           position: "absolute",
           opacity: "0",
           visibility: "hidden",
-          transition: `transform 75ms ${ easeInOut }, opacity 75ms ${ easeInOut }, visibility 75ms ${ easeInOut }`,
+          transition: `transform 125ms ${ easeInOut }, opacity 125ms ${ easeInOut }, visibility 125ms ${ easeInOut }`,
           transform: "scale(0.85, 0.85)",
           "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))", //drop shadow came from tailwind css dropshadow-md
           filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
@@ -688,6 +688,83 @@ const AddComponents = (color, shades) => {
 
 
 
+      //indicator class
+      ".indicator": {
+        "--translate-x": "35%",
+        "--translate-y": "-35%",
+        "--indicator-top": "0%",
+        "--indicator-bottom": "auto",
+        "--indicator-left": "auto",
+        "--indicator-right": "0%",
+
+        position: "relative",
+        display: "inline-flex",
+
+        "& > .indicator-item": {
+          position: "absolute",
+          top: "var(--indicator-top)",
+          bottom: "var(--indicator-bottom)",
+          left: "var(--indicator-left)",
+          right: "var(--indicator-right)",
+
+          transform: "translate(var(--translate-x), var(--translate-y))",
+
+          "&.indicator-top": {
+            "--indicator-top": "0%",
+            "--indicator-bottom": "auto",
+
+            "&.indicator-start": {
+              "--indicator-left": "0%",
+              "--indicator-right": "auto",
+              "--translate-x": "-35%",
+              "--translate-y": "-35%",
+            },
+
+            "&.indicator-center": {
+              "--indicator-left": "50%",
+              "--indicator-right": "auto",
+              "--translate-x": "-50%",
+              "--translate-y": "-35%",
+            },
+
+            "&.indicator-end": {
+              "--indicator-left": "auto",
+              "--indicator-right": "0%",
+              "--translate-x": "35%",
+              "--translate-y": "-35%",
+            },
+          },
+
+          "&.indicator-bottom": {
+            "--indicator-top": "auto",
+            "--indicator-bottom": "0%",
+
+            "&.indicator-start": {
+              "--indicator-left": "0%",
+              "--indicator-right": "auto",
+              "--translate-x": "-35%",
+              "--translate-y": "35%",
+            },
+
+            "&.indicator-center": {
+              "--indicator-left": "50%",
+              "--indicator-right": "auto",
+              "--translate-x": "-50%",
+              "--translate-y": "35%",
+            },
+
+            "&.indicator-end": {
+              "--indicator-left": "auto",
+              "--indicator-right": "0%",
+              "--translate-x": "35%",
+              "--translate-y": "35%",
+            },
+          },
+        }
+      },
+
+
+
       //input class
       ".input": {
         "--input-height": "3.25rem",
@@ -700,26 +777,26 @@ const AddComponents = (color, shades) => {
         paddingRight: "var(--input-padding-x)",
         fontSize: "var(--input-font-size)",
 
-        borderRadius: "9999px",
-        borderWidth: "2px",
+        borderRadius: "0.75rem",
+        borderWidth: "1px",
         backgroundColor: "#ffffff",
         borderColor: "#ffffff",
 
         "&:focus": {
-          outline: `2px solid ${ color }`,
-          outlineOffset: "2px",
+          outline: `1px solid #cccccc`,
+          outlineOffset: "1px",
 
           "&.input-underlined": { outline: "none" },
         },
 
-        "&.input-outline": { borderColor: color },
+        "&.input-outline": { borderColor: "#cccccc" },
 
         "&.input-ghost": { borderColor: "transparent", backgroundColor: "transparent" },
 
         "&.input-underlined": {
           borderWidth: "0px",
           borderBottomWidth: "2px",
-          borderColor: color,
+          borderColor: "#cccccc",
           backgroundColor: "transparent",
           borderRadius: "2px",
           paddingTop: "0.5rem",
@@ -777,7 +854,7 @@ const AddComponents = (color, shades) => {
         textTransform: "capitalize",
 
         "& > *": { fontSize: "1rem" },
-        color: labelsColor,
+        color: "#000000",
 
         "&.menu-horizontal": { //horizontal menu
           flexDirection: "row",
@@ -796,9 +873,9 @@ const AddComponents = (color, shades) => {
                 // paddingLeft: "2.25rem",
                 padding: "0.5rem",
                 marginLeft: "0",
-                borderRadius: "1.5rem",
-                color: labelsColor,
-                backgroundColor: ShadeHexColor(color, shades[100]),
+                borderRadius: "1rem",
+                color: "#000000",
+                backgroundColor: ShadeHexColor("#000000", shades[100]),
                 "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))", //drop shadow came from tailwind css dropshadow-md
                 filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
 
@@ -1024,10 +1101,85 @@ const AddComponents = (color, shades) => {
         top: "0",
         padding: "0.25rem",
         width: "100%",
-        minheight: "4.75rem",
-        maxheight: "4.75rem",
+        minHeight: "4.75rem",
+        maxHeight: "4.75rem",
         fontWeight: "bold",
         zIndex: "97",
+        backgroundColor: "#FFFFFF",
+
+        "&.navbar-bottom": { //bottom nav bar
+          padding: "0",
+          minHeight: "4.75rem",
+          maxHeight: "4.75rem",
+
+          position: "fixed",
+          top: "auto",
+          bottom: "0",
+
+          "& > .menu": {
+            padding: "0",
+
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            alignItems: "center",
+
+            width: "100%",
+
+            "& > li": {
+              minWidth: "3.75rem",
+              width: "4.75rem",
+
+              "& > a, & > label": { //list items under menu
+                gap: "0",
+                width: "100%",
+                minHeight: "initial",
+                maxHeight: "initial",
+                padding: "0",
+                fontSize: "0.75rem",
+    
+                "& > *:first-child": {
+                  width: "90%",
+                  textAlign: "center",
+                  padding: "0.125rem 0",
+                  borderRadius: "9999px",
+                },
+    
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                borderRadius: "0",
+                whiteSpace: "noWrap",
+      
+                "&:hover": { 
+                  background: "transparent",
+
+                  "& > *:first-child": {
+                    background: "rgba(0,0,0,0.05)",
+                  }, 
+                },
+      
+                "&:active": { 
+                  background: "transparent",
+
+                  "& > *:first-child": {
+                    background: "rgba(0,0,0,0.1)",
+                  }, 
+                },
+      
+                "&.menu-active": { 
+                  backgroundColor: "transparent",
+                  color: "#000000",
+
+                  "& > *:first-child": {
+                    backgroundColor: "#000000",
+                    color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
+                  },
+                },
+              },
+            }
+          },
+        }
       },
 
       //navbar item positions
@@ -1073,7 +1225,7 @@ const AddComponents = (color, shades) => {
         display: "inline-block",
         width: "256px",
         borderRadius: "9999px",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: ShadeHexColor("#000000", shades[95]),
 
         "&::after": {
           height: "var(--progress-height)",
@@ -1146,7 +1298,7 @@ const AddComponents = (color, shades) => {
               marginTop: "var(--menu-list-margin-y)",
               marginBottom: "var(--menu-list-margin-y)",
               marginLeft: "calc(1.5rem - 0.5rem)",
-              overflowX: "hidden",
+              // overflowX: "hidden",
 
               transition: `width 300ms ${ easeInOut }, margin-top 150ms ${ easeInOut }, margin-bottom 150ms ${ easeInOut }, margin-left 300ms ${ easeInOut }`,
 
@@ -1449,7 +1601,7 @@ const AddComponents = (color, shades) => {
         alignItems: "center",
         appearance: "none",
         "-webkit-appearance": "none",
-        backgroundColor: ShadeHexColor(color, shades[10]),
+        backgroundColor: "#000000",
         borderRadius: "9999px",
         cursor: "pointer",
         transition: `background-color 150ms ${ easeInOut }`,
@@ -1465,15 +1617,12 @@ const AddComponents = (color, shades) => {
           top: "3px",
           left: "3px",
           borderRadius: "100%",
-          backgroundColor: ShadeHexColor(color, LightOrDark(ShadeHexColor(color, shades[10])) === 'light' ? shades[10] : shades[95]),
+          backgroundColor: ShadeHexColor("#000000", shades[99]),
           transition: `left 150ms ${ easeInOut }, background-color 150ms ${ easeInOut }`,
         },
 
         "&:checked": {
-          backgroundColor: color,
-
           "&::after": {
-            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[95]),
             left: "calc(100% - var(--switch-circle-size) - 3px)",
           }
         },
