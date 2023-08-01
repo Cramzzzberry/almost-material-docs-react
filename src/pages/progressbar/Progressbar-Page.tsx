@@ -24,7 +24,7 @@ const ProgressbarPage = () => {
   return (
     <Page 
       name="Progress Bar"
-      desc="Blah blah here"
+      desc="Displays a visual representation of a progress"
       components={ getProgressbars() }
     />
   )

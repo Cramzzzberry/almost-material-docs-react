@@ -24,7 +24,7 @@ const DividerPage = () => {
   return (
     <Page 
       name="Divider"
-      desc="Blah blah here"
+      desc="Separates different elements in a group"
       components={ getDividers() }
     />
   )

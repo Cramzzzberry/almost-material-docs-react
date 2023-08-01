@@ -24,7 +24,7 @@ const RadiobuttonPage = () => {
   return (
     <Page 
       name="Radio Button"
-      desc="Blah blah here"
+      desc="Denotes the current state of an element and used for single choice"
       components={ getRadiobuttons() }
     />
   )

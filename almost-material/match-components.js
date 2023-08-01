@@ -84,8 +84,8 @@ const MatchComponents = (shades) => {
       
       //card class
       "card": (color) => ({
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        backgroundColor: color,
+        color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
+        backgroundColor: `${ color } !important`,
       }),
 
 
@@ -189,17 +189,18 @@ const MatchComponents = (shades) => {
 
       //switch class
       "switch": (color) => ({
-        backgroundColor: ShadeHexColor(color, shades[10]),
+        backgroundColor: ShadeHexColor(color, shades[95]),
 
         "&::after": {
-          backgroundColor: ShadeHexColor(color, shades[95]),
+          backgroundColor: ShadeHexColor(color, shades[10]),
         },
 
         "&:checked": {
-          "&::after": {
-            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[95]),
-          },
           backgroundColor: color,
+
+          "&::after": {
+            backgroundColor: ShadeHexColor(color, shades[95]),
+          },
         },
       })
     }

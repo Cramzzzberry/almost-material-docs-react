@@ -35,8 +35,8 @@ export const CardSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card w-96\">\n  <figure class=\"max-h-64\"><img src=\"\" /></figure>\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <span class=\"badge badge-warning\">20% off</span>\n\n    <div class=\"card-actions justify-end\">\n      <span class=\"badge badge-outline\">Tech</span>\n      <span class=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
-    jsxCode: "<div className=\"card w-96\">\n  <figure className=\"max-h-64\"><img src=\"\" /></figure>\n  <div className=\"card-body\">\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <span className=\"badge badge-warning\">20% off</span>\n\n    <div className=\"card-actions justify-end\">\n      <span className=\"badge badge-outline\">Tech</span>\n      <span className=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
+    htmlCode: "<div class=\"card w-96\">\n  <figure class=\"max-h-64\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <span class=\"badge badge-warning\">20% off</span>\n\n    <div class=\"card-actions justify-end\">\n      <span class=\"badge badge-outline\">Tech</span>\n      <span class=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
+    jsxCode: "<div className=\"card w-96\">\n  <figure className=\"max-h-64\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n  <div className=\"card-body\">\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <span className=\"badge badge-warning\">20% off</span>\n\n    <div className=\"card-actions justify-end\">\n      <span className=\"badge badge-outline\">Tech</span>\n      <span className=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
   },
   "Card w/ Image on Bottom": {
     preview: (
@@ -50,8 +50,8 @@ export const CardSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card w-96\">\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <p>- a computer keyboard that uses spring-activated switches</p>\n  </div>\n  <figure class=\"max-h-64\"><img src=\"\" /></figure>\n</div>",
-    jsxCode: "<div className=\"card w-96\">\n  <div className=\"card-body\">\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <p>- a computer keyboard that uses spring-activated switches</p>\n  </div>\n  <figure className=\"max-h-64\"><img src=\"\" /></figure>\n</div>",
+    htmlCode: "<div class=\"card w-96\">\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <p>- a computer keyboard that uses spring-activated switches</p>\n  </div>\n  <figure class=\"max-h-64\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n</div>",
+    jsxCode: "<div className=\"card w-96\">\n  <div className=\"card-body\">\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <p>- a computer keyboard that uses spring-activated switches</p>\n  </div>\n  <figure className=\"max-h-64\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n</div>",
   },
   "Card w/ Image Padding": {
     preview: (
@@ -70,7 +70,7 @@ export const CardSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"card w-96\">\n  <div class=\"card-body\">\n    <figure class=\"max-h-64 mb-3\"><img src=\"\" /></figure>\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <span class=\"badge badge-warning\">20% off</span>\n\n    <div class=\"card-actions justify-end\">\n      <span class=\"badge badge-outline\">Tech</span>\n      <span class=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
-    jsxCode: "<div className=\"card w-96\">\n  <div className=\"card-body\">\n    <figure className=\"max-h-64 mb-3\"><img src=\"\" /></figure>\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <span className=\"badge badge-warning\">20% off</span>\n\n    <div className=\"card-actions justify-end\">\n      <span className=\"badge badge-outline\">Tech</span>\n      <span className=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
+    htmlCode: "<div class=\"card w-96\">\n  <div class=\"card-body\">\n    <figure class=\"max-h-64 mb-3\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n    <h5 class=\"card-title\">Mechanical Keyboards</h5>\n    <span class=\"badge badge-warning\">20% off</span>\n\n    <div class=\"card-actions justify-end\">\n      <span class=\"badge badge-outline\">Tech</span>\n      <span class=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
+    jsxCode: "<div className=\"card w-96\">\n  <div className=\"card-body\">\n    <figure className=\"max-h-64 mb-3\"><img src=\"https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" /></figure>\n    <h5 className=\"card-title\">Mechanical Keyboards</h5>\n    <span className=\"badge badge-warning\">20% off</span>\n\n    <div className=\"card-actions justify-end\">\n      <span className=\"badge badge-outline\">Tech</span>\n      <span className=\"badge badge-outline\">Computer Accessories</span>\n    </div>\n  </div>\n</div>",
   },
 }

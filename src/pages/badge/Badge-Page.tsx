@@ -24,7 +24,7 @@ const BadgePage = () => {
   return (
     <Page 
       name="Badge"
-      desc="Blah blah here"
+      desc="Represents the status or notification of the underlying element"
       components={ getBadges() }
     />
   )

@@ -24,7 +24,7 @@ const ModalPage = () => {
   return (
     <Page 
       name="Modal"
-      desc="Blah blah here"
+      desc="A pop up window that disables other interactions except itself"
       components={ getModals() }
     />
   )

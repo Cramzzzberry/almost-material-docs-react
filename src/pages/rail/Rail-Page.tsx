@@ -24,7 +24,7 @@ const RailPage = () => {
   return (
     <Page 
       name="Navigation Rail"
-      desc="Blah blah here"
+      desc="It also provides quick access to other pages/navigation points. It sits at the left side of the page"
       components={ getRails() }
     />
   )

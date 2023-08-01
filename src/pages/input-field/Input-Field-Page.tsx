@@ -24,7 +24,7 @@ const InputFieldPage = () => {
   return (
     <Page 
       name="Input Fields"
-      desc="Blah blah here"
+      desc="Provides access to respond via text and/or other means of responses"
       components={ getinputFields() }
     />
   )

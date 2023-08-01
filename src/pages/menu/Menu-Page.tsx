@@ -24,7 +24,7 @@ const MenuPage = () => {
   return (
     <Page 
       name="Menu"
-      desc="Used to group links"
+      desc="Used to group links, navigation points, choices, and others"
       components={ getMenus() }
     />
   )

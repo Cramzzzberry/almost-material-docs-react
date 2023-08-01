@@ -24,7 +24,7 @@ const NavbarPage = () => {
   return (
     <Page 
       name="Navigation Bar"
-      desc="Blah blah here"
+      desc="Provides quick access to other pages/navigation points. It sits on top or at the bottom of the page"
       components={ getNavbars() }
     />
   )

@@ -1,7 +1,7 @@
 export const MenuSnippets = {
   "Menu": {
     preview: (
-    <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+    <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
       <div className="card">
         <ul className="menu w-56">
           <li><a>Link 1</a></li>
@@ -16,7 +16,7 @@ export const MenuSnippets = {
   },
   "Menu w/ Icons and Badge": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu w-72">
             <li><a><span className="material-icons">home</span>Home</a></li>
@@ -37,7 +37,7 @@ export const MenuSnippets = {
   },
   "Menu w/ Icons Only": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu">
             <li><a><span className="material-icons">home</span></a></li>
@@ -52,7 +52,7 @@ export const MenuSnippets = {
   },
   "Menu w/ Title": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu w-56">
             <li className="menu-title">Title</li>
@@ -68,7 +68,7 @@ export const MenuSnippets = {
   },
   "Menu w/ Title as a Parent": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu w-56">
             <li>
@@ -88,7 +88,7 @@ export const MenuSnippets = {
   },
   "Menu and Submenu": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu w-56">
             <li><a>Link 1</a></li>
@@ -117,7 +117,7 @@ export const MenuSnippets = {
   },
   "Collapsible Submenu using Details and Summary": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
           <ul className="menu w-56">
             <li><a>Link 1</a></li>
@@ -149,7 +149,7 @@ export const MenuSnippets = {
   },
   "Horizontal Menu": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-horizontal">
             <li><a>Link 1</a></li>
@@ -164,7 +164,7 @@ export const MenuSnippets = {
   },
   "Horizontal Menu w/ Icons": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-horizontal">
             <li><a><span className="material-icons">home</span>home</a></li>
@@ -179,7 +179,7 @@ export const MenuSnippets = {
   },
   "Horizontal Menu w/ Icons Only": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-horizontal">
             <li><a><span className="material-icons">home</span></a></li>
@@ -194,7 +194,7 @@ export const MenuSnippets = {
   },
   "Horizontal Menu and Submenu": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-horizontal">
             <li><a>Link 1</a></li>
@@ -223,7 +223,7 @@ export const MenuSnippets = {
   },
   "Horizontal Menu and Collapsible Submenu": {
     preview: (
-      <div className="card min-h-[392px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="min-h-[392px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
           <ul className="menu menu-horizontal">
             <li><a>Link 1</a></li>
@@ -255,7 +255,7 @@ export const MenuSnippets = {
   },
   "Menu with Colors": {
     preview: (
-      <div className="card min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
+      <div className="min-h-[272px] my-2 p-5 flex flex-row gap-2 justify-center items-center">
         <div className="card">
           <ul className="menu menu-primary">
             <li><a className="menu-active">Link 1</a></li>
@@ -312,7 +312,7 @@ export const MenuSnippets = {
   },
   "Menu Sizes": {
     preview: (
-      <div className="card min-h-[480px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
+      <div className="min-h-[480px] my-2 p-5 flex flex-row gap-2 justify-center items-start">
         <div className="card">
           <ul className="menu menu-sm">
             <li className="menu-title">Smol</li>

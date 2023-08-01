@@ -24,7 +24,7 @@ const SwapPage = () => {
   return (
     <Page 
       name="Swap"
-      desc="Blah blah here"
+      desc="Swaps two elements to represent states in more detail"
       components={ getSwaps() }
     />
   )

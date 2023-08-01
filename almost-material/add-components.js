@@ -1601,7 +1601,7 @@ const AddComponents = (shades) => {
         alignItems: "center",
         appearance: "none",
         "-webkit-appearance": "none",
-        backgroundColor: "#000000",
+        backgroundColor: ShadeHexColor("#000000", shades[95]),
         borderRadius: "9999px",
         cursor: "pointer",
         transition: `background-color 150ms ${ easeInOut }`,
@@ -1617,12 +1617,15 @@ const AddComponents = (shades) => {
           top: "3px",
           left: "3px",
           borderRadius: "100%",
-          backgroundColor: ShadeHexColor("#000000", shades[99]),
+          backgroundColor: ShadeHexColor("#000000", shades[10]),
           transition: `left 150ms ${ easeInOut }, background-color 150ms ${ easeInOut }`,
         },
 
         "&:checked": {
+          backgroundColor: ShadeHexColor("#000000", shades[10]),
+
           "&::after": {
+            backgroundColor: ShadeHexColor("#000000", shades[95]),
             left: "calc(100% - var(--switch-circle-size) - 3px)",
           }
         },

@@ -28,7 +28,7 @@ const SwitchPage = () => {
   return (
     <Page 
       name="Switch"
-      desc="Blah blah here"
+      desc="A toggle used for on and off purposes"
       components={ getSwitches() }
     />
   )

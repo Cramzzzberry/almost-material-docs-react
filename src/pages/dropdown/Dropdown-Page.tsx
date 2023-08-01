@@ -23,8 +23,8 @@ const getDropdowns =  () => {
 const DropdownPage = () => {
   return (
     <Page 
-      name="Dropdown"
-      desc="Blah blah here"
+      name="Dropdown Menu"
+      desc="Gives user/s a list of contents, choices or navigation points that floats around the interactable element"
       components={ getDropdowns() }
     />
   )

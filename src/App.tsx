@@ -1,6 +1,5 @@
 import 'material-icons/iconfont/material-icons.css'
-// import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"
-import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import ButtonPage from "./pages/button/Button-Page"
 import BadgePage from "./pages/badge/Badge-Page"
@@ -37,13 +36,13 @@ export default function App() {
           <div className="rail-middle">
             <ul className="menu">
               <li>
-                <a className={window.location.pathname === "/home" ? "menu-active" : ""} href="/home">
+                <a className={window.location.pathname === "/" ? "menu-active" : ""} href="/">
                   <span className="material-icons-round">home</span>
                   Home
                 </a>
               </li>
               <li>
-                <label className={window.location.pathname != "/home" ? "menu-active" : ""} htmlFor="drawerComponent">
+                <label className={window.location.pathname != "/" ? "menu-active" : ""} htmlFor="drawerComponent">
                   <span className="material-icons-round">add_circle_outline</span>
                   Components
                   <span className="material-icons-round">chevron_right</span>
@@ -57,25 +56,26 @@ export default function App() {
         <div className="drawer-page-content">
           <div className="p-4"> {/* content itself */}
             <Routes>
-              <Route path="/home" index element={ <Home /> } />
-              <Route path="/" element={ <Navigate href="/home" /> }></Route>
-              <Route path="/badge" element={ <BadgePage /> } />
-              <Route path="/button" element={ <ButtonPage /> } />
-              <Route path="/card" element={ <CardPage /> } />
-              <Route path="/checkbox" element={ <CheckboxPage /> } />
-              <Route path="/divider" element={ <DividerPage /> } />
-              <Route path="/drawer" element={ <DrawerPage /> } />
-              <Route path="/dropdown" element={ <DropdownPage /> } />
-              <Route path="/indicator" element={ <IndicatorPage /> } />
-              <Route path="/input-field" element={ <InputFieldPage /> } />
-              <Route path="/menu" element={ <MenuPage /> } />
-              <Route path="/modal" element={ <ModalPage /> } />
-              <Route path="/navbar" element={ <NavbarPage /> } />
-              <Route path="/progress-bar" element={ <ProgressbarPage /> } />
-              <Route path="/radio-button" element={ <RadiobuttonPage /> } />
-              <Route path="/rail" element={ <RailPage /> } />
-              <Route path="/swap" element={ <SwapPage /> } />
-              <Route path="/switch" element={ <SwitchPage /> } />
+              <Route path="/">
+                <Route index element={ <Home /> } />
+                <Route path="badge" element={ <BadgePage /> } />
+                <Route path="button" element={ <ButtonPage /> } />
+                <Route path="card" element={ <CardPage /> } />
+                <Route path="checkbox" element={ <CheckboxPage /> } />
+                <Route path="divider" element={ <DividerPage /> } />
+                <Route path="drawer" element={ <DrawerPage /> } />
+                <Route path="dropdown" element={ <DropdownPage /> } />
+                <Route path="indicator" element={ <IndicatorPage /> } />
+                <Route path="input-field" element={ <InputFieldPage /> } />
+                <Route path="menu" element={ <MenuPage /> } />
+                <Route path="modal" element={ <ModalPage /> } />
+                <Route path="navbar" element={ <NavbarPage /> } />
+                <Route path="progress-bar" element={ <ProgressbarPage /> } />
+                <Route path="radio-button" element={ <RadiobuttonPage /> } />
+                <Route path="rail" element={ <RailPage /> } />
+                <Route path="swap" element={ <SwapPage /> } />
+                <Route path="switch" element={ <SwitchPage /> } />
+              </Route>
             </Routes>
           </div>
         </div>

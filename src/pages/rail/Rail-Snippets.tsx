@@ -14,8 +14,8 @@ export const RailSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"rail rail-left\">\n  <div class=\"rail-main\">\n    <ul class=\"menu menu-rail\">\n      <li><a class=\"menu-active\"><!-- icon here -->label</a></li>\n      <li><a><!-- icon here -->label</a></li>\n      <li><a><!-- icon here -->label</a></li>\n      <li><a><!-- icon here -->label</a></li>\n    </ul>\n  </div>\n</div>",
-    jsxCode: "<div className=\"rail rail-left\">\n  <div className=\"rail-main\">\n    <ul className=\"menu menu-rail\">\n      <li><a className=\"menu-active\">{/* icon here */}hexagon</span>label</a></li>\n      <li><a>{/* icon here */}label</a></li>\n      <li><a>{/* icon here */}label</a></li>\n      <li><a>{/* icon here */}label</a></li>\n    </ul>\n  </div>\n</div>",
+    htmlCode: "<div class=\"rail\">\n  <div class=\"rail-middle\">\n    <ul class=\"menu\">\n      <li><a class=\"menu-active\"><!-- icon here --></a></li>\n      <li><a><!-- icon here --></a></li>\n      <li><a><!-- icon here --></a></li>\n      <li><a><!-- icon here --></a></li>\n    </ul>\n  </div>\n</div>",
+    jsxCode: "<div className=\"rail\">\n  <div className=\"rail-middle\">\n    <ul className=\"menu\">\n      <li><a className=\"menu-active\">{/* icon here */}</a></li>\n      <li><a>{/* icon here */}</a></li>\n      <li><a>{/* icon here */}</a></li>\n      <li><a>{/* icon here */}</a></li>\n    </ul>\n  </div>\n</div>",
   },
   "Navigation Rail w/ Open Toggle": {
     preview: (
@@ -38,7 +38,7 @@ export const RailSnippets = {
         </div>
       </div>
     ),
-    htmlCode: "<div class=\"rail rail-left\">\n  <div class=\"rail-top\">\n    <ul class=\"menu\">\n      <li><a><!-- icon here */-->a></li>\n    </ul>\n  </div>\n  <div class=\"rail-main\">\n    <ul class=\"menu menu-rail\">\n      <li><a><!-- icon here -->label</a></li>\n      <li><a><!-- icon here -->label</a></li>\n    </ul>\n  </div>\n  <div class=\"rail-bottom\">\n    <ul class=\"menu menu-rail\">\n      <li><a><!-- icon here -->label</a></li>\n    </ul>\n  </div>\n</div>",
-    jsxCode: "<div className=\"rail rail-left\">\n  <div className=\"rail-top\">\n    <ul className=\"menu\">\n      <li><a>{/* icon here */}</a></li>\n    </ul>\n  </div>\n  <div className=\"rail-main\">\n    <ul className=\"menu menu-rail\">\n      <li><a>{/* icon here */}label</a></li>\n      <li><a>{/* icon here */}label</a></li>\n    </ul>\n  </div>\n  <div className=\"rail-bottom\">\n    <ul className=\"menu menu-rail\">\n      <li><a>{/* icon here */}label</a></li>\n    </ul>\n  </div>\n</div>",
+    htmlCode: "<div class=\"rail\">\n  <div class=\"rail-top\">\n    <ul class=\"menu\">\n      <li><a><!-- icon here --><a></li>\n    </ul>\n  </div>\n  <div class=\"rail-middle\">\n    <ul class=\"menu menu-rail\">\n      <li><a><!-- icon here -->label</a></li>\n      <li><a><!-- icon here -->label</a></li>\n    </ul>\n  </div>\n  <div class=\"rail-bottom\">\n    <ul class=\"menu menu-rail\">\n      <li><a><!-- icon here -->label</a></li>\n    </ul>\n  </div>\n</div>",
+    jsxCode: "<div className=\"rail\">\n  <div className=\"rail-top\">\n    <ul className=\"menu\">\n      <li><a>{/* icon here */}</a></li>\n    </ul>\n  </div>\n  <div className=\"rail-middle\">\n    <ul className=\"menu menu-rail\">\n      <li><a>{/* icon here */}label</a></li>\n      <li><a>{/* icon here */}label</a></li>\n    </ul>\n  </div>\n  <div className=\"rail-bottom\">\n    <ul className=\"menu menu-rail\">\n      <li><a>{/* icon here */}label</a></li>\n    </ul>\n  </div>\n</div>",
   },
 }

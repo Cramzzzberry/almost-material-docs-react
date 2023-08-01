@@ -24,7 +24,7 @@ const indicatorPage = () => {
   return (
     <Page 
       name="Indicator"
-      desc="Blah blah here"
+      desc="It positions an element to an indicator state"
       components={ getIndicators() }
     />
   )

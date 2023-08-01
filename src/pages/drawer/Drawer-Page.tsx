@@ -24,7 +24,7 @@ const drawerPage = () => {
   return (
     <Page 
       name="Navigation Drawer"
-      desc="Blah blah here"
+      desc="Used to access different pages that slides from the side"
       components={ getDrawers() }
     />
   )

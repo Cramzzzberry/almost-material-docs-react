@@ -28,7 +28,7 @@ const CheckboxPage = () => {
   return (
     <Page 
       name="Checkbox"
-      desc="Blah blah here"
+      desc="Denotes the current state of an element and used for multiple choices"
       components={ getCheckboxes() }
     />
   )
