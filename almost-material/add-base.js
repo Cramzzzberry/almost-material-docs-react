@@ -48,9 +48,10 @@ const AddBase = (shades) => {
       lineHeight: "1.75rem",
     },
     
+    //scrollbars
     "::-webkit-scrollbar": {
-      width: "8px",
-      height: "8px",
+      width: "4px",
+      height: "4px",
     },
     
     "::-webkit-scrollbar-track": {
@@ -58,7 +59,7 @@ const AddBase = (shades) => {
     },
     
     "::-webkit-scrollbar-thumb": {
-      background: "gray",
+      background: "#999999",
       borderRadius: '4px',
     },
   }
@@ -71,6 +72,21 @@ const themeStyles = (palette, shades) => {
 		themeStyleSheet[`body[data-theme="${ color }"]`] = {
       color: ShadeHexColor(palette[color], shades[10]),
       backgroundColor: ShadeHexColor(palette[color], shades[95]),
+
+      //placeholders
+      "::placeholder": {
+        color: ShadeHexColor(palette[color], shades[10]),
+        opacity: "0.5",
+      },
+  
+      ":-ms-input-placeholder": {
+        opacity: "0.5",
+      },
+  
+      "::-ms-input-placeholder": {
+        opacity: "0.5",
+      },
+
   
   
   
@@ -109,11 +125,12 @@ const themeStyles = (palette, shades) => {
               },
       
               "& li": {
-                "& > ul, & > ol": { //sub ul and/or ol under li element
+                "& > ul, & > ol": {
                   "&::before": { //line on the left side of sub-ul
-                    backgroundColor: "#EBEBEB",
+                    backgroundColor: ShadeHexColor(palette[color], shades[10]),
+                    opacity: "0.25"
                   },
-                },
+                },  
       
                 "& > a, & > label": { //list items under menu
                   "&.menu-active": { backgroundColor: palette[color], color: ShadeHexColor(palette[color], LightOrDark(palette[color]) === 'light' ? shades[10] : shades[90]) },
@@ -134,9 +151,47 @@ const themeStyles = (palette, shades) => {
 
 
 
+      //divider class
+      "& .divider": {
+        "&::before, &::after": { //the line itself
+          backgroundColor: ShadeHexColor(palette[color], shades[10]),
+          opacity: "0.25"
+        },
+      },
+
+
+
       //dropdown class
       "& .dropdown": {
         "& .card": {backgroundColor: ShadeHexColor(palette[color], shades[99])}
+      },
+
+
+
+      //menu class
+      ".menu": {
+        "& .menu-title": { //menu title in almost all wrapper elements
+          color: ShadeHexColor(palette[color], shades[10]),
+          opacity: "0.5"
+        },
+
+        "& li": {
+          "& > ul, & > ol": {
+            "&::before": { //line on the left side of sub-ul
+              backgroundColor: ShadeHexColor(palette[color], shades[10]),
+              opacity: "0.25"
+            },
+          },
+
+          "& > details": { //collapsible list under menu
+            "& > ul, & > ol": { //sub ul and/or ol under li element
+              "&::before": { //line on the left side of sub-ul
+                backgroundColor: ShadeHexColor(palette[color], shades[10]),
+                opacity: "0.25"
+              },
+            },
+          }
+        },
       },
 
 

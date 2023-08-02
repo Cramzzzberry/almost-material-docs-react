@@ -144,4 +144,21 @@ export const NavbarSnippets = {
     htmlCode: "<div class=\"navbar\">\n  <div class=\"navbar-start\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a>Almost Material</a></li>\n    </ul>\n  </div>\n\n  <div class=\"navbar-center\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a>On Sale</a></li>\n      <li><a>Bundles</a></li>\n      <li><a>Categories</a></li>\n    </ul>\n  </div>\n\n  <div class=\"navbar-end\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a class=\"btn\">Shopping Cart</a></li>\n    </ul>\n  </div>\n</div>",
     jsxCode: "<div className=\"navbar\">\n  <div className=\"navbar-start\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a>Almost Material</a></li>\n    </ul>\n  </div>\n\n  <div className=\"navbar-center\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a>On Sale</a></li>\n      <li><a>Bundles</a></li>\n      <li><a>Categories</a></li>\n    </ul>\n  </div>\n\n  <div className=\"navbar-end\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a className=\"btn\">Shopping Cart</a></li>\n    </ul>\n  </div>\n</div>",
   },
+  "Bottom Navigation Bar": {
+    preview: (
+      <div className="card min-h-[100px] my-2 p-5 flex gap-2 justify-center items-start flex-wrap">
+        <div className="navbar navbar-bottom !static z-[0]">
+          <ul className="menu">
+            <li><a className="menu-active"><span className="material-icons-round">home</span>home</a></li>
+            <li><a><span className="material-icons-round">library_books</span>library</a></li>
+            <li><a><span className="material-icons-round">favorite</span>favorites</a></li>
+            <li><a><span className="material-icons-round">update</span>update</a></li>
+            <li><a><span className="material-icons-round">settings</span>settings</a></li>
+          </ul>
+        </div>
+      </div>
+    ),
+    htmlCode: "<div class=\"navbar\">\n  <div class=\"navbar-start\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a>Almost Material</a></li>\n    </ul>\n  </div>\n\n  <div class=\"navbar-center\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a>On Sale</a></li>\n      <li><a>Bundles</a></li>\n      <li><a>Categories</a></li>\n    </ul>\n  </div>\n\n  <div class=\"navbar-end\">\n    <ul class=\"menu menu-horizontal\">\n      <li><a class=\"btn\">Shopping Cart</a></li>\n    </ul>\n  </div>\n</div>",
+    jsxCode: "<div className=\"navbar\">\n  <div className=\"navbar-start\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a>Almost Material</a></li>\n    </ul>\n  </div>\n\n  <div className=\"navbar-center\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a>On Sale</a></li>\n      <li><a>Bundles</a></li>\n      <li><a>Categories</a></li>\n    </ul>\n  </div>\n\n  <div className=\"navbar-end\">\n    <ul className=\"menu menu-horizontal\">\n      <li><a className=\"btn\">Shopping Cart</a></li>\n    </ul>\n  </div>\n</div>",
+  },
 }

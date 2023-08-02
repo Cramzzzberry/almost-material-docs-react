@@ -279,7 +279,7 @@ const AddComponents = (shades) => {
         color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
 
         "& > .card-body": { //for card body
-          padding: "1rem",
+          padding: "1.5rem",
 
           "& > .card-title": { fontWeight: "bold" },
   
@@ -323,7 +323,7 @@ const AddComponents = (shades) => {
 
           width: "100%",
           height: "auto",
-          borderRadius: "1.5rem",
+          borderRadius: "1rem",
           "& > img": {
             width: "100%",
             objectFit: "cover",
@@ -604,14 +604,13 @@ const AddComponents = (shades) => {
           "& > .drawer-sidebar": { //drawer sidebar opened
             position: "static",
             height: "100vh",
-            borderRightWidth: "1px",
             opacity: "1",
             visibility: "visible",
             zIndex: "0",
   
             "& > .drawer-sidebar-content": { //drawer sdebar content fitted to its content
               position: "static",
-              width: "21rem",
+              width: "23rem",
               height: "100vh",
               zIndex: "0",
             },
@@ -1099,10 +1098,9 @@ const AddComponents = (shades) => {
         alignItems: "center",
         position: "sticky",
         top: "0",
-        padding: "0.25rem",
         width: "100%",
-        minHeight: "4.75rem",
-        maxHeight: "4.75rem",
+        minHeight: "4.5rem",
+        maxHeight: "4.5rem",
         fontWeight: "bold",
         zIndex: "97",
         backgroundColor: "#FFFFFF",
@@ -1190,6 +1188,7 @@ const AddComponents = (shades) => {
         flexGrow: "1",
         flexBasis: "0",
         justifyContent: "flex-start",
+        alignItems: "center",
         order: "0",
       },
       
@@ -1199,6 +1198,7 @@ const AddComponents = (shades) => {
         flexGrow: "1",
         flexBasis: "0",
         justifyContent: "center",
+        alignItems: "center",
         order: "1",
       },
       
@@ -1208,6 +1208,7 @@ const AddComponents = (shades) => {
         flexGrow: "1",
         flexBasis: "0",
         justifyContent: "flex-end",
+        alignItems: "center",
         order: "2",
       },
 
@@ -1289,7 +1290,7 @@ const AddComponents = (shades) => {
             "--menu-list-margin-y": "0.375rem", //initial value for animation purposes
             "--menu-list-item-gap": "1.75rem", //initial value for animation purposes
   
-            padding: "0.5rem 0",
+            padding: "0",
             width: "100%",
             overflowX: "hidden",
     
@@ -1307,8 +1308,13 @@ const AddComponents = (shades) => {
                 paddingLeft: "1rem",
                 opacity: "0",
                 overflowX: "hidden",
+                overflowY: "auto",
 
                 transition: `margin-left 300ms ${ easeInOut }, opacity 300ms ${ easeInOut }`,
+
+                "&::before": { //line on the left side of sub-ul
+                  display: "none",
+                },
               },
     
               "& > a, & > label": { //list items under menu
@@ -1402,14 +1408,14 @@ const AddComponents = (shades) => {
                 marginLeft: "0",
 
                 "& > ul, & ol": {
-                  marginLeft: "2.25rem",
+                  marginLeft: "0.25rem",
                   opacity: "1",
                 }
               },
 
               "& li > details": { //collapsible list under menu
                 "& > ul, & > ol": { //sub ul and/or ol under li element
-                  marginLeft: "2.25rem",
+                  marginLeft: "0.25rem",
                   opacity: "1",
                 },
               }
@@ -1430,6 +1436,7 @@ const AddComponents = (shades) => {
         width: "100%",
         display: "flex",
         alignItems: "flex-start",
+        marginTop: "0.5rem",
       },
 
       ".rail-bottom": {
@@ -1437,6 +1444,7 @@ const AddComponents = (shades) => {
         display: "flex",
         alignItems: "flex-end",
         flexBasis: "100%",
+        marginTop: "0.5rem",
       },
 
 

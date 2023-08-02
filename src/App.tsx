@@ -23,39 +23,48 @@ export default function App() {
   return(
     <BrowserRouter>
       {/* the whole drawer */}
-      <div className="drawer">
-        {/* nav rail */}
-        <input className="rail-toggle" type="checkbox" id="railComponent"/>
-        <div className="rail">
-          <div className="rail-top">
-            <label className="btn btn-ghost" htmlFor="railComponent">
-              <span className="material-icons-round">menu</span>
-              Menu
-            </label>
-          </div>
-          <div className="rail-middle">
-            <ul className="menu">
-              <li>
-                <a className={window.location.pathname === "/" ? "menu-active" : ""} href="/">
-                  <span className="material-icons-round">home</span>
-                  Home
-                </a>
-              </li>
-              <li>
-                <label className={window.location.pathname != "/" ? "menu-active" : ""} htmlFor="drawerComponent">
-                  <span className="material-icons-round">add_circle_outline</span>
-                  Components
-                  <span className="material-icons-round">chevron_right</span>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+      <div className={ window.location.pathname === "/" ? "drawer" : "drawer xl:drawer-open" }>
         <input className="drawer-toggle" type="checkbox" id="drawerComponent"/>
         <div className="drawer-page-content">
-          <div className="p-4"> {/* content itself */}
-            <Routes>
+          {/* navbar */}
+          <div className="navbar"> 
+            <div className="navbar-start">
+              <ul className="menu menu-horizontal">
+                <li className={ window.location.pathname === "/" ? "" : "xl:hidden"}>
+                  <label htmlFor="drawerComponent" className="btn btn-circle btn-ghost">
+                    <span className="material-icons-round">menu</span>
+                  </label>
+                </li>
+                <li>
+                  <a href="/">Almost Material</a>
+                </li>
+                {/* <li className="flex items-center">
+                  <div className="dropdown">
+                    <button tabIndex="0" className="btn btn-ghost btn-sm">
+                      0.8.0
+                      <span className="material-icons-round">expand_more</span>
+                    </button>
+                    <div tabIndex="0" className="dropdown-content z-[1] card">
+                      <ul className="menu menu-sm w-56">
+                        <li><a>0.8.0</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li> */}
+              </ul>
+
+              <input type="text" placeholder="Search here..." className="input w-96 hidden xl:inline-block" />
+            </div>
+
+            <div className="navbar-end">
+              <ul className="menu menu-horizontal">
+                <li><a href="https://github.com/Cramzzzberry/almost-material-docs" target="_blank">Github</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="p-4">
+            <Routes> {/* content itself */}
               <Route path="/">
                 <Route index element={ <Home /> } />
                 <Route path="badge" element={ <BadgePage /> } />
@@ -85,28 +94,43 @@ export default function App() {
           <div className="drawer-sidebar-content">
             <div>
               <ul className="menu">
-                <li>
-                  <span className="menu-title">Components</span>
-                  <ul>
-                    <li><a className={window.location.pathname === "/badge" ? "menu-active" : ""} href="/badge">Badge</a></li>
-                    <li><a className={window.location.pathname === "/button" ? "menu-active" : ""} href="/button">Button</a></li>
-                    <li><a className={window.location.pathname === "/card" ? "menu-active" : ""} href="/card">Card</a></li>
-                    <li><a className={window.location.pathname === "/checkbox" ? "menu-active" : ""} href="/checkbox">Checkbox</a></li>
-                    <li><a className={window.location.pathname === "/divider" ? "menu-active" : ""} href="/divider">Divider</a></li>
-                    <li><a className={window.location.pathname === "/drawer" ? "menu-active" : ""} href="/drawer">Drawer</a></li>
-                    <li><a className={window.location.pathname === "/dropdown" ? "menu-active" : ""} href="/dropdown">Dropdown</a></li>
-                    <li><a className={window.location.pathname === "/indicator" ? "menu-active" : ""} href="/indicator">Indicator</a></li>
-                    <li><a className={window.location.pathname === "/input-field" ? "menu-active" : ""} href="/input-field">Input Field</a></li>
-                    <li><a className={window.location.pathname === "/menu" ? "menu-active" : ""} href="/menu">Menu</a></li>
-                    <li><a className={window.location.pathname === "/modal" ? "menu-active" : ""} href="/modal">Modal</a></li>
-                    <li><a className={window.location.pathname === "/navbar" ? "menu-active" : ""} href="/navbar">Navigation Bar</a></li>
-                    <li><a className={window.location.pathname === "/progress-bar" ? "menu-active" : ""} href="/progress-bar">Progress Bar</a></li>
-                    <li><a className={window.location.pathname === "/radio-button" ? "menu-active" : ""} href="/radio-button">Radio Button</a></li>
-                    <li><a className={window.location.pathname === "/rail" ? "menu-active" : ""} href="/rail">Rail</a></li>
-                    <li><a className={window.location.pathname === "/swap" ? "menu-active" : ""} href="/swap">Swap</a></li>
-                    <li><a className={window.location.pathname === "/switch" ? "menu-active" : ""} href="/switch">Switch</a></li>
-                  </ul>
-                </li>
+                <li><input type="text" placeholder="Search here..." className="input input-sm w-full xl:hidden" /></li>
+                <span className="menu-title">Getting Started</span>
+                <li><a href="#">How to install</a></li>
+                <li><a href="#">Configuration</a></li>
+                <li><a href="#">Color Shades</a></li>
+                <span className="divider"></span>
+
+                <span className="menu-title">Inputs</span>
+                <li><a className={window.location.pathname === "/button" ? "menu-active" : ""} href="/button">Button</a></li>
+                <li><a className={window.location.pathname === "/input-field" ? "menu-active" : ""} href="/input-field">Input Field</a></li>
+                <span className="divider"></span>
+
+                <span className="menu-title">Containment</span>
+                <li><a className={window.location.pathname === "/card" ? "menu-active" : ""} href="/card">Card</a></li>
+                <li><a className={window.location.pathname === "/dropdown" ? "menu-active" : ""} href="/dropdown">Dropdown</a></li>
+                <li><a className={window.location.pathname === "/menu" ? "menu-active" : ""} href="/menu">Menu</a></li>
+                <li><a className={window.location.pathname === "/modal" ? "menu-active" : ""} href="/modal">Modal</a></li>
+                <span className="divider"></span>
+
+                <span className="menu-title">Toggles/States</span>
+                <li><a className={window.location.pathname === "/checkbox" ? "menu-active" : ""} href="/checkbox">Checkbox</a></li>
+                <li><a className={window.location.pathname === "/swap" ? "menu-active" : ""} href="/swap">Swap</a></li>
+                <li><a className={window.location.pathname === "/switch" ? "menu-active" : ""} href="/switch">Switch</a></li>
+                <li><a className={window.location.pathname === "/radio-button" ? "menu-active" : ""} href="/radio-button">Radio Button</a></li>
+                <span className="divider"></span>
+
+                <span className="menu-title">Navigations</span>
+                <li><a className={window.location.pathname === "/drawer" ? "menu-active" : ""} href="/drawer">Drawer</a></li>
+                <li><a className={window.location.pathname === "/navbar" ? "menu-active" : ""} href="/navbar">Navigation Bar</a></li>
+                <li><a className={window.location.pathname === "/rail" ? "menu-active" : ""} href="/rail">Rail</a></li>
+                <span className="divider"></span>
+
+                <span className="menu-title">Others</span>
+                <li><a className={window.location.pathname === "/badge" ? "menu-active" : ""} href="/badge">Badge</a></li>
+                <li><a className={window.location.pathname === "/divider" ? "menu-active" : ""} href="/divider">Divider</a></li>
+                <li><a className={window.location.pathname === "/indicator" ? "menu-active" : ""} href="/indicator">Indicator</a></li>
+                <li><a className={window.location.pathname === "/progress-bar" ? "menu-active" : ""} href="/progress-bar">Progress Bar</a></li>
               </ul>
             </div>
           </div>

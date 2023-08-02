@@ -2,8 +2,6 @@ import Block from "../../components/Component-Blocks"
 import Page from "../../components/Component-Page"
 import { SwitchSnippets } from "./Switch-Snippets"
 
-import useScript from "../../components/Use-Script"
-
 const getSwitches =  () => {
   const switchComponents = []
   const switchSnippets = Object.keys(SwitchSnippets)
@@ -23,7 +21,6 @@ const getSwitches =  () => {
 }
 
 const SwitchPage = () => {
-  useScript("/src/pages/switch/script.js")
 
   return (
     <Page 

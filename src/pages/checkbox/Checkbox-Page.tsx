@@ -2,8 +2,6 @@ import Block from "../../components/Component-Blocks"
 import Page from "../../components/Component-Page"
 import { CheckboxSnippets } from "./Checkbox-Snippets"
 
-import useScript from "../../components/Use-Script"
-
 const getCheckboxes =  () => {
   const checkboxComponents = []
   const checkboxSnippets = Object.keys(CheckboxSnippets)
@@ -23,8 +21,6 @@ const getCheckboxes =  () => {
 }
 
 const CheckboxPage = () => {
-  useScript("/src/pages/checkbox/script.js")
-
   return (
     <Page 
       name="Checkbox"

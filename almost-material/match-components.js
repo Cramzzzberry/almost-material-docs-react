@@ -155,6 +155,11 @@ const MatchComponents = (shades) => {
       "menu": (color) => ({
         color: `${ ShadeHexColor(color, shades[10]) } !important`,
 
+        "&.menu .menu-title": {
+          color: `${ ShadeHexColor(color, shades[10]) } !important`,
+          opacity: "0.5"
+        },
+
         //horizontal menu
         "&.menu.menu-horizontal > li > details > ul, &.menu.menu-horizontal > li > details > ol": { //sub ul and/or ol under li element
           color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
@@ -163,6 +168,14 @@ const MatchComponents = (shades) => {
         "&.menu li > a, &.menu li > label": { //list items under menu
           "&.menu-active": { backgroundColor: `${ color } !important`, color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important` },
         },
+
+        "&.menu li": {
+          "& > ul, & > ol": {
+            "&::before": { //line on the left side of sub-ul
+              backgroundColor: `${ ShadeHexColor(color, shades[10])} !important`,
+            },
+          },
+        }
       }),
 
 

@@ -25,8 +25,24 @@ const shades = {
 	100: "1",
 }
 
+const defaultPalette = {
+  primary: "#4fc1e9",
+   
+  secondary: "#ec87c0",
+      
+  tertiary: "#ac92ec",
+      
+  info: "#5d9cec",
+      
+  warning: "#ffce54",
+      
+  success: "#a0d468",
+      
+  error: "#ed5565",
+}
+
 //creates a palette based on the shades given and the palette that will be used
-const AlmostMaterialPalette = (palette) => {
+const AlmostMaterialPalette = (palette = defaultPalette) => {
 	let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
 	for(const color of Object.keys(palette)) {
@@ -52,8 +68,14 @@ const AlmostMaterialPalette = (palette) => {
 const almostMaterialPlugin = plugin(
   
 	function({addComponents, matchComponents, theme, addBase}) {
+		let userPalette = {}
 
-		const userPalette = theme("almostMaterial") //get the palette from tailwind config
+		try {
+			userPalette = theme("almostMaterial") //get the palette from tailwind config
+		} catch (error) {
+			userPalette = defaultPalette
+		}
+
 		addComponents(AddComponents(shades))
 
 		matchComponents(MatchComponents(shades), { values: AlmostMaterialPalette(userPalette) })
