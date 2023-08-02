@@ -163,7 +163,7 @@ const AddBase = (shades) => {
       fontSize: "1rem",
       color: ShadeHexColor("#000000", shades[10]),
       backgroundColor: ShadeHexColor("#000000", shades[99]),
-      fontFamily: "'Inter'",
+      fontFamily: "'PlusJakartaSans'",
     },
     
     "h1": {
@@ -210,9 +210,6 @@ const AddBase = (shades) => {
       background: "#999999",
       borderRadius: '4px',
     },
-    
-    "-webkit-font-smoothing": "antialiased",
-    "-moz-osx-font-smoothing": "grayscale",
   }
 }
 

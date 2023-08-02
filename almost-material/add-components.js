@@ -32,7 +32,7 @@ const AddComponents = (shades) => {
         borderRadius: "9999px",
         borderWidth: "1px",
 
-        fontWeight: "500",
+        fontWeight: "600",
         textTransform: "capitalize",
 
         backgroundColor: "var(--badge-bg-color)",
@@ -117,7 +117,7 @@ const AddComponents = (shades) => {
         borderWidth: "1px",
         borderRadius: "9999px",
 
-        fontWeight: "500",
+        fontWeight: "600",
         textTransform: "capitalize",
         textAlign: "start",
         whiteSpace: "nowrap",
@@ -557,58 +557,6 @@ const AddComponents = (shades) => {
               overflowY: "auto",
               backgroundColor: "var(--drawer-sidebar-content-bg-color)",
             },
-
-            // "& .menu": {
-            //   color: "#000000",
-      
-            //   "&.menu-horizontal": { //horizontal menu
-            //     "& > li": {
-            //       "& > details": { //collapsible list under menu
-            //         "& > ul, & > ol": { //sub ul and/or ol under li element
-            //           color: "#000000",
-            //           backgroundColor: ShadeHexColor("#000000", shades[100]),
-            //         },
-            //       }
-            //     },
-            //   },
-      
-            //   "& .menu-title": { //menu title in almost all wrapper elements
-            //     color: "#ABABAB",
-            //   },
-      
-            //   "& li": {
-            //     "& > ul, & > ol": { //sub ul and/or ol under li element
-            //       "&::before": { //line on the left side of sub-ul
-            //         backgroundColor: "#EBEBEB",
-            //       },
-            //     },
-      
-            //     "& > a, & > label": { //list items under menu
-            //       "&:hover": { background: "rgba(0,0,0,0.05)" },
-        
-            //       "&:active": { background: "rgba(0,0,0,0.1)" },
-        
-            //       "&.menu-active": { backgroundColor: "#000000", color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]) },
-            //     },
-      
-            //     "& > details": { //collapsible list under menu
-            //       "& > ul, & > ol": { //sub ul and/or ol under li element
-            //         "&::before": { //line on the left side of sub-ul
-            //           backgroundColor: "#EBEBEB",
-            //         },
-            //       },
-      
-            //       "& > summary": { //the summary tag
-            //         "&:hover": { background: "rgba(0,0,0,0.05)" },
-          
-            //         "&:active": { background: "rgba(0,0,0,0.1)" },
-            //       },
-      
-            //       //summary styled when details is open
-            //       "&[open] > summary": { background: "rgba(0,0,0,0.1)" }
-            //     }
-            //   },
-            // },
           },
           
           "&.drawer-compact > .drawer-sidebar-content": { //compact drawer!
@@ -901,7 +849,7 @@ const AddComponents = (shades) => {
         display: "flex",
         flexDirection: "column",
         padding: "0.5rem",
-        fontWeight: "500",
+        fontWeight: "600",
         textTransform: "capitalize",
 
         "& > *": { fontSize: "1rem" },
@@ -1155,7 +1103,7 @@ const AddComponents = (shades) => {
         width: "100%",
         minHeight: "4.25rem",
         maxHeight: "4.25rem",
-        fontWeight: "500",
+        fontWeight: "600",
         zIndex: "97",
         backgroundColor: "var(--navbar-bg-color)",
 

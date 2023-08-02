@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line no-undef
-const plugin = require("tailwindcss/plugin")
-
 import { ShadeHexColor } from "./misc"
 
 import { AddBase, themeStyles } from "./add-base"
 import AddComponents from "./add-components"
 import MatchComponents from "./match-components"
+
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line no-undef
+const plugin = require("tailwindcss/plugin")
 
 //shade presets for palettes
 const shades = {
@@ -83,9 +83,9 @@ const almostMaterialPlugin = plugin(
 		addBase({...AddBase(shades), ...themeStyles(AlmostMaterialPalette(userPalette), shades)});
 		addBase({
 			"@font-face": {
-				fontFamily: "'Inter'",
+        fontFamily: "'PlusJakartaSans'",
+        src: "url('/almost-material/src/PlusJakartaSans.ttf') format('truetype-variations')",
 				fontWeight: "100 900",
-				src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype-variations')",
 			},
 		});
 	}
