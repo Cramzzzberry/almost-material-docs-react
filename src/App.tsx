@@ -24,6 +24,7 @@ export default function App() {
     <BrowserRouter>
       {/* the whole drawer */}
       <div className={ window.location.pathname === "/" ? "drawer" : "drawer xl:drawer-open" }>
+
         <input className="drawer-toggle" type="checkbox" id="drawerComponent"/>
         <div className="drawer-page-content">
           {/* navbar */}
@@ -38,19 +39,25 @@ export default function App() {
                 <li>
                   <a href="/">Almost Material</a>
                 </li>
-                {/* <li className="flex items-center">
+                <li className="flex items-center">
                   <div className="dropdown">
                     <button tabIndex="0" className="btn btn-ghost btn-sm">
-                      0.8.0
+                      0.0.0
                       <span className="material-icons-round">expand_more</span>
                     </button>
                     <div tabIndex="0" className="dropdown-content z-[1] card">
                       <ul className="menu menu-sm w-56">
-                        <li><a>0.8.0</a></li>
+                        <li>
+                          <a>
+                            <span></span>
+                            0.0.0
+                            <span className="badge badge-error">dev</span>
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
-                </li> */}
+                </li>
               </ul>
 
               <input type="text" placeholder="Search here..." className="input w-96 hidden xl:inline-block" />
@@ -121,9 +128,9 @@ export default function App() {
                 <span className="divider"></span>
 
                 <span className="menu-title">Navigations</span>
-                <li><a className={window.location.pathname === "/drawer" ? "menu-active" : ""} href="/drawer">Drawer</a></li>
                 <li><a className={window.location.pathname === "/navbar" ? "menu-active" : ""} href="/navbar">Navigation Bar</a></li>
-                <li><a className={window.location.pathname === "/rail" ? "menu-active" : ""} href="/rail">Rail</a></li>
+                <li><a className={window.location.pathname === "/drawer" ? "menu-active" : ""} href="/drawer">Navigation Drawer</a></li>
+                <li><a className={window.location.pathname === "/rail" ? "menu-active" : ""} href="/rail">Navigation Rail</a></li>
                 <span className="divider"></span>
 
                 <span className="menu-title">Others</span>

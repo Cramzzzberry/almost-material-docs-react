@@ -11,111 +11,106 @@ const MatchComponents = (shades) => {
     {
       //badge class
       "badge": (color) => ({
-        backgroundColor: color,
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        borderColor: color,
-        "&.badge-outlined": { //badge-outlined
-          backgroundColor: "transparent",
-          color: color,
-          borderColor: color,
-        },
-  
-        "&.badge-dot": { //badge-dot
-          maxHeight: "0.875rem",
-          minHeight: "0.875rem",
-          minWidth: "0.875rem",
-          maxWidth: "0.875rem",
-          padding: "0",
-          backgroundColor: color,
-        },
+        
+        //badge
+        "--badge-bg-color": color,
+        "--badge-border-color": color,
+        "--badge-font-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+
+        //badge-outline
+        "--badge-outline-bg-color": "transparent",
+        "--badge-outline-border-color": color,
+        "--badge-outline-font-color": color,
       }),
   
   
 
       //button class
       "btn": (color) => ({
-        backgroundColor: color,
-        borderColor: color,
-        color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-        "&:hover:not([disabled])": {
-          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
-          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
-        },
+        //btn
+        "--btn-bg-color": color,
+        "--btn-border-color": color,
+        "--btn-font-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        "--btn-hovered-bg-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+        "--btn-hovered-border-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.1 : 0.1),
+        "--btn-clicked-bg-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+        "--btn-clicked-border-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+        "--btn-active-bg-color": color,
+        "--btn-active-border-color": color,
+        "--btn-active-font-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        "--btn-disabled-bg-color": "rgba(0,0,0,0.075)",
+        "--btn-disabled-border-color": "transparent",
+        "--btn-disabled-font-color": ShadeHexColor(color, shades[10]),
 
-        "&:active:not([disabled])": {
-          backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
-          borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
-        },
-  
-        "&.btn-outlined": { //btn-outlined
-          color: color,
-          "&:hover": {
-            backgroundColor: color,
-            borderColor: color,
-            color: ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
-          },
+        //btn-outline
+        "--btn-outline-bg-color": "transparent",
+        "--btn-outline-border-color": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--btn-outline-font-color": color,
+        "--btn-outline-hovered-bg-color": color,
+        "--btn-outline-hovered-border-color": color,
+        "--btn-outline-hovered-font-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        "--btn-outline-clicked-bg-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
+        "--btn-outline-clicked-border-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
 
-          "&:active": {
-            backgroundColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
-            borderColor: ShadeHexColor(color, LightOrDark(color) === 'light' ? -0.3 : 0.3),
-          },
-        },
-  
-        "&.btn-ghost": { //btn-ghost
-          color: color,
-  
-          "&.btn-active": { //btn-ghost btn-active
-            color: `${ color } !important`,
-          },
-        },
-  
-        "&.btn-active": { //btn with active state
-          backgroundColor: `${ color } !important`,
-          borderColor: `${ color } !important`,
-          color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
-        },
-  
-        "&:disabled": { //disabled btn
-          color: ShadeHexColor(color, shades[10]),
-        },
+        //btn-ghost
+        "--btn-ghost-bg-color": "transparent",
+        "--btn-ghost-border-color": "transparent",
+        "--btn-ghost-font-color": color,
+        "--btn-ghost-hovered-bg-color": "rgba(0,0,0,0.05)",
+        "--btn-ghost-hovered-border-color": "transparent",
+        "--btn-ghost-clicked-bg-color": "rgba(0,0,0,0.1)",
+        "--btn-ghost-active-bg-color": "rgba(0,0,0,0.05)",
+        "--btn-ghost-active-border-color": "transparent",
+        "--btn-ghost-active-font-color": color,
       }),
   
   
       
       //card class
       "card": (color) => ({
-        color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
-        backgroundColor: `${ color } !important`,
+        "--card-bg-color": color,
+        "--card-font-color": ShadeHexColor(color, shades[10]),
       }),
 
 
 
       //checkbox class
       "check": (color) =>  ({
-        "&:checked": {
-          borderColor: color,
-        },
-        
-        "&::after": { //my own checkbox :>
-          content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
-        },
+        //checkbox
+        "--checkbox-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--checkbox-border-color-on": color,
+        "--checkbox-disabled-bg-color": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--checkbox-indeterminate-bg-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        "--checkbox-indeterminate-border-color": color,
 
-        //checkbox sizes
-        "&.check-sm": {
-          "&::after": {
-            content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+        "& .check": {
+          "&::after": { //my own check :>
+            content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark( color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
           },
-        },
 
-        "&.check-lg": {
-          "&::after": {
-            content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          //checkbox sizes
+          "&.check-sm": {
+            "&::after": { 
+              content: `url('data:image/svg+xml; utf8, <svg width="10" height="10" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+            },
           },
-        },
 
-        "&.check-xl": {
-          "&::after": {
-            content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+          "&.check-md": { //default size for checkbox
+            "&::after": { 
+              content: `url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+            },
+          },
+
+          "&.check-lg": {
+            "&::after": { 
+              content: `url('data:image/svg+xml; utf8, <svg width="18" height="18" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+            },
+          },
+
+          "&.check-xl": {
+            "&::after": { 
+              content: `url('data:image/svg+xml; utf8, <svg width="22" height="22" viewBox="0 0 172 139" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="172" height="139" fill="none"/><rect x="19.6274" y="63" width="80" height="32" rx="8" transform="rotate(45 19.6274 63)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/><rect x="31" y="119.279" width="172" height="32" rx="8" transform="rotate(-45 31 119.279)" fill="${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]).replace("#", "%23") }"/></svg>')`,
+            },
           },
         },
       }),
@@ -124,97 +119,75 @@ const MatchComponents = (shades) => {
 
       //divider class
       "divider": (color) => ({
-        "&::before, &::after": {
-          backgroundColor: color,	
-        }
+        //divider
+        "--divider-bg-color": ShadeHexColor(color, shades[10]),
       }),
 
 
 
       //input class
       "input": (color) => ({ 
-        backgroundColor: "#ffffff",
-        borderColor: "#ffffff",
-        "&:focus": {
-          outline: `1px solid ${ color }`,
-        },
+        //input
+        "--input-bg-color": ShadeHexColor(color, shades[99]),
+        "--input-border-color": ShadeHexColor(color, shades[99]),
+        "--input-outline-color": color,
 
-        "&.input-outline": {
-          borderColor: color,
-        },
+        //input-outline
+        "--input-outline-border-color": color,
 
-        "&.input-underlined": {
-          backgroundColor: "transparent",
-          borderColor: color,
-        },
+        //input-ghost
+        "--input-ghost-bg-color": "transparent",
+        "--input-ghost-border-color": "transparent",
+
+        //input-underlined
+        "--input-underlined-bg-color": "transparent",
+        "--input-underlined-border-color": color,
       }),
 
 
 
       //menu class
       "menu": (color) => ({
-        color: `${ ShadeHexColor(color, shades[10]) } !important`,
+        //menu
+        "--menu-font-color": ShadeHexColor(color, shades[10]),
+        "--menu-title-font-color": ShadeHexColor(color, shades[10]),
+        "--menu-sideline-color": ShadeHexColor(color, shades[10]),
+        "--menu-item-hovered-bg-color": "rgba(0,0,0,0.05)",
+        "--menu-item-clicked-bg-color": "rgba(0,0,0,0.1)",
+        "--menu-item-active-bg-color": color,
+        "--menu-item-active-font-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
+        "--menu-details-open-bg-color": "rgba(0,0,0,0.1)",
 
-        "&.menu .menu-title": {
-          color: `${ ShadeHexColor(color, shades[10]) } !important`,
-          opacity: "0.5"
-        },
-
-        //horizontal menu
-        "&.menu.menu-horizontal > li > details > ul, &.menu.menu-horizontal > li > details > ol": { //sub ul and/or ol under li element
-          color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important`,
-        },
-
-        "&.menu li > a, &.menu li > label": { //list items under menu
-          "&.menu-active": { backgroundColor: `${ color } !important`, color: `${ ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]) } !important` },
-        },
-
-        "&.menu li": {
-          "& > ul, & > ol": {
-            "&::before": { //line on the left side of sub-ul
-              backgroundColor: `${ ShadeHexColor(color, shades[10])} !important`,
-            },
-          },
-        }
+        //menu-horizontal
+        "--menu-horizontal-bg-color": ShadeHexColor(color, shades[90]),
       }),
 
 
 
       //progress class
       "progress": (color) => ({
-        backgroundColor: ShadeHexColor(color, shades[95]),
-
-        "&::after": {
-          backgroundColor: color,
-        },
+        //progress
+        "--progress-bg-color": ShadeHexColor(color, shades[99]),
+        "--progress-fg-color": color,
       }),
 
 
 
       //radio class
       "radio": (color) => ({
-        "&:checked": {
-          borderColor: color,
-        },
+        //radio
+        "--radio-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--radio-border-color-on": color,
       }),
 
 
 
       //switch class
       "switch": (color) => ({
-        backgroundColor: ShadeHexColor(color, shades[95]),
-
-        "&::after": {
-          backgroundColor: ShadeHexColor(color, shades[10]),
-        },
-
-        "&:checked": {
-          backgroundColor: color,
-
-          "&::after": {
-            backgroundColor: ShadeHexColor(color, shades[95]),
-          },
-        },
+        "--switch-bg-color-off": ShadeHexColor(color, shades[95]),
+        "--switch--lever-bg-color-off": ShadeHexColor(color, shades[10]),
+        "--switch-bg-color-on": color,
+        "--switch--lever-bg-color-on": ShadeHexColor(color, shades[95]),
       })
     }
   )

@@ -9,11 +9,6 @@ const AddComponents = (shades) => {
   const easeInOut = "cubic-bezier(0.4, 0, 0.2, 1)"
   return (
     {
-      //::root
-      ":root": {
-      },
-
-
       //badge class
       ".badge": {
         //badge related variables
@@ -40,16 +35,16 @@ const AddComponents = (shades) => {
         fontWeight: "bold",
         textTransform: "capitalize",
 
-        backgroundColor: "#000000",
-        borderColor: "#000000",
-        color: ShadeHexColor("#000000", shades[90]),
+        backgroundColor: "var(--badge-bg-color)",
+        borderColor: "var(--badge-border-color)",
+        color: "var(--badge-font-color)",
 
         "&.badge-outline": { //badge-outlined
           fontWeight: "normal",
 
-          backgroundColor: "transparent",
-          borderColor: "#000000",
-          color: "#000000",
+          backgroundColor: "var(--badge-outline-bg-color)",
+          borderColor: "var(--badge-outline-border-color)",
+          color: "var(--badge-outline-font-color)",
         },
 
         "&.badge-dot": { //badge-dot
@@ -127,58 +122,61 @@ const AddComponents = (shades) => {
         textAlign: "start",
         whiteSpace: "nowrap",
 
-        backgroundColor: "#000000",
-        borderColor: "#000000",
-        color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
+        backgroundColor: "var(--btn-bg-color)",
+        borderColor: "var(--btn-border-color)",
+        color: "var(--btn-font-color)",
+
         "-webkit-user-select": "none",
         "-ms-user-select": "none",
         "user-select": "none",
 
         "&:hover:not([disabled])": {
-          backgroundColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.1 : 0.1),
-          borderColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.1 : 0.1),
+          backgroundColor: "var(--btn-hovered-bg-color)",
+          borderColor: "var(--btn-hovered-border-color)",
         },
 
         "&:active:not([disabled])": {
-          backgroundColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
-          borderColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
+          backgroundColor: "var(--btn-clicked-bg-color)",
+          borderColor: "var(--btn-clicked-border-color)",
         },
   
         "&.btn-outline": { //btn-outlined
-          backgroundColor: "transparent",
-          borderColor: "#C7C7C7",
-          color: ShadeHexColor("#000000", shades[10]),
+          backgroundColor: "var(--btn-outline-bg-color)",
+          borderColor: "var(--btn-outline-border-color)",
+          color: "var(--btn-outline-font-color)",
 
           "&:hover": {
-            backgroundColor: "#000000",
-            borderColor: "#000000",
-            color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
-            opacity: "1",
+            backgroundColor: "var(--btn-outline-hovered-bg-color)",
+            borderColor: "var(--btn-outline-hovered-border-color)",
+            color: "var(--btn-outline-hovered-font-color)",
+             
+            // opacity: "1",
           },
 
           "&:active": {
-            backgroundColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
-            borderColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? -0.3 : 0.3),
+            backgroundColor: "var(--btn-outline-clicked-bg-color)",
+            borderColor: "var(--btn-outline-clicked-border-color)",
           },
         },
   
         "&.btn-ghost": { //btn-ghost
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-          color: ShadeHexColor("#000000", shades[10]),
+          backgroundColor: "var(--btn-ghost-bg-color)",
+          borderColor: "var(--btn-ghost-border-color)",
+          color: "var(--btn-ghost-font-color)",
+
           "&:hover:not([disabled])": {
-            borderColor: "transparent",
-            background: "rgba(0,0,0,0.05)",
+            backgroundColor: "var(--btn-ghost-hovered-bg-color)",
+            borderColor: "var(--btn-ghost-hovered-border-color)",
           },
 
           "&:active:not([disabled])": {
-            background: "rgba(0,0,0,0.1)",
+            backgroundColor: "var(--btn-ghost-clicked-bg-color)",
           },
   
           "&.btn-active": { //btn-active
-            backgroundColor: "rgba(0,0,0,0.05) !important",
-            borderColor: "transparent !important",
-            color: `${ ShadeHexColor("#000000", shades[10]) } !important`,
+            backgroundColor: "var(--btn-ghost-active-bg-color) !important",
+            borderColor: "var(--btn-ghost-active-border-color) !important",
+            color: "var(--btn-ghost-active-font-color) !important",
           },
         },
   
@@ -221,15 +219,16 @@ const AddComponents = (shades) => {
         },
   
         "&.btn-active": { //btn with active state
-          backgroundColor: `${ "#000000" } !important`,
-          borderColor: `${ "#000000" } !important`,
-          color: `${ ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]) } !important`,
+          backgroundColor: "var(--btn-active-bg-color) !important",
+          borderColor: "var(--btn-active-border-color) !important",
+          color: "var(--btn-active-font-color) !important",
         },
   
         "&:disabled": { //disabled btn
-          backgroundColor: "rgba(0,0,0,0.075)",
-          borderColor: "transparent",
-          color: ShadeHexColor("#000000", shades[10]),
+          backgroundColor: "var(--btn-disabled-bg-color) !important",
+          borderColor: "var(--btn-disabled-border-color) !important",
+          color: "var(--btn-disabled-font-color) !important",
+
           opacity: "70%",
           cursor: "not-allowed",
         },
@@ -275,8 +274,8 @@ const AddComponents = (shades) => {
         width: "auto",
         height: "fit-content",
         borderRadius: "1rem",
-        backgroundColor: "#FFFFFF",
-        color: ShadeHexColor("#FFFFFF", LightOrDark("#FFFFFF") === 'light' ? shades[10] : shades[90]),
+        backgroundColor: "var(--card-bg-color)",
+        color: "var(--card-font-color)",
 
         "& > .card-body": { //for card body
           padding: "1.5rem",
@@ -363,13 +362,13 @@ const AddComponents = (shades) => {
 
         borderWidth: "2px",
         borderRadius: "4px",
-        borderColor: "#C7C7C7",
+        borderColor: "var(--checkbox-border-color-off)",
 
         transition: `border-width 100ms ${ easeInOut }, border-color 100ms ${ easeInOut }`,
 
         "&:checked": {
           borderWidth: "var(--checkbox-border-width-checked)",
-          borderColor: "#000000",
+          borderColor: "var(--checkbox-border-color-on)",
 
           "&::after": { opacity: "1" },
         },
@@ -390,7 +389,7 @@ const AddComponents = (shades) => {
         },
 
         "&:disabled": {//disabled checkbox
-          backgroundColor: "#C7C7C7",
+          backgroundColor: "var(--checkbox-disabled-bg-color)",
           opacity: "70%",
           cursor: "not-allowed",
         },
@@ -402,8 +401,8 @@ const AddComponents = (shades) => {
 
         "&:indeterminate": {//indeterminate checkbox
           borderWidth: "var(--check-indeterminate-border-x), var(--check-indeterminate-border-y)",
-          backgroundColor: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
-          borderColor: "#000000",
+          backgroundColor: "var(--checkbox-indeterminate-bg-color)",
+          borderColor: "var(--checkbox-indeterminate-border-color)",
 
           "&::after": {
             content: "''",
@@ -513,10 +512,11 @@ const AddComponents = (shades) => {
         },
         "&::before, &::after": { //the line itself
           flex: "1",
-          backgroundColor: "rgba(0,0,0,0.05)",
+          backgroundColor: "var(--divider-bg-color)",
           content: "''",
           borderRadius: "9999px",
           padding: "1px",				
+          opacity: "0.15",
         },
       },
 
@@ -555,8 +555,60 @@ const AddComponents = (shades) => {
             "& > *": {
               height: "100%",
               overflowY: "auto",
-              backgroundColor: "#FFFFFF",
+              backgroundColor: "var(--drawer-sidebar-content-bg-color)",
             },
+
+            // "& .menu": {
+            //   color: "#000000",
+      
+            //   "&.menu-horizontal": { //horizontal menu
+            //     "& > li": {
+            //       "& > details": { //collapsible list under menu
+            //         "& > ul, & > ol": { //sub ul and/or ol under li element
+            //           color: "#000000",
+            //           backgroundColor: ShadeHexColor("#000000", shades[100]),
+            //         },
+            //       }
+            //     },
+            //   },
+      
+            //   "& .menu-title": { //menu title in almost all wrapper elements
+            //     color: "#ABABAB",
+            //   },
+      
+            //   "& li": {
+            //     "& > ul, & > ol": { //sub ul and/or ol under li element
+            //       "&::before": { //line on the left side of sub-ul
+            //         backgroundColor: "#EBEBEB",
+            //       },
+            //     },
+      
+            //     "& > a, & > label": { //list items under menu
+            //       "&:hover": { background: "rgba(0,0,0,0.05)" },
+        
+            //       "&:active": { background: "rgba(0,0,0,0.1)" },
+        
+            //       "&.menu-active": { backgroundColor: "#000000", color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]) },
+            //     },
+      
+            //     "& > details": { //collapsible list under menu
+            //       "& > ul, & > ol": { //sub ul and/or ol under li element
+            //         "&::before": { //line on the left side of sub-ul
+            //           backgroundColor: "#EBEBEB",
+            //         },
+            //       },
+      
+            //       "& > summary": { //the summary tag
+            //         "&:hover": { background: "rgba(0,0,0,0.05)" },
+          
+            //         "&:active": { background: "rgba(0,0,0,0.1)" },
+            //       },
+      
+            //       //summary styled when details is open
+            //       "&[open] > summary": { background: "rgba(0,0,0,0.1)" }
+            //     }
+            //   },
+            // },
           },
           
           "&.drawer-compact > .drawer-sidebar-content": { //compact drawer!
@@ -573,7 +625,7 @@ const AddComponents = (shades) => {
             left: "0",
             width: "100vw",
             height: "100vh",
-            background: "rgba(0,0,0,0.5)",
+            backgroundColor: "var(--drawer-overlay-bg-color)",
             cursor: "pointer",
 
             transition: `width 300ms ${ easeInOut }`,
@@ -778,25 +830,25 @@ const AddComponents = (shades) => {
 
         borderRadius: "0.75rem",
         borderWidth: "1px",
-        backgroundColor: "#ffffff",
-        borderColor: "#ffffff",
+        backgroundColor: "var(--input-bg-color)",
+        borderColor: "var(--input-border-color)",
 
         "&:focus": {
-          outline: `1px solid #cccccc`,
+          outline: `1px solid var(--input-outline-color)`,
           outlineOffset: "1px",
 
           "&.input-underlined": { outline: "none" },
         },
 
-        "&.input-outline": { borderColor: "#cccccc" },
+        "&.input-outline": { borderColor: "var(--input-outline-border-color)" },
 
-        "&.input-ghost": { borderColor: "transparent", backgroundColor: "transparent" },
+        "&.input-ghost": { borderColor: "var(--input-ghost-border-color)", backgroundColor: "var(--input-ghost-bg-color)" },
 
         "&.input-underlined": {
           borderWidth: "0px",
           borderBottomWidth: "2px",
-          borderColor: "#cccccc",
-          backgroundColor: "transparent",
+          borderColor: "var(--input-underlined-border-color)",
+          backgroundColor: "var(--input-underlined-bg-color)",
           borderRadius: "2px",
           paddingTop: "0.5rem",
           paddingBottom: "calc(0.5rem - 2px)",
@@ -853,7 +905,7 @@ const AddComponents = (shades) => {
         textTransform: "capitalize",
 
         "& > *": { fontSize: "1rem" },
-        color: "#000000",
+        color: "var(--menu-font-color)",
 
         "&.menu-horizontal": { //horizontal menu
           flexDirection: "row",
@@ -873,8 +925,7 @@ const AddComponents = (shades) => {
                 padding: "0.5rem",
                 marginLeft: "0",
                 borderRadius: "1rem",
-                color: "#000000",
-                backgroundColor: ShadeHexColor("#000000", shades[100]),
+                backgroundColor: "var(--menu-horizontal-bg-color)",
                 "--tw-drop-shadow": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))", //drop shadow came from tailwind css dropshadow-md
                 filter: "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
 
@@ -895,7 +946,8 @@ const AddComponents = (shades) => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          color: "#ABABAB",
+          color: "var(--menu-title-font-color)",
+          opacity: "0.5",
         },
 
         "& li": {
@@ -913,7 +965,8 @@ const AddComponents = (shades) => {
               bottom: "1.25rem",
               content: "''",
               width: "2px",
-              backgroundColor: "#EBEBEB",
+              backgroundColor: "var(--menu-sideline-color)",
+              opacity: "0.15"
             },
           },
 
@@ -939,11 +992,11 @@ const AddComponents = (shades) => {
             "-ms-user-select": "none",
             "user-select": "none",
   
-            "&:hover": { background: "rgba(0,0,0,0.05)" },
+            "&:hover": { backgroundColor: "var(--menu-item-hovered-bg-color)" },
   
-            "&:active": { background: "rgba(0,0,0,0.1)" },
+            "&:active": { backgroundColor: "var(--menu-item-clicked-bg-color)" },
   
-            "&.menu-active": { backgroundColor: "#000000", color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]) },
+            "&.menu-active": { backgroundColor: "var(--menu-item-active-bg-color)", color: "var(--menu-item-active-font-color)" },
           },
 
           "& > details": { //collapsible list under menu
@@ -961,7 +1014,8 @@ const AddComponents = (shades) => {
                 bottom: "1.25rem",
                 content: "''",
                 width: "2px",
-                backgroundColor: "#EBEBEB",
+                backgroundColor: "var(--menu-sideline-color)",
+                opacity: "0.15"
               },
             },
 
@@ -990,13 +1044,13 @@ const AddComponents = (shades) => {
               listStyle: "none",
               "&::-webkit-details-marker": { display: "none" },
     
-              "&:hover": { background: "rgba(0,0,0,0.05)" },
+              "&:hover": { backgroundColor: "var(--menu-item-hovered-bg-color)" },
     
-              "&:active": { background: "rgba(0,0,0,0.1)" },
+              "&:active": { backgroundColor: "var(--menu-item-clicked-bg-color)" },
             },
 
             //summary styled when details is open
-            "&[open] > summary": { background: "rgba(0,0,0,0.1)" }
+            "&[open] > summary": { backgroundColor: "var(--menu-details-open-bg-color)" }
           }
         },
 
@@ -1056,7 +1110,7 @@ const AddComponents = (shades) => {
         left:"0",
         width:"100vw",
         height:"100vh",
-        background:"rgba(0,0,0,0.2)",
+        backgroundColor: "var(--modal-overlay-bg-color)",
         opacity: "0",
         visibility: "hidden",
         zIndex: "100",
@@ -1099,11 +1153,11 @@ const AddComponents = (shades) => {
         position: "sticky",
         top: "0",
         width: "100%",
-        minHeight: "4.5rem",
-        maxHeight: "4.5rem",
+        minHeight: "4.25rem",
+        maxHeight: "4.25rem",
         fontWeight: "bold",
         zIndex: "97",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--navbar-bg-color)",
 
         "&.navbar-bottom": { //bottom nav bar
           padding: "0",
@@ -1153,7 +1207,7 @@ const AddComponents = (shades) => {
                   background: "transparent",
 
                   "& > *:first-child": {
-                    background: "rgba(0,0,0,0.05)",
+                    backgroundColor: "var(--navbar-item-icon-hovered-bg-color)",
                   }, 
                 },
       
@@ -1161,7 +1215,7 @@ const AddComponents = (shades) => {
                   background: "transparent",
 
                   "& > *:first-child": {
-                    background: "rgba(0,0,0,0.1)",
+                    background: "var(--navbar-item-icon-clicked-bg-color)",
                   }, 
                 },
       
@@ -1170,8 +1224,8 @@ const AddComponents = (shades) => {
                   color: "#000000",
 
                   "& > *:first-child": {
-                    backgroundColor: "#000000",
-                    color: ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
+                    backgroundColor: "var(--navbar-item-icon-active-bg-color)",
+                    color: "var(--navbar-item-icon-active-font-color)",
                   },
                 },
               },
@@ -1226,7 +1280,7 @@ const AddComponents = (shades) => {
         display: "inline-block",
         width: "256px",
         borderRadius: "9999px",
-        backgroundColor: ShadeHexColor("#000000", shades[95]),
+        backgroundColor: "var(--progress-bg-color)",
 
         "&::after": {
           height: "var(--progress-height)",
@@ -1235,7 +1289,7 @@ const AddComponents = (shades) => {
           position: "absolute",
           width: "clamp(0%, calc((var(--value)/var(--max)) * 100%), 100%)", //clamping for minimum and maximun values
           borderRadius: "9999px",
-          backgroundColor: "#000000",
+          backgroundColor: "var(--progress-fg-color)",
         },
 
         "&.progress-sm": {
@@ -1260,7 +1314,7 @@ const AddComponents = (shades) => {
       //rail class
       ".rail": {
         display: "flex",
-        padding: "0.25rem",
+        padding: "0.5rem 0.25rem",
         flexDirection: "column",
         order: "1",
         alignItems: "flex-start",
@@ -1268,7 +1322,7 @@ const AddComponents = (shades) => {
         maxWidth: "5rem",
         height: "100vh",
 
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--rail-bg-color)",
 
         transition: `padding 300ms ${ easeInOut }, min-width 300ms ${ easeInOut }, max-width 300ms ${ easeInOut }`,
 
@@ -1390,7 +1444,7 @@ const AddComponents = (shades) => {
         "&:checked + .rail": {
           minWidth: "23rem",
           maxWidth: "23rem",
-          padding: "0.25rem 0.5rem",
+          padding: "0.5rem 0.5rem",
 
           "& > div.rail-top, & > div.rail-middle, & > div.rail-bottom": {
             "& > .btn": {
@@ -1461,7 +1515,7 @@ const AddComponents = (shades) => {
 
         "&:checked": {
           borderWidth: "var(--radio-border-width-checked)",
-          borderColor: "#000000",
+          borderColor: "var(--radio-border-color-on)",
         },
 
         appearance: "none",
@@ -1470,7 +1524,7 @@ const AddComponents = (shades) => {
         justifyContent: "center",
         backgroundColor: "transparent",
         borderWidth: "2px",
-        borderColor: "#C7C7C7",
+        borderColor: "var(--radio-border-color-off)",
         borderRadius: "100%",
         cursor: "pointer",
         transition: `border-width 75ms ${ easeInOut }, borderColor 75ms ${ easeInOut }`,
@@ -1609,7 +1663,7 @@ const AddComponents = (shades) => {
         alignItems: "center",
         appearance: "none",
         "-webkit-appearance": "none",
-        backgroundColor: ShadeHexColor("#000000", shades[95]),
+        backgroundColor: "var(--switch-bg-color-off)",
         borderRadius: "9999px",
         cursor: "pointer",
         transition: `background-color 150ms ${ easeInOut }`,
@@ -1625,15 +1679,15 @@ const AddComponents = (shades) => {
           top: "3px",
           left: "3px",
           borderRadius: "100%",
-          backgroundColor: ShadeHexColor("#000000", shades[10]),
+          backgroundColor: "var(--switch--lever-bg-color-off)",
           transition: `left 150ms ${ easeInOut }, background-color 150ms ${ easeInOut }`,
         },
 
         "&:checked": {
-          backgroundColor: ShadeHexColor("#000000", shades[10]),
+          backgroundColor: "var(--switch-bg-color-on)",
 
           "&::after": {
-            backgroundColor: ShadeHexColor("#000000", shades[95]),
+            backgroundColor: "var(--switch--lever-bg-color-on)",
             left: "calc(100% - var(--switch-circle-size) - 3px)",
           }
         },
