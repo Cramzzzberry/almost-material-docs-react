@@ -6,12 +6,12 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
   const tabContent = {
     "preview": ( preview ),
     "html": (
-      <SyntaxHighlighter className="card" language="cshtml" style={ darcula }>
+      <SyntaxHighlighter className="card !min-h-[100px] !flex !items-center" language="cshtml" style={ darcula }>
         { htmlCode }
       </SyntaxHighlighter>
     ),
     "jsx": (
-      <SyntaxHighlighter className="card" language="jsx" style={ darcula }>
+      <SyntaxHighlighter className="card !min-h-[100px] !flex !items-center" language="jsx" style={ darcula }>
         { jsxCode }
       </SyntaxHighlighter>
     ),

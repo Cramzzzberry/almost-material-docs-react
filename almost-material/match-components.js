@@ -27,6 +27,7 @@ const MatchComponents = (shades) => {
 
       //button class
       "btn": (color) => ({
+
         //btn
         "--btn-bg-color": color,
         "--btn-border-color": color,
@@ -68,6 +69,7 @@ const MatchComponents = (shades) => {
       
       //card class
       "card": (color) => ({
+        //card
         "--card-bg-color": color,
         "--card-font-color": ShadeHexColor(color, shades[10]),
       }),
@@ -178,6 +180,15 @@ const MatchComponents = (shades) => {
         //radio
         "--radio-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
         "--radio-border-color-on": color,
+      }),
+  
+  
+      
+      //slider class
+      "slider": (color) => ({
+        //slider
+        "--slider-track-color": ShadeHexColor(ShadeHexColor(color, shades[95]), shades[30]),
+        "--slider-thumb-color": color,
       }),
 
 

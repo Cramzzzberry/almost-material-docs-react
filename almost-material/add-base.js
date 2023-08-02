@@ -146,6 +146,12 @@ const AddBase = (shades) => {
 
 
 
+      //slider
+      "--slider-track-color": ShadeHexColor(ShadeHexColor("#000000", shades[95]), shades[30]),
+      "--slider-thumb-color": "#000000",
+
+
+
       //switch
       "--switch-bg-color-off": ShadeHexColor("#000000", shades[95]),
       "--switch--lever-bg-color-off": ShadeHexColor("#000000", shades[10]),
@@ -155,15 +161,6 @@ const AddBase = (shades) => {
 
     "html": {
       fontSize: "1rem",
-    },
-
-    "@font-face": {
-      fontFamily: "'Inter'",
-      fontWeight: "normal",
-      src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype')",
-    },
-
-    "body": {
       color: ShadeHexColor("#000000", shades[10]),
       backgroundColor: ShadeHexColor("#000000", shades[99]),
       fontFamily: "'Inter'",
@@ -213,6 +210,9 @@ const AddBase = (shades) => {
       background: "#999999",
       borderRadius: '4px',
     },
+    
+    "-webkit-font-smoothing": "antialiased",
+    "-moz-osx-font-smoothing": "grayscale",
   }
 }
 
@@ -220,7 +220,7 @@ const themeStyles = (palette, shades) => {
   let themeStyleSheet = {}
 
 	for(const color of Object.keys(palette)) {
-		themeStyleSheet[`body[data-theme="${ color }"]`] = {
+		themeStyleSheet[`html[data-color="${ color }"]`] = {
       color: ShadeHexColor(palette[color], shades[10]),
       backgroundColor: ShadeHexColor(palette[color], shades[95]),
 
@@ -410,6 +410,12 @@ const themeStyles = (palette, shades) => {
       //radio
       "--radio-border-color-off": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
       "--radio-border-color-on": palette[color],
+
+
+
+      //slider
+      "--slider-track-color": ShadeHexColor(ShadeHexColor(palette[color], shades[95]), shades[30]),
+      "--slider-thumb-color": palette[color],
 
 
       

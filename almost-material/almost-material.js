@@ -81,6 +81,13 @@ const almostMaterialPlugin = plugin(
 		matchComponents(MatchComponents(shades), { values: AlmostMaterialPalette(userPalette) })
 
 		addBase({...AddBase(shades), ...themeStyles(AlmostMaterialPalette(userPalette), shades)});
+		addBase({
+			"@font-face": {
+				fontFamily: "'Inter'",
+				fontWeight: "100 900",
+				src: "url('/almost-material/src/Inter-Variable.ttf') format('truetype-variations')",
+			},
+		});
 	}
 )
 

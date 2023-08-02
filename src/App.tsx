@@ -16,6 +16,7 @@ import NavbarPage from "./pages/navbar/Navbar-Page"
 import ProgressbarPage from "./pages/progressbar/Progressbar-Page"
 import RadiobuttonPage from "./pages/radiobutton/Radiobutton-Page"
 import RailPage from "./pages/rail/Rail-Page"
+import SliderPage from "./pages/slider/Slider-Page"
 import SwapPage from "./pages/swap/Swap-Page"
 import SwitchPage from "./pages/switch/Switch-Page"
 
@@ -26,7 +27,7 @@ export default function App() {
       <div className={ window.location.pathname === "/" ? "drawer" : "drawer xl:drawer-open" }>
 
         <input className="drawer-toggle" type="checkbox" id="drawerComponent"/>
-        <div className="drawer-page-content">
+        <div className="drawer-page-content mb-[4.75rem] md:mb-0">
           {/* navbar */}
           <div className="navbar"> 
             <div className="navbar-start">
@@ -37,7 +38,10 @@ export default function App() {
                   </label>
                 </li>
                 <li>
-                  <a href="/">Almost Material</a>
+                  <a href="/">
+                    Almost Material
+                    <span className="badge badge-warning">In Dev</span>
+                  </a>
                 </li>
                 <li className="flex items-center">
                   <div className="dropdown">
@@ -49,9 +53,9 @@ export default function App() {
                       <ul className="menu menu-sm w-56">
                         <li>
                           <a>
-                            <span></span>
                             0.0.0
-                            <span className="badge badge-error">dev</span>
+                            <span></span>
+                            <span className="badge badge-warning">In Dev</span>
                           </a>
                         </li>
                       </ul>
@@ -65,7 +69,12 @@ export default function App() {
 
             <div className="navbar-end">
               <ul className="menu menu-horizontal">
-                <li><a href="https://github.com/Cramzzzberry/almost-material-docs" target="_blank">Github</a></li>
+                <li>
+                  <a href="https://github.com/Cramzzzberry/almost-material-docs" target="_blank">
+                    Github
+                    <span className="badge badge-warning">In Dev</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -89,10 +98,21 @@ export default function App() {
                 <Route path="progress-bar" element={ <ProgressbarPage /> } />
                 <Route path="radio-button" element={ <RadiobuttonPage /> } />
                 <Route path="rail" element={ <RailPage /> } />
+                <Route path="slider" element={ <SliderPage /> } />
                 <Route path="swap" element={ <SwapPage /> } />
                 <Route path="switch" element={ <SwitchPage /> } />
               </Route>
             </Routes>
+          </div>
+
+          <div class="navbar navbar-bottom md:hidden">
+            <ul class="menu">
+              <li><a class="menu-active"><span class="material-icons-round">home</span>home</a></li>
+              <li><a><span class="material-icons-round">library_books</span>library</a></li>
+              <li><a><span class="material-icons-round">favorite</span>favorites</a></li>
+              <li><a><span class="material-icons-round">update</span>update</a></li>
+              <li><a><span class="material-icons-round">settings</span>settings</a></li>
+            </ul>
           </div>
         </div>
 
@@ -103,14 +123,33 @@ export default function App() {
               <ul className="menu">
                 <li><input type="text" placeholder="Search here..." className="input input-sm w-full xl:hidden" /></li>
                 <span className="menu-title">Getting Started</span>
-                <li><a href="#">How to install</a></li>
-                <li><a href="#">Configuration</a></li>
-                <li><a href="#">Color Shades</a></li>
+                <li>
+                  <a href="#">
+                    How to install
+                    <span></span>
+                    <span className="badge badge-error">No Page Yet...</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Configuration
+                    <span></span>
+                    <span className="badge badge-error">No Page Yet...</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Color Shades
+                    <span></span>
+                    <span className="badge badge-error">No Page Yet...</span>
+                  </a>
+                </li>
                 <span className="divider"></span>
 
                 <span className="menu-title">Inputs</span>
                 <li><a className={window.location.pathname === "/button" ? "menu-active" : ""} href="/button">Button</a></li>
-                <li><a className={window.location.pathname === "/input-field" ? "menu-active" : ""} href="/input-field">Input Field</a></li>
+                <li><a className={window.location.pathname === "/input-field" ? "menu-active" : ""} href="/input-field">Text Field</a></li>
+                <li><a className={window.location.pathname === "/slider" ? "menu-active" : ""} href="/slider">Slider</a></li>
                 <span className="divider"></span>
 
                 <span className="menu-title">Containment</span>

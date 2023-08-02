@@ -23,7 +23,7 @@ const getinputFields =  () => {
 const InputFieldPage = () => {
   return (
     <Page 
-      name="Input Fields"
+      name="Text Fields"
       desc="Provides access to respond via text and/or other means of responses"
       components={ getinputFields() }
     />

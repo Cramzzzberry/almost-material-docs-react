@@ -32,7 +32,7 @@ const AddComponents = (shades) => {
         borderRadius: "9999px",
         borderWidth: "1px",
 
-        fontWeight: "bold",
+        fontWeight: "500",
         textTransform: "capitalize",
 
         backgroundColor: "var(--badge-bg-color)",
@@ -40,7 +40,7 @@ const AddComponents = (shades) => {
         color: "var(--badge-font-color)",
 
         "&.badge-outline": { //badge-outlined
-          fontWeight: "normal",
+          fontWeight: "400",
 
           backgroundColor: "var(--badge-outline-bg-color)",
           borderColor: "var(--badge-outline-border-color)",
@@ -117,7 +117,7 @@ const AddComponents = (shades) => {
         borderWidth: "1px",
         borderRadius: "9999px",
 
-        fontWeight: "bold",
+        fontWeight: "500",
         textTransform: "capitalize",
         textAlign: "start",
         whiteSpace: "nowrap",
@@ -901,7 +901,7 @@ const AddComponents = (shades) => {
         display: "flex",
         flexDirection: "column",
         padding: "0.5rem",
-        fontWeight: "bold",
+        fontWeight: "500",
         textTransform: "capitalize",
 
         "& > *": { fontSize: "1rem" },
@@ -1155,7 +1155,7 @@ const AddComponents = (shades) => {
         width: "100%",
         minHeight: "4.25rem",
         maxHeight: "4.25rem",
-        fontWeight: "bold",
+        fontWeight: "500",
         zIndex: "97",
         backgroundColor: "var(--navbar-bg-color)",
 
@@ -1560,6 +1560,49 @@ const AddComponents = (shades) => {
           backgroundColor: "transparent",
           opacity: "70%",
           cursor: "not-allowed",
+        },
+      },
+
+
+
+      //slider class
+      "input[type=range].slider": {
+        // base style
+        "-webkit-appearance": "none",
+        height: "0.125rem",
+        marginTop: "0.5rem",
+        marginBottom: "0.5rem",
+        borderRadius: "4px",
+        backgroundColor: "var(--slider-track-color)",
+        cursor: "pointer",
+        
+        "&::-webkit-slider-thumb": {
+          "-webkit-appearance": "none",
+          height: "1rem",
+          width: "1rem",
+          borderRadius: "100%",
+          backgroundColor: "var(--slider-thumb-color)"
+        },
+        
+        "&::-moz-range-thumb": {
+          "-webkit-appearance": "none",
+          height: "1rem",
+          width: "1rem",
+          border: "none",
+          borderRadius: "100%",
+          backgroundColor: "var(--slider-thumb-color)"
+        },
+        
+        "&::-ms-thumb": {
+          "-webkit-appearance": "none",
+          height: "1rem",
+          width: "1rem",
+          borderRadius: "100%",
+          backgroundColor: "var(--slider-thumb-color)"
+        },
+        
+        "&:focus": {
+          outline: "none",
         },
       },
 

@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
     <div className="card p-32 mb-8 text-center">
-      <h1 className="font-bold">Almost Material</h1>
+      <h1 className="font-[600]">Almost Material</h1>
       <h4>A TailwindCSS plugin heavily based on Material Design 3</h4>
     </div>
 
