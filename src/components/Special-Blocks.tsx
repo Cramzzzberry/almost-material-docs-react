@@ -29,7 +29,6 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
   }
 
   return (
-    <>
     <div className="flex flex-col">
       {/* first block */}
       <div className="flex flex-row gap-4 mx-4 justify-between">
@@ -52,7 +51,6 @@ const Block = ({preview, htmlCode, jsxCode, componentName}) => {
       {/* second block */}
       { secondBlock }
     </div>
-    </>
   )
 }
 
