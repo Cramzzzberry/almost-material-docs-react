@@ -1,6 +1,6 @@
 //misc
 import 'material-icons/iconfont/material-icons.css'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 
 //main pages
 import HomePage from "./pages/Home"
@@ -31,22 +31,22 @@ export default function App() {
   return(
     <BrowserRouter>
       {/* the whole drawer */}
-      <div className={ window.location.pathname === "/" ? "drawer" : "drawer xl:drawer-open" }>
+      <div className="drawer xl:drawer-open">
         <input className="drawer-toggle" type="checkbox" id="drawerComponent"/>
         <div className="drawer-page-content mb-[4.75rem] md:mb-0">
           <div className="navbar"> {/* navbar */}
             <div className="navbar-start"> {/* navbar start */}
                 <ul className="menu menu-horizontal">
-                  <li className={ window.location.pathname === "/" ? "" : "xl:hidden"}>
+                  <li className="xl:hidden">
                     <label htmlFor="drawerComponent" className="btn btn-circle btn-ghost">
                       <span className="material-icons-round">menu</span>
                     </label>
                   </li>
                   <li>
-                    <a href="/">
+                    <NavLink to="/">
                       Almost Material
                       <span className="badge badge-warning">In Dev</span>
-                    </a>
+                    </NavLink>
                   </li>
                   <li className="flex items-center">
                     <div className="dropdown">
@@ -125,74 +125,72 @@ export default function App() {
 
         <div className="drawer-sidebar"> {/* drawer sidebar */}
           <div className="drawer-sidebar-content">
-            <div>
-              <ul className="menu menu-sm">
-                <li><input type="text" placeholder="Search here..." className="input input-sm input-outline w-full xl:hidden" /></li>
+            <ul className="menu menu-sm">
+              <li><input type="text" placeholder="Search here..." className="input input-sm input-outline w-full xl:hidden" /></li>
 
-                <span className="menu-title">Getting Started</span>
-                <li><a href="/how-to-install">How to install</a></li>
-                <li>
-                  <a href="#">
-                    Configuration
-                    <span></span>
-                    <span className="badge badge-error">No Page</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                  Color Shades
+              <span className="menu-title">Getting Started</span>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/how-to-install">How to install</NavLink></li>
+              <li>
+                <NavLink to="#">
+                  Configuration
                   <span></span>
                   <span className="badge badge-error">No Page</span>
-                  </a>
-                </li>
-                <span className="divider"></span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#">
+                Color Shades
+                <span></span>
+                <span className="badge badge-error">No Page</span>
+                </NavLink>
+              </li>
+              <span className="divider"></span>
 
-                <span className="menu-title">Inputs</span>
-                <li><a className={window.location.pathname === "/button" ? "menu-active" : ""} href="/button">Button</a></li>
-                <li><a className={window.location.pathname === "/input-field" ? "menu-active" : ""} href="/input-field">Text Field</a></li>
-                <li><a className={window.location.pathname === "/slider" ? "menu-active" : ""} href="/slider">Slider</a></li>
-                <span className="divider"></span>
+              <span className="menu-title">Inputs</span>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/button">Button</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/input-field">Text Field</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/slider">Slider</NavLink></li>
+              <span className="divider"></span>
 
-                <span className="menu-title">Containment</span>
-                <li>
-                  <a className={window.location.pathname === "/card" ? "menu-active" : ""} href="/card">
-                    Card
-                    <span></span>
-                    <span className="badge badge-warning">Layout Making</span>
-                  </a>
-                </li>
-                <li><a className={window.location.pathname === "/dropdown" ? "menu-active" : ""} href="/dropdown">Dropdown</a></li>
-                <li><a className={window.location.pathname === "/image" ? "menu-active" : ""} href="/image">Image</a></li>
-                <li><a className={window.location.pathname === "/menu" ? "menu-active" : ""} href="/menu">Menu</a></li>
-                <li>
-                  <a className={window.location.pathname === "/modal" ? "menu-active" : ""} href="/modal">
-                    Modal
-                    <span></span>
-                    <span className="badge badge-warning">Layout Making</span>
-                  </a>
-                </li>
-                <span className="divider"></span>
+              <span className="menu-title">Containment</span>
+              <li>
+                <NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/card">
+                  Card
+                  <span></span>
+                  <span className="badge badge-warning">Layout Making</span>
+                </NavLink>
+              </li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/dropdown">Dropdown</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/image">Image</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/menu">Menu</NavLink></li>
+              <li>
+                <NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/modal">
+                  Modal
+                  <span></span>
+                  <span className="badge badge-warning">Layout Making</span>
+                </NavLink>
+              </li>
+              <span className="divider"></span>
 
-                <span className="menu-title">Toggles/States</span>
-                <li><a className={window.location.pathname === "/checkbox" ? "menu-active" : ""} href="/checkbox">Checkbox</a></li>
-                <li><a className={window.location.pathname === "/swap" ? "menu-active" : ""} href="/swap">Swap</a></li>
-                <li><a className={window.location.pathname === "/switch" ? "menu-active" : ""} href="/switch">Switch</a></li>
-                <li><a className={window.location.pathname === "/radio-button" ? "menu-active" : ""} href="/radio-button">Radio Button</a></li>
-                <span className="divider"></span>
+              <span className="menu-title">Toggles/States</span>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/checkbox">Checkbox</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/swap">Swap</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/switch">Switch</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/radio-button">Radio Button</NavLink></li>
+              <span className="divider"></span>
 
-                <span className="menu-title">Navigations</span>
-                <li><a className={window.location.pathname === "/navbar" ? "menu-active" : ""} href="/navbar">Navigation Bar</a></li>
-                <li><a className={window.location.pathname === "/drawer" ? "menu-active" : ""} href="/drawer">Navigation Drawer</a></li>
-                <li><a className={window.location.pathname === "/rail" ? "menu-active" : ""} href="/rail">Navigation Rail</a></li>
-                <span className="divider"></span>
+              <span className="menu-title">Navigations</span>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/navbar">Navigation Bar</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/drawer">Navigation Drawer</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/rail">Navigation Rail</NavLink></li>
+              <span className="divider"></span>
 
-                <span className="menu-title">Others</span>
-                <li><a className={window.location.pathname === "/badge" ? "menu-active" : ""} href="/badge">Badge</a></li>
-                <li><a className={window.location.pathname === "/divider" ? "menu-active" : ""} href="/divider">Divider</a></li>
-                <li><a className={window.location.pathname === "/indicator" ? "menu-active" : ""} href="/indicator">Indicator</a></li>
-                <li><a className={window.location.pathname === "/progress-bar" ? "menu-active" : ""} href="/progress-bar">Progress Bar</a></li>
-              </ul>
-            </div>
+              <span className="menu-title">Others</span>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/badge">Badge</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/divider">Divider</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/indicator">Indicator</NavLink></li>
+              <li><NavLink className={({ isActive }) => isActive ? "menu-active" : ""} to="/progress-bar">Progress Bar</NavLink></li>
+            </ul>
           </div>
 
           <label className="drawer-overlay" htmlFor="drawerComponent"></label>
