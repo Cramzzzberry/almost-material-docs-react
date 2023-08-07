@@ -79,9 +79,9 @@ const MatchComponents = (shades) => {
       //checkbox class
       "check": (color) =>  ({
         //checkbox
-        "--checkbox-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--checkbox-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[80]),
         "--checkbox-border-color-on": color,
-        "--checkbox-disabled-bg-color": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--checkbox-disabled-bg-color": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[80]),
         "--checkbox-indeterminate-bg-color": ShadeHexColor(color, LightOrDark(color) === 'light' ? shades[10] : shades[90]),
         "--checkbox-indeterminate-border-color": color,
 
@@ -178,7 +178,7 @@ const MatchComponents = (shades) => {
       //radio class
       "radio": (color) => ({
         //radio
-        "--radio-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[90]),
+        "--radio-border-color-off": ShadeHexColor(ShadeHexColor(color, shades[10]), shades[80]),
         "--radio-border-color-on": color,
       }),
   
@@ -188,7 +188,9 @@ const MatchComponents = (shades) => {
       "slider": (color) => ({
         //slider
         "--slider-track-color": ShadeHexColor(ShadeHexColor(color, shades[95]), shades[30]),
-        "--slider-thumb-color": color,
+        "--slider-thumb-color": ShadeHexColor(color, shades[20]),
+        "--slider-progress-color": color,
+  
       }),
 
 

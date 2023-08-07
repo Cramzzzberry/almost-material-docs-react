@@ -8,13 +8,14 @@ export const ModalSnippets = {
       <input className="modal-toggle" type="checkbox" id="myModal" />
       <div className="modal">
         <div className="modal-content">
-          <div className="card w-96 text-center">
+          <div className="card w-[26.25rem]">
             <div className="card-body">
-              <h4 className="font-bold">This is an opened modal!</h4>
+              <h4 className="card-title">Prompt?</h4>
+              <span>Put your own description here that gives more details about the prompt.</span>
 
-              <div className="card-actions justify-center">
-                {/* button for closing modal */}
-                <label htmlFor="myModal" className="btn btn-error">Close</label>
+              <div className="card-actions mt-2 justify-end">
+                <label htmlFor="myModal" className="btn btn-ghost">Close</label>
+                <label htmlFor="myModal" className="btn">Ok</label>
               </div>
             </div>
           </div>

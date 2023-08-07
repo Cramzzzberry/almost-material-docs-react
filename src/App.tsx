@@ -14,6 +14,7 @@ import CheckboxPage from "./pages/checkbox/Checkbox-Page"
 import DividerPage from "./pages/divider/Divider-Page"
 import DrawerPage from "./pages/drawer/drawer-Page"
 import DropdownPage from "./pages/dropdown/Dropdown-Page"
+import ImagePage from "./pages/image/Image-Page"
 import IndicatorPage from "./pages/indicator/Indicator-Page"
 import InputFieldPage from "./pages/input-field/Input-Field-Page"
 import MenuPage from "./pages/menu/Menu-Page"
@@ -95,6 +96,7 @@ export default function App() {
                 <Route path="divider" element={ <DividerPage /> } />
                 <Route path="drawer" element={ <DrawerPage /> } />
                 <Route path="dropdown" element={ <DropdownPage /> } />
+                <Route path="image" element={ <ImagePage /> } />
                 <Route path="indicator" element={ <IndicatorPage /> } />
                 <Route path="input-field" element={ <InputFieldPage /> } />
                 <Route path="menu" element={ <MenuPage /> } />
@@ -125,7 +127,7 @@ export default function App() {
           <div className="drawer-sidebar-content">
             <div>
               <ul className="menu menu-sm">
-                <li><input type="text" placeholder="Search here..." className="input input-sm w-full xl:hidden" /></li>
+                <li><input type="text" placeholder="Search here..." className="input input-sm input-outline w-full xl:hidden" /></li>
 
                 <span className="menu-title">Getting Started</span>
                 <li><a href="/how-to-install">How to install</a></li>
@@ -133,14 +135,14 @@ export default function App() {
                   <a href="#">
                     Configuration
                     <span></span>
-                    <span className="badge badge-error">No Page Yet</span>
+                    <span className="badge badge-error">No Page</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
                   Color Shades
                   <span></span>
-                  <span className="badge badge-error">No Page Yet</span>
+                  <span className="badge badge-error">No Page</span>
                   </a>
                 </li>
                 <span className="divider"></span>
@@ -152,10 +154,23 @@ export default function App() {
                 <span className="divider"></span>
 
                 <span className="menu-title">Containment</span>
-                <li><a className={window.location.pathname === "/card" ? "menu-active" : ""} href="/card">Card</a></li>
+                <li>
+                  <a className={window.location.pathname === "/card" ? "menu-active" : ""} href="/card">
+                    Card
+                    <span></span>
+                    <span className="badge badge-warning">Layout Making</span>
+                  </a>
+                </li>
                 <li><a className={window.location.pathname === "/dropdown" ? "menu-active" : ""} href="/dropdown">Dropdown</a></li>
+                <li><a className={window.location.pathname === "/image" ? "menu-active" : ""} href="/image">Image</a></li>
                 <li><a className={window.location.pathname === "/menu" ? "menu-active" : ""} href="/menu">Menu</a></li>
-                <li><a className={window.location.pathname === "/modal" ? "menu-active" : ""} href="/modal">Modal</a></li>
+                <li>
+                  <a className={window.location.pathname === "/modal" ? "menu-active" : ""} href="/modal">
+                    Modal
+                    <span></span>
+                    <span className="badge badge-warning">Layout Making</span>
+                  </a>
+                </li>
                 <span className="divider"></span>
 
                 <span className="menu-title">Toggles/States</span>

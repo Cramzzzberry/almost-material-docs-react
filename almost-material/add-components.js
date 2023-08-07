@@ -277,61 +277,19 @@ const AddComponents = (shades) => {
         backgroundColor: "var(--card-bg-color)",
         color: "var(--card-font-color)",
 
-        "& > .card-body": { //for card body
-          padding: "1.5rem",
-
-          "& > .card-title": { fontWeight: "bold" },
-  
-          "& > .card-actions": {
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: "0.5rem",
-
-            paddingTop: "0.75rem",
-          },
-
-          "& > figure": { //image inside card body, it will look like the image has frame
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-
-            width: "100%",
-            height: "auto",
-            borderRadius: "1rem",
-            "& > img": {
-              width: "100%",
-              objectFit: "cover",
-
-              "-o-user-select": "none",
-              "-moz-user-select": "none",
-              "-webkit-user-select": "none",
-              "user-select": "none",
-            }
-          },
+        "& .card-body": { //for card body
+          padding: "1.25rem",
         },
-  
-        "& > figure": { //no frame image
+
+        "& .card-title": { fontWeight: "bold" },
+
+        "& .card-actions": {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
+          gap: "0.5rem",
 
-          width: "100%",
-          height: "auto",
-          borderRadius: "1rem",
-          "& > img": {
-            width: "100%",
-            objectFit: "cover",
-
-            "-o-user-select": "none",
-            "-moz-user-select": "none",
-            "-webkit-user-select": "none",
-            "user-select": "none",
-          }
+          paddingTop: "0.75rem",
         },
       },
 
@@ -495,7 +453,7 @@ const AddComponents = (shades) => {
         alignItems: "center",
 
         width: "100%",
-        height: "100%",
+        // height: "100%",
         paddingTop: "1rem",
         paddingBottom: "1rem",
         paddingLeft: "0",
@@ -682,6 +640,31 @@ const AddComponents = (shades) => {
         "&.dropdown-right": { //right dropdown
           "& > .dropdown-content": { transformOrigin: "10% 10%", top: "0%", left: "calc(100% + 8px)" },
           "&.dropdown-end > .dropdown-content": { transformOrigin: "10% 90%", top: "auto", bottom: "0%", left: "calc(100% + 8px)" },
+        },
+      },
+
+
+
+      //image class
+      ".image": {
+        display: "block",
+        width: "150px",
+        height: "150px",
+
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+
+        backgroundImage: "var(--image-url)",
+
+        "&.image-circle": {
+          borderRadius: "50%",
+        },
+
+        "&.image-card": {
+          width: "100%",
+          height: "16rem",
+          borderRadius: "1rem",
         },
       },
 
@@ -1517,19 +1500,36 @@ const AddComponents = (shades) => {
       "input[type=range].slider": {
         // base style
         "-webkit-appearance": "none",
+        "--track-height": "1rem",
+        "--thumb-height": "1rem",
         height: "0.125rem",
         marginTop: "0.5rem",
         marginBottom: "0.5rem",
-        borderRadius: "4px",
         backgroundColor: "var(--slider-track-color)",
+        borderRadius: "4px",
         cursor: "pointer",
+
+        "&::-webkit-slider-runnable-track": {
+          height: "var(--track-height)",
+          marginTop: "calc((var(--track-height)/2) - (var(--thumb-height)/2))",
+          // backgroundColor: "var(--slider-track-color)",
+          backgroundColor: "transparent",
+
+          borderRadius: "8rem",
+          overflow: "hidden",
+        },
+
+        "&::-moz-range-track": {
+
+        },
         
         "&::-webkit-slider-thumb": {
           "-webkit-appearance": "none",
           height: "1rem",
           width: "1rem",
           borderRadius: "100%",
-          backgroundColor: "var(--slider-thumb-color)"
+          backgroundColor: "var(--slider-thumb-color)",
+          boxShadow: "-9999px 0 0 calc(9999px - (var(--thumb-height)/2)) var(--slider-progress-color)",
         },
         
         "&::-moz-range-thumb": {
@@ -1546,7 +1546,8 @@ const AddComponents = (shades) => {
           height: "1rem",
           width: "1rem",
           borderRadius: "100%",
-          backgroundColor: "var(--slider-thumb-color)"
+          backgroundColor: "var(--slider-thumb-color)",
+          boxShadow: "",
         },
         
         "&:focus": {

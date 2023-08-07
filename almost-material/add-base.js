@@ -33,7 +33,7 @@ const AddBase = (shades) => {
 
       //btn-outline
       "--btn-outline-bg-color": "transparent",
-      "--btn-outline-border-color": ShadeHexColor("#000000", shades[90]),
+      "--btn-outline-border-color": ShadeHexColor("#000000", shades[80]),
       "--btn-outline-font-color": ShadeHexColor("#000000", shades[10]),
       "--btn-outline-hovered-bg-color": "#000000",
       "--btn-outline-hovered-border-color": "#000000",
@@ -61,7 +61,7 @@ const AddBase = (shades) => {
 
 
       //checkbox
-      "--checkbox-border-color-off": ShadeHexColor("#000000", shades[90]),
+      "--checkbox-border-color-off": ShadeHexColor("#000000", shades[80]),
       "--checkbox-border-color-on": "#000000",
       "--checkbox-disabled-bg-color": "#C7C7C7",
       "--checkbox-indeterminate-bg-color": ShadeHexColor("#000000", LightOrDark("#000000") === 'light' ? shades[10] : shades[90]),
@@ -141,7 +141,7 @@ const AddBase = (shades) => {
 
 
       //radio
-      "--radio-border-color-off": "#C7C7C7",
+      "--radio-border-color-off": ShadeHexColor("#000000", shades[80]),
       "--radio-border-color-on": "#000000",
 
 
@@ -149,6 +149,7 @@ const AddBase = (shades) => {
       //slider
       "--slider-track-color": ShadeHexColor(ShadeHexColor("#000000", shades[95]), shades[30]),
       "--slider-thumb-color": "#000000",
+      "--slider-progress-color": "#000000",
 
 
 
@@ -238,9 +239,9 @@ const themeStyles = (palette, shades) => {
 
 
       //badge
-      "--badge-bg-color": palette[color],
-      "--badge-border-color": palette[color],
-      "--badge-font-color": ShadeHexColor(palette[color], LightOrDark(palette[color]) === 'light' ? shades[10] : shades[90]),
+      "--badge-bg-color": ShadeHexColor(palette[color], shades[10]),
+      "--badge-border-color": ShadeHexColor(palette[color], shades[10]),
+      "--badge-font-color": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
 
       //badge-outline
       "--badge-outline-bg-color": "transparent",
@@ -266,7 +267,7 @@ const themeStyles = (palette, shades) => {
 
       //btn-outline
       "--btn-outline-bg-color": "transparent",
-      "--btn-outline-border-color": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
+      "--btn-outline-border-color": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[80]),
       "--btn-outline-font-color": ShadeHexColor(palette[color], shades[10]),
       "--btn-outline-hovered-bg-color": palette[color],
       "--btn-outline-hovered-border-color": palette[color],
@@ -294,9 +295,9 @@ const themeStyles = (palette, shades) => {
 
 
       //checkbox
-      "--checkbox-border-color-off": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
+      "--checkbox-border-color-off": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[80]),
       "--checkbox-border-color-on": palette[color],
-      "--checkbox-disabled-bg-color": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
+      "--checkbox-disabled-bg-color": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[80]),
       "--checkbox-indeterminate-bg-color": ShadeHexColor(palette[color], LightOrDark(palette[color]) === 'light' ? shades[10] : shades[90]),
       "--checkbox-indeterminate-border-color": palette[color],
 
@@ -405,14 +406,15 @@ const themeStyles = (palette, shades) => {
 
 
       //radio
-      "--radio-border-color-off": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[90]),
+      "--radio-border-color-off": ShadeHexColor(ShadeHexColor(palette[color], shades[10]), shades[80]),
       "--radio-border-color-on": palette[color],
 
 
 
       //slider
       "--slider-track-color": ShadeHexColor(ShadeHexColor(palette[color], shades[95]), shades[30]),
-      "--slider-thumb-color": palette[color],
+      "--slider-thumb-color": ShadeHexColor(palette[color], shades[20]),
+      "--slider-progress-color": palette[color],
 
 
       
