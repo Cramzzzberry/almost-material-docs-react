@@ -10,13 +10,13 @@ export const ModalSnippets = {
         <div className="modal-content">
           <div className="card w-[26.25rem]">
             <div className="card-body">
-              <h4 className="card-title">Prompt?</h4>
-              <span>Put your own description here that gives more details about the prompt.</span>
+              <h4 className="card-title">Woah a Dialog!</h4>
+              <span>Put your own description here that gives more details about this dialog.</span>
+            </div>
 
-              <div className="card-actions mt-2 justify-end">
-                <label htmlFor="myModal" className="btn btn-ghost">Close</label>
-                <label htmlFor="myModal" className="btn">Ok</label>
-              </div>
+            <div className="card-actions justify-end">
+              <label htmlFor="myModal" className="btn btn-ghost">Close</label>
+              <label htmlFor="myModal" className="btn">Ok</label>
             </div>
           </div>
         </div>
@@ -37,8 +37,8 @@ export const ModalSnippets = {
         <div className="modal-content">
           <div className="card w-96 text-center">
             <div className="card-body">
-              <h3 className="card-title">Modal Sample</h3>
-              <span>Click outside!</span>
+              <h4 className="card-title">Done!</h4>
+              <span>Click outside to close...</span>
             </div>
           </div>
           

@@ -42,27 +42,43 @@ const defaultPalette = {
 }
 
 //creates a palette based on the shades given and the palette that will be used
-const AlmostMaterialPalette = (palette = defaultPalette) => {
+const PaletteBreakdown = (palette = defaultPalette) => {
 	let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
-	for(const color of Object.keys(palette)) {
-		colorsAndShades[`${color}-0`] = ShadeHexColor(palette[color], shades[0])
-		colorsAndShades[`${color}-10`] = ShadeHexColor(palette[color], shades[10])
-		colorsAndShades[`${color}-20`] = ShadeHexColor(palette[color], shades[20])
-		colorsAndShades[`${color}-30`] = ShadeHexColor(palette[color], shades[30])
-		colorsAndShades[`${color}-40`] = ShadeHexColor(palette[color], shades[40])
-		colorsAndShades[`${color}-50`] = ShadeHexColor(palette[color], shades[50])
-		colorsAndShades[`${color}-60`] = ShadeHexColor(palette[color], shades[60])
-		colorsAndShades[`${color}-70`] = ShadeHexColor(palette[color], shades[70])
-		colorsAndShades[`${color}-80`] = ShadeHexColor(palette[color], shades[80])
-		colorsAndShades[`${color}-90`] = ShadeHexColor(palette[color], shades[90])
-		colorsAndShades[`${color}-95`] = ShadeHexColor(palette[color], shades[95])
-		colorsAndShades[`${color}-99`] = ShadeHexColor(palette[color], shades[99])
-		colorsAndShades[`${color}-100`] = ShadeHexColor(palette[color], shades[100])
-		colorsAndShades[`${color}`] = ShadeHexColor(palette[color], shades[40])
+	for (const color of Object.keys(palette)) {
+		colorsAndShades[`${ color }-0`] = ShadeHexColor(palette[color], shades[0])
+		colorsAndShades[`${ color }-10`] = ShadeHexColor(palette[color], shades[10])
+		colorsAndShades[`${ color }-20`] = ShadeHexColor(palette[color], shades[20])
+		colorsAndShades[`${ color }-30`] = ShadeHexColor(palette[color], shades[30])
+		colorsAndShades[`${ color }-40`] = ShadeHexColor(palette[color], shades[40])
+		colorsAndShades[`${ color }-50`] = ShadeHexColor(palette[color], shades[50])
+		colorsAndShades[`${ color }-60`] = ShadeHexColor(palette[color], shades[60])
+		colorsAndShades[`${ color }-70`] = ShadeHexColor(palette[color], shades[70])
+		colorsAndShades[`${ color }-80`] = ShadeHexColor(palette[color], shades[80])
+		colorsAndShades[`${ color }-90`] = ShadeHexColor(palette[color], shades[90])
+		colorsAndShades[`${ color }-95`] = ShadeHexColor(palette[color], shades[95])
+		colorsAndShades[`${ color }-99`] = ShadeHexColor(palette[color], shades[99])
+		colorsAndShades[`${ color }-100`] = ShadeHexColor(palette[color], shades[100])
+		colorsAndShades[`${ color }`] = ShadeHexColor(palette[color], shades[40])
 	}
 
 	return colorsAndShades
+}
+
+const ThemeColorsBreakdown = (colors) => { //breakes down the preset colors of tailwind and returns with a format 'color-shade'
+  let brokenDownColors = {}
+
+  for (const key of Object.keys(colors)) {
+    if (typeof(colors[key]) === "string") {
+      brokenDownColors[`${ key }`] = colors[key]
+    } else {
+      for (const nestedKey of Object.keys(colors[key])) {
+        brokenDownColors[`${ key }-${ nestedKey }`] = colors[key][nestedKey]
+      }
+    }
+	}
+
+  return brokenDownColors
 }
 
 const almostMaterialPlugin = plugin(
@@ -78,9 +94,9 @@ const almostMaterialPlugin = plugin(
 
 		addComponents(AddComponents(shades))
 
-		matchComponents(MatchComponents(shades), { values: AlmostMaterialPalette(userPalette) })
+		matchComponents(MatchComponents(shades), { values: {...PaletteBreakdown(userPalette), ...ThemeColorsBreakdown(theme("colors"))} })
 
-		addBase({...AddBase(shades), ...themeStyles(AlmostMaterialPalette(userPalette), shades)});
+		addBase({...AddBase(shades), ...themeStyles(PaletteBreakdown(userPalette), shades)});
 		addBase({
 			"@font-face": {
         fontFamily: "'PlusJakartaSans'",
@@ -91,4 +107,4 @@ const almostMaterialPlugin = plugin(
 	}
 )
 
-export { almostMaterialPlugin, AlmostMaterialPalette }
+export { almostMaterialPlugin, PaletteBreakdown }

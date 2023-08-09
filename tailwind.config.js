@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import { almostMaterialPlugin, AlmostMaterialPalette } from './almost-material/almost-material'
+import { almostMaterialPlugin, PaletteBreakdown } from './almost-material/almost-material'
 
 const myPalette = {
   primary: "#4fc1e9",
@@ -24,7 +24,7 @@ export default {
   ],
   theme: {
     extend: {
-      colors: AlmostMaterialPalette(myPalette)
+      colors: PaletteBreakdown(myPalette)
     },
     almostMaterial: myPalette,
   },

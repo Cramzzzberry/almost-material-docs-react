@@ -24,7 +24,7 @@ const AddComponents = (shades) => {
         fontSize: "var(--badge-font-size) !important",
         lineHeight: "var(--badge-height)",
 
-        display: "flex",
+        display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
 
@@ -107,7 +107,7 @@ const AddComponents = (shades) => {
           fontSize: "var(--btn-icon-size)",
         },
 
-        display: "grid",
+        display: "inline-grid",
         gridAutoFlow: "column",
         gridAutoColumns: "max-content auto max-content",
         alignItems: "center",
@@ -273,23 +273,46 @@ const AddComponents = (shades) => {
       ".card": {
         width: "auto",
         height: "fit-content",
+        borderWidth: "1px",
         borderRadius: "1rem",
+        borderColor: "var(--card-bg-color)",
         backgroundColor: "var(--card-bg-color)",
         color: "var(--card-font-color)",
 
+        "&.card-horizontal": {
+          display: "flex",
+          flexDirection: "row",
+
+          "& > .image.image-card": {
+            width: "16rem",
+            height: "100%",
+            flexShrink: "0",
+          },
+        },
+
+        "&.card-outline": {
+          borderColor: "var(--card-outline-border-color)",
+          backgroundColor: "var(--card-bg-color)",
+        },
+
         "& .card-body": { //for card body
           padding: "1.25rem",
+
+          "&.layout-spaced": {
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          },
         },
 
         "& .card-title": { fontWeight: "bold" },
 
         "& .card-actions": {
+          padding: "0 1.25rem 1.25rem 1.25rem",
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
           gap: "0.5rem",
-
-          paddingTop: "0.75rem",
         },
       },
 
@@ -557,6 +580,7 @@ const AddComponents = (shades) => {
           "& > .drawer-content": {
             width: "100%",
             overflowY: "auto",
+            flexGrow: "1",
           },
   
           "& > .drawer-sidebar": { //drawer sidebar opened
@@ -568,7 +592,7 @@ const AddComponents = (shades) => {
   
             "& > .drawer-sidebar-content": { //drawer sdebar content fitted to its content
               position: "static",
-              width: "23rem",
+              flexBasis: "23rem",
               height: "100vh",
               zIndex: "0",
             },
@@ -665,6 +689,11 @@ const AddComponents = (shades) => {
           width: "100%",
           height: "16rem",
           borderRadius: "1rem",
+
+          "&.image-horizontal": {
+            width: "16rem",
+            height: "100%",
+          },
         },
       },
 
@@ -749,70 +778,122 @@ const AddComponents = (shades) => {
 
       //input class
       ".input": {
-        "--input-height": "3.25rem",
+        "--input-height": "3.75rem",
         "--input-padding-x": "1.25rem",
         "--input-font-size": "1rem !important",
-        
-        minHeight: "var(--input-height)",
-        maxHeight: "var(--input-height)",
-        paddingLeft: "var(--input-padding-x)",
-        paddingRight: "var(--input-padding-x)",
-        fontSize: "var(--input-font-size)",
 
-        borderRadius: "0.75rem",
-        borderWidth: "1px",
+        padding: "0 var(--input-padding-x)",
+        borderRadius: "0.25rem 0.25rem 0 0",
+        borderColor: "var(--input-focused-underline-color)",
+        borderBottomWidth: "2px",
+
         backgroundColor: "var(--input-bg-color)",
-        borderColor: "var(--input-border-color)",
+        caretColor: "var(--input-focused-underline-color)",
+        color: "var(--input-font-color)",
+        outline: "none",
 
-        "&:focus": {
-          outline: `1px solid var(--input-outline-color)`,
-          outlineOffset: "1px",
+        cursor: "text",
 
-          "&.input-underlined": { outline: "none" },
-        },
-
-        "&.input-outline": { borderColor: "var(--input-outline-border-color)" },
-
-        "&.input-ghost": { borderColor: "var(--input-ghost-border-color)", backgroundColor: "var(--input-ghost-bg-color)" },
-
-        "&.input-underlined": {
-          borderWidth: "0px",
-          borderBottomWidth: "2px",
-          borderColor: "var(--input-underlined-border-color)",
-          backgroundColor: "var(--input-underlined-bg-color)",
-          borderRadius: "2px",
-          paddingTop: "0.5rem",
-          paddingBottom: "calc(0.5rem - 2px)",
-          paddingLeft: "0.75rem",
-          paddingRight: "0.75rem",
-        },
-
-        //input different sizes
-        "&.input-sm": {
-          "--input-height": "2.5rem",
-          "--input-padding-x": "1rem",
-          "--input-font-size": "0.875rem !important",
-        },
-
-        "&.input-md": {
-          "--input-height": "3.25rem",
-          "--input-padding-x": "1.25rem",
-          "--input-font-size": "1rem !important",
-        },
-
-        "&.input-lg": {
-          "--input-height": "3.75rem",
-          "--input-padding-x": "1.5rem",
-          "--input-font-size": "1.375rem !important",
-        },
-
-        "&.input-xl": {
-          "--input-height": "4.5rem",
-          "--input-padding-x": "2rem",
-          "--input-font-size": "1.5rem !important",
-        },
+        height: "var(--input-height)",
         
-        "&:disabled": { opacity: "70%", cursor: "not-allowed" },
+        //for date input
+        "&::-webkit-datetime-edit-text, &::-webkit-datetime-edit-day-field, &::-webkit-datetime-edit-month-field, &::-webkit-datetime-edit-year-field": {
+          color: "var(--input-focused-underline-color)",
+        },
+
+        // for time input
+        "&::-webkit-datetime-edit-hour-field, &::-webkit-datetime-edit-minute-field, &::-webkit-datetime-edit-ampm-field": {
+          color: "var(--input-focused-underline-color)",
+        },
+
+        "&.input-text": {
+          position: "relative",
+          display: "flex",
+          alignItems: "flex-end",
+
+          padding: "0",
+          borderRadius: "0",
+          borderColor: "transparent",
+          borderBottomWidth: "0",
+
+          backgroundColor: "transparent",
+          caretColor: "transparent",
+          color: "transparent",
+
+          "& > input": { 
+            width: "100%",
+            height: "100%",
+            padding: "1rem var(--input-padding-x) 0 var(--input-padding-x)",
+            borderRadius: "0.25rem 0.25rem 0 0",
+            borderColor: "var(--input-focused-underline-color)",
+            borderBottomWidth: "2px",
+
+            backgroundColor: "var(--input-bg-color)",
+            caretColor: "var(--input-focused-underline-color)",
+            color: "var(--input-font-color)",
+            outline: "none",
+
+            transition: `border-color 125ms ${ easeInOut }`,
+
+            "&:placeholder-shown": {
+              borderColor: "var(--input-underline-color)",
+
+              "& + label": {
+                top: "calc(50% - 1rem/2)",
+                padding: "0 0.375rem",
+                fontSize: "1rem",
+  
+                color: "var(--input-underline-color)",
+              },
+            },
+
+            "&:focus": {
+              borderColor: "var(--input-focused-underline-color)",
+
+              "& + label": {
+                top: "calc(0% - 0.875rem/2 + 1rem)",
+                padding: "0 0.375rem",
+                fontSize: "0.875rem",
+
+                color: "var(--input-focused-underline-color)",
+              }
+            },
+
+            "&:disabled": {
+              cursor: "not-allowed",
+              opacity: "0.5",
+
+              "& + label.input-placeholder": {
+                opacity: "0.5",
+              },
+            }
+          },
+          "& > label.input-placeholder": { 
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+
+            top: "calc(0% - 0.875rem/2 + 1rem)",
+            left: "calc(var(--input-padding-x) - 0.375rem)",
+            padding: "0 0.375rem",
+            borderRadius: "0.5rem",
+
+            fontSize: "0.875rem",
+            lineHeight: "1rem",
+
+            color: "var(--input-focused-underline-color)",
+            pointerEvents: "none",
+
+            transition: `top 125ms ${ easeInOut }, font-size 125ms ${ easeInOut }, color 125ms ${ easeInOut }`
+          },
+        },
+        "&:disabled": {
+          borderColor: "var(--input-underline-color)",
+          color: "var(--input-underline-color)",
+          
+          cursor: "not-allowed",
+          opacity: "0.5",
+        },
       },
 
 
@@ -822,7 +903,8 @@ const AddComponents = (shades) => {
       ".menu": {
         "--menu-title-height": "2.5rem",
         "--menu-padding-x": "1.25rem",
-        "--menu-title-font-size": "0.875rem",
+        "--menu-title-font-size": "1rem",
+        "--menu-title-margin-top": "1rem",
 
         "--menu-list-item-gap": "1rem",
         "--menu-list-item-height": "3.25rem",
@@ -882,6 +964,10 @@ const AddComponents = (shades) => {
         },
 
         "& li": {
+          "& + .menu-title": {
+            marginTop: "var(--menu-title-margin-top)",
+          },
+
           "& > ul, & > ol": { //sub ul and/or ol under li element
             position: "relative",
             display: "flex",
@@ -898,6 +984,10 @@ const AddComponents = (shades) => {
               width: "2px",
               backgroundColor: "var(--menu-sideline-color)",
               opacity: "0.15"
+            },
+            
+            "& + .menu-title": {
+              marginTop: "var(--menu-title-margin-top)",
             },
           },
 
@@ -989,7 +1079,8 @@ const AddComponents = (shades) => {
         "&.menu-sm": {
           "--menu-title-height": "1.75rem",
           "--menu-padding-x": "1rem",
-          "--menu-title-font-size": "0.75rem",
+          "--menu-title-font-size": "0.875rem",
+          "--menu-title-margin-top": "0.875rem",
 
           "--menu-list-item-gap": "0.25rem",
           "--menu-list-item-height": "2.5rem",
@@ -1001,7 +1092,8 @@ const AddComponents = (shades) => {
         "&.menu-md": {
           "--menu-title-height": "2.5rem",
           "--menu-padding-x": "1.25rem",
-          "--menu-title-font-size": "0.875rem",
+          "--menu-title-font-size": "1rem",
+          "--menu-title-margin-top": "1rem",
 
           "--menu-list-item-gap": "1rem",
           "--menu-list-item-height": "3.25rem",
@@ -1012,7 +1104,8 @@ const AddComponents = (shades) => {
         "&.menu-lg": {
           "--menu-title-height": "3.25rem",
           "--menu-padding-x": "1.5rem",
-          "--menu-title-font-size": "1.25rem",
+          "--menu-title-font-size": "1.375rem",
+          "--menu-title-margin-top": "1.375rem",
 
           "--menu-list-item-gap": "1rem",
           "--menu-list-item-height": "3.75rem",
@@ -1023,7 +1116,8 @@ const AddComponents = (shades) => {
         "&.menu-xl": {
           "--menu-title-height": "4rem",
           "--menu-padding-x": "2rem",
-          "--menu-title-font-size": "1.375rem",
+          "--menu-title-font-size": "1.5rem",
+          "--menu-title-margin-top": "1.5rem",
 
           "--menu-list-item-gap": "1rem",
           "--menu-list-item-height": "4.5rem",
@@ -1422,6 +1516,7 @@ const AddComponents = (shades) => {
         display: "flex",
         alignItems: "flex-start",
         marginTop: "0.5rem",
+        flexGrow: "1",
       },
 
       ".rail-bottom": {

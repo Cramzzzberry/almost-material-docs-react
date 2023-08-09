@@ -56,6 +56,7 @@ const AddBase = (shades) => {
 
       //card
       "--card-bg-color": "#FFFFFF",
+      "--card-border-color": "#000000",
       "--card-font-color": ShadeHexColor("#FFFFFF", shades[10]),
 
 
@@ -82,19 +83,8 @@ const AddBase = (shades) => {
 
       //input
       "--input-bg-color": "#FFFFFF",
-      "--input-border-color": "#FFFFFF",
-      "--input-outline-color": "#cccccc",
-
-      //input-outline
-      "--input-outline-border-color": "#cccccc",
-
-      //input-ghost
-      "--input-ghost-bg-color": "transparent",
-      "--input-ghost-border-color": "transparent",
-
-      //input-underlined
-      "--input-underlined-bg-color": "transparent",
-      "--input-underlined-border-color": "#cccccc",
+      "--input-border-color": "rgba(0,0,0,0.5)",
+      "--input-focused-border-color": "#000000",
 
 
 
@@ -290,7 +280,11 @@ const themeStyles = (palette, shades) => {
 
       //card
       "--card-bg-color": ShadeHexColor(palette[color], shades[90]),
+      "--card-border-color": ShadeHexColor(palette[color], shades[90]),
       "--card-font-color": ShadeHexColor(ShadeHexColor(palette[color], shades[90]), shades[10]),
+
+      //card outline
+      "--card-outline-border-color": palette[color],
 
 
 
@@ -346,20 +340,10 @@ const themeStyles = (palette, shades) => {
 
 
       //input
-      "--input-bg-color": ShadeHexColor(palette[color], shades[95]),
-      "--input-border-color": ShadeHexColor(palette[color], shades[90]),
-      "--input-outline-color": ShadeHexColor(ShadeHexColor(palette[color], shades[90]), shades[30]),
-
-      //input-outline
-      "--input-outline-border-color": ShadeHexColor(ShadeHexColor(palette[color], shades[90]), shades[30]),
-
-      //input-ghost
-      "--input-ghost-bg-color": "transparent",
-      "--input-ghost-border-color": "transparent",
-
-      //input-underlined
-      "--input-underlined-bg-color": "transparent",
-      "--input-underlined-border-color": ShadeHexColor(ShadeHexColor(palette[color], shades[90]), shades[30]),
+      "--input-bg-color": `${ ShadeHexColor(palette[color], shades[20]) }10`,
+      "--input-underline-color": ShadeHexColor(ShadeHexColor(palette[color], shades[20]), shades[70]),
+      "--input-focused-underline-color": ShadeHexColor(palette[color], shades[20]),
+      "--input-font-color": ShadeHexColor(palette[color], shades[10]),
 
 
 

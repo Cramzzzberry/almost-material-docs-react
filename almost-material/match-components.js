@@ -72,6 +72,11 @@ const MatchComponents = (shades) => {
         //card
         "--card-bg-color": color,
         "--card-font-color": ShadeHexColor(color, shades[10]),
+
+        "&.card-outline": {
+          "--card-outline-border-color": color,
+          "--card-bg-color": ShadeHexColor(color, shades[90]),
+        },
       }),
 
 
@@ -130,20 +135,10 @@ const MatchComponents = (shades) => {
       //input class
       "input": (color) => ({ 
         //input
-        "--input-bg-color": ShadeHexColor(color, shades[99]),
-        "--input-border-color": ShadeHexColor(color, shades[99]),
-        "--input-outline-color": color,
-
-        //input-outline
-        "--input-outline-border-color": color,
-
-        //input-ghost
-        "--input-ghost-bg-color": "transparent",
-        "--input-ghost-border-color": "transparent",
-
-        //input-underlined
-        "--input-underlined-bg-color": "transparent",
-        "--input-underlined-border-color": color,
+        "--input-bg-color": `${ ShadeHexColor(color, shades[20]) }10`,
+        "--input-underline-color": ShadeHexColor(ShadeHexColor(color, shades[20]), shades[70]),
+        "--input-focused-underline-color": color,
+        "--input-font-color": ShadeHexColor(color, shades[10]),
       }),
 
 

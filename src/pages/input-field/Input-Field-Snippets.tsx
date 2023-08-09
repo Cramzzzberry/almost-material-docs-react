@@ -1,64 +1,126 @@
 export const InputFieldSnippets = {
-  "Text Input": {
+  "Text Field": {
     preview: (
-      <input className="input" type="text" placeholder="Type here..." />
+      <>
+        <div className="input input-text">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Text</label>
+        </div>
+        
+        <div className="input input-text">
+          <input placeholder=" " type="password" />
+          <label className="input-placeholder">Password</label>
+        </div>
+
+        <div className="input input-text">
+          <input placeholder=" " type="number" />
+          <label className="input-placeholder">Number</label>
+        </div>
+      </>
     ),
-    htmlCode: "<input class=\"input\" type=\"text\" />",
+    htmlCode: "<input className=\"input\" type=\"text\" />",
     jsxCode: "<input className=\"input\" type=\"text\" />",
   },
-  "Outlined Text Input": {
-    preview: (
-      <input className="input input-outline" type="text" placeholder="I have borders!" />
-    ),
-    htmlCode: "<input class=\"input input-outline\" type=\"text\" />",
-    jsxCode: "<input className=\"input input-outline\" type=\"text\" />",
-  },
-  "Ghost Text Input": {
-    preview: (
-      <input className="input input-ghost" type="text" placeholder="Boo!" />
-    ),
-    htmlCode: "<input class=\"input input-ghost\" type=\"text\" />",
-    jsxCode: "<input className=\"input input-ghost\" type=\"text\" />",
-  },
-  "Underlined Text Input": {
-    preview: (
-      <input className="input input-underlined" type="text" placeholder="A line underneath!" />
-    ),
-    htmlCode: "<input class=\"input input-underlined\" type=\"text\" />",
-    jsxCode: "<input className=\"input input-underlined\" type=\"text\" />",
-  },
-  "Text Input w/ Colors": {
+  "Text Field w/ Colors": {
     preview: (
       <>
-      <input className="input input-outline input-primary" type="text" placeholder="Primary" />
-      <input className="input input-outline input-secondary" type="text" placeholder="Secondary" />
-      <input className="input input-outline input-tertiary" type="text" placeholder="tertiary" />
-      <input className="input input-outline input-info" type="text" placeholder="Info" />
-      <input className="input input-outline input-warning" type="text" placeholder="Warning" />
-      <input className="input input-outline input-success" type="text" placeholder="Success" />
-      <input className="input input-outline input-error" type="text" placeholder="Error" />
+        <div className="input input-text">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Default</label>
+        </div>
+        <div className="input input-text input-primary">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Primary</label>
+        </div>
+        <div className="input input-text input-secondary">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Secondary</label>
+        </div>
+        <div className="input input-text input-tertiary">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Tertiary</label>
+        </div>
+        <div className="input input-text input-info">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Info</label>
+        </div>
+        <div className="input input-text input-warning">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Warning</label>
+        </div>
+        <div className="input input-text input-success">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Success</label>
+        </div>
+        <div className="input input-text input-error">
+          <input placeholder=" " type="text" />
+          <label className="input-placeholder">Error</label>
+        </div>
       </>
     ),
-    htmlCode: "<input class=\"input input-outline input-primary\" type=\"text\" />\n<input class=\"input input-outline input-secondary\" type=\"text\" />\n<input class=\"input input-outline input-tertiary\" type=\"text\" />\n<input class=\"input input-outline input-info\" type=\"text\" />\n<input class=\"input input-outline input-warning\" type=\"text\" />\n<input class=\"input input-outline input-success\" type=\"text\" />\n<input class=\"input input-outline input-error\" type=\"text\" />",
+    htmlCode: "<input className=\"input input-outline input-primary\" type=\"text\" />\n<input className=\"input input-outline input-secondary\" type=\"text\" />\n<input className=\"input input-outline input-tertiary\" type=\"text\" />\n<input className=\"input input-outline input-info\" type=\"text\" />\n<input className=\"input input-outline input-warning\" type=\"text\" />\n<input className=\"input input-outline input-success\" type=\"text\" />\n<input className=\"input input-outline input-error\" type=\"text\" />",
     jsxCode: "<input className=\"input input-outline input-primary\" type=\"text\" />\n<input className=\"input input-outline input-secondary\" type=\"text\" />\n<input className=\"input input-outline input-tertiary\" type=\"text\" />\n<input className=\"input input-outline input-info\" type=\"text\" />\n<input className=\"input input-outline input-warning\" type=\"text\" />\n<input className=\"input input-outline input-success\" type=\"text\" />\n<input className=\"input input-outline input-error\" type=\"text\" />",
   },
-  "Text Input Sizes": {
+  "Disabled Text Field": {
+    preview: (
+      <div className="input input-text">
+        <input placeholder=" " type="text" disabled />
+        <label className="input-placeholder">Text</label>
+      </div>
+    ),
+    htmlCode: "<input className=\"input\" type=\"text\" disabled />",
+    jsxCode: "<input className=\"input\" type=\"text\" disabled />",
+  },
+  "Date and Time Field": {
     preview: (
       <>
-      <input className="input input-sm" type="text" placeholder="Small" />
-      <input className="input input-md" type="text" placeholder="Default" />
-      <input className="input input-lg" type="text" placeholder="Large" />
-      <input className="input input-xl" type="text" placeholder="RAWR" />
+        <input className="input" type="date" />
+        <input className="input" type="time" />
       </>
     ),
-    htmlCode: "<input class=\"input input-sm\" type=\"text\" />\n<input class=\"input input-md\" type=\"text\" />\n<input class=\"input input-lg\" type=\"text\" />\n<input class=\"input input-xl\" type=\"text\" />",
-    jsxCode: "<input className=\"input input-sm\" type=\"text\" />\n<input className=\"input input-md\" type=\"text\" />\n<input className=\"input input-lg\" type=\"text\" />\n<input className=\"input input-xl\" type=\"text\" />",
+    htmlCode: "<input className=\"input\" type=\"text\" disabled />",
+    jsxCode: "<input className=\"input\" type=\"text\" disabled />",
   },
-  "Disabled Text Input": {
+  "Date Field w/ Colors": {
     preview: (
-      <input className="input" type="text" placeholder="Disabled :(" disabled />
+      <>
+        <input className="input" type="date" />
+        <input className="input input-primary" type="date" />
+        <input className="input input-secondary" type="date" />
+        <input className="input input-tertiary" type="date" />
+        <input className="input input-info" type="date" />
+        <input className="input input-warning" type="date" />
+        <input className="input input-success" type="date" />
+        <input className="input input-error" type="date" />
+      </>
     ),
-    htmlCode: "<input class=\"input\" type=\"text\" disabled />",
+    htmlCode: "<input className=\"input\" type=\"text\" disabled />",
+    jsxCode: "<input className=\"input\" type=\"text\" disabled />",
+  },
+  "Time Field w/ Colors": {
+    preview: (
+      <>
+        <input className="input" type="time" />
+        <input className="input input-primary" type="time" />
+        <input className="input input-secondary" type="time" />
+        <input className="input input-tertiary" type="time" />
+        <input className="input input-info" type="time" />
+        <input className="input input-warning" type="time" />
+        <input className="input input-success" type="time" />
+        <input className="input input-error" type="time" />
+      </>
+    ),
+    htmlCode: "<input className=\"input\" type=\"text\" disabled />",
+    jsxCode: "<input className=\"input\" type=\"text\" disabled />",
+  },
+  "Disabled Date and Time Field": {
+    preview: (
+      <>
+        <input className="input" type="date" disabled />
+        <input className="input" type="time" disabled />
+      </>
+    ),
+    htmlCode: "<input className=\"input\" type=\"text\" disabled />",
     jsxCode: "<input className=\"input\" type=\"text\" disabled />",
   },
 }

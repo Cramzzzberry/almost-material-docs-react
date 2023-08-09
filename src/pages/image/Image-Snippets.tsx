@@ -23,13 +23,13 @@ export const ImageSnippets = {
         <div className="card w-[26rem]">
           <div className="image image-card" style={{"--image-url": "url('https://img.freepik.com/free-photo/cappuccino-wood-espresso-coffee-latte_1150-1632.jpg?w=1380&t=st=1691421217~exp=1691421817~hmac=4ff7258b18ade2f12da7026c57a5159051a8e72cb3b39ace24a57a1861f481c2')",}}></div>
           
-          <div className="card-body">
-            <h5 className="card-title mb-4">How to create a coffee</h5>
+          <div className="card-body layout-spaced">
+            <h5 className="card-title">How to create a coffee</h5>
             <span>Learn how to create the tastiest bevarage on the planet!</span>
+          </div>
 
-            <div className="card-actions mt-4 justify-end">
-              <button className="btn">visit page</button>
-            </div>
+          <div className="card-actions justify-end">
+            <button className="btn">visit page</button>
           </div>
         </div>
       </div>
