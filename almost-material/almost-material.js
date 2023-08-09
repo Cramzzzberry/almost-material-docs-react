@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 import { ShadeHexColor } from "./misc"
 
 import { AddBase, themeStyles } from "./add-base"
 import AddComponents from "./add-components"
 import MatchComponents from "./match-components"
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line no-undef
 const plugin = require("tailwindcss/plugin")
 
 //shade presets for palettes
@@ -42,7 +42,7 @@ const defaultPalette = {
 }
 
 //creates a palette based on the shades given and the palette that will be used
-const PaletteBreakdown = (palette = defaultPalette) => {
+const CreateShades = (palette = defaultPalette) => {
 	let colorsAndShades = {} //an object for storing all color shades of the userPalette
 
 	for (const color of Object.keys(palette)) {
@@ -81,7 +81,7 @@ const ThemeColorsBreakdown = (colors) => { //breakes down the preset colors of t
   return brokenDownColors
 }
 
-const almostMaterialPlugin = plugin(
+const almostMaterial = plugin(
   
 	function({addComponents, matchComponents, theme, addBase}) {
 		let userPalette = {}
@@ -94,9 +94,9 @@ const almostMaterialPlugin = plugin(
 
 		addComponents(AddComponents(shades))
 
-		matchComponents(MatchComponents(shades), { values: {...PaletteBreakdown(userPalette), ...ThemeColorsBreakdown(theme("colors"))} })
+		matchComponents(MatchComponents(shades), { values: {...CreateShades(userPalette), ...ThemeColorsBreakdown(theme("colors"))} })
 
-		addBase({...AddBase(shades), ...themeStyles(PaletteBreakdown(userPalette), shades)});
+		addBase({...AddBase(shades), ...themeStyles(CreateShades(userPalette), shades)});
 		addBase({
 			"@font-face": {
         fontFamily: "'PlusJakartaSans'",
@@ -107,4 +107,4 @@ const almostMaterialPlugin = plugin(
 	}
 )
 
-export { almostMaterialPlugin, PaletteBreakdown }
+module.exports = { almostMaterial, CreateShades }

@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
-import { almostMaterialPlugin, PaletteBreakdown } from './almost-material/almost-material'
+var plugin = require("./almost-material/almost-material")
 
 const myPalette = {
   primary: "#4fc1e9",
@@ -24,9 +26,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: PaletteBreakdown(myPalette)
+      colors: plugin.CreateShades(myPalette)
     },
     almostMaterial: myPalette,
   },
-  plugins: [almostMaterialPlugin],
+  plugins: [plugin.almostMaterial],
 }
